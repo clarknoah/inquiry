@@ -1,3 +1,6 @@
+---
+to: src/App.css
+---
 * {
   box-sizing: border-box;
 }
@@ -15,12 +18,6 @@ body {
   align-items: stretch;
   height: 100vh;
   width: 100vw;
-}
-
-main {
-  height:100%;
-  width: 100%;
-  margin: 5px;
 }
 
 header{

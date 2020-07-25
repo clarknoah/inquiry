@@ -1,0 +1,15 @@
+
+.UnderlyingBeliefs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.underlying-belief-query-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+
+}

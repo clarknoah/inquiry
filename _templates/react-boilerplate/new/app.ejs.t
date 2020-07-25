@@ -1,26 +1,24 @@
+---
+to: src/App.js
+---
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Route, Link} from 'react-router-dom';
-import InquiryForm from "./components/InquiryForm/InquiryForm";
 
 function App() {
   return (
     <div className="App">
       <header>
-        <h1>Inquiry</h1>
-        <Link exact to="/inquiry" render={()=>{
+        <h1>App Name</h1>
+        <Link exact to="/url" render={()=>{
           return <div/>
         }}>Link</Link>
       </header>
       <main>
-      <Route path="" render={
-        routerProps=>{
-          return <InquiryForm {...routerProps}/>
-        }
-      }/>
+
       </main>
-      <footer>hi</footer>
+      <footer></footer>
     </div>
   );
 }

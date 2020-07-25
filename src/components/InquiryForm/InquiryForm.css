@@ -1,0 +1,24 @@
+
+.InquiryForm {
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+
+.stepper-root {
+    width:100%;
+}
+
+.stepper-buttons {
+    margin: 5px !important;
+}
+
+.show-json {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
