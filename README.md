@@ -16,7 +16,7 @@ The vision for Inquiry is as follows:
 ## Key Concepts
 Before we can go into detail about inquiry and how it will work as software, it's important to establish some explicit definitions for certain words that I will be using. When it is intended that these words be understood with their definition in mind, I will capitalize the word so that this is clearly understood (unless I forgot to capitalize it :D)
 
-#### Thoughts
+### Thoughts
 A collection of words/word like experiences perceived in the mind that make up a coherent idea. For example:
 
 1. I think she is being stupid
@@ -24,7 +24,7 @@ A collection of words/word like experiences perceived in the mind that make up a
 3. They shouldn't do that
 
 
-#### Perception
+### Perception
 A special type of Thought that narrates what is happening in physical reality.  For example:
 
 1. She picked up the book
@@ -41,14 +41,14 @@ Perceptions are essentially Thoughts which describe objective events. The major 
 
 All of these are subjective opinions about reality. The more observers that would look at the same event and agree on the Thought, the more likely it's a perception.
 
-#### Form/Concept
+### Form/Concept
 A Form/Concept (used interchangeably) refers to any Concept that is stored in your mind, which has a specific meaning (even if the meaning changes) to the individual. For example, Capitalism is a Concept/Form. If you ask 100 people how they feel about capitalism, you'll get varying answers, because each individual has their own association to that particular Concept. Every Thought and Perception we have typically has several Concepts associated with it. For example:
 
 > My mother doesn't care about me
 
 There are (depending on how you look at it) three different Concepts here. Mother (Or My Mother), Care, and Me. Each of these Concepts MEANS something very particular to you. Lets quickly define these concepts as the relate to me personally:
 
-##### My Mother
+#### My Mother
 Lets look a a definition of My Mother:
 
 > The person that birthed me in the world
@@ -58,7 +58,7 @@ This is one definition, what we tend to see as we question the meaning of a Conc
 > The person who is responsible for caring for me
 
 
-##### Care
+#### Care
 What does the word **Care** MEAN to you? This isn't the time to look up the definition in a dictionary, this is the time to ask yourself what it means to YOU, for example:
 
 > To look after with compassion and love
@@ -69,17 +69,17 @@ Once again, this definition is context specific, maybe within the context of `My
 
 Once again, very different from the first definition.
 
-##### Me
+#### Me
 This is a nebulous and tricky one, who are you? What is you definition of me?
 
 > That which is typing on the keyboard right now
 
 This is of course just one definition, given that the sense of self is a constantly shifting experience...
 
-#### Emotion
+### Emotion
 This word refers to the DIRECT perceivable feeling that is being experienced in the moment. Emotions are different from Thoughts in that they do not have words associated with them, and instead are perceived by feeling into the body.
 
-#### Body Sensation
+### Body Sensation
 This word refers to the DIRECT sensorial experience that one has on their body. Tightness, pain, stiffness, tingle, prick, heat, cold, are all examples of body sensations. The sensations also have a particular location on the body.
 
 
@@ -91,7 +91,7 @@ Quick summary of capturable data points
 3. Perceptions (In the moment narratives of what is physically occurring in reality)
 3. Concepts/Forms
 
-#### Inquiry
+### Inquiry
 This words refers to the intentional act of investigating the truth/meaning of something, be it a Thought, Emotion, or Concept.
 
 ## Argument for why Inquiry should be added to a meditative practice
@@ -138,19 +138,19 @@ As a meditative practice, there are several components to inquiry.
 
 All of these components serve to help an individual develop insight into the nature of suffering.
 
-#### Thought & Emotion Sensitization
+### Thought & Emotion Sensitization
 This first component of inquiry is focused on developing your own in the moment ability to discern what Thoughts and emotions are arising in consciousness. This is a very simple practice in which you simply log exactly what you think and what you feel.  This can be as simply as something you do 5 minutes a day, or as intense as a whole hour long practice. Ultimately, the intent is to increase our ability to discern with finer granularity Thoughts and emotions.
 
-#### Emotional Projection Sensitization
+### Emotional Projection Sensitization
 As our ability to perceive emotions and Thoughts increases, you inevitable begin to realize that some emotions tend to have a direction. Rarely does someone feel anger, it's much more like that they feel anger IN RELATIONSHIP to some Concept. Anger AT capitalism, resentment towards partner, compassion towards friend, etc. This practice is once again simple, you simply write down the emotion, and what it is relationship with.
 
-#### Thought Collection and Categorization
+### Thought Collection and Categorization
 This part of inquiry has to do with the daily collection of stimulus-Thought-emotion events. This data collection actually beings when you start sensitizing yourself to emotions and Thoughts. There are two types of Thoughts to collect:
 
 1. Automatic Thought Collection (In meditation or as they arise during the day)
 2. Intentional Thought Collection (The act of reflecting on various different stimuli, and seeing what Thoughts you have in relationship to those stimulus)
 
-#### Belief Inquiry
+### Belief Inquiry
 This is a meditative practice in which a user goes through a collection of Thoughts, and deeply inquires into the Thought, doing the following things for teach Thought:
 
 1. Inquire into whether or not a Thought is based in reality
@@ -165,7 +165,7 @@ This is a meditative practice in which a user goes through a collection of Thoug
 
 This has been the bulk of my practice that last 6 weeks, and it has done more in the last 6 weeks for me than the last 3 years of meditating (albeit everything before really let up to this being a viable practice). This is essentially a very rigorous form of Cognitive Behavioral Therapy.
 
-#### Gains Inquiry
+### Gains Inquiry
 By Gains, I'm referring to the positive benefits that one notices from doing inquiry/Thought/Emotion tracking. These gains could be something like:
 1. I don't get caught in negative thinking when I'm around my parents
 2. I notice I'm more aware of X thought and don't get caught up in the story as much
@@ -177,17 +177,11 @@ I'm still kicking around the idea for how this would work, at the moment I am th
 
 Another idea is to actually use the data in the thought tracker itself, and actually report to the user if a thought that hasn't been logged in a while is still causing discomfort, my assumption is if you're not having a negative thought, you've reduced/removed it from your belief structure, so reviewing previously reported negative thoughts that aren't being reported anymore should bring to peoples' awareness that they no longer deal with it.
 
-#### Form Association Inquiry
+### Form Association Inquiry
 This is a meditative practice in which you deeply inquiry into the meaning of a Concept as it relates to a Thought. For example:
 
 1. I need <Concept> to love me
 The question here becomes, what does "love" mean to this individual in this particular thought? The word "Love" in this particular situation means something very specific within the context OF the thought, so a practice in which you inquire into the meaning of certain Concepts in relationship to a thought I believe (from personal experience) is incredibly valuable, and can yield very important insights into what is really going on in the mind.
 
-#### Next Steps
+## Next Steps
 So that is essentially the idea I have for this software, I'm working on figuring out how the data model for this would work, and I have a basic idea, but I'm really kinda letting my own practice help guide the development of this software.
-
-
-
-
-## Thought Note Taking
-Thought essentially determine how
