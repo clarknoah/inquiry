@@ -79,6 +79,24 @@ This is of course just one definition, given that the sense of self is a constan
 ### Emotion
 This word refers to the DIRECT perceivable feeling that is being experienced in the moment. Emotions are different from Thoughts in that they do not have words associated with them, and instead are perceived by feeling into the body.
 
+Examples include:
+
+1. Anger
+2. Rage
+1. Fear
+1. Sad
+1. Happy
+2. Content
+3. Calm
+4. Peace
+5. Grief
+1. Jealousy
+1. Hatred
+2. Resentment
+1. Anxiety
+1. Worry
+
+
 ### Body Sensation
 This word refers to the DIRECT sensorial experience that one has on their body. Tightness, pain, stiffness, tingle, prick, heat, cold, are all examples of body sensations. The sensations also have a particular location on the body.
 
