@@ -1,6 +1,6 @@
 import NodeProperty from "./NodeProperty.js";
 
-function getCurrentLocaleDate(){
+function getCurrentLocalDate(){
     let date = new Date();
     let offset = date.getTimezoneOffset();
     date = new Date(date.getTime() - (offset*60*1000))
@@ -12,9 +12,11 @@ class DateProperty extends NodeProperty{
         super(data);
     }
 
-    setValue(value = getCurrentLocaleDate()){
-        
+    setValue(value = getCurrentLocalDate()){
         this.value = value;
+    }
+    setDefaultValue(){
+        this.value = getCurrentLocalDate();
     }
 }
 

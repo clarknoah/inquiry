@@ -11,24 +11,22 @@ import Typography from "@material-ui/core/Typography";
 import utils from "../../services/utils";
 import TextField from '@material-ui/core/TextField';
 import GraphNode from "../../models/GraphNode";
-import models from "../../models/inquiry_models_v1.json";
+import InquiryModel from "../../models/GraphModel";
 
-console.log(new GraphNode(models.collections.filter(node=>node.collectionName=="A_Thought")[0]));
+let exp = InquiryModel.getNewModelClass('M_Thought');
+console.log(exp);
 // Class Based React Component
 class ManifestedThought extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
-
-    // Default CSS class to apply to the Component
+    let mThought = InquiryModel.getNewModelClass("M_Thought");
+    mThought.setProperty('dateOfThought','2020-07-17');
     this.inputRef = React.createRef();
 
     this.state = {
       classList: "ManifestedThought",
-      thought: "",
-      dateOfThought:"2020-07-17",
       abstractThoughts:[],
-      thoughtDate:null
+      mThought: mThought
     };
   }
 
@@ -38,51 +36,51 @@ class ManifestedThought extends Component {
   // Runs after a component has been updated
   componentDidUpdate() {}
 
+  resetForm=()=>{
+    let mThought = InquiryModel.getNewModelClass("M_Thought");
+    mThought.setProperty('dateOfThought','2020-07-17');
+    this.setState({
+      classList: "ManifestedThought",
+      abstractThoughts:[],
+      mThought: mThought
+    })
+  }
+
   onChange = evt => {
     let text = evt.target.value;
     if(text.length > 4){
-      api.nodeListQuery("Abstract_Thought", "thought", text).then(res => {
+      api.nodeListQuery("A_Thought", "thought", text).then(res => {
         console.log(res);
         this.setState({
-          thought: text,
-          abstractThoughts:res
+          abstractThoughts:res,
+          mThought: this.state.mThought.setProperty('thought',text)
         });
       });
     }else{
       this.setState({
-        thought: text,
-        abstractThoughts:[]
+        abstractThoughts:[],
+        mThought: this.state.mThought.setProperty('thought',text)
       });
     }
 
   };
   selectExistingThought=(thought)=>{
-    let currentDate = new Date();
-    const offset = currentDate.getTimezoneOffset()
-    currentDate = new Date(currentDate.getTime() - (offset*60*1000))
 
-    thought.properties.dateOfThought = this.state.dateOfThought;
-    thought.properties.dateOfInput = currentDate.toISOString().split('T')[0]
-    thought.properties.timestampOfInput = Date.now();
     console.log(thought);
-    thought.exists = true;
-    thought.nodeId = thought.identity;
-    thought.manifestedVar = `node_${utils.getUniqueId()}`;
-    thought.abstractVar = `node_${utils.getUniqueId()}`;
-    this.props.submitThought(thought);
+    let aThought = InquiryModel.getExistingModelClass(thought.labels[0], thought.identity,thought.properties)
+    let mThought = this.state.mThought;
+    console.log(this.state.mThought);
+    mThought.setProperty('thought',aThought.properties.thought.value);
+    //aThought
+    this.props.submitThought(aThought, mThought);
     this.inputRef.current.focus();
-    this.setState({
-      thought:"",
-      abstractThoughts:[]
-    })
+
   }
 
   compareThoughtString=()=>{
-    console.log(this.state.thought, )
     let same =  this.state.abstractThoughts.filter(val=>{
       return val.name === this.state.thought
     }).length == 0;
-    console.log(same);
     if(same){
       return  <Button
       variant="contained"
@@ -93,23 +91,25 @@ class ManifestedThought extends Component {
     }
   }
 
-  selectNewThought=()=>{
-    let currentDate = new Date();
-    const offset = currentDate.getTimezoneOffset()
-    currentDate = new Date(currentDate.getTime() - (offset*60*1000))
-    console.log(this.state.dateOfThought);
-    let thought = {
-      exists:false,
-      manifestedVar: `node_${utils.getUniqueId()}`,
-      abstractVar:`node_${utils.getUniqueId()}`,
-      properties:{
-        thought: this.state.thought,
-        dateOfThought:this.state.dateOfThought
-      }
+  submitThought=(thought)=>{
+    let mThought = this.state.mThought;
+    mThought.setDefaultProperty('dateOfInput');
+    mThought.setDefaultProperty('timestampOfInput');
+
+    let payload = {
+      aThought:this.state.aThought
     }
-    thought.properties.dateOfInput = currentDate.toISOString().split('T')[0]
-    thought.properties.timestampOfInput = Date.now();
-    this.props.submitThought(thought);
+    api.submitThought()
+  }
+
+  selectNewThought=()=>{
+    let mThought = this.state.mThought;
+    mThought.properties.timestampOfThought.setValueByDate(mThought.properties.dateOfThought.value);
+    mThought.setAllDefaultProperties();
+    let aThought = InquiryModel.getNewModelClass("A_Thought");
+    aThought.setMatchingProperties(mThought);
+    console.log(mThought);
+    this.props.submitThought(aThought, mThought);
     this.inputRef.current.focus();
     this.setState({thought:""})
   }
@@ -140,9 +140,12 @@ class ManifestedThought extends Component {
         label="Date of Thought"
         type="date"
         onChange={(e)=>{
-          this.setState({dateOfThought:e.target.value})
+          this.setState({mThought:this
+            .state
+            .mThought
+            .setProperty('dateOfThought',e.target.value)})
         }}
-        value={this.state.dateOfThought}
+        value={this.state.mThought.properties.dateOfThought.value}
         className={"ThoughtLogger-field"}
         InputLabelProps={{
           shrink: true,
@@ -157,7 +160,7 @@ class ManifestedThought extends Component {
           rows={4}
           placeholder="Type in thought"
           variant="outlined"
-          value={this.state.thought}
+          value={this.state.mThought.properties.thought.value}
           onChange={this.onChange}
         />
         {this.compareThoughtString()}

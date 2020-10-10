@@ -1,6 +1,7 @@
 class NodeProperty{
     constructor(data){
         this.value = undefined;
+        this.required = data.required;
     }
 
     setValue(value){
@@ -9,6 +10,7 @@ class NodeProperty{
     getValue(){
         return this.value;
     }
+
 
 }
 

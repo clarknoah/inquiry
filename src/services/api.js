@@ -42,31 +42,33 @@ let api = {
   submitThoughtPayload: function(){
 
   },
-  submitThought:function(thought){
-    if(thought.properties.thought.length > 0){
-      let query;
-      query = `CREATE (${thought.manifestedVar}:M_Thought)
-      SET ${thought.manifestedVar} = $data
-      `
-      if(thought.exists){
-        query = `MATCH (${thought.abstractVar}:A_Thought)
-        WHERE id(${thought.abstractVar}) = ${thought.nodeId}
-        `+query+`
-        CREATE (${thought.manifestedVar})-[:MANIFESTATION_OF]->(${thought.abstractVar})
-        `
-        return driver.session().run(query, {data:thought.properties})
+  submitThought:function(aThought, mThought){
+    console.log(aThought, mThought);
+    if(mThought.properties.thought.value.length > 0){
+      let mThoughtQuery = mThought.generateCypherCreateNode();
+      let query = [];
+      let params = {};
+      params[mThoughtQuery.paramVariable] = mThoughtQuery.properties;
+      query.push(
+          mThoughtQuery.create,
+          mThoughtQuery.set,
+          mThought.generateCypherTargetRelationship(aThought,'MANIFESTATION_OF')
+        );
+
+      if(aThought.exists){
+        let aThoughtQuery = aThought.generateCypherMatchNode();
+        
+        query.unshift(aThoughtQuery.match, aThoughtQuery.where);
+        //return driver.session().run(query, {data:thought.properties})
       }else{
-        query+=`
-        CREATE (${thought.manifestedVar}_a:A_Thought)
-        SET ${thought.manifestedVar}_a = $data_a
-        CREATE (${thought.manifestedVar})-[:MANIFESTATION_OF]->(${thought.manifestedVar}_a)
-        `
-        let a_thought = {thought:thought.properties.thought};
-        console.log(query);
-        return driver.session().run(query, {data:thought.properties,data_a:a_thought})
+        let aThoughtQuery = aThought.generateCypherCreateNode();
+        console.log(aThoughtQuery);
+        params[aThoughtQuery.paramVariable] = aThoughtQuery.properties;
+        query.unshift(aThoughtQuery.create, aThoughtQuery.set)
+        //return driver.session().run(query, {data:thought.properties,data_a:a_thought})
       }
-      console.log(query);
-   
+      console.log(query.join("\n"), params);
+      
   
     }else{
       console.log("Empty Thought...haha")

@@ -28,9 +28,9 @@ class ThoughtLogger extends Component{
   // Runs right before a component is removed from the DOM
   componentWillUnmount(){}
 
-  submitThought=(data)=>{
-    console.log(data);
-    api.submitThought(data);
+  submitThought=(a, m)=>{
+
+    api.submitThought(a, m);
   }
 
   render(){

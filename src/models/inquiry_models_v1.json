@@ -1,8 +1,8 @@
 {
-    "GUID": "a791baf0-0a4c-11eb-b91b-65a1de19ee72",
+    "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-10-09T16:29:51.013Z",
+    "lastModifTS": "2020-10-10T11:53:00.896Z",
     "persistenceSchemaVersion": "3",
     "description": "",
     "comments": "",
@@ -727,7 +727,7 @@
             "properties": [
                 {
                     "primaryKey": false,
-                    "default": "",
+                    "default": "now",
                     "enum": [],
                     "sample": "",
                     "comments": "",
@@ -753,7 +753,7 @@
                 },
                 {
                     "primaryKey": false,
-                    "default": "",
+                    "default": "now",
                     "enum": [],
                     "sample": "",
                     "comments": "",
@@ -779,7 +779,7 @@
                 },
                 {
                     "primaryKey": false,
-                    "default": "",
+                    "default": "now",
                     "enum": [],
                     "sample": "",
                     "comments": "",
@@ -805,7 +805,7 @@
                 },
                 {
                     "primaryKey": false,
-                    "default": "",
+                    "default": "now",
                     "enum": [],
                     "sample": "",
                     "comments": "",
@@ -850,6 +850,31 @@
                     "comments": "",
                     "dependencies": [],
                     "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "311b1470-0aec-11eb-b91b-65a1de19ee72",
+                    "name": "thought",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {}
@@ -1721,14 +1746,15 @@
                     "error": {}
                 },
                 {
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "default": "",
                     "primaryKey": false,
+                    "default": "",
                     "enum": [],
                     "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
                     "unique": false,
+                    "childType": "temporal",
                     "type": "string",
                     "compositeKey": [
                         "compositeNodeKey"
@@ -1738,16 +1764,21 @@
                     "name": "dateOfThought",
                     "code": "",
                     "description": "",
-                    "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "relationshipType": "",
+                    "error": {},
+                    "mode": "date"
                 },
                 {
                     "primaryKey": false,
-                    "default": "",
+                    "default": "now",
                     "enum": [],
                     "sample": "",
                     "comments": "",
@@ -1765,20 +1796,22 @@
                     "code": "",
                     "description": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "mode": "localdatetime"
                 },
                 {
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "default": "",
                     "primaryKey": false,
+                    "default": "",
                     "enum": [],
                     "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
                     "unique": false,
+                    "childType": "temporal",
                     "type": "string",
                     "compositeKey": [
                         "compositeNodeKey"
@@ -1788,16 +1821,16 @@
                     "name": "dateOfInput",
                     "code": "",
                     "description": "",
-                    "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "mode": "date"
                 },
                 {
                     "primaryKey": false,
-                    "default": "",
+                    "default": "now",
                     "enum": [],
                     "sample": "",
                     "comments": "",
@@ -1815,10 +1848,11 @@
                     "code": "",
                     "description": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "mode": "localdatetime"
                 }
             ],
             "definitions": {
@@ -3267,7 +3301,6 @@
         "c6524b80-f822-11ea-9f76-433a900eeb80": "WHEN_NOT_BELIEVED",
         "d68a0f10-f822-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
         "93131aa0-09b7-11eb-b91b-65a1de19ee72": "dateOfThought",
-        "876062a0-09ba-11eb-b91b-65a1de19ee72": "timestampOfThought",
         "d22e6bf0-09cf-11eb-b91b-65a1de19ee72": "dateOfInput",
         "d9a2fdb0-09cf-11eb-b91b-65a1de19ee72": "timestampOfInput",
         "b6709550-0a38-11eb-b91b-65a1de19ee72": "date",
@@ -3275,10 +3308,12 @@
         "fc790cd0-0a38-11eb-b91b-65a1de19ee72": "endTimestamp",
         "042920f0-0a39-11eb-b91b-65a1de19ee72": "duration",
         "837fe4f0-0a3a-11eb-b91b-65a1de19ee72": "dateOfInput",
-        "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfInput",
         "e505b6f0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfThought",
         "8cb64af0-0a3a-11eb-b91b-65a1de19ee72": "dateOfThought",
-        "bdce9730-0a4b-11eb-b91b-65a1de19ee72": "test"
+        "bdce9730-0a4b-11eb-b91b-65a1de19ee72": "test",
+        "311b1470-0aec-11eb-b91b-65a1de19ee72": "thought",
+        "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "876062a0-09ba-11eb-b91b-65a1de19ee72": "timestampOfThought"
     },
     "definitions": {
         "type": "definitions",

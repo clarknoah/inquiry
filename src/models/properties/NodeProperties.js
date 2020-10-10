@@ -1,9 +1,11 @@
 import DateProperty from "./DateProperty";
 import LocalDateTimeProperty from "./LocalDateTimeProperty";
+import NodeProperty from "./NodeProperty";
 class NodeProperties{
     constructor(data){
         this.propertyKeys = this.setPropertyKeys(data);
         this.setProperties(data);
+        console.log(data);
     }
     getPropertiesObject(){
 
@@ -19,8 +21,8 @@ class NodeProperties{
                 }else if(field.mode="localdatetime"){
                     this[field.name] = new LocalDateTimeProperty(field);
                 }
-            }else if(field.type==""){
-
+            }else if(field.type=="string"){
+                this[field.name] = new NodeProperty(field);
             }
         })
     }
@@ -32,6 +34,9 @@ class NodeProperties{
             properties[key]=this[key].value;
         })
         return properties;
+    }
+    setAllDefaults(){
+        //Iterate through all properties with default values and set them
     }
 
     
