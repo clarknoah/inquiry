@@ -9,6 +9,11 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import utils from "../../services/utils";
+import TextField from '@material-ui/core/TextField';
+import GraphNode from "../../models/GraphNode";
+import models from "../../models/inquiry_models_v1.json";
+
+console.log(new GraphNode(models.collections.filter(node=>node.collectionName=="A_Thought")[0]));
 // Class Based React Component
 class ManifestedThought extends Component {
   constructor(props) {
@@ -16,10 +21,14 @@ class ManifestedThought extends Component {
     console.log(props);
 
     // Default CSS class to apply to the Component
+    this.inputRef = React.createRef();
+
     this.state = {
       classList: "ManifestedThought",
       thought: "",
-      abstractThoughts:[]
+      dateOfThought:"2020-07-17",
+      abstractThoughts:[],
+      thoughtDate:null
     };
   }
 
@@ -48,12 +57,24 @@ class ManifestedThought extends Component {
 
   };
   selectExistingThought=(thought)=>{
+    let currentDate = new Date();
+    const offset = currentDate.getTimezoneOffset()
+    currentDate = new Date(currentDate.getTime() - (offset*60*1000))
+
+    thought.properties.dateOfThought = this.state.dateOfThought;
+    thought.properties.dateOfInput = currentDate.toISOString().split('T')[0]
+    thought.properties.timestampOfInput = Date.now();
     console.log(thought);
     thought.exists = true;
     thought.nodeId = thought.identity;
     thought.manifestedVar = `node_${utils.getUniqueId()}`;
     thought.abstractVar = `node_${utils.getUniqueId()}`;
     this.props.submitThought(thought);
+    this.inputRef.current.focus();
+    this.setState({
+      thought:"",
+      abstractThoughts:[]
+    })
   }
 
   compareThoughtString=()=>{
@@ -73,15 +94,24 @@ class ManifestedThought extends Component {
   }
 
   selectNewThought=()=>{
+    let currentDate = new Date();
+    const offset = currentDate.getTimezoneOffset()
+    currentDate = new Date(currentDate.getTime() - (offset*60*1000))
+    console.log(this.state.dateOfThought);
     let thought = {
       exists:false,
       manifestedVar: `node_${utils.getUniqueId()}`,
       abstractVar:`node_${utils.getUniqueId()}`,
       properties:{
-        thought: this.state.thought
+        thought: this.state.thought,
+        dateOfThought:this.state.dateOfThought
       }
     }
+    thought.properties.dateOfInput = currentDate.toISOString().split('T')[0]
+    thought.properties.timestampOfInput = Date.now();
     this.props.submitThought(thought);
+    this.inputRef.current.focus();
+    this.setState({thought:""})
   }
 
   // Runs right before a component is removed from the DOM
@@ -89,21 +119,44 @@ class ManifestedThought extends Component {
 
   render() {
     let chips = this.state.abstractThoughts.map((val,index)=>{
-      return <div><Chip
-        label={val.name}
-        clickable
-        color="primary"
-        onClick={()=>{
-          this.selectExistingThought(val)
-        }}
-      /></div>
+      return <div>
+        <Button
+      variant="contained"
+      className={"ThoughtLogger-field"}
+      label="Hello"
+      onClick={()=>{
+        this.selectExistingThought(val)
+      }}>
+                {val.name}
+                </Button>
+        </div>
     })
     return (
       <div className={this.state.classList}>
-        <TextareaAutosize
-          rowsMin={3}
-          aria-label="empty textarea"
-          placeholder="Empty"
+
+         <TextField
+         
+        id="date"
+        label="Date of Thought"
+        type="date"
+        onChange={(e)=>{
+          this.setState({dateOfThought:e.target.value})
+        }}
+        value={this.state.dateOfThought}
+        className={"ThoughtLogger-field"}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+        <TextField
+          id="outlined-multiline-static"
+          label="Thought"
+          inputRef={this.inputRef}
+          multiline
+          className={"ThoughtLogger-field"}
+          rows={4}
+          placeholder="Type in thought"
+          variant="outlined"
           value={this.state.thought}
           onChange={this.onChange}
         />

@@ -153,6 +153,7 @@ As a meditative practice, there are several components to inquiry.
 2. Belief Inquiry (The core active meditative practice of fully entering into a Thought, and questioning its reality)
 1. Gain Inquiry (The active practice of review Thoughts that are no longer arising to validate progress)
 1. Form Association Inquiry (The active practice of review Thoughts and associating Concepts with them)
+1. Emotional Concept Training
 
 All of these components serve to help an individual develop insight into the nature of suffering.
 
@@ -201,5 +202,18 @@ This is a meditative practice in which you deeply inquiry into the meaning of a 
 1. I need <Concept> to love me
 The question here becomes, what does "love" mean to this individual in this particular thought? The word "Love" in this particular situation means something very specific within the context OF the thought, so a practice in which you inquire into the meaning of certain Concepts in relationship to a thought I believe (from personal experience) is incredibly valuable, and can yield very important insights into what is really going on in the mind.
 
+
+### Emotional Concept Training
+Another area of focus (potentially) is this idea of emotional concept training. This would simply be to have a wide catalog of emotional concepts, and have an individual training themselves on these concepts
+
+## Visualizations
+So the big value in collecting all these thoughts and emotions is to actually to create visualizations which can show the user what is actually going on in their head over a perid
+
 ## Next Steps
 So that is essentially the idea I have for this software, I'm working on figuring out how the data model for this would work, and I have a basic idea, but I'm really kinda letting my own practice help guide the development of this software.
+
+
+# Questions
+
+## How is iAm different from a CBT based app?
+Excellent question, in my experience. CBT apps do not focus much on the systematic part of deconstructing your thoughts.

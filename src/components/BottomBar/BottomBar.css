@@ -1,0 +1,11 @@
+
+.BottomBar {
+  background-color: white;
+  font-family: arial;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: black;
+  padding: 5px;
+  border-top: 1px solid grey;
+}
