@@ -11,15 +11,16 @@ let api = {
     MATCH (n:${label})
     WHERE n.${field} =~ $text
     RETURN n
+    ORDER BY n.thought ASC
+    LIMIT 5
     `
     let params={
-      text:`(?i).*${queryText}.*`
+      text:`(?i)${queryText}.*`
     }
-    console.log(query);
+   
     return driver.session().run(query,params)
       .then(results=>{
-        console.log(results);
-        //return results;
+
         return results.records.map((val)=>{
             let node = val._fields[0];
             node.identity = node.identity.low;
@@ -57,23 +58,27 @@ let api = {
 
       if(aThought.exists){
         let aThoughtQuery = aThought.generateCypherMatchNode();
-        
         query.unshift(aThoughtQuery.match, aThoughtQuery.where);
-        //return driver.session().run(query, {data:thought.properties})
+
       }else{
         let aThoughtQuery = aThought.generateCypherCreateNode();
         console.log(aThoughtQuery);
         params[aThoughtQuery.paramVariable] = aThoughtQuery.properties;
         query.unshift(aThoughtQuery.create, aThoughtQuery.set)
-        //return driver.session().run(query, {data:thought.properties,data_a:a_thought})
       }
       console.log(query.join("\n"), params);
-      
+      return driver.session().run(query.join("\n"), params)
   
     }else{
       console.log("Empty Thought...haha")
     }
 
+  },cypherQuery:function(query,params=null){
+    if(params!==null){
+      return driver.session().run(query, params)
+    }else{
+      return driver.session().run(query);
+    }
   }
 }
 

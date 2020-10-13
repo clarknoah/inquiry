@@ -1,11 +1,11 @@
 import DateProperty from "./DateProperty";
 import LocalDateTimeProperty from "./LocalDateTimeProperty";
+import NumberProperty from "./NumberProperty.js";
 import NodeProperty from "./NodeProperty";
 class NodeProperties{
     constructor(data){
         this.propertyKeys = this.setPropertyKeys(data);
         this.setProperties(data);
-        console.log(data);
     }
     getPropertiesObject(){
 
@@ -15,13 +15,18 @@ class NodeProperties{
     }
     setProperties(data){
         data.forEach(field=>{
-            if(field.childType!==undefined&&field.mode!==undefined){
+           //console.log(field);
+            if(field.type==="string" && field.childType ==="temporal"){
                 if(field.mode=="date"){
                     this[field.name] = new DateProperty(field);
                 }else if(field.mode="localdatetime"){
                     this[field.name] = new LocalDateTimeProperty(field);
                 }
             }else if(field.type=="string"){
+                this[field.name] = new NodeProperty(field);
+            }else if(field.type=="numeric"){
+                this[field.name] = new NumberProperty(field);
+            }else if(field.type=="boolean" || field.type=="array"){
                 this[field.name] = new NodeProperty(field);
             }
         })

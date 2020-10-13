@@ -16,17 +16,6 @@ class PracticesHome extends Component{
   }
 
 
-  // Runs after Component is loaded in the broswer
-  componentDidMount(){}
-
-
-  // Runs after a component has been updated
-  componentDidUpdate(){}
-
-
-  // Runs right before a component is removed from the DOM
-  componentWillUnmount(){}
-
   render(){
     return(
       <div className={this.state.classList}>

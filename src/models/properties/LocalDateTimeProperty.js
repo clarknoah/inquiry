@@ -8,13 +8,13 @@ function getCurrentLocalDateTime(value = null){
 
     let offset = date.getTimezoneOffset();
     date = new Date(date.getTime() - (offset*60*1000))
-    return date.getTime();
+    let time = date.getTime();
+    return time;
 }
 
 class LocalDateTimeProperty extends NodeProperty{
     constructor(data){
         super(data);
-        console.log(data);
     }
 
     setValue(value = getCurrentLocalDateTime()){

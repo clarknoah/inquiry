@@ -9,6 +9,7 @@ import InsightsHome from "./pages/InsightsHome/InsightsHome";
 import ThoughtJournal from "./pages/ThoughtJournal/ThoughtJournal";
 import ThoughtLogger from "./pages/ThoughtLogger/ThoughtLogger";
 import PracticesHome from "./pages/PracticesHome/PracticesHome";
+import ThoughtTracker from "./pages/trackers/ThoughtTracker/ThoughtTracker";
 
 function App() {
   return (
@@ -16,9 +17,7 @@ function App() {
       <main>
       <header>
         <h1>Inquiry</h1>
-        <Link exact to="/inquiry" render={()=>{
-          return <div/>
-        }}>Link</Link>
+        <Link to="/inquiry" >Link</Link>
       </header>
       <Switch>
       <Route path="/journal" render={
@@ -28,7 +27,7 @@ function App() {
       }/>
       <Route path="/practices" render={
         routerProps=>{
-          return <PracticesHome {...routerProps}/>
+          return <ThoughtTracker {...routerProps}/>
         }
       }/>
       <Route path="/logger" render={

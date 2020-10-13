@@ -1,4 +1,5 @@
 import NodeProperties from "./properties/NodeProperties";
+
 import utils from "../services/utils";
 class GraphNode{
     constructor(data, id=undefined, properties=undefined){
@@ -77,7 +78,6 @@ class GraphNode{
         return this;
     }
     setExistingProperties(props){
-        console.log(props);
         for(let key in props){
             this.properties[key].value = props[key];
         }

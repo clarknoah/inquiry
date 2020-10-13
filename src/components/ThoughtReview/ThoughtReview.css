@@ -1,0 +1,20 @@
+
+.ThoughtReview {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ThoughtReview-input {
+
+}
+
+.ThoughtReview-editButton {
+
+}
+
+.ThoughtReview-saveButton {
+    
+}
+

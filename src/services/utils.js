@@ -45,6 +45,14 @@ let utils = {
 
   return array;
 },
+  deduplicateArray:(arr, key)=>{
+    arr = arr.filter(function(obj, index, self) { 
+      return index === self.findIndex(function(t) {
+           return t[key]=== obj[key].toLowerCase().trim();
+          }); 
+    })
+  return arr;
+  },
   parseBoolean:(string)=>{
     string = string.toLowerCase();
     if(string === "false"){

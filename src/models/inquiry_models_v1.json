@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-10-10T11:53:00.896Z",
+    "lastModifTS": "2020-10-12T20:28:49.984Z",
     "persistenceSchemaVersion": "3",
     "description": "",
     "comments": "",
@@ -828,31 +828,6 @@
                     "hackoladeMeta": {},
                     "error": {},
                     "mode": "localdatetime"
-                },
-                {
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "default": "",
-                    "primaryKey": false,
-                    "enum": [],
-                    "sample": "",
-                    "unique": false,
-                    "type": "string",
-                    "compositeKey": [
-                        "compositeNodeKey"
-                    ],
-                    "compositeNodeKey": false,
-                    "GUID": "bdce9730-0a4b-11eb-b91b-65a1de19ee72",
-                    "name": "test",
-                    "code": "",
-                    "description": "",
-                    "comments": "",
-                    "dependencies": [],
-                    "required": false,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {}
                 },
                 {
                     "minLength": "",
@@ -1773,8 +1748,11 @@
                     "parentRelationship": "",
                     "childRelationships": [],
                     "relationshipType": "",
-                    "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "error": {
+                        "mode": false,
+                        "required": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -1799,7 +1777,10 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "mode": false,
+                        "required": false
+                    },
                     "mode": "localdatetime"
                 },
                 {
@@ -1825,8 +1806,11 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "error": {
+                        "mode": false,
+                        "required": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -1851,8 +1835,45 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "mode": false,
+                        "required": false
+                    },
                     "mode": "localdatetime"
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "fac19a10-0bff-11eb-b91b-65a1de19ee72",
+                    "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
                 }
             ],
             "definitions": {
@@ -1948,7 +1969,33 @@
             "comments": "",
             "$schema": "",
             "additionalProperties": false,
-            "properties": [],
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "01ad05f0-0cc1-11eb-b91b-65a1de19ee72",
+                    "name": "name",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
             "definitions": {
                 "type": "definitions",
                 "properties": [],
@@ -1973,14 +2020,15 @@
             "additionalProperties": false,
             "properties": [
                 {
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "default": "",
                     "primaryKey": false,
+                    "default": "",
                     "enum": [],
                     "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
                     "unique": false,
+                    "childType": "temporal",
                     "type": "string",
                     "compositeKey": [
                         "compositeNodeKey"
@@ -1990,12 +2038,19 @@
                     "name": "date",
                     "code": "",
                     "description": "",
-                    "comments": "",
                     "dependencies": [],
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "relationshipType": "",
+                    "mode": "date",
+                    "error": {
+                        "mode": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -2020,7 +2075,10 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "mode": false
+                    },
+                    "mode": "localdatetime"
                 },
                 {
                     "primaryKey": false,
@@ -2045,7 +2103,10 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "mode": false
+                    },
+                    "mode": "localdatetime"
                 },
                 {
                     "unit": "",
@@ -2077,6 +2138,595 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "f53af180-0b42-11eb-b91b-65a1de19ee72",
+                    "name": "completed",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "5ed6b5a0-0b54-11eb-b91b-65a1de19ee72",
+                    "name": "realtime",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "92e0daf0-0bc3-11eb-b91b-65a1de19ee72",
+                    "name": "usedSuggestions",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "bac820f0-0beb-11eb-b91b-65a1de19ee72",
+                    "name": "totalSilence",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "130600c0-0bec-11eb-b91b-65a1de19ee72",
+                    "name": "longestThoughtGap",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "6ae40d50-0bec-11eb-b91b-65a1de19ee72",
+                    "name": "averageThoughtsPerMinute",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "properties": [
+                        {
+                            "unit": "",
+                            "minimum": "",
+                            "exclusiveMinimum": false,
+                            "maximum": "",
+                            "exclusiveMaximum": false,
+                            "multipleOf": "",
+                            "divisibleBy": "",
+                            "default": "",
+                            "primaryKey": false,
+                            "enum": [],
+                            "mode": "",
+                            "sample": "",
+                            "unique": false,
+                            "childType": "number",
+                            "type": "numeric",
+                            "compositeKey": [
+                                "compositeNodeKey"
+                            ],
+                            "compositeNodeKey": false,
+                            "GUID": "8226b970-0bee-11eb-b91b-65a1de19ee72",
+                            "description": "",
+                            "comments": "",
+                            "required": false,
+                            "id": "",
+                            "hackoladeMeta": {},
+                            "arrayItem": true,
+                            "arrayParentType": "list"
+                        }
+                    ],
+                    "primaryKey": false,
+                    "additionalItems": true,
+                    "minItems": "",
+                    "maxItems": "",
+                    "uniqueItems": false,
+                    "unique": false,
+                    "childType": "list",
+                    "type": "array",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "821ca750-0bee-11eb-b91b-65a1de19ee72",
+                    "name": "thoughtGaps",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "08024510-0bfd-11eb-b91b-65a1de19ee72",
+                    "name": "shortestThoughtGap",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "907302e0-0bfd-11eb-b91b-65a1de19ee72",
+                    "name": "stdThoughtGap",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "a83cfce0-0bfe-11eb-b91b-65a1de19ee72",
+                    "name": "thoughtCount",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "8adab190-0c05-11eb-b91b-65a1de19ee72",
+                    "name": "distinctThoughtCount",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "92dd7990-0c05-11eb-b91b-65a1de19ee72",
+                    "name": "newThoughtCount",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "a1edfb30-0c05-11eb-b91b-65a1de19ee72",
+                    "name": "existingThoughtCount",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c777f770-0c05-11eb-b91b-65a1de19ee72",
+                    "name": "distinctNewThoughtCount",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "cf86cd60-0c05-11eb-b91b-65a1de19ee72",
+                    "name": "distinctExistingThoughtCount",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "72ecfb90-0c07-11eb-b91b-65a1de19ee72",
+                    "name": "averageThoughtGap",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "aa5fc220-0c88-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfStart",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "mode": "localdatetime",
+                    "error": {
+                        "mode": false,
+                        "name": false
+                    }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b9299dd0-0c88-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfEnd",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "mode": false
+                    },
+                    "mode": "localdatetime"
                 }
             ],
             "definitions": {
@@ -2431,7 +3081,33 @@
             "comments": "",
             "$schema": "",
             "additionalProperties": false,
-            "properties": [],
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "01a8c030-0cc1-11eb-b91b-65a1de19ee72",
+                    "name": "thought",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
             "definitions": {
                 "type": "definitions",
                 "properties": [],
@@ -2443,7 +3119,9 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "name": "A_Mental_Image",
+            "error": {}
         }
     ],
     "buckets": [],
@@ -2867,7 +3545,42 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
-            "properties": []
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "7d407180-0bdf-11eb-b91b-65a1de19ee72",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
+                }
+            ]
         },
         {
             "GUID": "a9b38a80-cac7-11ea-ae25-3ded20c57388",
@@ -3310,10 +4023,31 @@
         "837fe4f0-0a3a-11eb-b91b-65a1de19ee72": "dateOfInput",
         "e505b6f0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfThought",
         "8cb64af0-0a3a-11eb-b91b-65a1de19ee72": "dateOfThought",
-        "bdce9730-0a4b-11eb-b91b-65a1de19ee72": "test",
         "311b1470-0aec-11eb-b91b-65a1de19ee72": "thought",
         "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfInput",
-        "876062a0-09ba-11eb-b91b-65a1de19ee72": "timestampOfThought"
+        "876062a0-09ba-11eb-b91b-65a1de19ee72": "timestampOfThought",
+        "f53af180-0b42-11eb-b91b-65a1de19ee72": "completed",
+        "5ed6b5a0-0b54-11eb-b91b-65a1de19ee72": "realtime",
+        "92e0daf0-0bc3-11eb-b91b-65a1de19ee72": "usedSuggestions",
+        "7d407180-0bdf-11eb-b91b-65a1de19ee72": "durationBetween",
+        "bac820f0-0beb-11eb-b91b-65a1de19ee72": "totalSilence",
+        "130600c0-0bec-11eb-b91b-65a1de19ee72": "longestThoughtGap",
+        "6ae40d50-0bec-11eb-b91b-65a1de19ee72": "averageThoughtsPerMinute",
+        "821ca750-0bee-11eb-b91b-65a1de19ee72": "thoughtGaps",
+        "08024510-0bfd-11eb-b91b-65a1de19ee72": "shortestThoughtGap",
+        "907302e0-0bfd-11eb-b91b-65a1de19ee72": "stdThoughtGap",
+        "a83cfce0-0bfe-11eb-b91b-65a1de19ee72": "thoughtCount",
+        "fac19a10-0bff-11eb-b91b-65a1de19ee72": "inputDuration",
+        "8adab190-0c05-11eb-b91b-65a1de19ee72": "distinctThoughtCount",
+        "92dd7990-0c05-11eb-b91b-65a1de19ee72": "newThoughtCount",
+        "a1edfb30-0c05-11eb-b91b-65a1de19ee72": "existingThoughtCount",
+        "c777f770-0c05-11eb-b91b-65a1de19ee72": "distinctNewThoughtCount",
+        "cf86cd60-0c05-11eb-b91b-65a1de19ee72": "distinctExistingThoughtCount",
+        "72ecfb90-0c07-11eb-b91b-65a1de19ee72": "averageThoughtGap",
+        "aa5fc220-0c88-11eb-b91b-65a1de19ee72": "timestampOfStart",
+        "b9299dd0-0c88-11eb-b91b-65a1de19ee72": "timestampOfEnd",
+        "01a8c030-0cc1-11eb-b91b-65a1de19ee72": "thought",
+        "01ad05f0-0cc1-11eb-b91b-65a1de19ee72": "name"
     },
     "definitions": {
         "type": "definitions",

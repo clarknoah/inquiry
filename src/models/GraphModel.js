@@ -1,5 +1,7 @@
 import models from "./inquiry_models_v1.json";
 import GraphNode from "./GraphNode";
+import M_Thought from "./nodes/M_Thought";
+import Tracker from "./nodes/Tracker";
 class GraphModel{
     constructor(data,format){
         this.model = data;
@@ -15,11 +17,22 @@ class GraphModel{
     }
     getNewModelClass(label){
         let model = this.getLabelModel(label);
-        return new GraphNode(model);
+        if(label=="M_Thought"){
+            return new M_Thought(model);
+        }else if(label.includes("_Tracker")){
+            return new Tracker(model);
+        }else {
+            return new GraphNode(model);
+        }
     }
     getExistingModelClass(label, id, properties){
         let model = this.getLabelModel(label);
-        return new GraphNode(model, id, properties);
+        if(label=="M_Thought"){
+            return new M_Thought(model, id, properties);
+        }else {
+            return new GraphNode(model, id, properties);
+        }
+        
     }
 }
 

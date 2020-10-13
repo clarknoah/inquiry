@@ -15,3 +15,7 @@
 .thought-chip-box {
   display: flex
 }
+
+.ManifestedThought-selectedType{
+  background-color: green !important;
+}
