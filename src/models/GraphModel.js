@@ -1,6 +1,7 @@
 import models from "./inquiry_models_v1.json";
 import GraphNode from "./GraphNode";
 import M_Thought from "./nodes/M_Thought";
+import M_Perception from "./nodes/M_Perception";
 import Tracker from "./nodes/Tracker";
 class GraphModel{
     constructor(data,format){
@@ -19,8 +20,8 @@ class GraphModel{
         let model = this.getLabelModel(label);
         if(label=="M_Thought"){
             return new M_Thought(model);
-        }else if(label.includes("_Tracker")){
-            return new Tracker(model);
+        }else if(label.includes("M_")){
+            return new M_Perception(model);
         }else {
             return new GraphNode(model);
         }
@@ -29,6 +30,8 @@ class GraphModel{
         let model = this.getLabelModel(label);
         if(label=="M_Thought"){
             return new M_Thought(model, id, properties);
+        }else if(label.includes("M_")){
+            return new M_Perception(model, id, properties);
         }else {
             return new GraphNode(model, id, properties);
         }

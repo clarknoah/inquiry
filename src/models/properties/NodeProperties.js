@@ -14,8 +14,8 @@ class NodeProperties{
         return data.map(field=>field.name);
     }
     setProperties(data){
+        console.log(data.filter(field=>field.enum.length >0));
         data.forEach(field=>{
-           //console.log(field);
             if(field.type==="string" && field.childType ==="temporal"){
                 if(field.mode=="date"){
                     this[field.name] = new DateProperty(field);

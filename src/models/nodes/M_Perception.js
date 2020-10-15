@@ -1,4 +1,4 @@
-import M_Perception from "./M_Perception";
+import GraphNode from "../GraphNode";
 function getCurrentLocalDateTime(value = null){
     let date = new Date();
     if(value!==null){
@@ -10,21 +10,21 @@ function getCurrentLocalDateTime(value = null){
     let time = date.getTime();
     return time;
 }
-class M_Thought extends M_Perception{
+class M_Perception extends GraphNode{
     constructor(data, id=undefined, properties=undefined){
         super(data, id, properties);
     }
-    setNewThoughtTimes(){
-        this.properties.dateOfThought.setDefaultValue();
+    setNewPerceptionTimes(){
+        this.properties.dateOfPerception.setDefaultValue();
         this.properties.dateOfInput.setDefaultValue();
-        this.properties.timestampOfThought.setDefaultValue();
-        this.properties.timestampOfInput.value = this.properties.timestampOfThought.value;
+        this.properties.timestampOfPerception.setDefaultValue();
+        this.properties.timestampOfInput.value = this.properties.timestampOfPerception.value;
         return this;
       }
-    setExistingThoughtTimes(date){
-        this.properties.dateOfThought.setValue(date);
+    setExistingPerceptionTimes(date){
+        this.properties.dateOfPerception.setValue(date);
         this.properties.dateOfInput.setDefaultValue();
-        this.properties.timestampOfThought.setValueByDate(date);
+        this.properties.timestampOfPerception.setValueByDate(date);
         this.properties.timestampOfInput.setDefaultValue();
         return this;
     }
@@ -35,4 +35,4 @@ class M_Thought extends M_Perception{
     }
 }
 
-export default M_Thought
+export default M_Perception

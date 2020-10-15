@@ -7,7 +7,6 @@ import InquiryModel from "../../models/GraphModel";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 class ManifestedThought extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,6 @@ class ManifestedThought extends Component {
   // }
 
   resetForm = () => {
-
     let mThought = InquiryModel.getNewModelClass("M_Thought");
     mThought.properties.thought.value = "";
     if(this.state.newThought == false){
@@ -60,6 +58,7 @@ class ManifestedThought extends Component {
       return "A_Thought"
     }
   }
+
   onChange = (evt) => {
     let mThought = this.state.mThought;
     let text = evt.target.value;

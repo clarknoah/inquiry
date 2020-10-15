@@ -14,6 +14,7 @@ class Tracker extends GraphNode{
     }
 
     addThought(aThought,mThought){
+        aThought.properties.inputType.setValue("tracker");
         this.thoughts.push([aThought,mThought])
         return this;
     }
@@ -176,13 +177,13 @@ class Tracker extends GraphNode{
 
     generateMetrics(){
         this.setThoughtCount();
-        this.setAverageThoughtPerMinute();
         this.setDistinctThoughtCount();
         this.setNewThoughtCount();
         this.setDistinctNewThoughtCount();
         this.setExistingThoughtCount();
         this.setDistinctExistingThoughtCount();
         if(this.properties.realtime.value==true){
+            this.setAverageThoughtPerMinute();
             this.setThoughtGapMetrics();
             this.setAverageThoughtGapTotal();
         }
