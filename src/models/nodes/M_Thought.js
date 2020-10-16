@@ -13,6 +13,7 @@ function getCurrentLocalDateTime(value = null){
 class M_Thought extends M_Perception{
     constructor(data, id=undefined, properties=undefined){
         super(data, id, properties);
+        this.defaultQueryKey = "perception";
     }
     setNewThoughtTimes(){
         this.properties.dateOfThought.setDefaultValue();

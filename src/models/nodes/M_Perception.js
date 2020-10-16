@@ -13,6 +13,7 @@ function getCurrentLocalDateTime(value = null){
 class M_Perception extends GraphNode{
     constructor(data, id=undefined, properties=undefined){
         super(data, id, properties);
+        this.defaultQueryKey = "perception";
     }
     setNewPerceptionTimes(){
         this.properties.dateOfPerception.setDefaultValue();

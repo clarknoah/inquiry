@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import "./ThoughtTracker.css";
-import ManifestedThought from "../../../components/ManifestedThought/ManifestedThought";
+import ManifestedPerception from "../../../components/ManifestedPerception/ManifestedPerception";
 import TextField from "@material-ui/core/TextField";
 import InquiryModel from "../../../models/GraphModel";
 import Button from "@material-ui/core/Button";
@@ -14,13 +14,15 @@ class ThoughtTracker extends Component{
     console.log(props);
 
     let tracker = InquiryModel.getNewModelClass("Thought_Tracker");
+    tracker.properties.date.setDefaultValue();
     console.log(tracker);
     // Default CSS class to apply to the Component
     this.state = {
       classList: "ThoughtTracker",
       tracker: tracker,
       time:undefined,
-      timeRemaining:undefined
+      timeRemaining:undefined,
+      type:"Thought"
     };
   }
 
@@ -73,6 +75,11 @@ class ThoughtTracker extends Component{
 
   beginHistoricTracker=()=>{
     let tracker = this.state.tracker;
+    if(tracker.properties.timestampOfStart.value===undefined){
+      let date = tracker.properties.date.value.split("-");
+      let timestamp = new Date(date[0],date[1],date[2], "07", "30")
+      tracker.properties.timestampOfStart.setValue(timestamp.getTime());
+    }
     tracker.properties.realtime.setValue(false);
     tracker.status = "inProgress";
     this.setState({
@@ -142,11 +149,23 @@ class ThoughtTracker extends Component{
     })
   }
 
+  setHistoric=()=>{
+    let tracker = this.state.tracker;
+    let value = !this.state.tracker.historic;
+    if(value==true){
+      tracker.properties.date.value = undefined;
+    }else{
+      tracker.properties.date.setDefaultValue();
+    }
+    this.setState({ tracker:tracker.updateTrackerProperty('historic', value)})
+  }
+
 
   render(){
     let duration = this.state.tracker.properties.duration.value;
     let status = this.state.tracker.status;
     let historic = this.state.tracker.historic;
+    let checkReady = isNaN(duration) !== true && this.state.tracker.properties.date.value!==undefined ;
     return(
       <div className={this.state.classList}>
         {status === "setup" ? <div className={"ThoughtTracker-setupForm"}>
@@ -155,10 +174,7 @@ class ThoughtTracker extends Component{
           control={
             <Checkbox
               checked={this.state.tracker.historic}
-              onChange={() =>{
-                let value = !this.state.tracker.historic;
-                this.setState({ tracker:this.state.tracker.updateTrackerProperty('historic', value)})
-              }}
+              onChange={this.setHistoric}
               name="checkedB"
               color="primary"
             />
@@ -211,7 +227,7 @@ class ThoughtTracker extends Component{
           value={duration}
           onChange={this.setDuration}
         />
-          {isNaN(duration) !== true? <Button
+          {checkReady ? <Button
             color="primary"
             variant="contained"
             className={"ThoughtLogger-field"}
@@ -230,13 +246,20 @@ class ThoughtTracker extends Component{
             onClick={this.endTracker}
           >End Tracker
           </Button>
-            <ManifestedThought 
+            <ManifestedPerception
+              label={this.state.type}
+              queryKey="perception"
               date={this.state.tracker.properties.date.value} 
-              submitThought={this.submitThought}/>
+              submitPerception={this.submitThought}/>
         </div>: null}
         { status === "inProgress" && historic!==true ? <div className="ThoughtTracker-inProgress">
             
-            <ManifestedThought submitThought={this.submitThought} finalInput={this.getFinalInput}/>
+            <ManifestedPerception 
+              label={this.state.type} 
+              queryKey="perception" 
+              submitPerception={this.submitThought} 
+              finalInput={this.getFinalInput}/>
+
         </div>: null}
         {status === "review" ? <div className="ThoughtTracker-Review">
 

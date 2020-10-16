@@ -2,6 +2,8 @@ import models from "./inquiry_models_v1.json";
 import GraphNode from "./GraphNode";
 import M_Thought from "./nodes/M_Thought";
 import M_Perception from "./nodes/M_Perception";
+import A_Thought from "./nodes/A_Thought";
+import A_Perception from "./nodes/A_Perception";
 import Tracker from "./nodes/Tracker";
 class GraphModel{
     constructor(data,format){
@@ -16,23 +18,50 @@ class GraphModel{
         }
         
     }
+    getLabelRelationships(label){
+        console.log(label);
+        let guid = this.getLabelModel(label).GUID;
+        let relationships = this.model.relationships.filter(rel=>{
+            return rel.parentCollection==guid;
+        })
+        return relationships;
+    }
+
     getNewModelClass(label){
         let model = this.getLabelModel(label);
+        model.relationships = this.getLabelRelationships(label);
         if(label=="M_Thought"){
             return new M_Thought(model);
-        }else if(label.includes("M_")){
+        }else if(label.startsWith("M_")){
             return new M_Perception(model);
-        }else {
+        }else if(label.startsWith("A_")){
+            if(label=="A_Thought"){
+                return new A_Thought(model);
+            }else{
+                return new A_Perception(model);
+            }
+        }else if(label =="Thought_Tracker"){
+            return new Tracker(model);
+        }else{
             return new GraphNode(model);
         }
     }
     getExistingModelClass(label, id, properties){
         let model = this.getLabelModel(label);
+        model.relationships = this.getLabelRelationships(label);
         if(label=="M_Thought"){
             return new M_Thought(model, id, properties);
-        }else if(label.includes("M_")){
+        }else if(label.startsWith("M_")){
             return new M_Perception(model, id, properties);
-        }else {
+        }else if(label.startsWith("A_")){
+            if(label=="A_Thought"){
+                return new A_Thought(model, id, properties);
+            }else{
+                return new A_Perception(model, id, properties);
+            }
+        }else if(label =="Thought_Tracker"){
+            return new Tracker(model, id, properties);
+        }else{
             return new GraphNode(model, id, properties);
         }
         

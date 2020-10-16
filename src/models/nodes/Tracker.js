@@ -5,18 +5,77 @@ class Tracker extends GraphNode{
     constructor(data, id=undefined, properties=undefined){
         super(data, id, properties);
         this.thoughts = [];
-        this.relationships = [];
+        this.perceptions = [];
         this.status = "setup";
         this.currentTime = undefined;
         this.historic = false;
         this.cypherQuery = new CypherQuery();
         this.finalInput = undefined;
+        this.newKeys={
+            "A_Thought":{},
+            "A_Mental_Image":{},
+            "A_Emotion":{},
+            "A_Perception":{}
+        };
+        this.existingKeys={
+            "A_Thought":{},
+            "A_Mental_Image":{},
+            "A_Emotion":{},
+            "A_Perception":{}
+        };
     }
 
     addThought(aThought,mThought){
-        aThought.properties.inputType.setValue("tracker");
+        console.log(aThought);
+        mThought.properties.inputType.setValue("tracker");
+        if(aThought.exists===true){
+            aThought = this.checkForExistingDuplicate(aThought);
+        }else if(aThought.exists===false){
+            aThought = this.checkForNewDuplicate(aThought);
+        }
+        mThought.addRelationship(
+            "MANIFESTATION_OF",
+            aThought.variable
+        )
+        this.addRelationship(`PERCEIVED`,mThought.variable);
+        if(this.thoughts.length > 0 && this.historic==false){
+            let index = this.thoughts.length-1;
+            console.log(this.thoughts[index][1]);
+            let durationRel = this.thoughts[index][1].addRelationship("FOLLOWED_BY",mThought.variable);
+            let duration = mThought.properties.timestampOfPerception.value 
+                - this.thoughts[index][1].properties.timestampOfPerception.value;
+            durationRel.properties.durationBetween.setValue(duration/1000);
+            console.log(durationRel);
+            this.cypherQuery.addNewRelationship(durationRel.getCreateQuery());
+        }
         this.thoughts.push([aThought,mThought])
+        this.perceptions.push(aThought,mThought);
+        this.cypherQuery.addNode(aThought);
+        this.cypherQuery.addNode(mThought);
         return this;
+    }
+
+    checkForNewDuplicate(node){
+        let thought = node.properties[node.defaultQueryKey].value.toLowerCase().trim();
+        let newNode = node.id==undefined;
+        let variable = node.variable;
+        let notAdded = !this.newKeys[node.labels[0]].hasOwnProperty(thought);
+        if(newNode && notAdded){
+            this.newKeys[node.labels[0]][thought] = node.variable;
+        }else if(newNode && !notAdded){
+            node.variable = this.newKeys[node.labels[0]][thought];
+        }
+        return node;
+    }
+
+    checkForExistingDuplicate(node){
+        let abstractId = node.id;
+        if(this.existingKeys[node.labels[0]].hasOwnProperty(abstractId)!==true){
+            this.existingKeys[node.labels[0]][abstractId] = node.variable;
+        }else{
+            node.variable = this.existingKeys[node.labels[0]][abstractId]
+        }
+       return node;
     }
 
     updateTrackerProperty(property,value){
@@ -54,9 +113,9 @@ class Tracker extends GraphNode{
         let lastElement = this.thoughts.length - 1;
         this.thoughts.forEach((val,index)=>{
             if(index < lastElement){
-                let timestamp = val[1].properties.timestampOfThought.value
+                let timestamp = val[1].properties.timestampOfPerception.value
                 let inputDuration = val[1].properties.inputDuration.value;
-                let nextTimestamp = this.thoughts[index+1][1].properties.timestampOfThought.value;
+                let nextTimestamp = this.thoughts[index+1][1].properties.timestampOfPerception.value;
                 let gap = nextTimestamp - (timestamp+(inputDuration*1000));
                 gap = gap/1000;
                 gaps.push(gap);
@@ -98,7 +157,7 @@ class Tracker extends GraphNode{
     }
 
     setDistinctThoughtCount(){
-        let prop = "thought";
+        let prop = "perception";
         let thoughts = this.thoughts.filter(function(obj, index, self) { 
             return index === self.findIndex(function(t) {
                  return t[0].properties[prop].value.toLowerCase().trim() === obj[0].properties[prop].value.toLowerCase().trim();
@@ -112,7 +171,7 @@ class Tracker extends GraphNode{
         let newThoughts = 0;
         let uniqueNewThoughts = {};
         this.thoughts.forEach((val,index)=>{
-            let thought = val[0].properties.thought.value.toLowerCase().trim();
+            let thought = val[0].properties.perception.value.toLowerCase().trim();
             let newNode = val[0].id==undefined;
             let variable = val[0].variable;
             let notAdded = !uniqueNewThoughts.hasOwnProperty(thought);
@@ -137,7 +196,7 @@ class Tracker extends GraphNode{
     
     setDistinctExistingThoughtCount(){
         let thoughts = this.thoughts.filter(val=>val[0].exists==true);
-        let prop = "thought";
+        let prop = "perception";
         thoughts = thoughts.filter(function(obj, index, self) { 
             return index === self.findIndex(function(t) {
                  return t[0].properties[prop].value.toLowerCase().trim() === obj[0].properties[prop].value.toLowerCase().trim();
@@ -193,55 +252,57 @@ class Tracker extends GraphNode{
     
 
     generateCypherQuery(){
+        this.properties.completed.setValue(true);
+        this.properties.usedSuggestions.setValue(true);
         this.generateMetrics();
         console.log(this.properties.generateCypherPropertyObject())
-        this.deduplicateNewThoughts();
-        let pRels = [];
-        let mRels = [];
-        let fRels = [];
+        //this.deduplicateNewThoughts();
+        // let pRels = [];
+        // let mRels = [];
+        // let fRels = [];
+        this.cypherQuery.addNode(this);
+    //     this.cypherQuery.addCreate(this);
+    //     console.log(this.thoughts);
+    //     let lastElement = this.thoughts.length - 1;
+    //    this.thoughts.forEach((val,index)=>{
+    //         let aThought = val[0];
+    //         let mThought = val[1];
+    //         this.cypherQuery.addCreate(mThought);
 
-        this.cypherQuery.addCreate(this);
-        console.log(this.thoughts);
-        let lastElement = this.thoughts.length - 1;
-       this.thoughts.forEach((val,index)=>{
-            let aThought = val[0];
-            let mThought = val[1];
-            this.cypherQuery.addCreate(mThought);
-
-            if(aThought.exists===false){
-                this.cypherQuery.addCreate(aThought);
-            }else{
-                this.cypherQuery.addMatch(aThought);
-            }
-            pRels.push([this,'PERCEIVED',mThought])
-            mRels.push([mThought,'MANIFESTATION_OF',aThought]);
-            if(index<lastElement){
-                let nextThought = this.thoughts[index+1][1];
-                let duration = nextThought.properties.timestampOfThought.value - mThought.properties.timestampOfThought.value
-                let relProps = {
-                    durationBetween:(duration/1000)
-                }
-                fRels.push([mThought,"FOLLOWED_BY",nextThought,relProps])
-            }
-       })
-       console.log(pRels,mRels);
-       pRels.forEach(val=>{
-            this.cypherQuery.addRelationship(val[0],val[1],val[2])
-       })
-        mRels.forEach(val=>{
-            this.cypherQuery.addRelationship(val[0],val[1],val[2])
-        })
-        fRels.forEach(val=>{
-            if(this.properties.realtime.value == true){
-                this.cypherQuery.addRelationship(val[0],val[1],val[2],val[3])
-            }else{
-                this.cypherQuery.addRelationship(val[0],val[1],val[2])
-            }
+    //         if(aThought.exists===false){
+    //             this.cypherQuery.addCreate(aThought);
+    //         }else{
+    //             this.cypherQuery.addMatch(aThought);
+    //         }
+    //         pRels.push([this,'PERCEIVED',mThought])
+    //         mRels.push([mThought,'MANIFESTATION_OF',aThought]);
+    //         if(index<lastElement){
+    //             let nextThought = this.thoughts[index+1][1];
+    //             let duration = nextThought.properties.timestampOfThought.value - mThought.properties.timestampOfThought.value
+    //             let relProps = {
+    //                 durationBetween:(duration/1000)
+    //             }
+    //             fRels.push([mThought,"FOLLOWED_BY",nextThought,relProps])
+    //         }
+    //    })
+    //    console.log(pRels,mRels);
+    //    pRels.forEach(val=>{
+    //         this.cypherQuery.addRelationship(val[0],val[1],val[2])
+    //    })
+    //     mRels.forEach(val=>{
+    //         this.cypherQuery.addRelationship(val[0],val[1],val[2])
+    //     })
+    //     fRels.forEach(val=>{
+    //         if(this.properties.realtime.value == true){
+    //             this.cypherQuery.addRelationship(val[0],val[1],val[2],val[3])
+    //         }else{
+    //             this.cypherQuery.addRelationship(val[0],val[1],val[2])
+    //         }
             
-        })
+    //     })
        let query = this.cypherQuery.generateQuery();
        console.log(query, this.cypherQuery.params);
-       return api.cypherQuery(query,this.cypherQuery.params);
+       //return api.cypherQuery(query,this.cypherQuery.params);
     }
 
 

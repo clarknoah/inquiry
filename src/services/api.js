@@ -45,7 +45,7 @@ let api = {
   },
   submitThought:function(aThought, mThought){
     console.log(aThought, mThought);
-    if(mThought.properties.thought.value.length > 0){
+    if(mThought.properties[mThought.defaultQueryKey].value.length > 0){
       let mThoughtQuery = mThought.generateCypherCreateNode();
       let query = [];
       let params = {};

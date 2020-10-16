@@ -1,11 +1,11 @@
 import NodeProperties from "./properties/NodeProperties";
-
+import NodeRelationships from "./NodeRelationships";
 import utils from "../services/utils";
 class GraphNode{
     constructor(data, id=undefined, properties=undefined){
         this.labels = [data.collectionName];
         this.properties = new NodeProperties(data.properties);
-        this.relationships = {};
+        this.relationships = new NodeRelationships(data.relationships);
         this.variable = `node_${utils.getUniqueId()}`
         this.exists = false;
         if(id!==undefined && properties!== undefined){
@@ -50,17 +50,30 @@ class GraphNode{
     }
     getPropertyObject(){
         let props = {};
+        let required = [];
         for(let key in this.properties){
             let propertyValue = this.properties[key].value;
             if(propertyValue!==undefined){
                 props[key]=propertyValue;
+            } else if (propertyValue==undefined&& this.properties[key].required==true){
+                required.push(key);
             }
+
         }
-        return props;
+        if(required.length == 0){
+            return props;
+        }else{
+            throw `${this.variable}:${this.labels.join(":")} is missing the following required properties: ${required.join(", ")}`
+        }
     }
     setProperty(propertyKey, value){
         this.properties[propertyKey].setValue(value);
         return this;
+    }
+    addRelationship(relationshipKey, target){
+        console.log(relationshipKey, target);
+       let rel= this.relationships[relationshipKey].addRelationship(this.variable,target);
+       return rel;
     }
     setDefaultProperty(propertyKey){
         this.properties[propertyKey].setValue();
@@ -78,8 +91,17 @@ class GraphNode{
         return this;
     }
     setExistingProperties(props){
+        console.log(props);
         for(let key in props){
-            this.properties[key].value = props[key];
+            try{
+                if(this.properties.hasOwnProperty(key)){
+                    this.properties[key].value = props[key];
+                }
+            }catch(err){
+                console.log(err);
+                throw `${this.variable}(${this.labels.join(":")}) is missing ${key}`;
+            }
+            
         }
     }
 }

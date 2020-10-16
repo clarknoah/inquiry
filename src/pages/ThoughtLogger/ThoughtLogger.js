@@ -6,6 +6,7 @@ import ManifestedPerception from "../../components/ManifestedPerception/Manifest
 import ManifestedThought from "../../components/ManifestedThought/ManifestedThought";
 import api from "../../services/api";
 import Radio from '@material-ui/core/Radio';
+import CypherQuery from "../../models/CypherQuery";
 // Class Based React Component
 class ThoughtLogger extends Component{
   constructor(props){
@@ -32,8 +33,17 @@ class ThoughtLogger extends Component{
   componentWillUnmount(){}
 
   submitPerception=(a, m)=>{
-    a.properties.inputType.setValue("logger");
-    console.log(a,m);
+    console.log(m);
+    if(m.properties[m.defaultQueryKey].value.length > 0){
+      m.properties.inputType.setValue("logger");
+      let rel = m.addRelationship("MANIFESTATION_OF",a.variable)
+      let query = new CypherQuery();
+      query.addNode(a);
+      query.addNode(m);
+      let qString = query.generateQuery();
+      console.log(qString, query.params);
+      api.cypherQuery(qString, query.params);
+    }
     //api.submitThought(a, m);
   }
 
@@ -54,8 +64,7 @@ class ThoughtLogger extends Component{
   }
   getComponent=()=>{
     if(this.state.type=="M_Thought"){
-      return <ManifestedPerception label={"Thought"} queryKey="thought" submitPerception={this.submitPerception}/>
-     // return <ManifestedThought label={"Thought"} queryKey="thought" submitThought={this.submitPerception}/>
+      return <ManifestedPerception label={"Thought"} queryKey="perception" submitPerception={this.submitPerception}/>
     }else {
       return <ManifestedPerception label={"Mental_Image"} queryKey="perception" submitPerception={this.submitPerception}/>
     }

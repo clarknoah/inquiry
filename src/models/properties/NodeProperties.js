@@ -14,7 +14,7 @@ class NodeProperties{
         return data.map(field=>field.name);
     }
     setProperties(data){
-        console.log(data.filter(field=>field.enum.length >0));
+        //console.log(data.filter(field=>field.enum.length >0));
         data.forEach(field=>{
             if(field.type==="string" && field.childType ==="temporal"){
                 if(field.mode=="date"){
@@ -35,7 +35,7 @@ class NodeProperties{
     generateCypherPropertyObject(){
         let properties = {};
         this.propertyKeys.forEach(key=>{
-            if(this[key]!==null&&this[key!==undefined])
+            if(this[key]!==null&&this[key].value!==undefined)
             properties[key]=this[key].value;
         })
         return properties;

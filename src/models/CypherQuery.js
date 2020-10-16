@@ -3,7 +3,8 @@ export default class CypherQuery{
     constructor(){
         this.match = [];
         this.where = [];
-        this.create = [];
+        this.createNodes = [];
+        this.createRels = [];
         this.set = [];
         this.params = {};
         this.matchVariables = {};
@@ -27,14 +28,37 @@ export default class CypherQuery{
     }
     
     doesRelationshipExist(source,rel,target){
-        let relName = `${source.variable}_${rel}_${target.variable}`;
+        let relName = `${source}_${rel}_${target}`;
         if(this.relationshipVariables.hasOwnProperty(relName)){
             return true
         }else {
             return false;
         }
     }
-    
+
+    doesNewRelationshipExist(rel){
+        if(this.relationshipVariables.hasOwnProperty(rel.variable)){
+            return true
+        }else {
+            return false;
+        }
+    }
+    addNode(node){
+        this.addAllRelationships(node);
+        if(node.exists===true){
+            this.addMatch(node);
+        }else if(node.exists===false){
+            this.addCreate(node);
+        }
+    }
+    addAllRelationships(node){
+        for(let key in node.relationships){
+            for(let relKey in node.relationships[key].variables){
+                let rel = node.relationships[key].variables[relKey];
+                this.addNewRelationship(rel);
+            }
+        }
+    }
     addMatch(node){
         let alreadyAdded = this.doesMatchNodeExist(node,'match');
         if(alreadyAdded){
@@ -56,27 +80,40 @@ export default class CypherQuery{
             let set = `SET ${node.variable} = $${node.variable}_props`;
             let props = node.getPropertyObject();
             this.params[`${node.variable}_props`] = props;
-            this.create.push(create)
+            this.createNodes.push(create)
             this.set.push(set);
             this.createVariables[`${node.variable}`] = true;
             return set;
         }
     }
 
-    addRelationship(source,rel,target,relProps=undefined){
-        let alreadyAdded = this.doesRelationshipExist(source,rel,target);
+    // addRelationship(source,rel,target,relProps=undefined){
+    //     let alreadyAdded = this.doesRelationshipExist(source,rel,target);
+    //     if(alreadyAdded){
+    //         console.log("Duplicate Relationship");
+    //     }else{
+    //     let relName = `${source.variable}_${rel}_${target.variable}`;
+    //     let relVariable = "rel_"+utils.getUniqueId();
+    //     let create = `CREATE (${source.variable})-[${relVariable}:${rel}]->(${target.variable})`;
+    //     this.createRels.push(create);
+    //     this.relationshipVariables[relName] = true;
+    //     if(relProps!==undefined){
+    //         let set = `SET ${relVariable} = $${relVariable}_props`;
+    //         this.set.push(set);
+    //         this.params[`${relVariable}_props`]= relProps;
+    //     }}
+    // }
+    addNewRelationship(rel){
+        console.log(rel);
+        let alreadyAdded = this.doesRelationshipExist(rel.source,rel.type,rel.target);
         if(alreadyAdded){
             console.log("Duplicate Relationship");
         }else{
-        let relName = `${source.variable}_${rel}_${target.variable}`;
-        let relVariable = "rel_"+utils.getUniqueId();
-        let create = `CREATE (${source.variable})-[${relVariable}:${rel}]->(${target.variable})`;
-        this.create.push(create);
-        this.relationshipVariables[relName] = true;
-        if(relProps!==undefined){
-            let set = `SET ${relVariable} = $${relVariable}_props`;
-            this.set.push(set);
-            this.params[`${relVariable}_props`]= relProps;
+        this.createRels.push(rel.create);
+        this.relationshipVariables[rel.variable] = true;
+        if(rel.params!==undefined){
+            this.set.push(rel.set);
+            this.params[`${rel.variable}_props`]= rel.params;
         }}
     }
     generateQuery(){
@@ -87,8 +124,11 @@ export default class CypherQuery{
         if(this.where.length> 0){
             query.push(`WHERE ${this.where.join(" AND ")}`);
         }
-        if(this.create.length> 0){
-            query.push(...this.create);
+        if(this.createNodes.length> 0){
+            query.push(...this.createNodes);
+        }
+        if(this.createRels.length> 0){
+            query.push(...this.createRels);
         }
         if(this.set.length > 0){
             query.push(...this.set);

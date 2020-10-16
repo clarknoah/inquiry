@@ -54,16 +54,53 @@ class ManifestedPerception extends Component {
     });
   };
 
+  switchLabel=(text)=>{
+    let label;
+    if(text==="-T"){
+      label = "Thought"
+    }else if(text==="-I"){
+      label = "Mental-Image"
+    }else if(text=="-E"){
+      label = "Emotion"
+    }else if(text=="-B"){
+      label = "Body_Sensation"
+    }
+
+    if(label!==undefined){
+      let mPerception = InquiryModel.getNewModelClass(`M_${label}`);
+      mPerception.properties.perception.value="";
+      if(this.state.newPerception == false){
+        mPerception.properties.dateOfPerception.setValue(this.state.mPerception.properties.dateOfPerception.value)
+      }
+      if(this.props.date!==undefined){
+        mPerception.setProperty("dateOfPerception", this.props.date);
+      }
+      this.setState({
+        classList: "ManifestedPerception",
+        abstractPerceptions: [],
+        mPerception: mPerception,
+        newPerception: this.state.newPerception,
+        label:label,
+        queryKey:this.props.queryKey
+      },()=>{
+        this.inputRef.current.focus();
+      });
+    }
+  }
+
 
   onChange = (evt) => {
-    let mPerception = this.state.mPerception;
     let text = evt.target.value;
-    if (text.length === 1 && this.state.newPerception == true) {
+    let switchLabel = text[0] == "-" && text.length === 2;
+    let mPerception = this.state.mPerception;
+    if(switchLabel){
+      this.switchLabel(text);
+    }else if (text.length === 1 && this.state.newPerception == true) {
       mPerception.setNewPerceptionTimes();
     } else if(text.length === 1 && this.state.newPerception == false) {
       mPerception.setExistingPerceptionTimes(mPerception.properties.dateOfPerception.value);
     }
-    if (text.length > 0) {
+    if (text.length > 0 && switchLabel==false) {
       api.nodeListQuery(`A_${this.state.label}`, this.state.queryKey, text).then((res) => {
        // console.log(res);
         this.setState({
@@ -71,7 +108,7 @@ class ManifestedPerception extends Component {
           mPerception: this.state.mPerception.setProperty(this.state.queryKey, text),
         });
       });
-    } else {
+    } else if(switchLabel==false) {
       this.setState({
         abstractPerceptions: [],
         mPerception: mPerception.setProperty(this.state.queryKey, text),
@@ -91,12 +128,13 @@ class ManifestedPerception extends Component {
   selectExistingPerception = (perception) => {
     let mPerception = this.state.mPerception;
     mPerception.setInputDuration();
+    console.log(perception);
     let aPerception = InquiryModel.getExistingModelClass(
       perception.labels[0],
       perception.identity,
       perception.properties
     );
-    mPerception.setProperty("perception", aPerception.properties[this.props.queryKey].value);
+    mPerception.setProperty(this.state.queryKey, aPerception.properties[this.props.queryKey].value);
     this.submitPerception(aPerception, mPerception);
   };
 
@@ -106,7 +144,6 @@ class ManifestedPerception extends Component {
   };
 
   comparePerceptionString = () => {
-    console.log(this.props.queryKey);
     let same =
       this.state.abstractPerceptions.filter((val) => {
         val = val.name.toLowerCase().trim();

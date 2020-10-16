@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-10-15T02:18:06.426Z",
+    "lastModifTS": "2020-10-16T01:04:21.787Z",
     "persistenceSchemaVersion": "3",
     "description": "",
     "comments": "",
@@ -674,7 +674,11 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "name": false,
+                        "mode": false,
+                        "required": false
+                    },
                     "mode": "localdatetime"
                 },
                 {
@@ -700,7 +704,10 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "name": false,
+                        "mode": false
+                    },
                     "mode": "localdatetime"
                 },
                 {
@@ -724,7 +731,10 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
                 }
             ],
             "definitions": {
@@ -843,14 +853,16 @@
                     ],
                     "compositeNodeKey": false,
                     "GUID": "8cb64af0-0a3a-11eb-b91b-65a1de19ee72",
-                    "name": "dateOfThought",
+                    "name": "dateOfPerception",
                     "code": "",
                     "description": "",
                     "dependencies": [],
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "name": false
+                    },
                     "mode": "date"
                 },
                 {
@@ -895,14 +907,16 @@
                     ],
                     "compositeNodeKey": false,
                     "GUID": "e505b6f0-0a3a-11eb-b91b-65a1de19ee72",
-                    "name": "timestampOfThought",
+                    "name": "timestampOfPerception",
                     "code": "",
                     "description": "",
                     "dependencies": [],
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "name": false
+                    },
                     "mode": "localdatetime"
                 },
                 {
@@ -920,7 +934,7 @@
                     ],
                     "compositeNodeKey": false,
                     "GUID": "311b1470-0aec-11eb-b91b-65a1de19ee72",
-                    "name": "thought",
+                    "name": "perception",
                     "code": "",
                     "description": "",
                     "comments": "",
@@ -928,7 +942,9 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "name": false
+                    }
                 }
             ],
             "definitions": {
@@ -955,7 +971,136 @@
             "comments": "",
             "$schema": "",
             "additionalProperties": false,
-            "properties": [],
+            "properties": [
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "83448ba0-0f06-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "8619cbb0-0f06-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "890e2c80-0f06-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "8ba6b1b0-0f06-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b8cef080-0f42-11eb-b91b-65a1de19ee72",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
             "definitions": {
                 "type": "definitions",
                 "properties": [],
@@ -1055,31 +1200,6 @@
             "$schema": "",
             "additionalProperties": false,
             "properties": [
-                {
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "default": "",
-                    "primaryKey": false,
-                    "enum": [],
-                    "sample": "",
-                    "unique": false,
-                    "type": "string",
-                    "compositeKey": [
-                        "compositeNodeKey"
-                    ],
-                    "compositeNodeKey": false,
-                    "GUID": "b108f0f0-cac6-11ea-ae25-3ded20c57388",
-                    "name": "thought",
-                    "code": "",
-                    "description": "",
-                    "comments": "",
-                    "dependencies": [],
-                    "required": true,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {}
-                },
                 {
                     "primaryKey": false,
                     "default": "",
@@ -1811,69 +1931,6 @@
                         "compositeNodeKey"
                     ],
                     "compositeNodeKey": false,
-                    "GUID": "93131aa0-09b7-11eb-b91b-65a1de19ee72",
-                    "name": "dateOfThought",
-                    "code": "",
-                    "description": "",
-                    "dependencies": [],
-                    "required": true,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "foreignCollection": "",
-                    "foreignField": [],
-                    "parentRelationship": "",
-                    "childRelationships": [],
-                    "relationshipType": "",
-                    "mode": "date",
-                    "error": {
-                        "mode": false,
-                        "required": false
-                    }
-                },
-                {
-                    "primaryKey": false,
-                    "default": "now",
-                    "enum": [],
-                    "sample": "",
-                    "comments": "",
-                    "pattern": "",
-                    "format": "",
-                    "unique": false,
-                    "childType": "temporal",
-                    "type": "string",
-                    "compositeKey": [
-                        "compositeNodeKey"
-                    ],
-                    "compositeNodeKey": false,
-                    "GUID": "876062a0-09ba-11eb-b91b-65a1de19ee72",
-                    "name": "timestampOfThought",
-                    "code": "",
-                    "description": "",
-                    "dependencies": [],
-                    "required": true,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {
-                        "mode": false,
-                        "required": false
-                    },
-                    "mode": "localdatetime"
-                },
-                {
-                    "primaryKey": false,
-                    "default": "",
-                    "enum": [],
-                    "sample": "",
-                    "comments": "",
-                    "pattern": "",
-                    "format": "",
-                    "unique": false,
-                    "childType": "temporal",
-                    "type": "string",
-                    "compositeKey": [
-                        "compositeNodeKey"
-                    ],
-                    "compositeNodeKey": false,
                     "GUID": "d22e6bf0-09cf-11eb-b91b-65a1de19ee72",
                     "name": "dateOfInput",
                     "code": "",
@@ -1975,10 +2032,19 @@
                     "description": "",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "name": false,
+                        "enum": false,
+                        "enums": [
+                            false,
+                            false,
+                            false
+                        ],
+                        "required": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -2000,11 +2066,15 @@
                     "code": "",
                     "description": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
                     "mode": "localdatetime",
-                    "error": {}
+                    "error": {
+                        "mode": false,
+                        "name": false,
+                        "required": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -2026,11 +2096,43 @@
                     "code": "",
                     "description": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
                     "mode": "localdatetime",
-                    "error": {}
+                    "error": {
+                        "mode": false,
+                        "name": false,
+                        "required": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "9ed85120-0f02-11eb-b91b-65a1de19ee72",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "required": false,
+                        "name": false
+                    }
                 }
             ],
             "definitions": {
@@ -2057,7 +2159,212 @@
             "comments": "",
             "$schema": "",
             "additionalProperties": false,
-            "properties": [],
+            "properties": [
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "dc9d94e0-0f05-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "mode": false
+                    },
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "df30e9f0-0f05-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "mode": false
+                    },
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "e4474060-0f05-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "mode": false
+                    },
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "e833bcd0-0f05-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false,
+                        "mode": false
+                    },
+                    "mode": "localdatetime"
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "20fe76e0-0f06-11eb-b91b-65a1de19ee72",
+                    "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "2fd068e0-0f06-11eb-b91b-65a1de19ee72",
+                    "name": "inputType",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "a9057490-0f41-11eb-b91b-65a1de19ee72",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "required": false,
+                        "name": false
+                    }
+                }
+            ],
             "definitions": {
                 "type": "definitions",
                 "properties": [],
@@ -2069,18 +2376,181 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "name": "M_Emotion",
+            "error": {}
         },
         {
             "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
-            "collectionName": "M_Body_Sensation\\",
+            "collectionName": "M_Body_Sensation",
             "code": "",
             "type": "object",
             "description": "",
             "comments": "",
             "$schema": "",
             "additionalProperties": false,
-            "properties": [],
+            "properties": [
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d515f910-0f41-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "da52c340-0f41-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "df4d0630-0f41-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "e45d6930-0f41-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "35c87580-0f42-11eb-b91b-65a1de19ee72",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "3ca0ee50-0f42-11eb-b91b-65a1de19ee72",
+                    "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
             "definitions": {
                 "type": "definitions",
                 "properties": [],
@@ -2150,7 +2620,10 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
                 }
             ],
             "definitions": {
@@ -2823,9 +3296,7 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    }
+                    "error": {}
                 },
                 {
                     "primaryKey": false,
@@ -2847,13 +3318,14 @@
                     "code": "",
                     "description": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
                     "mode": "localdatetime",
                     "error": {
                         "mode": false,
-                        "name": false
+                        "name": false,
+                        "required": false
                     }
                 },
                 {
@@ -2876,12 +3348,13 @@
                     "code": "",
                     "description": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {
                         "name": false,
-                        "mode": false
+                        "mode": false,
+                        "required": false
                     },
                     "mode": "localdatetime"
                 }
@@ -3239,7 +3712,10 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "name": false,
+                        "required": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -3265,7 +3741,10 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "mode": "datetime",
-                    "error": {}
+                    "error": {
+                        "mode": false,
+                        "name": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -3290,8 +3769,11 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "error": {
+                        "mode": false,
+                        "required": false
+                    }
                 },
                 {
                     "primaryKey": false,
@@ -3316,7 +3798,11 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "name": false,
+                        "mode": false,
+                        "required": false
+                    },
                     "mode": "localdatetime"
                 },
                 {
@@ -3342,8 +3828,71 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {},
+                    "error": {
+                        "name": false,
+                        "mode": false
+                    },
                     "mode": "localdatetime"
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c176e5e0-0f05-11eb-b91b-65a1de19ee72",
+                    "name": "inputType",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c8f20750-0f05-11eb-b91b-65a1de19ee72",
+                    "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
                 }
             ],
             "definitions": {
@@ -3384,15 +3933,119 @@
                     ],
                     "compositeNodeKey": false,
                     "GUID": "01a8c030-0cc1-11eb-b91b-65a1de19ee72",
-                    "name": "thought",
+                    "name": "perception",
                     "code": "",
                     "description": "",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d52f7f10-0f42-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d7b84cd0-0f42-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "dab9cd00-0f42-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "9492b480-0f43-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
                 }
             ],
             "definitions": {
@@ -4168,6 +4821,165 @@
             "childCardinality": "1",
             "lineSize": 2,
             "properties": []
+        },
+        {
+            "GUID": "ccf35360-0f49-11eb-b91b-65a1de19ee72",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "e7fc8f50-0f49-11eb-b91b-65a1de19ee72",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "biDirectional": true,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "30ae1150-0f4b-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "dccab200-0f4a-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "biDirectional": true,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "4061b0c0-0f4b-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "ea9e46d0-0f4a-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "biDirectional": true,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "6c865980-0f4b-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
         }
     ],
     "users": [],
@@ -4213,7 +5025,7 @@
         "e06e7ec0-cac4-11ea-ae25-3ded20c57388": "M_Perception",
         "e3cb6560-cac4-11ea-ae25-3ded20c57388": "M_Thought",
         "e6a1b6e0-cac4-11ea-ae25-3ded20c57388": "M_Emotion",
-        "f0449a50-cac4-11ea-ae25-3ded20c57388": "M_Body_Sensation\\",
+        "f0449a50-cac4-11ea-ae25-3ded20c57388": "M_Body_Sensation",
         "fc4c21b0-cac4-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
         "0638df60-cac5-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
         "082df8a0-cac5-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
@@ -4252,7 +5064,6 @@
         "ab1e2c20-cac9-11ea-ae25-3ded20c57388": "certainlyTrueStartTimestamp",
         "bb100d10-cac9-11ea-ae25-3ded20c57388": "certainlyTrueEndTimestamp",
         "c3f17540-cac9-11ea-ae25-3ded20c57388": "certainlyTrueDuration",
-        "b108f0f0-cac6-11ea-ae25-3ded20c57388": "thought",
         "26a65190-caef-11ea-ae25-3ded20c57388": "whenLetGoStartTimestamp",
         "349e8560-caef-11ea-ae25-3ded20c57388": "whenLetGoEndTimestamp",
         "40b2b6f0-caef-11ea-ae25-3ded20c57388": "whenLetGoDuration",
@@ -4300,19 +5111,15 @@
         "be750ce0-f822-11ea-9f76-433a900eeb80": "WHEN_BELIEVED",
         "c6524b80-f822-11ea-9f76-433a900eeb80": "WHEN_NOT_BELIEVED",
         "d68a0f10-f822-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
-        "93131aa0-09b7-11eb-b91b-65a1de19ee72": "dateOfThought",
-        "d22e6bf0-09cf-11eb-b91b-65a1de19ee72": "dateOfInput",
         "d9a2fdb0-09cf-11eb-b91b-65a1de19ee72": "timestampOfInput",
         "b6709550-0a38-11eb-b91b-65a1de19ee72": "date",
         "bee224b0-0a38-11eb-b91b-65a1de19ee72": "startTimestamp",
         "fc790cd0-0a38-11eb-b91b-65a1de19ee72": "endTimestamp",
         "042920f0-0a39-11eb-b91b-65a1de19ee72": "duration",
         "837fe4f0-0a3a-11eb-b91b-65a1de19ee72": "dateOfInput",
-        "e505b6f0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfThought",
-        "8cb64af0-0a3a-11eb-b91b-65a1de19ee72": "dateOfThought",
-        "311b1470-0aec-11eb-b91b-65a1de19ee72": "thought",
-        "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfInput",
-        "876062a0-09ba-11eb-b91b-65a1de19ee72": "timestampOfThought",
+        "e505b6f0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfPerception",
+        "8cb64af0-0a3a-11eb-b91b-65a1de19ee72": "dateOfPerception",
+        "311b1470-0aec-11eb-b91b-65a1de19ee72": "perception",
         "f53af180-0b42-11eb-b91b-65a1de19ee72": "completed",
         "5ed6b5a0-0b54-11eb-b91b-65a1de19ee72": "realtime",
         "92e0daf0-0bc3-11eb-b91b-65a1de19ee72": "usedSuggestions",
@@ -4329,23 +5136,57 @@
         "92dd7990-0c05-11eb-b91b-65a1de19ee72": "newThoughtCount",
         "a1edfb30-0c05-11eb-b91b-65a1de19ee72": "existingThoughtCount",
         "c777f770-0c05-11eb-b91b-65a1de19ee72": "distinctNewThoughtCount",
-        "cf86cd60-0c05-11eb-b91b-65a1de19ee72": "distinctExistingThoughtCount",
-        "72ecfb90-0c07-11eb-b91b-65a1de19ee72": "averageThoughtGap",
         "aa5fc220-0c88-11eb-b91b-65a1de19ee72": "timestampOfStart",
         "b9299dd0-0c88-11eb-b91b-65a1de19ee72": "timestampOfEnd",
-        "01a8c030-0cc1-11eb-b91b-65a1de19ee72": "thought",
+        "01a8c030-0cc1-11eb-b91b-65a1de19ee72": "perception",
         "01ad05f0-0cc1-11eb-b91b-65a1de19ee72": "name",
         "199bc7e0-0e34-11eb-b91b-65a1de19ee72": "timestampOfStart",
         "321cf960-0e34-11eb-b91b-65a1de19ee72": "timestampOfEnd",
         "417f4480-0e34-11eb-b91b-65a1de19ee72": "realtime",
-        "04873f00-0e35-11eb-b91b-65a1de19ee72": "inputType",
         "d7c0b7b0-0e86-11eb-b91b-65a1de19ee72": "dateOfPerception",
         "e7839960-0e86-11eb-b91b-65a1de19ee72": "timestampOfPerception",
         "a6185b40-0e87-11eb-b91b-65a1de19ee72": "perception",
         "725bc800-0e8c-11eb-b91b-65a1de19ee72": "dateOfInput",
         "7f72eaa0-0e8c-11eb-b91b-65a1de19ee72": "timestampOfInput",
         "8f57d340-0e8c-11eb-b91b-65a1de19ee72": "dateOfPerception",
-        "9e907650-0e8c-11eb-b91b-65a1de19ee72": "timestampOfPerception"
+        "9e907650-0e8c-11eb-b91b-65a1de19ee72": "timestampOfPerception",
+        "9ed85120-0f02-11eb-b91b-65a1de19ee72": "perception",
+        "c176e5e0-0f05-11eb-b91b-65a1de19ee72": "inputType",
+        "c8f20750-0f05-11eb-b91b-65a1de19ee72": "inputDuration",
+        "dc9d94e0-0f05-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "df30e9f0-0f05-11eb-b91b-65a1de19ee72": "timestampOfPerception",
+        "e4474060-0f05-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "e833bcd0-0f05-11eb-b91b-65a1de19ee72": "dateOfPerception",
+        "20fe76e0-0f06-11eb-b91b-65a1de19ee72": "inputDuration",
+        "2fd068e0-0f06-11eb-b91b-65a1de19ee72": "inputType",
+        "83448ba0-0f06-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "8619cbb0-0f06-11eb-b91b-65a1de19ee72": "timestampOfPerception",
+        "890e2c80-0f06-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "8ba6b1b0-0f06-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "04873f00-0e35-11eb-b91b-65a1de19ee72": "inputType",
+        "d22e6bf0-09cf-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "72ecfb90-0c07-11eb-b91b-65a1de19ee72": "averageThoughtGap",
+        "cf86cd60-0c05-11eb-b91b-65a1de19ee72": "distinctExistingThoughtCount",
+        "a9057490-0f41-11eb-b91b-65a1de19ee72": "perception",
+        "d515f910-0f41-11eb-b91b-65a1de19ee72": "timestampOfPerception",
+        "da52c340-0f41-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "df4d0630-0f41-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "e45d6930-0f41-11eb-b91b-65a1de19ee72": "dateOfPerception",
+        "35c87580-0f42-11eb-b91b-65a1de19ee72": "perception",
+        "3ca0ee50-0f42-11eb-b91b-65a1de19ee72": "inputDuration",
+        "b8cef080-0f42-11eb-b91b-65a1de19ee72": "perception",
+        "d52f7f10-0f42-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "d7b84cd0-0f42-11eb-b91b-65a1de19ee72": "timestampOfPerception",
+        "dab9cd00-0f42-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "9492b480-0f43-11eb-b91b-65a1de19ee72": "dateOfPerception",
+        "ccf35360-0f49-11eb-b91b-65a1de19ee72": "FOLLOWED_BY",
+        "e7fc8f50-0f49-11eb-b91b-65a1de19ee72": "FOLLOWED_BY",
+        "dccab200-0f4a-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "ea9e46d0-0f4a-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "30ae1150-0f4b-11eb-91f5-cb7103b539db": "durationBetween",
+        "4061b0c0-0f4b-11eb-91f5-cb7103b539db": "durationBetween",
+        "6c865980-0f4b-11eb-91f5-cb7103b539db": "durationBetween"
     },
     "definitions": {
         "type": "definitions",
@@ -4487,8 +5328,8 @@
                     },
                     {
                         "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
-                        "x": 1573.7534387770577,
-                        "y": 1369.3100645780612,
+                        "x": 1575.0896042324537,
+                        "y": 1494.9096173852975,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4527,8 +5368,8 @@
                     },
                     {
                         "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
-                        "x": 1344.5874060348085,
-                        "y": 641.8212428743279,
+                        "x": 1025.9207393681418,
+                        "y": 980.4879095409943,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4537,8 +5378,8 @@
                     },
                     {
                         "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1310.6032818735835,
-                        "y": 1363.7652509977365,
+                        "x": 895.8459873009078,
+                        "y": 1305.316657729905,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4547,8 +5388,8 @@
                     },
                     {
                         "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
-                        "x": 2032.0742848510217,
-                        "y": 646.8783840377251,
+                        "x": 1014.7409515176895,
+                        "y": 757.5450507043929,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4557,8 +5398,8 @@
                     },
                     {
                         "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1800.238256143713,
-                        "y": 643.5016646492,
+                        "x": 912.2382561437129,
+                        "y": 1100.8349979825348,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4567,8 +5408,8 @@
                     },
                     {
                         "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1339.6604230369824,
-                        "y": 809.214928107423,
+                        "x": 1371.660423036982,
+                        "y": 478.5482614407562,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4577,8 +5418,8 @@
                     },
                     {
                         "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1817.2520112519182,
-                        "y": 1128.5186897747847,
+                        "x": 1846.647651270632,
+                        "y": 1109.8123733992372,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4587,8 +5428,8 @@
                     },
                     {
                         "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
-                        "x": 2026.4213732925637,
-                        "y": 818.4181032751793,
+                        "x": 1914.4213732925668,
+                        "y": 458.4181032751798,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4597,8 +5438,8 @@
                     },
                     {
                         "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1797.4848173666612,
-                        "y": 822.867839665884,
+                        "x": 1189.4848173666614,
+                        "y": 482.8678396658837,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4677,16 +5518,16 @@
                     },
                     {
                         "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
-                        "x": 2304.640567757143,
-                        "y": 646.9655106722122,
+                        "x": 909.9739010904757,
+                        "y": 626.9655106722136,
                         "width": 240,
                         "height": 100,
                         "color": {}
                     },
                     {
                         "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
-                        "x": 2306.0954921567395,
-                        "y": 821.2287424966482,
+                        "x": 2274.0954921567413,
+                        "y": 643.8954091633152,
                         "width": 240,
                         "height": 100,
                         "color": {}
@@ -4823,8 +5664,8 @@
                     },
                     {
                         "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
-                        "x": 2294.6666666666774,
-                        "y": 1382.6666666666656,
+                        "x": 2393.333333333345,
+                        "y": 1155.9999999999989,
                         "width": 240,
                         "height": 100,
                         "color": {}
@@ -4841,16 +5682,16 @@
                     },
                     {
                         "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
-                        "x": 1587.9999999999995,
-                        "y": 641.9999999999999,
+                        "x": 910.6666666666655,
+                        "y": 887.3333333333352,
                         "width": 240,
                         "height": 100,
                         "color": {}
                     },
                     {
                         "GUID": "a7bd9590-f777-11ea-9f76-433a900eeb80",
-                        "x": 1588,
-                        "y": 822,
+                        "x": 1040.0000000000011,
+                        "y": 487.3333333333339,
                         "width": 240,
                         "height": 100,
                         "color": {}
@@ -4877,8 +5718,8 @@
                     },
                     {
                         "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
-                        "x": 2304.66666666668,
-                        "y": 1128.6666666666647,
+                        "x": 2366.0000000000146,
+                        "y": 804.6666666666645,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -4897,8 +5738,8 @@
                     },
                     {
                         "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
-                        "x": 1822.0000000000027,
-                        "y": 1632.6666666666647,
+                        "x": 938.0702068933358,
+                        "y": 1489.1305385267215,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5027,8 +5868,8 @@
                     },
                     {
                         "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
-                        "x": 1149.9999999999975,
-                        "y": 809.9999999999978,
+                        "x": 1579.333333333332,
+                        "y": 483.3333333333321,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5037,8 +5878,8 @@
                     },
                     {
                         "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
-                        "x": 1150.0000000000014,
-                        "y": 647.3333333333335,
+                        "x": 1019.0954350800608,
+                        "y": 1213.9128003742894,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5079,6 +5920,46 @@
                         "GUID": "d68a0f10-f822-11ea-9f76-433a900eeb80",
                         "x": 980,
                         "y": 980,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "ccf35360-0f49-11eb-b91b-65a1de19ee72",
+                        "x": 1000,
+                        "y": 1000,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "e7fc8f50-0f49-11eb-b91b-65a1de19ee72",
+                        "x": 1020,
+                        "y": 1020,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "dccab200-0f4a-11eb-91f5-cb7103b539db",
+                        "x": 1040,
+                        "y": 1040,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "ea9e46d0-0f4a-11eb-91f5-cb7103b539db",
+                        "x": 1060,
+                        "y": 1060,
                         "width": 240,
                         "height": 100,
                         "color": {
