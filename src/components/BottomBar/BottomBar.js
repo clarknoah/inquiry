@@ -9,8 +9,9 @@ import AddAlarmIcon from "@material-ui/icons/AddAlarm";
 import InsertChartIcon from "@material-ui/icons/InsertChart";
 import FlareIcon from "@material-ui/icons/Flare";
 import Tooltip from "@material-ui/core/Tooltip";
-import {Link} from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 // Class Based React Component
 class BottomBar extends Component {
   constructor(props) {
@@ -19,9 +20,25 @@ class BottomBar extends Component {
 
     // Default CSS class to apply to the Component
     this.state = {
-      classList: "BottomBar"
+      classList: "BottomBar",
+      showLoggerMenu: false,
+      anchor: null,
     };
   }
+  showLoggerMenu = (e) => {
+    console.log(Boolean(e.currentTarget));
+
+    this.setState({
+      anchor: e.currentTarget,
+    });
+  };
+
+  closeLoggerMenu = () => {
+    console.log("Closing");
+    this.setState({
+      anchor: null,
+    });
+  };
 
   // Runs after Component is loaded in the broswer
   componentDidMount() {}
@@ -37,37 +54,78 @@ class BottomBar extends Component {
       <div className={this.state.classList}>
         <Tooltip title="Thought Journal">
           <Link to="/journal">
-          <Fab color="primary" aria-label="notes">
-            <NotesIcon />
-          </Fab>
+            <Fab color="primary" aria-label="notes">
+              <NotesIcon />
+            </Fab>
           </Link>
         </Tooltip>
         <Tooltip title="Metacognitive Practices">
-        <Link to="/practices">
-          <Fab color="primary" aria-label="meta-practices">
-            <AddAlarmIcon />
-          </Fab>
+          <Link to="/practices">
+            <Fab color="primary" aria-label="meta-practices">
+              <AddAlarmIcon />
+            </Fab>
           </Link>
         </Tooltip>
-        <Tooltip title="Log a Thought">
-        <Link to="/logger">
-          <Fab color="primary" aria-label="add">
-            <AddIcon />
-          </Fab>
+        <Fab
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          color="primary"
+          aria-label="add"
+          onClick={this.showLoggerMenu}
+        >
+          <AddIcon />
+        </Fab>
+
+        <Menu
+          id="simple-menu"
+          anchorEl={this.state.anchor}
+          keepMounted
+          open={Boolean(this.state.anchor)}
+          onClose={this.closeLoggerMenu}
+        >
+          <Link to="/logger/thought">
+          <MenuItem onClick={this.closeLoggerMenu}>Add Thought</MenuItem>
           </Link>
-        </Tooltip>
+          <Link to="/logger/stimulusAndThought">
+          <MenuItem onClick={this.closeLoggerMenu}> Add Stimulus + Thought</MenuItem>
+          
+          </Link>
+          <Link to="/logger/stimulusAndThoughtAndEmotion">
+          <MenuItem onClick={this.closeLoggerMenu}>Add Stimulus + THought + Emotion</MenuItem>
+          
+          </Link>
+          <Link to="/logger/stimulusAndThoughtAndEmotionAndConcept">
+          <MenuItem onClick={this.closeLoggerMenu}>Add Stimulus + Thought + Emotion + Concept</MenuItem>
+          
+          </Link>
+          <Link to="/logger/thoughtAndEmotionAndConcept">
+          <MenuItem onClick={this.closeLoggerMenu}>Thought + Emotion + Concept</MenuItem>
+          
+          </Link>
+          <Link to="/logger/thoughtAndEmotion">
+          <MenuItem onClick={this.closeLoggerMenu}>Thought + Emotion</MenuItem>
+          
+          </Link>
+          
+          <Link to="/logger/EmotionAndForm">
+          <MenuItem onClick={this.closeLoggerMenu}>Emotion + Form</MenuItem>
+          
+          </Link>
+          
+          
+        </Menu>
         <Tooltip title="Inquiry Practice">
-        <Link to="/inquiry">
-          <Fab color="primary" aria-label="inquiry">
-            <FlareIcon />
-          </Fab>
+          <Link to="/inquiry">
+            <Fab color="primary" aria-label="inquiry">
+              <FlareIcon />
+            </Fab>
           </Link>
         </Tooltip>
         <Tooltip title="Insights">
-        <Link to="/insights">
-          <Fab color="primary" aria-label="insights">
-            <InsertChartIcon />
-          </Fab>
+          <Link to="/insights">
+            <Fab color="primary" aria-label="insights">
+              <InsertChartIcon />
+            </Fab>
           </Link>
         </Tooltip>
       </div>

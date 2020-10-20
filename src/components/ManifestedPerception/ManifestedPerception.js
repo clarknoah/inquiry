@@ -59,7 +59,7 @@ class ManifestedPerception extends Component {
     if(text==="-T"){
       label = "Thought"
     }else if(text==="-I"){
-      label = "Mental-Image"
+      label = "Mental_Image"
     }else if(text=="-E"){
       label = "Emotion"
     }else if(text=="-B"){
@@ -139,8 +139,13 @@ class ManifestedPerception extends Component {
   };
 
   submitPerception = (aPerception, mPerception) => {
-    this.props.submitPerception(aPerception, mPerception);
-    this.resetForm();
+    console.log(this.props);
+    if(mPerception.properties.perception.value.length > 0){
+      this.props.submitPerception(aPerception, mPerception);
+      this.resetForm();
+    }else{
+      console.log("Empty thought...hahah")
+    }
   };
 
   comparePerceptionString = () => {
@@ -195,7 +200,6 @@ class ManifestedPerception extends Component {
     return (
       <div className={this.state.classList}>
         {this.props.date === undefined ?<FormControlLabel
-          className={"ThoughtLogger-field"}
           control={
             <Checkbox
               checked={this.state.newPerception}

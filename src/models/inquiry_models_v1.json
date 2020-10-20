@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-10-16T01:04:21.787Z",
+    "lastModifTS": "2020-10-19T23:50:21.512Z",
     "persistenceSchemaVersion": "3",
     "description": "",
     "comments": "",
@@ -786,6 +786,110 @@
                     "error": {
                         "name": false
                     }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ad60e9d0-118e-11eb-8981-11dc4e470dad",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b046cbb0-118e-11eb-8981-11dc4e470dad",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b28d8760-118e-11eb-8981-11dc4e470dad",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b41e6090-118e-11eb-8981-11dc4e470dad",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
                 }
             ],
             "definitions": {
@@ -799,7 +903,9 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "name": "A_Perception",
+            "error": {}
         },
         {
             "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
@@ -1065,7 +1171,7 @@
                     ],
                     "compositeNodeKey": false,
                     "GUID": "8ba6b1b0-0f06-11eb-b91b-65a1de19ee72",
-                    "name": "timestampOfInput",
+                    "name": "dateOfPerception",
                     "code": "",
                     "description": "",
                     "dependencies": [],
@@ -1073,7 +1179,7 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "date"
                 },
                 {
                     "minLength": "",
@@ -1173,6 +1279,164 @@
                     "error": {
                         "name": false
                     }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "5f74bb10-0fcd-11eb-91f5-cb7103b539db",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "615e1480-0fcd-11eb-91f5-cb7103b539db",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "644aad20-0fcd-11eb-91f5-cb7103b539db",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "67165040-0fcd-11eb-91f5-cb7103b539db",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "cc268180-0fcd-11eb-91f5-cb7103b539db",
+                    "name": "inputType",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "5713bb70-1157-11eb-8981-11dc4e470dad",
+                    "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -2573,7 +2837,137 @@
             "comments": "",
             "$schema": "",
             "additionalProperties": false,
-            "properties": [],
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "78bab170-1265-11eb-8981-11dc4e470dad",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "7bd9a4b0-1265-11eb-8981-11dc4e470dad",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "82655d10-1265-11eb-8981-11dc4e470dad",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "84445640-1265-11eb-8981-11dc4e470dad",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "86287f90-1265-11eb-8981-11dc4e470dad",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                }
+            ],
             "definitions": {
                 "type": "definitions",
                 "properties": [],
@@ -2612,7 +3006,7 @@
                     ],
                     "compositeNodeKey": false,
                     "GUID": "01ad05f0-0cc1-11eb-b91b-65a1de19ee72",
-                    "name": "name",
+                    "name": "perception",
                     "code": "",
                     "description": "",
                     "comments": "",
@@ -2620,10 +3014,166 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false,
-                        "required": false
-                    }
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "2e7812b0-1265-11eb-8981-11dc4e470dad",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "30470650-1265-11eb-8981-11dc4e470dad",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "324917e0-1265-11eb-8981-11dc4e470dad",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "3495ee10-1265-11eb-8981-11dc4e470dad",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "36920c30-1265-11eb-8981-11dc4e470dad",
+                    "name": "inputType",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "6ef52ad0-1265-11eb-8981-11dc4e470dad",
+                    "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -4838,54 +5388,6 @@
             "properties": []
         },
         {
-            "GUID": "e7fc8f50-0f49-11eb-b91b-65a1de19ee72",
-            "name": "FOLLOWED_BY",
-            "description": "",
-            "comments": "",
-            "relationshipType": "",
-            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
-            "parentField": [],
-            "parentCardinality": "1",
-            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
-            "childField": [],
-            "childCardinality": "1",
-            "lineSize": 2,
-            "biDirectional": true,
-            "properties": [
-                {
-                    "unit": "",
-                    "minimum": "",
-                    "exclusiveMinimum": false,
-                    "maximum": "",
-                    "exclusiveMaximum": false,
-                    "multipleOf": "",
-                    "divisibleBy": "",
-                    "default": "",
-                    "primaryKey": false,
-                    "enum": [],
-                    "mode": "",
-                    "sample": "",
-                    "unique": false,
-                    "childType": "number",
-                    "type": "numeric",
-                    "compositeKey": [
-                        "compositeNodeKey"
-                    ],
-                    "compositeNodeKey": false,
-                    "GUID": "30ae1150-0f4b-11eb-91f5-cb7103b539db",
-                    "name": "durationBetween",
-                    "code": "",
-                    "description": "",
-                    "comments": "",
-                    "dependencies": [],
-                    "required": false,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {}
-                }
-            ]
-        },
-        {
             "GUID": "dccab200-0f4a-11eb-91f5-cb7103b539db",
             "name": "FOLLOWED_BY",
             "description": "",
@@ -4898,7 +5400,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
-            "biDirectional": true,
+            "biDirectional": false,
             "properties": [
                 {
                     "unit": "",
@@ -4980,6 +5482,520 @@
                     "error": {}
                 }
             ]
+        },
+        {
+            "GUID": "18663bb0-0fc1-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "39f9f780-0fc1-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "202e44a0-0fc1-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "2bbf6380-0fc1-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "5b28d700-0fc1-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "79699740-0fc1-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "70aa3600-0fc1-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "879a4030-0fc1-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "e5c16060-0fcd-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ee2f9460-0fcd-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "f568f1e0-0fcd-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ff4b2840-0fcd-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "1125c660-0fce-11eb-91f5-cb7103b539db",
+            "name": "HAS_TAG",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "2e354180-f783-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "19c73f60-0fce-11eb-91f5-cb7103b539db",
+            "name": "HAS_TAG",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "2e354180-f783-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "205bd160-0fce-11eb-91f5-cb7103b539db",
+            "name": "HAS_TAG",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "2e354180-f783-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "8fd0d680-0fce-11eb-91f5-cb7103b539db",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "95a796c0-0fce-11eb-91f5-cb7103b539db",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "9d02fb30-0fce-11eb-91f5-cb7103b539db",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "1e35eeb0-0fcf-11eb-91f5-cb7103b539db",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "244f3630-0fcf-11eb-91f5-cb7103b539db",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "2c700d80-0fcf-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "562f7610-0fcf-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "3fb64990-0fcf-11eb-91f5-cb7103b539db",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": [
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "4c538140-0fcf-11eb-91f5-cb7103b539db",
+                    "name": "durationBetween",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ]
+        },
+        {
+            "GUID": "4d7af4d0-0fd0-11eb-91f5-cb7103b539db",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "547a7da0-0fd0-11eb-91f5-cb7103b539db",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
         }
     ],
     "users": [],
@@ -5139,7 +6155,7 @@
         "aa5fc220-0c88-11eb-b91b-65a1de19ee72": "timestampOfStart",
         "b9299dd0-0c88-11eb-b91b-65a1de19ee72": "timestampOfEnd",
         "01a8c030-0cc1-11eb-b91b-65a1de19ee72": "perception",
-        "01ad05f0-0cc1-11eb-b91b-65a1de19ee72": "name",
+        "01ad05f0-0cc1-11eb-b91b-65a1de19ee72": "perception",
         "199bc7e0-0e34-11eb-b91b-65a1de19ee72": "timestampOfStart",
         "321cf960-0e34-11eb-b91b-65a1de19ee72": "timestampOfEnd",
         "417f4480-0e34-11eb-b91b-65a1de19ee72": "realtime",
@@ -5162,7 +6178,7 @@
         "83448ba0-0f06-11eb-b91b-65a1de19ee72": "timestampOfInput",
         "8619cbb0-0f06-11eb-b91b-65a1de19ee72": "timestampOfPerception",
         "890e2c80-0f06-11eb-b91b-65a1de19ee72": "dateOfInput",
-        "8ba6b1b0-0f06-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "8ba6b1b0-0f06-11eb-b91b-65a1de19ee72": "dateOfPerception",
         "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfInput",
         "04873f00-0e35-11eb-b91b-65a1de19ee72": "inputType",
         "d22e6bf0-09cf-11eb-b91b-65a1de19ee72": "dateOfInput",
@@ -5181,12 +6197,58 @@
         "dab9cd00-0f42-11eb-b91b-65a1de19ee72": "dateOfInput",
         "9492b480-0f43-11eb-b91b-65a1de19ee72": "dateOfPerception",
         "ccf35360-0f49-11eb-b91b-65a1de19ee72": "FOLLOWED_BY",
-        "e7fc8f50-0f49-11eb-b91b-65a1de19ee72": "FOLLOWED_BY",
         "dccab200-0f4a-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
         "ea9e46d0-0f4a-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
         "30ae1150-0f4b-11eb-91f5-cb7103b539db": "durationBetween",
         "4061b0c0-0f4b-11eb-91f5-cb7103b539db": "durationBetween",
-        "6c865980-0f4b-11eb-91f5-cb7103b539db": "durationBetween"
+        "6c865980-0f4b-11eb-91f5-cb7103b539db": "durationBetween",
+        "18663bb0-0fc1-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "202e44a0-0fc1-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "2bbf6380-0fc1-11eb-91f5-cb7103b539db": "durationBetween",
+        "39f9f780-0fc1-11eb-91f5-cb7103b539db": "durationBetween",
+        "5b28d700-0fc1-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "70aa3600-0fc1-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "79699740-0fc1-11eb-91f5-cb7103b539db": "durationBetween",
+        "879a4030-0fc1-11eb-91f5-cb7103b539db": "durationBetween",
+        "5f74bb10-0fcd-11eb-91f5-cb7103b539db": "timestampOfInput",
+        "615e1480-0fcd-11eb-91f5-cb7103b539db": "timestampOfPerception",
+        "644aad20-0fcd-11eb-91f5-cb7103b539db": "dateOfInput",
+        "67165040-0fcd-11eb-91f5-cb7103b539db": "dateOfPerception",
+        "cc268180-0fcd-11eb-91f5-cb7103b539db": "inputType",
+        "e5c16060-0fcd-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "ee2f9460-0fcd-11eb-91f5-cb7103b539db": "durationBetween",
+        "f568f1e0-0fcd-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "ff4b2840-0fcd-11eb-91f5-cb7103b539db": "durationBetween",
+        "1125c660-0fce-11eb-91f5-cb7103b539db": "HAS_TAG",
+        "19c73f60-0fce-11eb-91f5-cb7103b539db": "HAS_TAG",
+        "205bd160-0fce-11eb-91f5-cb7103b539db": "HAS_TAG",
+        "8fd0d680-0fce-11eb-91f5-cb7103b539db": "CAUSED",
+        "95a796c0-0fce-11eb-91f5-cb7103b539db": "CAUSED",
+        "9d02fb30-0fce-11eb-91f5-cb7103b539db": "CAUSED",
+        "1e35eeb0-0fcf-11eb-91f5-cb7103b539db": "CAUSED",
+        "244f3630-0fcf-11eb-91f5-cb7103b539db": "CAUSED",
+        "2c700d80-0fcf-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "3fb64990-0fcf-11eb-91f5-cb7103b539db": "FOLLOWED_BY",
+        "4c538140-0fcf-11eb-91f5-cb7103b539db": "durationBetween",
+        "562f7610-0fcf-11eb-91f5-cb7103b539db": "durationBetween",
+        "4d7af4d0-0fd0-11eb-91f5-cb7103b539db": "CAUSED",
+        "547a7da0-0fd0-11eb-91f5-cb7103b539db": "CAUSED",
+        "5713bb70-1157-11eb-8981-11dc4e470dad": "inputDuration",
+        "ad60e9d0-118e-11eb-8981-11dc4e470dad": "timestampOfInput",
+        "b046cbb0-118e-11eb-8981-11dc4e470dad": "timestampOfPerception",
+        "b28d8760-118e-11eb-8981-11dc4e470dad": "dateOfInput",
+        "b41e6090-118e-11eb-8981-11dc4e470dad": "dateOfPerception",
+        "2e7812b0-1265-11eb-8981-11dc4e470dad": "timestampOfInput",
+        "30470650-1265-11eb-8981-11dc4e470dad": "timestampOfPerception",
+        "324917e0-1265-11eb-8981-11dc4e470dad": "dateOfInput",
+        "3495ee10-1265-11eb-8981-11dc4e470dad": "dateOfPerception",
+        "36920c30-1265-11eb-8981-11dc4e470dad": "inputType",
+        "6ef52ad0-1265-11eb-8981-11dc4e470dad": "inputDuration",
+        "78bab170-1265-11eb-8981-11dc4e470dad": "perception",
+        "82655d10-1265-11eb-8981-11dc4e470dad": "timestampOfPerception",
+        "84445640-1265-11eb-8981-11dc4e470dad": "dateOfInput",
+        "86287f90-1265-11eb-8981-11dc4e470dad": "dateOfPerception",
+        "7bd9a4b0-1265-11eb-8981-11dc4e470dad": "timestampOfInput"
     },
     "definitions": {
         "type": "definitions",
@@ -5328,8 +6390,8 @@
                     },
                     {
                         "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
-                        "x": 1575.0896042324537,
-                        "y": 1494.9096173852975,
+                        "x": 1759.0896042324534,
+                        "y": 1314.909617385298,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5368,8 +6430,8 @@
                     },
                     {
                         "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
-                        "x": 1025.9207393681418,
-                        "y": 980.4879095409943,
+                        "x": 897.9207393681422,
+                        "y": 1121.8212428743275,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5378,8 +6440,8 @@
                     },
                     {
                         "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
-                        "x": 895.8459873009078,
-                        "y": 1305.316657729905,
+                        "x": 890.5126539675742,
+                        "y": 1459.98332439657,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5388,8 +6450,8 @@
                     },
                     {
                         "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1014.7409515176895,
-                        "y": 757.5450507043929,
+                        "x": 2468.594962879976,
+                        "y": 1438.8783840377264,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5398,8 +6460,8 @@
                     },
                     {
                         "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
-                        "x": 912.2382561437129,
-                        "y": 1100.8349979825348,
+                        "x": 896.2382561437129,
+                        "y": 1231.5016646492006,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5408,8 +6470,8 @@
                     },
                     {
                         "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1371.660423036982,
-                        "y": 478.5482614407562,
+                        "x": 890.3270897036471,
+                        "y": 409.2149281074236,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5418,8 +6480,8 @@
                     },
                     {
                         "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1846.647651270632,
-                        "y": 1109.8123733992372,
+                        "x": 1724.0831323137033,
+                        "y": 816.6200589634966,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5428,8 +6490,8 @@
                     },
                     {
                         "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1914.4213732925668,
-                        "y": 458.4181032751798,
+                        "x": 2359.754706625902,
+                        "y": 574.4181032751795,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5438,8 +6500,8 @@
                     },
                     {
                         "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
-                        "x": 1189.4848173666614,
-                        "y": 482.8678396658837,
+                        "x": 1093.4848173666617,
+                        "y": 958.867839665884,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5518,16 +6580,16 @@
                     },
                     {
                         "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
-                        "x": 909.9739010904757,
-                        "y": 626.9655106722136,
+                        "x": 2316.64056775714,
+                        "y": 1462.9655106722137,
                         "width": 240,
                         "height": 100,
                         "color": {}
                     },
                     {
                         "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
-                        "x": 2274.0954921567413,
-                        "y": 643.8954091633152,
+                        "x": 2358.095492156741,
+                        "y": 1245.2287424966496,
                         "width": 240,
                         "height": 100,
                         "color": {}
@@ -5664,8 +6726,8 @@
                     },
                     {
                         "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
-                        "x": 2393.333333333345,
-                        "y": 1155.9999999999989,
+                        "x": 1320.0000000000123,
+                        "y": 1337.3333333333303,
                         "width": 240,
                         "height": 100,
                         "color": {}
@@ -5682,8 +6744,8 @@
                     },
                     {
                         "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
-                        "x": 910.6666666666655,
-                        "y": 887.3333333333352,
+                        "x": 894.6666666666653,
+                        "y": 994.0000000000024,
                         "width": 240,
                         "height": 100,
                         "color": {}
@@ -5718,8 +6780,8 @@
                     },
                     {
                         "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
-                        "x": 2366.0000000000146,
-                        "y": 804.6666666666645,
+                        "x": 2127.333333333346,
+                        "y": 891.3333333333308,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5738,8 +6800,8 @@
                     },
                     {
                         "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
-                        "x": 938.0702068933358,
-                        "y": 1489.1305385267215,
+                        "x": 1679.403540226668,
+                        "y": 1465.1305385267217,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5778,8 +6840,8 @@
                     },
                     {
                         "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
-                        "x": 2081.999999999999,
-                        "y": 1379.3333333333333,
+                        "x": 2012.6666666666663,
+                        "y": 1287.3333333333335,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5868,8 +6930,8 @@
                     },
                     {
                         "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
-                        "x": 1579.333333333332,
-                        "y": 483.3333333333321,
+                        "x": 1664.6666666666667,
+                        "y": 439.3333333333326,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5878,8 +6940,8 @@
                     },
                     {
                         "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
-                        "x": 1019.0954350800608,
-                        "y": 1213.9128003742894,
+                        "x": 893.7621017467274,
+                        "y": 1347.246133707622,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -5937,16 +6999,6 @@
                         }
                     },
                     {
-                        "GUID": "e7fc8f50-0f49-11eb-b91b-65a1de19ee72",
-                        "x": 1020,
-                        "y": 1020,
-                        "width": 240,
-                        "height": 100,
-                        "color": {
-                            "hex": "#333333"
-                        }
-                    },
-                    {
                         "GUID": "dccab200-0f4a-11eb-91f5-cb7103b539db",
                         "x": 1040,
                         "y": 1040,
@@ -5960,6 +7012,186 @@
                         "GUID": "ea9e46d0-0f4a-11eb-91f5-cb7103b539db",
                         "x": 1060,
                         "y": 1060,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "18663bb0-0fc1-11eb-91f5-cb7103b539db",
+                        "x": 1080,
+                        "y": 1080,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "202e44a0-0fc1-11eb-91f5-cb7103b539db",
+                        "x": 1100,
+                        "y": 1100,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "5b28d700-0fc1-11eb-91f5-cb7103b539db",
+                        "x": 1120,
+                        "y": 1120,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "70aa3600-0fc1-11eb-91f5-cb7103b539db",
+                        "x": 1020,
+                        "y": 1020,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "e5c16060-0fcd-11eb-91f5-cb7103b539db",
+                        "x": 1140,
+                        "y": 1140,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "f568f1e0-0fcd-11eb-91f5-cb7103b539db",
+                        "x": 1160,
+                        "y": 1160,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "1125c660-0fce-11eb-91f5-cb7103b539db",
+                        "x": 1180,
+                        "y": 1180,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "19c73f60-0fce-11eb-91f5-cb7103b539db",
+                        "x": 1200,
+                        "y": 1200,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "205bd160-0fce-11eb-91f5-cb7103b539db",
+                        "x": 1220,
+                        "y": 1220,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "8fd0d680-0fce-11eb-91f5-cb7103b539db",
+                        "x": 1240,
+                        "y": 1240,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "95a796c0-0fce-11eb-91f5-cb7103b539db",
+                        "x": 1260,
+                        "y": 1260,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "9d02fb30-0fce-11eb-91f5-cb7103b539db",
+                        "x": 1280,
+                        "y": 1280,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "1e35eeb0-0fcf-11eb-91f5-cb7103b539db",
+                        "x": 1300,
+                        "y": 1300,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "244f3630-0fcf-11eb-91f5-cb7103b539db",
+                        "x": 1320,
+                        "y": 1320,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "2c700d80-0fcf-11eb-91f5-cb7103b539db",
+                        "x": 1340,
+                        "y": 1340,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "3fb64990-0fcf-11eb-91f5-cb7103b539db",
+                        "x": 1360,
+                        "y": 1360,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "4d7af4d0-0fd0-11eb-91f5-cb7103b539db",
+                        "x": 1380,
+                        "y": 1380,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "547a7da0-0fd0-11eb-91f5-cb7103b539db",
+                        "x": 1400,
+                        "y": 1400,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -6054,7 +7286,7 @@
                     "buckets": [],
                     "hideRelationshipName": false,
                     "showPropertiesBoxes": false,
-                    "nameAlongTheLine": false
+                    "nameAlongTheLine": true
                 },
                 "activeRelationshipFields": {
                     "childField": [],

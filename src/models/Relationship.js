@@ -8,7 +8,7 @@ export default class Relationship {
         this.target = target;
         this.source = source;
         this.params = undefined;
-        this.create = `CREATE (source)-[${this.variable}:${this.type}]->(${target})`;
+        this.create = `CREATE (${source})-[${this.variable}:${this.type}]->(${target})`;
         this.set = `SET ${this.variable} = $${this.variable}_props`;
     }
     getCreateQuery(){

@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {Route, Link, Switch} from 'react-router-dom';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Route, Link, Switch } from "react-router-dom";
 import InquiryForm from "./components/InquiryForm/InquiryForm";
 import BottomBar from "./components/BottomBar/BottomBar";
 import HomePage from "./pages/HomePage/HomePage";
@@ -10,49 +10,96 @@ import ThoughtJournal from "./pages/ThoughtJournal/ThoughtJournal";
 import ThoughtLogger from "./pages/ThoughtLogger/ThoughtLogger";
 import PracticesHome from "./pages/PracticesHome/PracticesHome";
 import ThoughtTracker from "./pages/trackers/ThoughtTracker/ThoughtTracker";
-
+import StLogger from "./pages/ThoughtLogger/StLogger/StLogger";
+import SteLogger from "./pages/ThoughtLogger/SteLogger/SteLogger";
+import StefLogger from "./pages/ThoughtLogger/StefLogger/StefLogger";
+import TeLogger from "./pages/ThoughtLogger/TeLogger/TeLogger";
+import TefLogger from "./pages/ThoughtLogger/TefLogger/TefLogger";
+import TfLogger from "./pages/ThoughtLogger/TfLogger/TfLogger";
 function App() {
   return (
     <div className="App">
       <main>
-      <header>
-        <h1>Inquiry</h1>
-        <Link to="/inquiry" >Link</Link>
-      </header>
-      <Switch>
-      <Route path="/journal" render={
-        routerProps=>{
-          return <ThoughtJournal {...routerProps}/>
-        }
-      }/>
-      <Route path="/practices" render={
-        routerProps=>{
-          return <ThoughtTracker {...routerProps}/>
-        }
-      }/>
-      <Route path="/logger" render={
-        routerProps=>{
-          return <ThoughtLogger {...routerProps}/>
-        }
-      }/>
-      <Route path="/inquiry" render={
-        routerProps=>{
-          return <InquiryForm {...routerProps}/>
-        }
-      }/>
-      <Route path="/insights" render={
-        routerProps=>{
-          return <InsightsHome {...routerProps}/>
-        }
-      }/>
-      <Route path="/" render={
-        routerProps=>{
-          return <HomePage {...routerProps}/>
-        }
-      }/>
-      </Switch>
+        <header>
+          <h1>Inquiry</h1>
+          <Link to="/inquiry">Link</Link>
+        </header>
+        <Switch>
+          <Route
+            path="/journal"
+            render={(routerProps) => {
+              return <ThoughtJournal {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/practices"
+            render={(routerProps) => {
+              return <ThoughtTracker {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/logger/thought"
+            render={(routerProps) => {
+              return <ThoughtLogger {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/logger/stimulusAndThought"
+            render={(routerProps) => {
+              return <StLogger {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/logger/stimulusAndThoughtAndEmotion"
+            render={(routerProps) => {
+              return <SteLogger {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/logger/stimulusAndThoughtAndEmotionAndConcept"
+            render={(routerProps) => {
+              return <StefLogger {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/logger/thoughtAndEmotionAndConcept"
+            render={(routerProps) => {
+              return <TefLogger {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/logger/thoughtAndEmotion"
+            render={(routerProps) => {
+              return <TeLogger {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/logger/emotionAndForm"
+            render={(routerProps) => {
+              return <TfLogger {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/inquiry"
+            render={(routerProps) => {
+              return <InquiryForm {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/insights"
+            render={(routerProps) => {
+              return <InsightsHome {...routerProps} />;
+            }}
+          />
+          <Route
+            path="/"
+            render={(routerProps) => {
+              return <HomePage {...routerProps} />;
+            }}
+          />
+        </Switch>
       </main>
-      <BottomBar/>
+      <BottomBar />
     </div>
   );
 }

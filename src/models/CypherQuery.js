@@ -10,6 +10,7 @@ export default class CypherQuery{
         this.matchVariables = {};
         this.createVariables = {};
         this.relationshipVariables={};
+        this.query = "";
     }
     //At some point I can probably push all deduplication to here
     doesMatchNodeExist(node){
@@ -133,6 +134,7 @@ export default class CypherQuery{
         if(this.set.length > 0){
             query.push(...this.set);
         }
+        this.query = query.join("\n");
         return query.join("\n");
 
     }

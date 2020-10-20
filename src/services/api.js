@@ -11,7 +11,7 @@ let api = {
     MATCH (n:${label})
     WHERE n.${field} =~ $text
     RETURN n
-    ORDER BY n.thought ASC
+    ORDER BY size(n.${field}) ASC
     LIMIT 5
     `
     let params={

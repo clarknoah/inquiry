@@ -4,8 +4,11 @@ import api from "../../services/api";
 class Tracker extends GraphNode{
     constructor(data, id=undefined, properties=undefined){
         super(data, id, properties);
+        console.log(this);
+        this.api = api;
         this.thoughts = [];
         this.perceptions = [];
+        this.followedBy = [];
         this.status = "setup";
         this.currentTime = undefined;
         this.historic = false;
@@ -38,14 +41,17 @@ class Tracker extends GraphNode{
             aThought.variable
         )
         this.addRelationship(`PERCEIVED`,mThought.variable);
-        if(this.thoughts.length > 0 && this.historic==false){
+        if(this.thoughts.length > 0){
             let index = this.thoughts.length-1;
             console.log(this.thoughts[index][1]);
             let durationRel = this.thoughts[index][1].addRelationship("FOLLOWED_BY",mThought.variable);
-            let duration = mThought.properties.timestampOfPerception.value 
+            if(this.historic==false){
+                let duration = mThought.properties.timestampOfPerception.value 
                 - this.thoughts[index][1].properties.timestampOfPerception.value;
             durationRel.properties.durationBetween.setValue(duration/1000);
             console.log(durationRel);
+            this.followedBy.push(duration/1000);
+            }
             this.cypherQuery.addNewRelationship(durationRel.getCreateQuery());
         }
         this.thoughts.push([aThought,mThought])
@@ -138,7 +144,7 @@ class Tracker extends GraphNode{
     setAverageThoughtGapTotal(){
         let gaps = this.properties.thoughtGaps.value;
         let total = gaps.reduce((a,b)=>a+b);
-        let avg = total/gaps;
+        let avg = total/gaps.length;
         console.log(gaps, total, avg);
         this.properties.averageThoughtGap.setValue(avg);
     }
@@ -248,61 +254,21 @@ class Tracker extends GraphNode{
         }
     }
 
+    submitTracker(){
+        return api.cypherQuery(this.query.query,this.query.params)
 
-    
+    }
+
 
     generateCypherQuery(){
         this.properties.completed.setValue(true);
         this.properties.usedSuggestions.setValue(true);
         this.generateMetrics();
         console.log(this.properties.generateCypherPropertyObject())
-        //this.deduplicateNewThoughts();
-        // let pRels = [];
-        // let mRels = [];
-        // let fRels = [];
         this.cypherQuery.addNode(this);
-    //     this.cypherQuery.addCreate(this);
-    //     console.log(this.thoughts);
-    //     let lastElement = this.thoughts.length - 1;
-    //    this.thoughts.forEach((val,index)=>{
-    //         let aThought = val[0];
-    //         let mThought = val[1];
-    //         this.cypherQuery.addCreate(mThought);
-
-    //         if(aThought.exists===false){
-    //             this.cypherQuery.addCreate(aThought);
-    //         }else{
-    //             this.cypherQuery.addMatch(aThought);
-    //         }
-    //         pRels.push([this,'PERCEIVED',mThought])
-    //         mRels.push([mThought,'MANIFESTATION_OF',aThought]);
-    //         if(index<lastElement){
-    //             let nextThought = this.thoughts[index+1][1];
-    //             let duration = nextThought.properties.timestampOfThought.value - mThought.properties.timestampOfThought.value
-    //             let relProps = {
-    //                 durationBetween:(duration/1000)
-    //             }
-    //             fRels.push([mThought,"FOLLOWED_BY",nextThought,relProps])
-    //         }
-    //    })
-    //    console.log(pRels,mRels);
-    //    pRels.forEach(val=>{
-    //         this.cypherQuery.addRelationship(val[0],val[1],val[2])
-    //    })
-    //     mRels.forEach(val=>{
-    //         this.cypherQuery.addRelationship(val[0],val[1],val[2])
-    //     })
-    //     fRels.forEach(val=>{
-    //         if(this.properties.realtime.value == true){
-    //             this.cypherQuery.addRelationship(val[0],val[1],val[2],val[3])
-    //         }else{
-    //             this.cypherQuery.addRelationship(val[0],val[1],val[2])
-    //         }
-            
-    //     })
        let query = this.cypherQuery.generateQuery();
-       console.log(query, this.cypherQuery.params);
-       //return api.cypherQuery(query,this.cypherQuery.params);
+       this.query = {query:query, params:this.cypherQuery.params};
+       return this;
     }
 
 
