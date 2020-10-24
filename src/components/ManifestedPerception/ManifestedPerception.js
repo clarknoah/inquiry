@@ -6,8 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import InquiryModel from "../../models/GraphModel";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
+
 class ManifestedPerception extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +21,7 @@ class ManifestedPerception extends Component {
     this.inputRef = React.createRef();
 
     this.state = {
-      classList: "ManifestedPerception",
+      classList: `ManifestedPerception ${props.className}`,
       abstractPerceptions: [],
       mPerception: mPerception,
       newPerception: newPerception,
@@ -64,6 +63,8 @@ class ManifestedPerception extends Component {
       label = "Emotion"
     }else if(text=="-B"){
       label = "Body_Sensation"
+    }else if(text=="-P"){
+      label = "Perception"
     }
 
     if(label!==undefined){
@@ -96,8 +97,9 @@ class ManifestedPerception extends Component {
     if(switchLabel){
       this.switchLabel(text);
     }else if (text.length === 1 && this.state.newPerception == true) {
-      mPerception.setNewPerceptionTimes();
-    } else if(text.length === 1 && this.state.newPerception == false) {
+      mPerception.setNewPerceptionTimes(this.props.date);
+    } else if((text.length === 1 && this.state.newPerception == false) 
+      || (text.length === 1 && this.state.newPerception == false && this.props.date!==undefined)) {
       mPerception.setExistingPerceptionTimes(mPerception.properties.dateOfPerception.value);
     }
     if (text.length > 0 && switchLabel==false) {
@@ -186,7 +188,6 @@ class ManifestedPerception extends Component {
           <Button
             color="primary"
             variant="contained"
-            className={"ThoughtLogger-field"}
             label="Hello"
             onClick={() => {
               this.selectExistingPerception(val);
@@ -198,7 +199,7 @@ class ManifestedPerception extends Component {
       );
     });
     return (
-      <div className={this.state.classList}>
+      <div className={this.state.classList} style={this.props.style}>
         {this.props.date === undefined ?<FormControlLabel
           control={
             <Checkbox
@@ -226,7 +227,7 @@ class ManifestedPerception extends Component {
               });
             }}
             value={this.state.mPerception.properties.dateOfPerception.value}
-            className={"ThoughtLogger-field"}
+
             InputLabelProps={{
               shrink: true,
             }}
@@ -237,7 +238,7 @@ class ManifestedPerception extends Component {
           label={this.state.label}
           inputRef={this.inputRef}
           multiline
-          className={"ThoughtLogger-field"}
+
           rows={4}
           placeholder={`Type in ${this.state.label}`}
           variant="outlined"

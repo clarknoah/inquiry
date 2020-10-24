@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import "./HomePage.css";
-
+import api from "../../services/api";
 
 // Class Based React Component
 class HomePage extends Component{
@@ -28,6 +28,7 @@ class HomePage extends Component{
   componentWillUnmount(){}
 
   render(){
+
     return(
       <div className={this.state.classList}>
         HomePage

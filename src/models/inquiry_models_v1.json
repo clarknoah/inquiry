@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-10-19T23:50:21.512Z",
+    "lastModifTS": "2020-10-23T13:45:30.029Z",
     "persistenceSchemaVersion": "3",
     "description": "",
     "comments": "",
@@ -735,6 +735,63 @@
                         "name": false,
                         "required": false
                     }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "fbee7d00-1270-11eb-8981-11dc4e470dad",
+                    "name": "dateOfStart",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "95b2f5b0-1271-11eb-8981-11dc4e470dad",
+                    "name": "duration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -5996,6 +6053,21 @@
             "childCardinality": "1",
             "lineSize": 2,
             "properties": []
+        },
+        {
+            "GUID": "f845dc30-1535-11eb-8981-11dc4e470dad",
+            "name": "FULL_BELIEF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
         }
     ],
     "users": [],
@@ -6248,7 +6320,10 @@
         "82655d10-1265-11eb-8981-11dc4e470dad": "timestampOfPerception",
         "84445640-1265-11eb-8981-11dc4e470dad": "dateOfInput",
         "86287f90-1265-11eb-8981-11dc4e470dad": "dateOfPerception",
-        "7bd9a4b0-1265-11eb-8981-11dc4e470dad": "timestampOfInput"
+        "7bd9a4b0-1265-11eb-8981-11dc4e470dad": "timestampOfInput",
+        "fbee7d00-1270-11eb-8981-11dc4e470dad": "dateOfStart",
+        "95b2f5b0-1271-11eb-8981-11dc4e470dad": "duration",
+        "f845dc30-1535-11eb-8981-11dc4e470dad": "FULL_BELIEF"
     },
     "definitions": {
         "type": "definitions",
@@ -6390,8 +6465,8 @@
                     },
                     {
                         "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
-                        "x": 1759.0896042324534,
-                        "y": 1314.909617385298,
+                        "x": 1761.2355928701654,
+                        "y": 1218.3401286882524,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -6470,8 +6545,8 @@
                     },
                     {
                         "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
-                        "x": 890.3270897036471,
-                        "y": 409.2149281074236,
+                        "x": 809.3198843055999,
+                        "y": 476.2553739540827,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -7197,11 +7272,21 @@
                         "color": {
                             "hex": "#333333"
                         }
+                    },
+                    {
+                        "GUID": "f845dc30-1535-11eb-8981-11dc4e470dad",
+                        "x": 1420,
+                        "y": 1420,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
                     }
                 ],
                 "buckets": [],
                 "collapsedNodes": [],
-                "activeRelationship": "",
+                "activeRelationship": "f845dc30-1535-11eb-8981-11dc4e470dad",
                 "selectedCollections": [],
                 "decorativeSymbols": [],
                 "graphView": {

@@ -1,9 +1,12 @@
 
 .Truth {
+  width:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-  margin: 10px;
+  justify-content: flex-start;
+}
+
+.Truth button {
+  margin: 15px;
 }

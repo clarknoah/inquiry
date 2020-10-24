@@ -18,13 +18,15 @@ class Tracker extends GraphNode{
             "A_Thought":{},
             "A_Mental_Image":{},
             "A_Emotion":{},
-            "A_Perception":{}
+            "A_Perception":{},
+            "A_Form":{}
         };
         this.existingKeys={
             "A_Thought":{},
             "A_Mental_Image":{},
             "A_Emotion":{},
-            "A_Perception":{}
+            "A_Perception":{},
+            "A_Form":{}
         };
     }
 

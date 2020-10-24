@@ -5,6 +5,8 @@ import M_Perception from "./nodes/M_Perception";
 import A_Thought from "./nodes/A_Thought";
 import A_Perception from "./nodes/A_Perception";
 import Tracker from "./nodes/Tracker";
+import Inquiry_Session from "./Inquiry_Session";
+
 class GraphModel{
     constructor(data,format){
         this.model = data;
@@ -42,6 +44,8 @@ class GraphModel{
             }
         }else if(label =="Thought_Tracker"){
             return new Tracker(model);
+        }else if(label == "Inquiry_Session"){
+            return new Inquiry_Session(model);
         }else{
             return new GraphNode(model);
         }

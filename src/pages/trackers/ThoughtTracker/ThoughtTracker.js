@@ -6,6 +6,7 @@ import InquiryModel from "../../../models/GraphModel";
 import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+
 // Class Based React Component
 class ThoughtTracker extends Component {
   constructor(props) {
@@ -82,7 +83,7 @@ class ThoughtTracker extends Component {
     let tracker = this.state.tracker;
     if (tracker.properties.timestampOfStart.value === undefined) {
       let date = tracker.properties.date.value.split("-");
-      let timestamp = new Date(date[0], date[1], date[2], "07", "30");
+      let timestamp = new Date(date[0], (parseInt(date[1])-1), date[2], "07", "30");
       tracker.properties.timestampOfStart.setValue(timestamp.getTime());
     }
     tracker.properties.realtime.setValue(false);
@@ -124,6 +125,12 @@ class ThoughtTracker extends Component {
   };
 
   submitHistoricThought = (aThought, mThought) => {
+    console.log("Historic");
+    if(aThought.exists!==true){
+      aThought.properties.timestampOfPerception.value = this.state.tracker.properties.timestampOfStart.value+1;
+    }
+    mThought.properties.timestampOfPerception.value = this.state.tracker.properties.timestampOfStart.value+1;
+
     this.setState({
       tracker: this.state.tracker.addThought(aThought, mThought),
     });
@@ -140,7 +147,7 @@ class ThoughtTracker extends Component {
     let tracker = this.state.tracker;
     let time = e.target.value.split(":");
     let date = tracker.properties.date.value.split("-");
-    let timestamp = new Date(date[0], date[1], date[2], time[0], time[1]);
+    let timestamp = new Date(date[0], (parseInt(date[1])-1), date[2], time[0], time[1]);
     tracker.properties.timestampOfStart.setValue(timestamp.getTime());
     this.setState({
       tracker: tracker,
@@ -265,7 +272,7 @@ class ThoughtTracker extends Component {
               label={this.state.type}
               queryKey="perception"
               date={this.state.tracker.properties.date.value}
-              submitPerception={this.submitThought}
+              submitPerception={this.submitHistoricThought}
             />
           </div>
         ) : null}

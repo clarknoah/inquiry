@@ -16,14 +16,13 @@ import StefLogger from "./pages/ThoughtLogger/StefLogger/StefLogger";
 import TeLogger from "./pages/ThoughtLogger/TeLogger/TeLogger";
 import TefLogger from "./pages/ThoughtLogger/TefLogger/TefLogger";
 import TfLogger from "./pages/ThoughtLogger/TfLogger/TfLogger";
+import TopBar from "./components/TopBar/TopBar";
 function App() {
   return (
     <div className="App">
       <main>
-        <header>
-          <h1>Inquiry</h1>
-          <Link to="/inquiry">Link</Link>
-        </header>
+        <TopBar/>
+
         <Switch>
           <Route
             path="/journal"

@@ -1,0 +1,10 @@
+
+.TopBar {
+    width: 100%;
+}
+
+.TopBar .MuiToolbar-regular {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
