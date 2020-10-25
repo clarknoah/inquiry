@@ -6,7 +6,6 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
 import ManifestedPerception from "../ManifestedPerception/ManifestedPerception";
 import FullBelief from "../FullBelief/FullBelief";
 import UnderlyingBeliefs from "../UnderlyingBeliefs/UnderlyingBeliefs";
@@ -22,6 +21,7 @@ import PerceptionCollector from "../PerceptionCollector/PerceptionCollector";
 import PerceptionsCollector from "../PerceptionsCollector/PerceptionsCollector";
 import InquiryModel from "../../models/GraphModel";
 import Divider from "@material-ui/core/Divider";
+import Timer from "react-compound-timer";
 /*
     This class needs to perform the following tasks. 
 
@@ -61,6 +61,10 @@ function getSteps() {
     "Associated Fears (Optional)",
     "Full Belief Thought (Optional)",
     "When Believed True",
+    "How do I treat myself and others?",
+    "How do I perceive myself and others?",
+    "Does this thought serve me?",
+    "Underlying beliefs",
     "When Not Believed True",
     "Turnarounds",
     "Let go",
@@ -75,14 +79,15 @@ class InquiryForm extends Component {
   constructor() {
     super();
     this.steps = getSteps();
+    this.timer = React.createRef();
     this.state = {
-      activeStep: 8,
+      activeStep: 6,
       inquiry: InquiryModel.getNewModelClass("Inquiry_Session"),
       manifestedDesire: null,
       manifestedThought: {
         properties: {},
       },
-      letGo:undefined,
+      letGo: undefined,
       whenBelieved: {
         Perception: [],
         Thought: [],
@@ -100,58 +105,95 @@ class InquiryForm extends Component {
     };
   }
 
+  handleNext = () => {
+    let inquiry = this.state.inquiry;
+    if(this.state.activeStep == this.steps.length -1 && inquiry.checkForCompletion()){
+      console.log("Finished");
+      let duration = this.getCurrentTimerTime();
+      inquiry.properties.duration.value = duration;
+    }
+    this.setState({
+      activeStep: this.state.activeStep + 1,
+      inquiry:inquiry
+    });
+  };
+
+  handleBack = () => {
+    this.setState({
+      activeStep: this.state.activeStep - 1,
+    });
+  };
+
+  handleReset = () => {
+    this.setState({
+      activeStep: 0,
+    });
+  };
+
   getStepContent = (stepIndex) => {
     switch (stepIndex) {
       case 0:
         return (
-          <div style={{width:"100%"}}>
-
+          <div style={{ width: "100%" }}>
             <ManifestedPerception
               label={"Thought"}
               queryKey="perception"
               submitPerception={this.submitThoughtForInquiry}
             />
-
           </div>
         );
       case 1:
         return (
-          <Truth memory={this.state.truth} submitTruth={this.receiveTruth}/>
+          <Truth memory={this.state.truth} submitTruth={this.receiveTruth} />
         );
       case 2:
-        let getCollector= ()=>{
-          return (<PerceptionCollector
-            label={"Thought"}
-            queryKey={"perception"}
-            date={"2020-10-15"}
-            unique
-            list={this.state.inquiry.desires}
-            updateList={this.updateDesires}
-          />)
-        }
-        return getCollector();
-        case 3:
+        let getCollector = () => {
           return (
-            <div style={{width:"100%"}}>
             <PerceptionCollector
               label={"Thought"}
               queryKey={"perception"}
-              date={"2020-10-15"}
+              date={this.state.inquiry.date}
+              unique
+              list={this.state.inquiry.desires}
+              updateList={this.updateDesires}
+            />
+          );
+        };
+        return getCollector();
+      case 3:
+        return (
+          <div style={{ width: "100%" }}>
+            <PerceptionCollector
+              label={"Thought"}
+              queryKey={"perception"}
+              date={this.state.inquiry.date}
               unique
               list={this.state.inquiry.fears}
               updateList={this.updateFears}
             />
-            </div>
-          );
+          </div>
+        );
       case 4:
         return (
-          <div style={{width:"100%"}}>
-          <ManifestedPerception
-            label={"Thought"}
-            queryKey="perception"
-            date={"2020-10-15"}
-            submitPerception={this.receiveFullBelief}
-          />
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+            }}
+          >
+            {this.state.inquiry.fullBelief.length > 0 ? (
+              <Typography variant="h5">
+                {this.state.inquiry.fullBelief[0].properties.perception.value}
+              </Typography>
+            ) : null}
+            <ManifestedPerception
+              label={"Thought"}
+              queryKey="perception"
+              date={this.state.inquiry.date}
+              submitPerception={this.receiveFullBelief}
+            />
           </div>
         );
       case 5:
@@ -179,7 +221,26 @@ class InquiryForm extends Component {
                 "perception",
                 "perception",
               ]}
-              date={"2020-10-15"}
+              subRelationships={[
+                undefined,
+                {
+                  label:"Form",
+                  queryKey:"perception",
+                  unique:true,
+                  date:this.state.inquiry.date
+  
+                },
+                {
+                  label:"Body_Location",
+                  queryKey:"perception",
+                  unique:true,
+                  date:this.state.inquiry.date
+  
+                },
+                undefined,
+                undefined
+              ]}
+              date={this.state.inquiry.date}
               list={this.state.whenBelieved}
               unique
               header={"When you believe this thought is true..."}
@@ -188,6 +249,66 @@ class InquiryForm extends Component {
           </div>
         );
       case 6:
+        return (
+          <div style={{width:"100%",display:"flex",flexDirection:"column"}}>
+            <Typography>How do you treat yourself and others when you believe this thought?</Typography>
+            <PerceptionCollector
+              label={"Form"}
+              queryKey={"perception"}
+              date={this.state.inquiry.date}
+              unique
+              subRelationships={{
+                label:"Perception",
+                queryKey:"perception",
+                unique:true,
+                date:this.state.inquiry.date,
+                updateList:this.updateTreats
+
+              }}
+              list={this.state.inquiry.treats}
+              updateList={this.updateTreats}
+            />
+          </div>
+        );
+      case 7:
+        return (
+          <div style={{width:"100%",display:"flex",flexDirection:"column"}}>
+            <Typography>How do you perceive yourself and others when you believe this thought?</Typography>
+            <PerceptionCollector
+              label={"Form"}
+              queryKey={"perception"}
+              date={this.state.inquiry.date}
+              unique
+              subRelationships={{
+                label:"Perception",
+                queryKey:"perception",
+                unique:true,
+                date:this.state.inquiry.date,
+                updateList:this.updatePerceives
+
+              }}
+              list={this.state.inquiry.treats}
+              updateList={this.updatePerceives}
+            />
+          </div>
+        );
+      case 8:
+        return <div style={{ width: "100%" }}>Does this thought serve me?</div>;
+      case 9:
+        let getUnderlyingBeliefs = () => {
+          return (
+            <PerceptionCollector
+              label={"Thought"}
+              queryKey={"perception"}
+              date={this.state.inquiry.date}
+              unique
+              list={this.state.inquiry.underlyingBeliefs}
+              updateList={this.updateUnderlyingBeliefs}
+            />
+          );
+        };
+        return <div style={{ width: "100%" }}>{getUnderlyingBeliefs()}</div>;
+      case 10:
         return (
           <PerceptionsCollector
             labels={[
@@ -211,7 +332,7 @@ class InquiryForm extends Component {
               "perception",
               "perception",
             ]}
-            date={"2020-10-15"}
+            date={this.state.inquiry.date}
             list={this.state.whenNotBelieved}
             unique
             header={
@@ -220,15 +341,20 @@ class InquiryForm extends Component {
             updateLists={this.updateWhenBelievedNotTruePerceptionList}
           />
         );
-      case 7:
+      case 11:
         return (
           <div
-            style={{ width: "100%", height:"100%", display: "flex", flexDirection: "column" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+            }}
           >
             <PerceptionCollector
               label={"Thought"}
               queryKey={"perception"}
-              date={"2020-10-15"}
+              date={this.state.inquiry.date}
               unique
               list={this.state.inquiry.turnarounds}
               updateList={this.updateTurnAroundsList}
@@ -259,7 +385,7 @@ class InquiryForm extends Component {
                     "perception",
                     "perception",
                   ]}
-                  date={"2020-10-15"}
+                  date={this.state.inquiry.date}
                   list={turnaround[2]}
                   unique
                   header={
@@ -273,17 +399,17 @@ class InquiryForm extends Component {
             })}
           </div>
         );
-      case 8:
+      case 12:
         return (
           <CanLetGo data={this.state.letGo} submit={this.receiveCanLetGo} />
         );
-      case 9:
+      case 13:
         return <WillLetGo submit={this.receiveWillLetGo} />;
-      case 10:
+      case 14:
         return <CanLetGo submit={this.receiveCanLetGo} />;
-      case 11:
+      case 15:
         return <WhenLetGo submit={this.receiveWhenLetGo} />;
-      case 12:
+      case 16:
         return <WhenLetGo submit={this.receiveWhenLetGo} />;
       default:
         return "Unknown stepIndex";
@@ -293,6 +419,7 @@ class InquiryForm extends Component {
   updateWhenBelievedNotTruePerceptionList = (list) => {
     console.log(list);
   };
+
   updateWhenBelievedTruePerceptionList = (list) => {
     console.log(list);
   };
@@ -320,21 +447,39 @@ class InquiryForm extends Component {
     });
   };
 
-  updateDesires =(list)=>{
+  updateDesires = (list) => {
     let inquiry = this.state.inquiry;
     inquiry.desires = list;
+    this.setState({
+      inquiry: inquiry,
+    });
+  };
+
+  updateTreats=(list)=>{
+    console.log(list);
+    let inquiry = this.state.inquiry;
+    inquiry.treats = list;
+    this.setState({
+      inquiry:inquiry
+    })
+  }
+  updatePerceives=(list)=>{
+    console.log(list);
+    let inquiry = this.state.inquiry;
+    inquiry.perceives = list;
     this.setState({
       inquiry:inquiry
     })
   }
 
-  updateFears =(list)=>{
+
+  updateFears = (list) => {
     let inquiry = this.state.inquiry;
     inquiry.fears = list;
     this.setState({
-      inquiry:inquiry
-    })
-  }
+      inquiry: inquiry,
+    });
+  };
 
   updateTurnaroundExample = (exampleList, turnaroundIndex) => {
     console.log(exampleList, turnaroundIndex);
@@ -345,91 +490,60 @@ class InquiryForm extends Component {
     });
   };
 
-  handleNext = () => {
-    this.setState({
-      activeStep: this.state.activeStep + 1,
-    });
-  };
-
-  handleBack = () => {
-    this.setState({
-      activeStep: this.state.activeStep - 1,
-    });
-  };
-
-  handleReset = () => {
-    this.setState({
-      activeStep: 0,
-    });
-  };
-
   submitThoughtForInquiry = (a, m) => {
     console.log(a, m);
     let inquiry = this.state.inquiry;
-    inquiry.inquiryThought = [a, m];
+    inquiry.setupSession(a,m);
     this.setState({
       inquiry: inquiry,
       activeStep: 1,
     });
   };
 
-  // receiveManifestedThought=(thought)=>{
-  //   console.log("Selected Thought: ", thought);
-  //   this.state.manifestedThought = thought;
-  //   this.setState({
-  //     manifestedThought:thought
-  //   },()=>{
-  //     this.handleNext();
-  //   })
-  // }
-
-  receiveManifestedDesire = (desire) => {
-    console.log("Selected Desire: ", desire);
-    let thought = this.state.manifestedThought;
-    thought.desire = desire;
+  receiveFullBelief = (a, m) => {
+    let inquiry = this.state.inquiry;
+    inquiry.fullBelief = [a, m];
     this.setState(
       {
-        manifestedThought: thought,
+        inquiry: inquiry,
       },
       () => {
         this.handleNext();
       }
     );
   };
+  updateUnderlyingBeliefs = (list) => {
+    let inquiry = this.state.inquiry;
+    inquiry.underlyingBeliefs = list;
+    this.setState({
+      inquiry: inquiry,
+    });
+  };
 
-  receiveFullBelief = (belief) => {
-    console.log("Full Belief: ", belief);
-    let thought = this.state.manifestedThought;
-    thought.properties.fullBelief = thought;
-    this.setState(
-      {
-        manifestedThouht: thought,
-      },
-      () => {
-        this.handleNext();
-      }
-    );
-  };
-  receiveUnderlyingBeliefs = (beliefs) => {
-    console.log("Underlying Beliefs: ", beliefs);
-  };
   receiveAcceptance = (accept) => {
     console.log("Acceptance: ", accept);
   };
 
   receiveTruth = (isTrue) => {
+    this.getCurrentTimerTime();
     let inquiry = this.state.inquiry;
     console.log("Truth: ", isTrue);
     this.setState({
-      truth:isTrue
-    })
+      truth: isTrue,
+    });
     this.handleNext();
   };
 
+  getCurrentTimerTime=()=>{
+    let timeArr = this.timer.current.querySelector("div").innerText.split(":").map(val=>parseInt(val))
+    let currentDuration = (timeArr[0]*60*60)+(timeArr[1]*60)+(timeArr[2]);
+    console.log(currentDuration);
+  }
+
   receiveCanLetGo = (payload) => {
     this.setState({
-      letGo:payload
-    })
+      letGo: payload,
+    });
   };
 
   getThoughtText = () => {
@@ -445,8 +559,7 @@ class InquiryForm extends Component {
     return (
       <div className="InquiryForm">
         <div className={"stepper-root"}>
-
-        <div>
+          <div>
             {this.state.activeStep === this.steps.length ? (
               <div>
                 <Typography>All steps completed</Typography>
@@ -455,6 +568,34 @@ class InquiryForm extends Component {
             ) : (
               <div className="InquiryForm-content">
                 <div>
+                  {this.state.inquiry.inquiryThought.length > 0 ? (
+                    <div ref={this.timer}>
+                    <Timer
+                      initialTime={0}
+                      startImmediately={true}
+                      onStart={() => console.log("onStart hook")}
+                      onResume={() => console.log("onResume hook")}
+                      onPause={() => console.log("onPause hook")}
+                      onStop={() => console.log("onStop hook")}
+                      onReset={() => console.log("onReset hook")}
+                    >
+                      {({ start, resume, pause, stop, reset, timerState }) => (
+                        <React.Fragment>
+                          <div>
+                            <Timer.Hours />:
+                            <Timer.Minutes />:
+                            <Timer.Seconds />
+                          </div>
+                          <br />
+                          <div>
+                            <button onClick={pause}>Pause</button>
+                            <button onClick={resume}>Resume</button>
+                          </div>
+                        </React.Fragment>
+                      )}
+                    </Timer>
+                    </div>
+                  ) : null}
                   <Button
                     disabled={this.state.activeStep === 0}
                     onClick={this.handleBack}
@@ -477,7 +618,7 @@ class InquiryForm extends Component {
               </div>
             )}
           </div>
-        <h3>{this.getThoughtText()}</h3>
+          <h3>{this.getThoughtText()}</h3>
           <Stepper
             nonLinear
             activeStep={this.state.activeStep}
@@ -490,16 +631,13 @@ class InquiryForm extends Component {
             ))}
           </Stepper>
           <div>
-            {this.state.activeStep === this.steps.length ? (
-              null
-             ) : (
+            {this.state.activeStep === this.steps.length ? null : (
               <div className="InquiryForm-content">
                 {this.getStepContent(this.state.activeStep)}
               </div>
             )}
           </div>
         </div>
-
       </div>
     );
   }

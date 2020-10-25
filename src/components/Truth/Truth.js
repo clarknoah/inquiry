@@ -88,7 +88,7 @@ class Truth extends Component{
     if(this.state.isItTrue==true){
       console.log("Thought true")
       return (<div>
-          <p>Can you be absolutely certain that this thouht is true?</p>
+          <p>Can you be absolutely certain that this thought is true?</p>
           <div>
           <Button color="secondary" variant={this.state.button3} size="large" onClick={()=>{this.onCertainChange(true)}}>Yes</Button>
           <Button color="secondary" variant={this.state.button4} size="large" onClick={()=>{this.onCertainChange(false)}}>No</Button>

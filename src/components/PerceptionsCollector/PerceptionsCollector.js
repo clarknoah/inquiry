@@ -36,6 +36,45 @@ class PerceptionsCollector extends Component {
     })
   }
 
+  updateSubPerceptionArray=(list, index)=>{
+    console.log(list, index);
+  }
+
+  determineCollector=(mainLabel, index)=>{
+    if(this.props.subRelationships!==undefined && this.props.subRelationships[index]!==undefined){
+      let {label, queryKey, unique, date, updateList}= this.props.subRelationships[index];
+      return (
+        <PerceptionCollector
+        label={mainLabel}
+        queryKey={this.props.queryKeys[index]}
+        date={this.props.date}
+        unique
+        subRelationships={{
+          label:label,
+          queryKey:queryKey,
+          unique:true,
+          date:date,
+          updateList:(list)=>{this.updateSubPerceptionArray(list, index)}
+
+        }}
+        list={this.state.perceptions[mainLabel]}
+        updateList={(list)=>{this.updatePerceptionArray(list,mainLabel)}}
+      />
+      )
+    }else{
+      return (
+        <PerceptionCollector
+        label={mainLabel}
+        queryKey={this.props.queryKeys[index]}
+        date={this.props.date}
+        unique
+        list={this.state.perceptions[mainLabel]}
+        updateList={(list)=>{this.updatePerceptionArray(list,mainLabel)}}
+      />
+      )
+    }
+  }
+
   render() {
     return (
       <div className={this.state.classList}>
@@ -43,6 +82,7 @@ class PerceptionsCollector extends Component {
           <Typography variant="h5">{this.props.header}</Typography>
         ) : null}
         {this.props.labels.map((label, index) => {
+          console.log(label);
           return (
             <Accordion className={"PerceptionsCollector-content"}>
               <AccordionSummary
@@ -59,14 +99,7 @@ class PerceptionsCollector extends Component {
 
               </AccordionSummary>
               <AccordionDetails >
-              <PerceptionCollector
-            label={label}
-            queryKey={this.props.queryKeys[index]}
-            date={this.props.date}
-            unique
-            list={this.state.perceptions[label]}
-            updateList={(list)=>{this.updatePerceptionArray(list,label)}}
-          />
+                {this.determineCollector(label, index)}
               </AccordionDetails>
             </Accordion>
           );
