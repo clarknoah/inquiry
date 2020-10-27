@@ -26,8 +26,12 @@ class ManifestedPerception extends Component {
       mPerception: mPerception,
       newPerception: newPerception,
       label: props.label,
-      queryKey:props.queryKey
+      queryKey:props.queryKey,
+      hideNewThought:false
     };
+    if(props.hideNewThought){
+      this.state.hideNewThought=true;
+    }
   }
 
 
@@ -200,7 +204,7 @@ class ManifestedPerception extends Component {
     });
     return (
       <div className={this.state.classList} style={this.props.style}>
-        {this.props.date === undefined ?<FormControlLabel
+        {this.props.date === undefined && this.state.hideNewThought!==true ?<FormControlLabel
           control={
             <Checkbox
               checked={this.state.newPerception}

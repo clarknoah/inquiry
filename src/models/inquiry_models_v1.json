@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-10-25T05:06:06.528Z",
+    "lastModifTS": "2020-10-26T02:07:41.108Z",
     "persistenceSchemaVersion": "3",
     "description": "",
     "comments": "",
@@ -2676,6 +2676,29 @@
                         "required": false,
                         "name": false
                     }
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "51310980-16d7-11eb-8d60-bd232681e931",
+                    "name": "doesThisBenefitMe",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -3084,6 +3107,31 @@
                     "compositeNodeKey": false,
                     "GUID": "3ca0ee50-0f42-11eb-b91b-65a1de19ee72",
                     "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "9d7c1a70-172f-11eb-8d60-bd232681e931",
+                    "name": "inputType",
                     "code": "",
                     "description": "",
                     "comments": "",
@@ -5533,21 +5581,6 @@
             "properties": []
         },
         {
-            "GUID": "8e8fd3a0-cac5-11ea-ae25-3ded20c57388",
-            "name": "DESIRE",
-            "description": "",
-            "comments": "",
-            "relationshipType": "",
-            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
-            "parentField": [],
-            "parentCardinality": "1",
-            "childCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
-            "childField": [],
-            "childCardinality": "1",
-            "lineSize": 2,
-            "properties": []
-        },
-        {
             "GUID": "b3eccc70-cac5-11ea-ae25-3ded20c57388",
             "name": "TO_FULFILL_DESIRE",
             "description": "",
@@ -6701,6 +6734,51 @@
             "childCardinality": "1",
             "lineSize": 2,
             "properties": []
+        },
+        {
+            "GUID": "6eb0cb10-16d4-11eb-8d60-bd232681e931",
+            "name": "HOW_THOUGHT_SERVES_ME",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "86f512a0-172c-11eb-8d60-bd232681e931",
+            "name": "ASSOCIATED_DESIRE",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "8c2818d0-172c-11eb-8d60-bd232681e931",
+            "name": "ASSOCIATED_FEAR",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
         }
     ],
     "users": [],
@@ -6758,7 +6836,6 @@
         "6774d720-cac5-11ea-ae25-3ded20c57388": "M_Form",
         "6aa1fb30-cac5-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
         "84f92530-cac5-11ea-ae25-3ded20c57388": "TURNAROUND",
-        "8e8fd3a0-cac5-11ea-ae25-3ded20c57388": "DESIRE",
         "b3eccc70-cac5-11ea-ae25-3ded20c57388": "TO_FULFILL_DESIRE",
         "d18a95f0-cac5-11ea-ae25-3ded20c57388": "INQUIRED_INTO",
         "01e45ce0-cac6-11ea-ae25-3ded20c57388": "UNDERLYING_BELIEF",
@@ -6979,7 +7056,12 @@
         "ad363280-167f-11eb-8d60-bd232681e931": "timestampOfInput",
         "ad513490-167f-11eb-8d60-bd232681e931": "timestampOfPerception",
         "ad6be880-167f-11eb-8d60-bd232681e931": "dateOfInput",
-        "ad8738b0-167f-11eb-8d60-bd232681e931": "dateOfPerception"
+        "ad8738b0-167f-11eb-8d60-bd232681e931": "dateOfPerception",
+        "6eb0cb10-16d4-11eb-8d60-bd232681e931": "HOW_THOUGHT_SERVES_ME",
+        "51310980-16d7-11eb-8d60-bd232681e931": "doesThisBenefitMe",
+        "86f512a0-172c-11eb-8d60-bd232681e931": "ASSOCIATED_DESIRE",
+        "8c2818d0-172c-11eb-8d60-bd232681e931": "ASSOCIATED_FEAR",
+        "9d7c1a70-172f-11eb-8d60-bd232681e931": "inputType"
     },
     "definitions": {
         "type": "definitions",
@@ -7232,7 +7314,7 @@
                     {
                         "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
                         "x": 1093.4848173666617,
-                        "y": 958.867839665884,
+                        "y": 957.4719361843927,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -7339,16 +7421,6 @@
                         "GUID": "84f92530-cac5-11ea-ae25-3ded20c57388",
                         "x": 380,
                         "y": 380,
-                        "width": 240,
-                        "height": 100,
-                        "color": {
-                            "hex": "#333333"
-                        }
-                    },
-                    {
-                        "GUID": "8e8fd3a0-cac5-11ea-ae25-3ded20c57388",
-                        "x": 400,
-                        "y": 400,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -7968,14 +8040,42 @@
                         "color": {
                             "hex": "#333333"
                         }
+                    },
+                    {
+                        "GUID": "6eb0cb10-16d4-11eb-8d60-bd232681e931",
+                        "x": 1500,
+                        "y": 1500,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "86f512a0-172c-11eb-8d60-bd232681e931",
+                        "x": 400,
+                        "y": 400,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "8c2818d0-172c-11eb-8d60-bd232681e931",
+                        "x": 1520,
+                        "y": 1520,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
                     }
                 ],
                 "buckets": [],
                 "collapsedNodes": [],
-                "activeRelationship": "",
-                "selectedCollections": [
-                    "5f11ffb0-cac3-11ea-ae25-3ded20c57388"
-                ],
+                "activeRelationship": "86f512a0-172c-11eb-8d60-bd232681e931",
+                "selectedCollections": [],
                 "decorativeSymbols": [],
                 "graphView": {
                     "erd": [

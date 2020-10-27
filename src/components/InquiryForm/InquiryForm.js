@@ -13,7 +13,6 @@ import Acceptance from "../Acceptance/Acceptance";
 import Truth from "../Truth/Truth";
 import WhenBelieved from "../WhenBelieved/WhenBelieved";
 import WhenNotBelieved from "../WhenNotBelieved/WhenNotBelieved";
-import Turnarounds from "../Turnarounds/Turnarounds";
 import CanLetGo from "../CanLetGo/CanLetGo";
 import WillLetGo from "../WillLetGo/WillLetGo";
 import WhenLetGo from "../WhenLetGo/WhenLetGo";
@@ -22,6 +21,12 @@ import PerceptionsCollector from "../PerceptionsCollector/PerceptionsCollector";
 import InquiryModel from "../../models/GraphModel";
 import Divider from "@material-ui/core/Divider";
 import Timer from "react-compound-timer";
+import HowItServes from "../HowItServes/HowItServes";
+import Chip from "@material-ui/core/Chip";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"; 
 /*
     This class needs to perform the following tasks. 
 
@@ -61,10 +66,10 @@ function getSteps() {
     "Associated Fears (Optional)",
     "Full Belief Thought (Optional)",
     "When Believed True",
-    "How do I treat myself and others?",
-    "How do I perceive myself and others?",
-    "Does this thought serve me?",
-    "Underlying beliefs",
+    "How do I treat myself and others? (Optional)",
+    "How do I perceive myself and others? (Optional)",
+    "Does this thought serve me? (Optional)",
+    "Underlying beliefs (Optional)",
     "When Not Believed True",
     "Turnarounds",
     "Let go",
@@ -81,7 +86,7 @@ class InquiryForm extends Component {
     this.steps = getSteps();
     this.timer = React.createRef();
     this.state = {
-      activeStep: 6,
+      activeStep: 0,
       inquiry: InquiryModel.getNewModelClass("Inquiry_Session"),
       manifestedDesire: null,
       manifestedThought: {
@@ -107,14 +112,28 @@ class InquiryForm extends Component {
 
   handleNext = () => {
     let inquiry = this.state.inquiry;
-    if(this.state.activeStep == this.steps.length -1 && inquiry.checkForCompletion()){
-      console.log("Finished");
-      let duration = this.getCurrentTimerTime();
-      inquiry.properties.duration.value = duration;
+    let nextStep = this.state.activeStep + 1;
+    if(nextStep == this.steps.length ){
+      if (inquiry.checkForCompletion()) {
+        console.log("Finished");
+        let duration = this.getCurrentTimerTime();
+        inquiry.properties.duration.value = duration;
+        this.setState({
+          inquiry:inquiry
+        },this.finishInquiry)
+      }else{
+        alert("YOu still have more to finish");
+        nextStep = nextStep -1;
+        console.log(nextStep);
+      }
+    }else if(nextStep == 1 && inquiry.stepsCompleted.thought!==true){
+        nextStep--;
+    }else if (nextStep==2  && inquiry.stepsCompleted.truth!==true){
+        nextStep--;
     }
     this.setState({
-      activeStep: this.state.activeStep + 1,
-      inquiry:inquiry
+      activeStep: nextStep,
+      inquiry: inquiry,
     });
   };
 
@@ -129,6 +148,18 @@ class InquiryForm extends Component {
       activeStep: 0,
     });
   };
+
+  finishInquiry=()=>{
+    let inquiry = this.state.inquiry;
+    inquiry.generateCypherQuery();
+    api.cypherQuery(inquiry.query.query, inquiry.query.params)
+      .then(res=>{
+        console.log(res,"Query submitted");
+      })
+    this.setState({
+      inquiry:inquiry
+    })
+  }
 
   getStepContent = (stepIndex) => {
     switch (stepIndex) {
@@ -224,24 +255,22 @@ class InquiryForm extends Component {
               subRelationships={[
                 undefined,
                 {
-                  label:"Form",
-                  queryKey:"perception",
-                  unique:true,
-                  date:this.state.inquiry.date
-  
+                  label: "Form",
+                  queryKey: "perception",
+                  unique: true,
+                  date: this.state.inquiry.date,
                 },
                 {
-                  label:"Body_Location",
-                  queryKey:"perception",
-                  unique:true,
-                  date:this.state.inquiry.date
-  
+                  label: "Body_Location",
+                  queryKey: "perception",
+                  unique: true,
+                  date: this.state.inquiry.date,
                 },
                 undefined,
-                undefined
+                undefined,
               ]}
               date={this.state.inquiry.date}
-              list={this.state.whenBelieved}
+              list={this.state.inquiry.whenBelieved}
               unique
               header={"When you believe this thought is true..."}
               updateLists={this.updateWhenBelievedTruePerceptionList}
@@ -249,51 +278,73 @@ class InquiryForm extends Component {
           </div>
         );
       case 6:
-        return (
-          <div style={{width:"100%",display:"flex",flexDirection:"column"}}>
-            <Typography>How do you treat yourself and others when you believe this thought?</Typography>
-            <PerceptionCollector
-              label={"Form"}
-              queryKey={"perception"}
-              date={this.state.inquiry.date}
-              unique
-              subRelationships={{
-                label:"Perception",
-                queryKey:"perception",
-                unique:true,
-                date:this.state.inquiry.date,
-                updateList:this.updateTreats
-
-              }}
-              list={this.state.inquiry.treats}
-              updateList={this.updateTreats}
-            />
-          </div>
-        );
+        let getTreat=()=>{
+          return (
+            <div
+              style={{ width: "100%", display: "flex", flexDirection: "column" }}
+            ><div></div>
+              <Typography>
+                How do you treat yourself and others when you believe this
+                thought?
+              </Typography>
+              <PerceptionCollector
+                label={"Form"}
+                queryKey={"perception"}
+                date={this.state.inquiry.date}
+                unique
+                subRelationships={{
+                  label: "Perception",
+                  queryKey: "perception",
+                  unique: true,
+                  date: this.state.inquiry.date,
+                  updateList: this.updateTreats,
+                }}
+                list={this.state.inquiry.treats}
+                updateList={this.updateTreats}
+              />
+            </div>
+          );
+        }
+        return getTreat();
       case 7:
-        return (
-          <div style={{width:"100%",display:"flex",flexDirection:"column"}}>
-            <Typography>How do you perceive yourself and others when you believe this thought?</Typography>
-            <PerceptionCollector
-              label={"Form"}
-              queryKey={"perception"}
-              date={this.state.inquiry.date}
-              unique
-              subRelationships={{
-                label:"Perception",
-                queryKey:"perception",
-                unique:true,
-                date:this.state.inquiry.date,
-                updateList:this.updatePerceives
-
-              }}
-              list={this.state.inquiry.treats}
-              updateList={this.updatePerceives}
-            />
-          </div>
-        );
+        let getPerceive=()=>{
+          return (
+            <div
+              style={{ width: "100%", display: "flex", flexDirection: "column" }}
+            >
+              <Typography>
+                How do you perceive yourself and others when you believe this
+                thought?
+              </Typography>
+              <PerceptionCollector
+                label={"Form"}
+                queryKey={"perception"}
+                date={this.state.inquiry.date}
+                unique
+                subRelationships={{
+                  label: "Perception",
+                  queryKey: "perception",
+                  unique: true,
+                  date: this.state.inquiry.date,
+                  updateList: this.updatePerceives,
+                }}
+                list={this.state.inquiry.perceives}
+                updateList={this.updatePerceives}
+              />
+            </div>
+          );
+        }
+        return getPerceive();
       case 8:
-        return <div style={{ width: "100%" }}>Does this thought serve me?</div>;
+        return (
+          <HowItServes
+            thought={this.getThoughtText()}
+            updateList={this.receiveServes}
+            doesBenefit={this.getBenefitsValue()}
+            date={this.state.inquiry.date}
+            list={this.state.inquiry.serves}
+          />
+        );
       case 9:
         let getUnderlyingBeliefs = () => {
           return (
@@ -332,8 +383,25 @@ class InquiryForm extends Component {
               "perception",
               "perception",
             ]}
+            subRelationships={[
+              undefined,
+              undefined,
+              {
+                label: "Form",
+                queryKey: "perception",
+                unique: true,
+                date: this.state.inquiry.date,
+              },
+              {
+                label: "Body_Location",
+                queryKey: "perception",
+                unique: true,
+                date: this.state.inquiry.date,
+              },
+              undefined,
+            ]}
             date={this.state.inquiry.date}
-            list={this.state.whenNotBelieved}
+            list={this.state.inquiry.whenNotBelieved}
             unique
             header={
               "Who would you be if you didn't believe nor could even experience this thought?"
@@ -362,39 +430,71 @@ class InquiryForm extends Component {
             <Divider />
             {this.state.inquiry.turnarounds.map((turnaround, index) => {
               console.log(turnaround);
+              let header = turnaround[0].properties.perception.value;
               return (
-                <PerceptionsCollector
-                  labels={[
-                    "Perception",
-                    "Thought",
-                    "Emotion",
-                    "Body_Sensation",
-                    "Mental_Image",
-                  ]}
-                  text={[
-                    "What are some real world examples where this thought has been true?",
-                    "What thoughts arise (if any) in association with this thought?",
-                    "What emotions arise (if any) in association with this thought?",
-                    "What bodily sensations arise (if any) in association with this thought?",
-                    "What mental images arise (if any) in association with this thought",
-                  ]}
-                  queryKeys={[
-                    "perception",
-                    "perception",
-                    "perception",
-                    "perception",
-                    "perception",
-                  ]}
-                  date={this.state.inquiry.date}
-                  list={turnaround[2]}
-                  unique
-                  header={
-                    "Who would you be if you didn't believe nor could even experience this thought?"
-                  }
-                  updateLists={(list, label) => {
-                    this.updateTurnaroundExample(list, index);
-                  }}
-                />
+                <Accordion className={"PerceptionsCollector-content"}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions1-content"
+                    id="additional-actions1-header"
+                  >
+                    <Typography className="PerceptionsCollector-header">
+                      {header}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    
+                    <PerceptionsCollector
+                      labels={[
+                        "Perception",
+                        "Thought",
+                        "Emotion",
+                        "Body_Sensation",
+                        "Mental_Image",
+                      ]}
+                      text={[
+                        "What are some real world examples where this thought has been true?",
+                        "What thoughts arise (if any) in association with this thought?",
+                        "What emotions arise (if any) in association with this thought?",
+                        "What bodily sensations arise (if any) in association with this thought?",
+                        "What mental images arise (if any) in association with this thought",
+                      ]}
+                      queryKeys={[
+                        "perception",
+                        "perception",
+                        "perception",
+                        "perception",
+                        "perception",
+                      ]}
+                      unique
+                      subRelationships={[
+                        undefined,
+                        undefined,
+                        {
+                          label: "Form",
+                          queryKey: "perception",
+                          unique: true,
+                          date: this.state.inquiry.date,
+                        },
+                        {
+                          label: "Body_Location",
+                          queryKey: "perception",
+                          unique: true,
+                          date: this.state.inquiry.date,
+                        },
+                        undefined,
+                      ]}
+                      date={this.state.inquiry.date}
+                      list={turnaround[2]}
+                      unique
+                      header={header}
+                      updateLists={(list, label) => {
+                        this.updateTurnaroundExample(list, index);
+                      }}
+                    />
+                  </AccordionDetails>
+                </Accordion>
               );
             })}
           </div>
@@ -418,10 +518,36 @@ class InquiryForm extends Component {
 
   updateWhenBelievedNotTruePerceptionList = (list) => {
     console.log(list);
+    let inquiry = this.state.inquiry;
+    let completed = false;
+    for(let key in list){
+      if(list[key].length > 0){
+        completed = true;
+      }
+    }
+      inquiry.stepsCompleted.whenNotBelieved = completed;
+
+    inquiry.whenNotBelieved = list;
+    this.setState({
+      inquiry:inquiry
+    })
   };
 
   updateWhenBelievedTruePerceptionList = (list) => {
     console.log(list);
+    let inquiry = this.state.inquiry;
+    let completed = false;
+    for(let key in list){
+      if(list[key].length > 0){
+        completed = true;
+      }
+    }
+      inquiry.stepsCompleted.whenBelieved = completed;
+
+    inquiry.whenBelieved = list;
+    this.setState({
+      inquiry:inquiry
+    })
   };
 
   updateTurnAroundsList = (list, action = undefined) => {
@@ -442,11 +568,34 @@ class InquiryForm extends Component {
     }
     console.log(list, this.state.turnarounds);
     inquiry.turnarounds = list;
+    if(inquiry.turnarounds.length > 0){
+      inquiry.stepsCompleted.turnarounds = true;
+    }else{
+      inquiry.stepsCompleted.turnarounds = false;
+    }
     this.setState({
       inquiry: inquiry,
     });
   };
 
+  receiveServes = (list, bool) => {
+    console.log(list, bool);
+    let inquiry = this.state.inquiry;
+    inquiry.serves = list;
+    inquiry.inquiryThought[1].properties.doesThisBenefitMe.value = bool;
+    this.setState({
+      inquiry: inquiry,
+    });
+  };
+
+  getBenefitsValue = () => {
+    if (this.state.inquiry.inquiryThought.length > 0) {
+      return this.state.inquiry.inquiryThought[1].properties.doesThisBenefitMe
+        .value;
+    } else {
+      return undefined;
+    }
+  };
   updateDesires = (list) => {
     let inquiry = this.state.inquiry;
     inquiry.desires = list;
@@ -455,23 +604,22 @@ class InquiryForm extends Component {
     });
   };
 
-  updateTreats=(list)=>{
+  updateTreats = (list) => {
     console.log(list);
     let inquiry = this.state.inquiry;
     inquiry.treats = list;
     this.setState({
-      inquiry:inquiry
-    })
-  }
-  updatePerceives=(list)=>{
+      inquiry: inquiry,
+    });
+  };
+  updatePerceives = (list) => {
     console.log(list);
     let inquiry = this.state.inquiry;
     inquiry.perceives = list;
     this.setState({
-      inquiry:inquiry
-    })
-  }
-
+      inquiry: inquiry,
+    });
+  };
 
   updateFears = (list) => {
     let inquiry = this.state.inquiry;
@@ -493,7 +641,7 @@ class InquiryForm extends Component {
   submitThoughtForInquiry = (a, m) => {
     console.log(a, m);
     let inquiry = this.state.inquiry;
-    inquiry.setupSession(a,m);
+    inquiry.setupSession(a, m);
     this.setState({
       inquiry: inquiry,
       activeStep: 1,
@@ -525,8 +673,8 @@ class InquiryForm extends Component {
   };
 
   receiveTruth = (isTrue) => {
-    this.getCurrentTimerTime();
     let inquiry = this.state.inquiry;
+    inquiry.stepsCompleted.truth = true;
     console.log("Truth: ", isTrue);
     this.setState({
       truth: isTrue,
@@ -534,11 +682,14 @@ class InquiryForm extends Component {
     this.handleNext();
   };
 
-  getCurrentTimerTime=()=>{
-    let timeArr = this.timer.current.querySelector("div").innerText.split(":").map(val=>parseInt(val))
-    let currentDuration = (timeArr[0]*60*60)+(timeArr[1]*60)+(timeArr[2]);
+  getCurrentTimerTime = () => {
+    let timeArr = this.timer.current
+      .querySelector("div")
+      .innerText.split(":")
+      .map((val) => parseInt(val));
+    let currentDuration = timeArr[0] * 60 * 60 + timeArr[1] * 60 + timeArr[2];
     console.log(currentDuration);
-  }
+  };
 
   receiveCanLetGo = (payload) => {
     this.setState({
@@ -550,7 +701,7 @@ class InquiryForm extends Component {
     console.log(this.state);
     let thoughtText =
       this.state.inquiry.inquiryThought[0] !== undefined
-        ? `Thought: ${this.state.inquiry.inquiryThought[1].properties.perception.value}`
+        ? `${this.state.inquiry.inquiryThought[1].properties.perception.value}`
         : "";
     return thoughtText;
   };
@@ -570,30 +721,37 @@ class InquiryForm extends Component {
                 <div>
                   {this.state.inquiry.inquiryThought.length > 0 ? (
                     <div ref={this.timer}>
-                    <Timer
-                      initialTime={0}
-                      startImmediately={true}
-                      onStart={() => console.log("onStart hook")}
-                      onResume={() => console.log("onResume hook")}
-                      onPause={() => console.log("onPause hook")}
-                      onStop={() => console.log("onStop hook")}
-                      onReset={() => console.log("onReset hook")}
-                    >
-                      {({ start, resume, pause, stop, reset, timerState }) => (
-                        <React.Fragment>
-                          <div>
-                            <Timer.Hours />:
-                            <Timer.Minutes />:
-                            <Timer.Seconds />
-                          </div>
-                          <br />
-                          <div>
-                            <button onClick={pause}>Pause</button>
-                            <button onClick={resume}>Resume</button>
-                          </div>
-                        </React.Fragment>
-                      )}
-                    </Timer>
+                      <Timer
+                        initialTime={0}
+                        startImmediately={true}
+                        onStart={() => console.log("onStart hook")}
+                        onResume={() => console.log("onResume hook")}
+                        onPause={() => console.log("onPause hook")}
+                        onStop={() => console.log("onStop hook")}
+                        onReset={() => console.log("onReset hook")}
+                      >
+                        {({
+                          start,
+                          resume,
+                          pause,
+                          stop,
+                          reset,
+                          timerState,
+                        }) => (
+                          <React.Fragment>
+                            <div>
+                              <Timer.Hours />:
+                              <Timer.Minutes />:
+                              <Timer.Seconds />
+                            </div>
+                            <br />
+                            <div>
+                              <button onClick={pause}>Pause</button>
+                              <button onClick={resume}>Resume</button>
+                            </div>
+                          </React.Fragment>
+                        )}
+                      </Timer>
                     </div>
                   ) : null}
                   <Button

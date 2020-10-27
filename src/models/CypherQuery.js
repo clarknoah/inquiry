@@ -52,6 +52,13 @@ export default class CypherQuery{
             this.addCreate(node);
         }
     }
+    addNodeWithoutRelationships(node){
+        if(node.exists===true){
+            this.addMatch(node);
+        }else if(node.exists===false){
+            this.addCreate(node);
+        }
+    }
     addAllRelationships(node){
         for(let key in node.relationships){
             for(let relKey in node.relationships[key].variables){
@@ -117,6 +124,13 @@ export default class CypherQuery{
             this.params[`${rel.variable}_props`]= rel.params;
         }}
     }
+
+    addTestProperty(){
+        for(let key in this.params){
+            this.params[key].rollbackProperty = true;
+        }
+    }
+
     generateQuery(){
         let query = [];
         if(this.match.length > 0){

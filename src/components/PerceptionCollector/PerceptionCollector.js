@@ -14,7 +14,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Chip from '@material-ui/core/Chip';
+import Chip from "@material-ui/core/Chip";
 /*
   This component should accept as inputs a date prop which will determine 
   whether thoughts are marked as in the moment or as in the past 
@@ -67,7 +67,7 @@ class PerceptionCollector extends Component {
 
   addToList = (a, m) => {
     let perception = [a, m];
-    if(this.props.subRelationships!==undefined){
+    if (this.props.subRelationships !== undefined) {
       m.collectorList = [];
     }
     let list = this.state.list;
@@ -94,28 +94,23 @@ class PerceptionCollector extends Component {
     }
   };
 
-  addToSubList=()=>{
+  addToSubList = () => {};
 
+  removeFromSubList = () => {};
 
-  }
-
-  removeFromSubList=()=>{
-
-
-  }
-
-  updateSubList=(subList, mainIndex)=>{
+  updateSubList = (subList, mainIndex) => {
     console.log(subList, mainIndex);
     let list = this.state.list;
     list[mainIndex][1].collectorList = subList;
-    this.setState({
-      list:list
-    },()=>{
-      this.updateList()
-    })
-  }
-
-
+    this.setState(
+      {
+        list: list,
+      },
+      () => {
+        this.updateList();
+      }
+    );
+  };
 
   checkForUnique = (perception) => {
     let isUnique =
@@ -157,36 +152,40 @@ class PerceptionCollector extends Component {
             id="additional-actions1-header"
           >
             <Typography className="PerceptionsCollector-header">
+              <IconButton
+                edge="end"
+                aria-label="delete"
+                onClick={() => this.removeFromList(index)}
+              >
+                <DeleteIcon />
+              </IconButton>
               {label[0].properties.perception.value}
-              </Typography>
-
-              <Chip label={label[1].collectorList.length} />
-
+            </Typography>
+            <Chip label={label[1].collectorList.length} />
           </AccordionSummary>
-          <AccordionDetails >
+          <AccordionDetails>
             <PerceptionCollector
               label={this.props.subRelationships.label}
               queryKey={this.props.subRelationships.queryKey}
               date={this.props.subRelationships.date}
               unique={this.props.subRelationships.unique}
               list={list}
-              updateList={(list)=>{
-                this.updateSubList(list, index)
+              updateList={(list) => {
+                this.updateSubList(list, index);
               }}
             />
           </AccordionDetails>
         </Accordion>
       );
-    })
+    });
     return (
-      <div style={{width:"100%",display:"flex",flexDirection:"column"}}>
+      <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>
         {accordians}
       </div>
-    )
+    );
   };
 
   getList = () => {
-
     return (
       <List
         className={"PerceptionCollector-list"}
