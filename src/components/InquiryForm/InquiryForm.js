@@ -83,6 +83,8 @@ let stepsCompleted = {
 class InquiryForm extends Component {
   constructor() {
     super();
+    this.api = api;
+    console.log(this);
     this.steps = getSteps();
     this.timer = React.createRef();
     this.state = {
@@ -108,16 +110,20 @@ class InquiryForm extends Component {
         Mental_Image: [],
       },
     };
+    this.state.inquiry.properties.completed.value = false;
   }
 
   handleNext = () => {
     let inquiry = this.state.inquiry;
     let nextStep = this.state.activeStep + 1;
     if(nextStep == this.steps.length ){
-      if (inquiry.checkForCompletion()) {
+      //add checkedForCompleted
+      if (true) {
         console.log("Finished");
         let duration = this.getCurrentTimerTime();
         inquiry.properties.duration.value = duration;
+        inquiry.properties.timestampOfInputEnd.setDefaultValue();
+        inquiry.properties.duration.value = this.getCurrentTimerTime();
         this.setState({
           inquiry:inquiry
         },this.finishInquiry)
@@ -151,6 +157,8 @@ class InquiryForm extends Component {
 
   finishInquiry=()=>{
     let inquiry = this.state.inquiry;
+    console.log(this);
+    inquiry.createMarkdown();
     inquiry.generateCypherQuery();
     api.cypherQuery(inquiry.query.query, inquiry.query.params)
       .then(res=>{
@@ -159,6 +167,14 @@ class InquiryForm extends Component {
     this.setState({
       inquiry:inquiry
     })
+  }
+  finishInquiryPass=(query,params)=>{
+
+    api.cypherQuery(query, params)
+      .then(res=>{
+        console.log(res,"Query submitted");
+      })
+ 
   }
 
   getStepContent = (stepIndex) => {
@@ -221,6 +237,7 @@ class InquiryForm extends Component {
             ) : null}
             <ManifestedPerception
               label={"Thought"}
+              hideNewThought
               queryKey="perception"
               date={this.state.inquiry.date}
               submitPerception={this.receiveFullBelief}
@@ -673,13 +690,19 @@ class InquiryForm extends Component {
   };
 
   receiveTruth = (isTrue) => {
+    console.log(isTrue);
     let inquiry = this.state.inquiry;
+    inquiry.inquiryThought[1].properties.isItTrue.value = isTrue.isItTrue;
+    if(isTrue.isItTrue==true){
+      inquiry.inquiryThought[1].properties.certainlyTrue.value = isTrue.certainlyTrue;
+    }
     inquiry.stepsCompleted.truth = true;
     console.log("Truth: ", isTrue);
     this.setState({
       truth: isTrue,
-    });
-    this.handleNext();
+      inquiry:inquiry
+    },this.handleNext);
+
   };
 
   getCurrentTimerTime = () => {
@@ -689,11 +712,19 @@ class InquiryForm extends Component {
       .map((val) => parseInt(val));
     let currentDuration = timeArr[0] * 60 * 60 + timeArr[1] * 60 + timeArr[2];
     console.log(currentDuration);
+    return currentDuration;
   };
 
   receiveCanLetGo = (payload) => {
+    let inquiry = this.state.inquiry;
+    inquiry.inquiryThought[1].properties.wouldLetGoEmotion.value = payload.wouldEmotion;
+    inquiry.inquiryThought[1].properties.wouldLetGoThought.value = payload.wouldThought;
+    inquiry.inquiryThought[1].properties.couldLetGoEmotion.value = payload.wouldEmotion;
+    inquiry.inquiryThought[1].properties.wouldLetGoThought.value = payload.wouldThought;
+    inquiry.inquiryThought[1].properties.whenLetGo.value = payload.when;
     this.setState({
       letGo: payload,
+      inquiry:inquiry
     });
   };
 

@@ -229,6 +229,7 @@ class PerceptionCollector extends Component {
           queryKey={this.props.queryKey}
           submitPerception={this.addToList}
           date={this.props.date}
+          hideNewThought
         />
         {this.state.list.length > 0 ? this.determineCollector() : null}
       </div>

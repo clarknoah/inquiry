@@ -125,9 +125,9 @@ export default class CypherQuery{
         }}
     }
 
-    addTestProperty(){
+    addTestProperty(propertyName,value){
         for(let key in this.params){
-            this.params[key].rollbackProperty = true;
+            this.params[key]["_special_"+propertyName] = value;
         }
     }
 

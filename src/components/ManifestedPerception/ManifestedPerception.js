@@ -98,12 +98,14 @@ class ManifestedPerception extends Component {
     let text = evt.target.value;
     let switchLabel = text[0] == "-" && text.length === 2;
     let mPerception = this.state.mPerception;
+    let noText = mPerception.properties[this.state.queryKey].value.length === 0;
+    let assignTimes = text.length > 0 && noText;
     if(switchLabel){
       this.switchLabel(text);
-    }else if (text.length === 1 && this.state.newPerception == true) {
+    }else if (assignTimes && this.state.newPerception == true) {
       mPerception.setNewPerceptionTimes(this.props.date);
-    } else if((text.length === 1 && this.state.newPerception == false) 
-      || (text.length === 1 && this.state.newPerception == false && this.props.date!==undefined)) {
+    } else if((assignTimes && this.state.newPerception == false) 
+      || (assignTimes && this.state.newPerception == false && this.props.date!==undefined)) {
       mPerception.setExistingPerceptionTimes(mPerception.properties.dateOfPerception.value);
     }
     if (text.length > 0 && switchLabel==false) {
@@ -204,7 +206,7 @@ class ManifestedPerception extends Component {
     });
     return (
       <div className={this.state.classList} style={this.props.style}>
-        {this.props.date === undefined && this.state.hideNewThought!==true ?<FormControlLabel
+        {this.props.date === undefined && this.props.hideNewThought!==true ?<FormControlLabel
           control={
             <Checkbox
               checked={this.state.newPerception}
@@ -217,7 +219,7 @@ class ManifestedPerception extends Component {
           }
           label={`New ${this.state.label}? (In this moment)`}
         /> : null}
-        {this.state.newPerception == false && this.props.date === undefined ? (
+        {this.state.newPerception == false && this.props.date === undefined  ? (
           <TextField
             id="date"
             label="Date of Perception"

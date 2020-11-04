@@ -76,7 +76,7 @@ export default class Inquiry_Session extends GraphNode{
             }
         }
         //TODO: CHANGE THIS BACK!
-        return true;
+        return completed;
     }
 
     setupSession(a,m){
@@ -84,8 +84,8 @@ export default class Inquiry_Session extends GraphNode{
             let isHistoric = m.properties.timestampOfInput.value !==m.properties.timestampOfPerception.value;
             this.properties.dateOfInput.setDefaultValue();
             this.properties.timestampOfInputStart.setDefaultValue();
-            this.properties.dateOfPerception = m.properties.dateOfPerception.value
-            this.properties.timestampOfPerception = m.properties.timestampOfPerception.value
+            this.properties.dateOfPerception.value = m.properties.dateOfPerception.value
+            this.properties.timestampOfPerception.value = m.properties.timestampOfPerception.value
             if(isHistoric){
                 this.properties.realtime.value = false;
                 this.historic = isHistoric;
@@ -173,16 +173,122 @@ export default class Inquiry_Session extends GraphNode{
         return source;
     }
 
+    createPerceptionObjectMarkdown(object){
+        let text = ``
+        console.log(object);
+        for(let key in object){
+            if(object[key].length>0){
+                text+=`##### ${key}:\n`;
+                object[key].forEach(val=>{
+                    let props = val[1].properties;
+                    text+=`* ${props.perception.value}`
+                    if(val[1].collectorList!==undefined && val[1].collectorList.length >0){
+                        let perceptions = val[1].collectorList.map(item=>item[1].properties.perception.value)
+                        text+=`: ${perceptions.join(",")}\n`
+                    }else{
+                        text+=`\n`
+                    }
+                })
+            }
+        }
+        return text;
+    }
+
+    createMarkdown(){
+        let mdArr = [];
+        let thought = this.inquiryThought[1].properties;
+        console.log(thought);
+        let thoughtText = `## Thought (${thought.dateOfPerception.value}): ${thought.perception.value}`;
+    
+        let isItTrue = `### Is it true?\n${thought.isItTrue.value}`
+        let certainlyTrue = thought.certainlyTrue.value !==undefined ? thought.certainlyTrue.value+"\n" : "\n";
+        let desires = "### Desires:\n";
+        desires += this.desires.map(desire=>`* ${desire[1].properties.perception.value}`).join("\n")
+        let fears = "### Fears:\n";
+        fears += this.fears.map(fear=>`* ${fear[1].properties.perception.value}`).join("\n")
+        let fullBelief = ``;
+        if(this.fullBelief.length >0){
+            fullBelief = `### Full Belief: ${this.fullBelief[1].properties.perception.value}\n`;
+        }
+        let whenBelieved  = `### When Believed:\n\n`;
+        whenBelieved += this.createPerceptionObjectMarkdown(this.whenBelieved);
+        console.log(this.treats);
+        let treats = `### How do you treat self and others when you believe this thought?\n`;
+        treats += this.treats.map(val=>{
+            console.log(val);
+            let text = `#### ${val[1].properties.perception.value}\n`;
+            text+=val[1].collectorList.map(item=>{
+                return `* ${item[1].properties.perception.value}`
+            }).join("\n")
+            return text;
+        }).join("\n")
+        let perceives = `### How do I perceive self and others when you believe this thought?\n`;
+
+        perceives += this.perceives.map(val=>{
+            console.log(val);
+            let text = `#### ${val[1].properties.perception.value}\n`;
+            text+=val[1].collectorList.map(item=>{
+                return `* ${item[1].properties.perception.value}`
+            }).join("\n")
+            return text;
+        }).join("\n")
+        let underlyingBeliefs = `### Underlying Beliefs\n`;
+
+        underlyingBeliefs += this.underlyingBeliefs.map(val=>{
+            return `* ${val[1].properties.perception.value}`
+        }).join("\n")
+
+        let serves = `### Does this serve me in any beneficial way?\n${thought.doesThisBenefitMe.value}\n\n`;
+        serves+= this.serves.map(val=>`* ${val[1].properties.perception.value}`).join("\n")
+
+        let whenNotBelieved = `### When Not Believed:\n`;
+        whenNotBelieved += this.createPerceptionObjectMarkdown(this.whenNotBelieved);
+        let turnarounds = `### Turnarounds:\n`;
+        this.turnarounds.forEach(val=>{
+            turnarounds+=`#### ${val[1].properties.perception.value}\n`
+            turnarounds+=this.createPerceptionObjectMarkdown(val[2]);
+        })
+
+        let letGo = `### Would Let Go:\n`
+        letGo+=`#### Would let go of emotion\n ${thought.couldLetGoEmotion.value}\n`
+        letGo+=`#### Would let go of thought\n ${thought.couldLetGoThought.value}\n`
+        letGo+=`#### could let go of emotion\n ${thought.wouldLetGoEmotion.value}\n`
+        letGo+=`#### could let go of emotion\n ${thought.wouldLetGoThought.value}\n`
+        letGo+=`#### when?\n ${thought.whenLetGo.value}`
+        mdArr.push(thoughtText, 
+            isItTrue, 
+            certainlyTrue, 
+            desires, 
+            fears, 
+            fullBelief,
+            whenBelieved,
+            treats,
+            perceives,
+            serves,
+            underlyingBeliefs,
+            whenNotBelieved,
+            turnarounds,
+            letGo
+
+            );
+    
+        window.inquiryMarkdown = mdArr.join("\n")
+        console.log(window.inquiryMarkdown);
+
+    }
 
     addPerceptions(list, specialRelationship,subList=undefined,addToQuery=true){
         console.log(list);
         if(list.length > 0){
 
             list.forEach((perception, index)=>{
-                list[index] = this.addPerception(list[index],specialRelationship,addToQuery)
                 if(subList!==undefined && list[index][1].collectorList !== undefined && list[index][1].collectorList.length > 0){
+
                     list[index][1] = this.addNestedPerceptions(list[index][1], subList.specialRelationship,addToQuery)
                 }
+
+                    list[index] = this.addPerception(list[index],specialRelationship,addToQuery)
+                
             })
             // if(subList!==undefined && list[1].collectorList !== undefined && list[1].collectorList.length > 0){
             //     list[1] = this.addNestedPerceptions(list[1], subList.specialRelationship,addToQuery)
@@ -212,6 +318,7 @@ export default class Inquiry_Session extends GraphNode{
         this.addRelationship(`INQUIRED_INTO`,m_iThought.variable);
         m_iThought.addRelationship(`MANIFESTATION_OF`,a_iThought.variable);
         m_iThought.properties.inputType.setValue("inquiry");
+        this.properties.completed.value = this.checkForCompletion();
         this.cypherQuery.addNode(this);
         this.inquiryThought=[a_iThought, m_iThought];
         this.cypherQuery.addNodeWithoutRelationships(this.inquiryThought[1])
@@ -303,7 +410,7 @@ export default class Inquiry_Session extends GraphNode{
         });
         this.cypherQuery.addNode(this.inquiryThought[0]);
         this.cypherQuery.addNode(this.inquiryThought[1]);
-        this.cypherQuery.addTestProperty();
+        this.cypherQuery.addTestProperty("first_real_data","2020-10-29");
         this.query = {
             query:this.cypherQuery.generateQuery(),
             params:this.cypherQuery.params}

@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-10-26T02:07:41.108Z",
+    "lastModifTS": "2020-10-29T20:07:41.171Z",
     "persistenceSchemaVersion": "3",
     "description": "",
     "comments": "",
@@ -836,6 +836,29 @@
                     "hackoladeMeta": {},
                     "error": {},
                     "mode": "localdatetime"
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "5fcbbcd0-1a22-11eb-8d60-bd232681e931",
+                    "name": "completed",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -2164,31 +2187,6 @@
                     "error": {}
                 },
                 {
-                    "default": "",
-                    "enum": [],
-                    "primaryKey": false,
-                    "sample": "",
-                    "unique": false,
-                    "childType": "boolean",
-                    "type": "boolean",
-                    "compositeKey": [
-                        "compositeNodeKey"
-                    ],
-                    "compositeNodeKey": false,
-                    "GUID": "2e6476a0-cac7-11ea-ae25-3ded20c57388",
-                    "name": "wouldLetGo",
-                    "code": "",
-                    "description": "",
-                    "comments": "",
-                    "dependencies": [],
-                    "required": false,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    }
-                },
-                {
                     "primaryKey": false,
                     "default": "",
                     "enum": [],
@@ -2612,12 +2610,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "mode": "localdatetime",
-                    "error": {
-                        "mode": false,
-                        "name": false,
-                        "required": false
-                    }
+                    "mode": "date",
+                    "error": {}
                 },
                 {
                     "primaryKey": false,
@@ -2691,6 +2685,98 @@
                     "compositeNodeKey": false,
                     "GUID": "51310980-16d7-11eb-8d60-bd232681e931",
                     "name": "doesThisBenefitMe",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "764241a0-18ab-11eb-8d60-bd232681e931",
+                    "name": "wouldLetGoEmotion",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "885e7ca0-18ab-11eb-8d60-bd232681e931",
+                    "name": "wouldLetGoThought",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "926c2fd0-18ab-11eb-8d60-bd232681e931",
+                    "name": "couldLetGoThought",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "9c1fdc20-18ab-11eb-8d60-bd232681e931",
+                    "name": "couldLetGoEmotion",
                     "code": "",
                     "description": "",
                     "comments": "",
@@ -2807,11 +2893,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false,
-                        "mode": false
-                    },
-                    "mode": "localdatetime"
+                    "error": {},
+                    "mode": "date"
                 },
                 {
                     "primaryKey": false,
@@ -2836,11 +2919,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false,
-                        "mode": false
-                    },
-                    "mode": "localdatetime"
+                    "error": {},
+                    "mode": "date"
                 },
                 {
                     "unit": "",
@@ -4983,11 +5063,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "mode": "datetime",
-                    "error": {
-                        "mode": false,
-                        "name": false
-                    }
+                    "mode": "date",
+                    "error": {}
                 },
                 {
                     "primaryKey": false,
@@ -6851,7 +6928,6 @@
         "f2573bc0-cac6-11ea-ae25-3ded20c57388": "fullyAcceptEndTimestamp",
         "ff3944a0-cac6-11ea-ae25-3ded20c57388": "fullyAcceptDuration",
         "24a076a0-cac7-11ea-ae25-3ded20c57388": "letGo",
-        "2e6476a0-cac7-11ea-ae25-3ded20c57388": "wouldLetGo",
         "4f9b6c70-cac7-11ea-ae25-3ded20c57388": "FOLLOWED_BY",
         "743451f0-cac7-11ea-ae25-3ded20c57388": "perception",
         "7ea44960-cac7-11ea-ae25-3ded20c57388": "perception",
@@ -6953,7 +7029,6 @@
         "c8f20750-0f05-11eb-b91b-65a1de19ee72": "inputDuration",
         "dc9d94e0-0f05-11eb-b91b-65a1de19ee72": "timestampOfInput",
         "df30e9f0-0f05-11eb-b91b-65a1de19ee72": "timestampOfPerception",
-        "e4474060-0f05-11eb-b91b-65a1de19ee72": "dateOfInput",
         "e833bcd0-0f05-11eb-b91b-65a1de19ee72": "dateOfPerception",
         "20fe76e0-0f06-11eb-b91b-65a1de19ee72": "inputDuration",
         "2fd068e0-0f06-11eb-b91b-65a1de19ee72": "inputType",
@@ -7061,7 +7136,13 @@
         "51310980-16d7-11eb-8d60-bd232681e931": "doesThisBenefitMe",
         "86f512a0-172c-11eb-8d60-bd232681e931": "ASSOCIATED_DESIRE",
         "8c2818d0-172c-11eb-8d60-bd232681e931": "ASSOCIATED_FEAR",
-        "9d7c1a70-172f-11eb-8d60-bd232681e931": "inputType"
+        "9d7c1a70-172f-11eb-8d60-bd232681e931": "inputType",
+        "e4474060-0f05-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "764241a0-18ab-11eb-8d60-bd232681e931": "wouldLetGoEmotion",
+        "885e7ca0-18ab-11eb-8d60-bd232681e931": "wouldLetGoThought",
+        "926c2fd0-18ab-11eb-8d60-bd232681e931": "couldLetGoThought",
+        "9c1fdc20-18ab-11eb-8d60-bd232681e931": "couldLetGoEmotion",
+        "5fcbbcd0-1a22-11eb-8d60-bd232681e931": "completed"
     },
     "definitions": {
         "type": "definitions",
@@ -7203,7 +7284,7 @@
                     },
                     {
                         "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
-                        "x": 1761.2355928701654,
+                        "x": 1759.839689388674,
                         "y": 1218.3401286882524,
                         "width": 240,
                         "height": 100,
@@ -7401,8 +7482,8 @@
                     },
                     {
                         "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
-                        "x": 2327.385615563927,
-                        "y": 950.6931079019673,
+                        "x": 2275.7371867487404,
+                        "y": 1073.5326142732076,
                         "width": 240,
                         "height": 100,
                         "color": {}
@@ -8074,7 +8155,7 @@
                 ],
                 "buckets": [],
                 "collapsedNodes": [],
-                "activeRelationship": "86f512a0-172c-11eb-8d60-bd232681e931",
+                "activeRelationship": "",
                 "selectedCollections": [],
                 "decorativeSymbols": [],
                 "graphView": {

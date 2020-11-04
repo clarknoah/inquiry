@@ -43,6 +43,7 @@ class PerceptionsCollector extends Component {
   determineCollector=(mainLabel, index)=>{
     if(this.props.subRelationships!==undefined && this.props.subRelationships[index]!==undefined){
       let {label, queryKey, unique, date, updateList}= this.props.subRelationships[index];
+
       return (
         <PerceptionCollector
         label={mainLabel}
@@ -54,6 +55,7 @@ class PerceptionsCollector extends Component {
           queryKey:queryKey,
           unique:true,
           date:date,
+          hideNewThought:true,
           updateList:(list)=>{this.updateSubPerceptionArray(list, index)}
 
         }}
@@ -67,6 +69,7 @@ class PerceptionsCollector extends Component {
         label={mainLabel}
         queryKey={this.props.queryKeys[index]}
         date={this.props.date}
+        hideNewThought
         unique
         list={this.state.perceptions[mainLabel]}
         updateList={(list)=>{this.updatePerceptionArray(list,mainLabel)}}
