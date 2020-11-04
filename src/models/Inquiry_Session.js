@@ -14,6 +14,7 @@ export default class Inquiry_Session extends GraphNode{
         this.fullBelief = [];
         this.desires = [];
         this.fears = [];
+        this.definitions = [];
         this.treats = [];
         this.perceives = [];
         this.serves = [];
@@ -26,7 +27,7 @@ export default class Inquiry_Session extends GraphNode{
             whenBelieved:false,
             whenNotBelieved:false,
             turnarounds:false,
-            letGo:true
+            letGo:false
         }
         this.whenBelieved={
             "Thought":[],
@@ -49,7 +50,8 @@ export default class Inquiry_Session extends GraphNode{
             "A_Perception":{},
             "A_Form":{},
             "A_Body_Sensation":{},
-            "A_Body_Location":{}
+            "A_Body_Location":{},
+            "A_Meaning":{}
         };
         this.existingKeys={
             "A_Thought":{},
@@ -58,7 +60,8 @@ export default class Inquiry_Session extends GraphNode{
             "A_Perception":{},
             "A_Form":{},
             "A_Body_Sensation":{},
-            "A_Body_Location":{}
+            "A_Body_Location":{},
+            "A_Meaning":{}
         };
     }
 
@@ -105,6 +108,7 @@ export default class Inquiry_Session extends GraphNode{
     checkForNewDuplicate(node){
         let thought = node.properties[node.defaultQueryKey].value.toLowerCase().trim();
         let newNode = node.id==undefined;
+        console.log()
         let notAdded = !this.newKeys[node.labels[0]].hasOwnProperty(thought);
         if(newNode && notAdded){
             this.newKeys[node.labels[0]][thought] = node.variable;
@@ -348,6 +352,7 @@ export default class Inquiry_Session extends GraphNode{
         this.whenBelieved = this.addObjectOfPerceptions(this.whenBelieved,"WHEN_BELIEVED", believedSubList);
         console.log("Adding treat and perceive")
         let treatAndPerceiveList = {specialRelationship:"ASSOCIATED_PERCEPTION"};
+        this.definitions = this.addPerceptions(this.definitions, "ASSOCIATED_FORM", {specialRelationship:"ASSOCIATED_DEFINITION"})
         this.treats = this.addPerceptions(this.treats,"TREAT_WHEN_BELIEVED", treatAndPerceiveList);
         this.perceives = this.addPerceptions(this.perceives,"PERCEIVED_WHEN_BELIEVED", treatAndPerceiveList);
         console.log("Adding serves")
@@ -410,7 +415,7 @@ export default class Inquiry_Session extends GraphNode{
         });
         this.cypherQuery.addNode(this.inquiryThought[0]);
         this.cypherQuery.addNode(this.inquiryThought[1]);
-        this.cypherQuery.addTestProperty("first_real_data","2020-10-29");
+        this.cypherQuery.addTestProperty("first_real_data",this.inquiryThought[1].properties.dateOfInput.value);
         this.query = {
             query:this.cypherQuery.generateQuery(),
             params:this.cypherQuery.params}
