@@ -20,6 +20,7 @@ export default class Inquiry_Session extends GraphNode{
         this.serves = [];
         this.fullBelief = [];
         this.underlyingBeliefs=[];
+        this.part = [];
         this.date = undefined;
         this.stepsCompleted={
             thought:false,
@@ -51,7 +52,8 @@ export default class Inquiry_Session extends GraphNode{
             "A_Form":{},
             "A_Body_Sensation":{},
             "A_Body_Location":{},
-            "A_Meaning":{}
+            "A_Meaning":{},
+            "A_Part":{}
         };
         this.existingKeys={
             "A_Thought":{},
@@ -61,7 +63,8 @@ export default class Inquiry_Session extends GraphNode{
             "A_Form":{},
             "A_Body_Sensation":{},
             "A_Body_Location":{},
-            "A_Meaning":{}
+            "A_Meaning":{},
+            "A_Part":{}
         };
     }
 
@@ -327,6 +330,11 @@ export default class Inquiry_Session extends GraphNode{
         this.inquiryThought=[a_iThought, m_iThought];
         this.cypherQuery.addNodeWithoutRelationships(this.inquiryThought[1])
         this.cypherQuery.addNode(this.inquiryThought[0])
+
+        // Add part 
+        if(this.part.length > 0){
+            this.part = this.addPerception(this.part,"ASSOCIATED_PART")
+        }
         // Add all associated desires 
         console.log("Adding Desires")
         this.desires = this.addPerceptions(this.desires,"ASSOCIATED_DESIRE");
@@ -416,6 +424,7 @@ export default class Inquiry_Session extends GraphNode{
         this.cypherQuery.addNode(this.inquiryThought[0]);
         this.cypherQuery.addNode(this.inquiryThought[1]);
         this.cypherQuery.addTestProperty("first_real_data",this.inquiryThought[1].properties.dateOfInput.value);
+        this.cypherQuery.addTransactionId();
         this.query = {
             query:this.cypherQuery.generateQuery(),
             params:this.cypherQuery.params}

@@ -268,6 +268,7 @@ class Tracker extends GraphNode{
         this.generateMetrics();
         console.log(this.properties.generateCypherPropertyObject())
         this.cypherQuery.addNode(this);
+        this.cypherQuery.addTransactionId();
        let query = this.cypherQuery.generateQuery();
        this.query = {query:query, params:this.cypherQuery.params};
        return this;

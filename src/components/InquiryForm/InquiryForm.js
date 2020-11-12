@@ -62,6 +62,7 @@ function getSteps() {
   return [
     "Thought to Inquire Into",
     "Is it true?",
+    "Associated Part (Optional)",
     "Concept Definitions (Optional)",
     "Associated Desires (Optional)",
     "Associated Fears (Optional)",
@@ -178,6 +179,14 @@ class InquiryForm extends Component {
     });
   };
 
+  updateParts=(a,m)=>{
+    let inquiry = this.state.inquiry;
+    inquiry.part = [a,m];
+    this.setState({
+      inquiry: inquiry,
+      activeStep: this.state.activeStep+1,
+    });
+  }
   getStepContent = (stepIndex) => {
     switch (stepIndex) {
       case 0:
@@ -195,6 +204,18 @@ class InquiryForm extends Component {
           <Truth memory={this.state.truth} submitTruth={this.receiveTruth} />
         );
       case 2:
+        return (
+          <div style={{ width: "100%" }}>
+            <ManifestedPerception
+              label={"Part"}
+              queryKey="perception"
+              submitPerception={this.updateParts}
+              date={this.state.inquiry.date}
+              hideNewThought
+            />
+          </div>
+        );
+      case 3:
         let getDefCollector = () => {
           return (
             <div
@@ -227,7 +248,7 @@ class InquiryForm extends Component {
           );
         };
         return getDefCollector();
-      case 3:
+      case 4:
         let getCollector = () => {
           return (
             <PerceptionCollector
@@ -241,7 +262,7 @@ class InquiryForm extends Component {
           );
         };
         return getCollector();
-      case 4:
+      case 5:
         return (
           <div style={{ width: "100%" }}>
             <PerceptionCollector
@@ -254,7 +275,7 @@ class InquiryForm extends Component {
             />
           </div>
         );
-      case 5:
+      case 6:
         return (
           <div
             style={{
@@ -278,7 +299,7 @@ class InquiryForm extends Component {
             />
           </div>
         );
-      case 6:
+      case 7:
         return (
           <div style={{ width: "100%" }}>
             <PerceptionsCollector
@@ -328,7 +349,7 @@ class InquiryForm extends Component {
             />
           </div>
         );
-      case 7:
+      case 8:
         let getTreat = () => {
           return (
             <div
@@ -362,7 +383,7 @@ class InquiryForm extends Component {
           );
         };
         return getTreat();
-      case 8:
+      case 9:
         let getPerceive = () => {
           return (
             <div
@@ -395,7 +416,7 @@ class InquiryForm extends Component {
           );
         };
         return getPerceive();
-      case 9:
+      case 10:
         return (
           <HowItServes
             thought={this.getThoughtText()}
@@ -405,7 +426,7 @@ class InquiryForm extends Component {
             list={this.state.inquiry.serves}
           />
         );
-      case 10:
+      case 11:
         let getUnderlyingBeliefs = () => {
           return (
             <PerceptionCollector
@@ -419,7 +440,7 @@ class InquiryForm extends Component {
           );
         };
         return <div style={{ width: "100%" }}>{getUnderlyingBeliefs()}</div>;
-      case 11:
+      case 12:
         return (
           <PerceptionsCollector
             labels={[
@@ -469,7 +490,7 @@ class InquiryForm extends Component {
             updateLists={this.updateWhenBelievedNotTruePerceptionList}
           />
         );
-      case 12:
+      case 13:
         return (
           <div
             style={{
@@ -558,7 +579,7 @@ class InquiryForm extends Component {
             })}
           </div>
         );
-      case 13:
+      case 14:
         return (
           <CanLetGo data={this.state.letGo} submit={this.receiveCanLetGo} />
         );
@@ -779,9 +800,14 @@ class InquiryForm extends Component {
 
   getThoughtText = () => {
     console.log(this.state);
+    
     let thoughtText =
       this.state.inquiry.inquiryThought[0] !== undefined
-        ? `${this.state.inquiry.inquiryThought[1].properties.perception.value}`
+        ? `Thought: ${this.state.inquiry.inquiryThought[1].properties.perception.value}`
+        : "";
+    thoughtText +=
+      this.state.inquiry.part[0] !== undefined
+        ? ` | Part: ${this.state.inquiry.part[1].properties.perception.value}`
         : "";
     return thoughtText;
   };

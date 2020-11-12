@@ -131,6 +131,13 @@ export default class CypherQuery{
         }
     }
 
+    addTransactionId(){
+        let transactionId = utils.getUniqueId();
+        for(let key in this.params){
+            this.params[key]["_transactionId"] = transactionId;
+        }
+    }
+
     generateQuery(){
         let query = [];
         if(this.match.length > 0){

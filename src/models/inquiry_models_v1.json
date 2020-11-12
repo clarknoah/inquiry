@@ -2,8 +2,8 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-11-04T16:51:47.893Z",
-    "persistenceSchemaVersion": "3",
+    "lastModifTS": "2020-11-11T15:31:51.626Z",
+    "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
     "author": "",
@@ -43,7 +43,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -69,7 +70,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -95,7 +97,8 @@
                     "error": {
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -121,7 +124,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -152,7 +156,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -177,7 +182,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -203,7 +209,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -226,7 +233,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -240,7 +248,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
@@ -277,7 +286,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -303,7 +313,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -329,7 +340,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -355,7 +367,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -381,7 +394,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -397,7 +411,8 @@
                 }
             },
             "name": "A_Perception",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
@@ -433,7 +448,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -461,7 +477,8 @@
                     "error": {
                         "name": false
                     },
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -487,7 +504,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -515,7 +533,8 @@
                     "error": {
                         "name": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -542,7 +561,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -558,7 +578,8 @@
                 }
             },
             "name": "A_Thought",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
@@ -594,7 +615,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -619,7 +641,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -645,7 +668,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -671,7 +695,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -696,7 +721,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -710,7 +736,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
@@ -744,7 +771,8 @@
                     "dependencies": [],
                     "required": false,
                     "id": "",
-                    "hackoladeMeta": {}
+                    "hackoladeMeta": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -775,7 +803,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -805,7 +834,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -835,7 +865,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -865,7 +896,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -895,7 +927,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -911,7 +944,8 @@
                 }
             },
             "name": "A_Body_Sensation",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
@@ -948,7 +982,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -973,7 +1008,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -998,7 +1034,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1024,7 +1061,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1050,7 +1088,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -1075,7 +1114,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1106,7 +1146,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -1122,7 +1163,8 @@
                 }
             },
             "name": "M_Perception",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
@@ -1157,7 +1199,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -1179,7 +1222,8 @@
                     "dependencies": [],
                     "required": false,
                     "id": "",
-                    "hackoladeMeta": {}
+                    "hackoladeMeta": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1210,7 +1254,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1235,7 +1280,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1266,7 +1312,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1291,7 +1338,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1316,7 +1364,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -1339,7 +1388,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -1362,7 +1412,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1386,7 +1437,8 @@
                     "dependencies": [],
                     "required": false,
                     "id": "",
-                    "hackoladeMeta": {}
+                    "hackoladeMeta": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1413,7 +1465,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1446,7 +1499,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -1471,7 +1525,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1496,7 +1551,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1521,7 +1577,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1552,7 +1609,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1577,7 +1635,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1602,7 +1661,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1633,7 +1693,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -1660,7 +1721,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1685,7 +1747,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1710,7 +1773,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1741,7 +1805,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -1769,7 +1834,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -1798,7 +1864,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -1823,7 +1890,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1852,7 +1920,8 @@
                     "error": {
                         "mode": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1881,7 +1950,8 @@
                         "mode": false,
                         "required": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -1915,7 +1985,8 @@
                     "error": {
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -1953,7 +2024,8 @@
                             false
                         ],
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -1979,7 +2051,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "mode": "date",
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2009,7 +2082,8 @@
                         "mode": false,
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -2037,7 +2111,8 @@
                     "error": {
                         "required": false,
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -2060,7 +2135,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -2083,7 +2159,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -2106,7 +2183,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -2129,7 +2207,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -2152,7 +2231,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -2168,7 +2248,8 @@
                 }
             },
             "name": "M_Thought",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
@@ -2207,7 +2288,8 @@
                         "name": false,
                         "mode": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2236,7 +2318,8 @@
                         "name": false,
                         "mode": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2262,7 +2345,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2288,7 +2372,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -2321,7 +2406,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -2348,7 +2434,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -2376,7 +2463,8 @@
                     "error": {
                         "required": false,
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -2392,7 +2480,8 @@
                 }
             },
             "name": "M_Emotion",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
@@ -2428,7 +2517,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2454,7 +2544,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2480,7 +2571,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2506,7 +2598,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -2531,7 +2624,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -2562,7 +2656,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -2587,7 +2682,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -2601,7 +2697,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
@@ -2636,7 +2733,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2662,7 +2760,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2688,7 +2787,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2714,7 +2814,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2740,7 +2841,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -2754,7 +2856,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
@@ -2789,7 +2892,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2815,7 +2919,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2841,7 +2946,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2867,7 +2973,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -2892,7 +2999,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -2917,7 +3025,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -2948,7 +3057,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -2962,7 +3072,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
@@ -3005,7 +3116,8 @@
                     "mode": "date",
                     "error": {
                         "mode": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3033,7 +3145,8 @@
                     "error": {
                         "mode": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3061,7 +3174,8 @@
                     "error": {
                         "mode": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3092,7 +3206,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -3118,7 +3233,8 @@
                     "error": {
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -3144,7 +3260,8 @@
                     "error": {
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "default": "",
@@ -3170,7 +3287,8 @@
                     "error": {
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3203,7 +3321,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3236,7 +3355,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3269,7 +3389,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "properties": [
@@ -3300,7 +3421,8 @@
                             "id": "",
                             "hackoladeMeta": {},
                             "arrayItem": true,
-                            "arrayParentType": "list"
+                            "arrayParentType": "list",
+                            "isActivated": true
                         }
                     ],
                     "primaryKey": false,
@@ -3326,7 +3448,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3359,7 +3482,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3392,7 +3516,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3425,7 +3550,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3458,7 +3584,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3491,7 +3618,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3524,7 +3652,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3557,7 +3686,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3590,7 +3720,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -3621,7 +3752,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3651,7 +3783,8 @@
                         "mode": false,
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3681,7 +3814,8 @@
                         "mode": false,
                         "required": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -3697,7 +3831,8 @@
                 }
             },
             "name": "Thought_Tracker",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
@@ -3738,7 +3873,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3768,7 +3904,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3798,7 +3935,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3828,7 +3966,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3858,7 +3997,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -3872,7 +4012,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "a7bd9590-f777-11ea-9f76-433a900eeb80",
@@ -3913,7 +4054,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3942,7 +4084,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -3971,7 +4114,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4001,7 +4145,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4031,7 +4176,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4060,7 +4206,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -4095,7 +4242,8 @@
                     "relationshipType": "",
                     "foreignCollection": "",
                     "foreignField": [],
-                    "parentRelationship": ""
+                    "parentRelationship": "",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -4109,7 +4257,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
@@ -4132,7 +4281,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
@@ -4169,7 +4319,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4196,7 +4347,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4223,7 +4375,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4250,7 +4403,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4277,7 +4431,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4304,7 +4459,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4331,7 +4487,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -4345,7 +4502,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
@@ -4368,7 +4526,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
@@ -4406,7 +4565,8 @@
                     "error": {
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4432,7 +4592,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "mode": "date",
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4461,7 +4622,8 @@
                     "error": {
                         "mode": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4491,7 +4653,8 @@
                         "mode": false,
                         "required": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4520,7 +4683,8 @@
                         "name": false,
                         "mode": false
                     },
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4547,7 +4711,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -4580,7 +4745,8 @@
                     "hackoladeMeta": {},
                     "error": {
                         "name": false
-                    }
+                    },
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -4594,7 +4760,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
@@ -4629,7 +4796,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4655,7 +4823,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4681,7 +4850,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4707,7 +4877,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4733,7 +4904,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -4749,7 +4921,8 @@
                 }
             },
             "name": "A_Mental_Image",
-            "error": {}
+            "error": {},
+            "isActivated": true
         },
         {
             "GUID": "bc7b5d00-1eb4-11eb-a04e-73e33b72b93e",
@@ -4784,7 +4957,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4810,7 +4984,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4836,7 +5011,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4862,7 +5038,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -4887,7 +5064,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "minLength": "",
@@ -4912,7 +5090,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "unit": "",
@@ -4943,7 +5122,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -4957,7 +5137,8 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
         },
         {
             "GUID": "cdf7d590-1eb4-11eb-a04e-73e33b72b93e",
@@ -4992,7 +5173,8 @@
                     "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -5018,7 +5200,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -5044,7 +5227,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "localdatetime"
+                    "mode": "localdatetime",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -5070,7 +5254,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 },
                 {
                     "primaryKey": false,
@@ -5096,7 +5281,8 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {},
-                    "mode": "date"
+                    "mode": "date",
+                    "isActivated": true
                 }
             ],
             "definitions": {
@@ -5110,7 +5296,387 @@
                 "validationErrors": {
                     "collectionName": false
                 }
-            }
+            },
+            "isActivated": true
+        },
+        {
+            "GUID": "c8586b00-2430-11eb-9c8c-17fcea665648",
+            "collectionName": "M_Part",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c85ed3a0-2430-11eb-9c8c-17fcea665648",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c85ed3a1-2430-11eb-9c8c-17fcea665648",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime",
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c85ed3a2-2430-11eb-9c8c-17fcea665648",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime",
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c85ed3a3-2430-11eb-9c8c-17fcea665648",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date",
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c85ed3a4-2430-11eb-9c8c-17fcea665648",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "isActivated": true
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c85ed3a5-2430-11eb-9c8c-17fcea665648",
+                    "name": "inputType",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "isActivated": true
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c85ed3a6-2430-11eb-9c8c-17fcea665648",
+                    "name": "inputDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "isActivated": true
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "c85efab0-2430-11eb-9c8c-17fcea665648"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "isActivated": true
+        },
+        {
+            "GUID": "ce956720-2430-11eb-9c8c-17fcea665648",
+            "collectionName": "A_Part",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ce9b0c70-2430-11eb-9c8c-17fcea665648",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    },
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ce9b0c71-2430-11eb-9c8c-17fcea665648",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime",
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ce9b0c72-2430-11eb-9c8c-17fcea665648",
+                    "name": "timestampOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime",
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ce9b0c73-2430-11eb-9c8c-17fcea665648",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date",
+                    "isActivated": true
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ce9b0c74-2430-11eb-9c8c-17fcea665648",
+                    "name": "dateOfPerception",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date",
+                    "isActivated": true
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "ce9b0c75-2430-11eb-9c8c-17fcea665648"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "A_Perception",
+            "error": {},
+            "isActivated": true
         }
     ],
     "buckets": [],
@@ -5129,6 +5695,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5144,6 +5711,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5159,6 +5727,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5174,6 +5743,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5189,6 +5759,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5204,6 +5775,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5219,6 +5791,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5234,6 +5807,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5249,6 +5823,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5264,6 +5839,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5279,6 +5855,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5294,6 +5871,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5309,6 +5887,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5324,6 +5903,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5339,6 +5919,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5354,6 +5935,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5369,6 +5951,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5384,6 +5967,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5399,6 +5983,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5414,6 +5999,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5429,6 +6015,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5444,6 +6031,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5459,6 +6047,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5474,6 +6063,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5489,6 +6079,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5504,6 +6095,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5519,6 +6111,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -5552,7 +6145,8 @@
                     "error": {
                         "name": false,
                         "required": false
-                    }
+                    },
+                    "isActivated": true
                 }
             ]
         },
@@ -5569,6 +6163,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5584,6 +6179,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5599,6 +6195,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5614,6 +6211,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5629,6 +6227,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5644,6 +6243,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5659,6 +6259,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5674,6 +6275,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5689,6 +6291,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5704,6 +6307,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5719,6 +6323,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5734,6 +6339,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5749,6 +6355,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5764,6 +6371,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5779,6 +6387,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5794,6 +6403,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5809,6 +6419,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5824,6 +6435,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5839,6 +6451,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5854,6 +6467,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5869,6 +6483,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -5885,6 +6500,7 @@
             "childCardinality": "1",
             "lineSize": 2,
             "biDirectional": false,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -5915,7 +6531,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -5933,6 +6550,7 @@
             "childCardinality": "1",
             "lineSize": 2,
             "biDirectional": true,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -5963,7 +6581,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -5980,6 +6599,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -6010,7 +6630,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6027,6 +6648,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -6057,7 +6679,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6074,6 +6697,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "minLength": "",
@@ -6098,7 +6722,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6115,6 +6740,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "minLength": "",
@@ -6139,7 +6765,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6156,6 +6783,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -6186,7 +6814,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6203,6 +6832,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -6233,7 +6863,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6250,6 +6881,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6265,6 +6897,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6280,6 +6913,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6295,6 +6929,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6310,6 +6945,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6325,6 +6961,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6340,6 +6977,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6355,6 +6993,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6370,6 +7009,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -6400,7 +7040,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6417,6 +7058,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": [
                 {
                     "unit": "",
@@ -6447,7 +7089,8 @@
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {},
+                    "isActivated": true
                 }
             ]
         },
@@ -6464,6 +7107,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6479,6 +7123,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6494,6 +7139,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6509,6 +7155,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6524,6 +7171,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6539,6 +7187,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6554,6 +7203,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6569,6 +7219,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6584,6 +7235,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6599,6 +7251,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6614,6 +7267,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6629,6 +7283,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6644,6 +7299,7 @@
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
+            "level": "entity",
             "properties": []
         },
         {
@@ -6658,6 +7314,104 @@
             "childCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
             "childField": [],
             "childCardinality": "1",
+            "lineSize": 2,
+            "level": "entity",
+            "properties": []
+        },
+        {
+            "GUID": "dd5530b0-2430-11eb-9c8c-17fcea665648",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "c8586b00-2430-11eb-9c8c-17fcea665648",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "ce956720-2430-11eb-9c8c-17fcea665648",
+            "childField": [],
+            "childCardinality": "1",
+            "level": "entity",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "35054f70-2431-11eb-9c8c-17fcea665648",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "ce956720-2430-11eb-9c8c-17fcea665648",
+            "childField": [],
+            "childCardinality": "1",
+            "level": "entity",
+            "lineSize": 2,
+            "bucketId": "",
+            "properties": []
+        },
+        {
+            "GUID": "6b2ed1c0-2431-11eb-9c8c-17fcea665648",
+            "name": "ASSOCIATED_PART",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "c8586b00-2430-11eb-9c8c-17fcea665648",
+            "childField": [],
+            "childCardinality": "1",
+            "level": "entity",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "b0d07120-2431-11eb-9c8c-17fcea665648",
+            "name": "ASSOCIATED_PART",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "c8586b00-2430-11eb-9c8c-17fcea665648",
+            "childField": [],
+            "childCardinality": "1",
+            "level": "entity",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "c78b1370-2431-11eb-9c8c-17fcea665648",
+            "name": "ASSOCIATED_PART",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "c8586b00-2430-11eb-9c8c-17fcea665648",
+            "childField": [],
+            "childCardinality": "1",
+            "level": "entity",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "0c19bc30-2432-11eb-9c8c-17fcea665648",
+            "name": "ASSOCIATED_PART",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "c8586b00-2430-11eb-9c8c-17fcea665648",
+            "childField": [],
+            "childCardinality": "1",
+            "level": "entity",
             "lineSize": 2,
             "properties": []
         }
@@ -6941,7 +7695,27 @@
         "e3bc7f20-1eb4-11eb-a04e-73e33b72b93e": "ASSOCIATED_MEANING",
         "ed2d07f0-1eb4-11eb-a04e-73e33b72b93e": "ASSOCIATED_DEFINITION",
         "11da11b0-1eb5-11eb-a04e-73e33b72b93e": "HAS_ABSTRACT",
-        "2d1f8160-1eb7-11eb-a04e-73e33b72b93e": "ASSOCIATED_FORM"
+        "2d1f8160-1eb7-11eb-a04e-73e33b72b93e": "ASSOCIATED_FORM",
+        "c8586b00-2430-11eb-9c8c-17fcea665648": "M_Part",
+        "c85ed3a0-2430-11eb-9c8c-17fcea665648": "perception",
+        "c85ed3a1-2430-11eb-9c8c-17fcea665648": "timestampOfInput",
+        "c85ed3a2-2430-11eb-9c8c-17fcea665648": "timestampOfPerception",
+        "c85ed3a3-2430-11eb-9c8c-17fcea665648": "dateOfInput",
+        "c85ed3a4-2430-11eb-9c8c-17fcea665648": "dateOfPerception",
+        "c85ed3a5-2430-11eb-9c8c-17fcea665648": "inputType",
+        "c85ed3a6-2430-11eb-9c8c-17fcea665648": "inputDuration",
+        "ce956720-2430-11eb-9c8c-17fcea665648": "A_Part",
+        "ce9b0c70-2430-11eb-9c8c-17fcea665648": "perception",
+        "ce9b0c71-2430-11eb-9c8c-17fcea665648": "timestampOfInput",
+        "ce9b0c72-2430-11eb-9c8c-17fcea665648": "timestampOfPerception",
+        "ce9b0c73-2430-11eb-9c8c-17fcea665648": "dateOfInput",
+        "ce9b0c74-2430-11eb-9c8c-17fcea665648": "dateOfPerception",
+        "dd5530b0-2430-11eb-9c8c-17fcea665648": "MANIFESTATION_OF",
+        "35054f70-2431-11eb-9c8c-17fcea665648": "HAS_ABSTRACT",
+        "6b2ed1c0-2431-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
+        "b0d07120-2431-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
+        "c78b1370-2431-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
+        "0c19bc30-2432-11eb-9c8c-17fcea665648": "ASSOCIATED_PART"
     },
     "definitions": {
         "type": "definitions",
@@ -6961,12 +7735,13 @@
     "isCreatedByPlugin": true,
     "pluginInformation": {
         "pluginName": "Neo4j",
-        "pluginVersion": "0.1.14",
+        "pluginVersion": "0.1.22",
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "3.5.1"
+        "version": "4.2.10"
     },
+    "hackoladeMeta": {},
     "settings": {
         "centralPane": {
             "dbLevel": {
@@ -7966,85 +8741,247 @@
                         "color": {
                             "hex": "#333333"
                         }
+                    },
+                    {
+                        "GUID": "c8586b00-2430-11eb-9c8c-17fcea665648",
+                        "x": 2043.7371867487404,
+                        "y": 276.5326142732076,
+                        "width": 240,
+                        "height": 100,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "ce956720-2430-11eb-9c8c-17fcea665648",
+                        "x": 957.9207393681422,
+                        "y": 1146.8212428743275,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "dd5530b0-2430-11eb-9c8c-17fcea665648",
+                        "x": 1660,
+                        "y": 1660,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "35054f70-2431-11eb-9c8c-17fcea665648",
+                        "x": 1680,
+                        "y": 1680,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "6b2ed1c0-2431-11eb-9c8c-17fcea665648",
+                        "x": 1700,
+                        "y": 1700,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "b0d07120-2431-11eb-9c8c-17fcea665648",
+                        "x": 1740,
+                        "y": 1740,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "c78b1370-2431-11eb-9c8c-17fcea665648",
+                        "x": 1640,
+                        "y": 1640,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "0c19bc30-2432-11eb-9c8c-17fcea665648",
+                        "x": 1720,
+                        "y": 1720,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
                     }
                 ],
                 "buckets": [],
                 "collapsedNodes": [],
-                "activeRelationship": "",
-                "selectedCollections": [
-                    "bc7b5d00-1eb4-11eb-a04e-73e33b72b93e"
-                ],
-                "decorativeSymbols": [],
-                "graphView": {
-                    "erd": [
-                        {
-                            "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
-                            "size": 120
-                        },
-                        {
-                            "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
-                            "size": 100
-                        },
-                        {
-                            "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
-                            "size": 100
-                        }
-                    ],
-                    "buckets": [],
-                    "hideRelationshipName": false,
-                    "showPropertiesBoxes": false,
-                    "nameAlongTheLine": true
-                },
+                "activeRelationship": "0c19bc30-2432-11eb-9c8c-17fcea665648",
                 "activeRelationshipFields": {
                     "childField": [],
                     "parentField": []
                 },
+                "selectedCollections": [],
                 "displayColorPicker": false,
-                "expandCollections": []
+                "graphView": {
+                    "erd": [
+                        {
+                            "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+                            "size": 120,
+                            "x": 2620.0196542047033,
+                            "y": 1858.2829150657392
+                        },
+                        {
+                            "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 1958.0850934775285,
+                            "y": 1046.3158527513142
+                        },
+                        {
+                            "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 1407.2109509251604,
+                            "y": 1198.8846570284816
+                        },
+                        {
+                            "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 2525.5044679664775,
+                            "y": 1496.3565003831845
+                        },
+                        {
+                            "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 1040.21556531635,
+                            "y": 1689.6013469191307
+                        },
+                        {
+                            "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 2467.265331778037,
+                            "y": 423.162869656161
+                        },
+                        {
+                            "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 2231.0568190045087,
+                            "y": 1162.3205632121933
+                        },
+                        {
+                            "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 2989.8861265749706,
+                            "y": 866.3292359173639
+                        },
+                        {
+                            "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100,
+                            "x": 1444.989780684682,
+                            "y": 997.3704899547682
+                        },
+                        {
+                            "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
+                            "x": 2610.075512072122,
+                            "y": 1967.8315817258608,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
+                            "x": 3055.008796827441,
+                            "y": 1303.1567722962936,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
+                            "x": 1427.0544268613405,
+                            "y": 1100.9012066268779,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
+                            "x": 1615.3645064004543,
+                            "y": 1072.3347831051574,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "a7bd9590-f777-11ea-9f76-433a900eeb80",
+                            "x": 975.4070934512831,
+                            "y": 1613.4484456156197,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
+                            "size": 100,
+                            "x": 3004.639092339952,
+                            "y": 967.9326903838738
+                        },
+                        {
+                            "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
+                            "size": 100,
+                            "x": 1822.707698227882,
+                            "y": 1838.7037186755676
+                        },
+                        {
+                            "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
+                            "size": 100,
+                            "x": 2591.479365333735,
+                            "y": 1571.4979961920915
+                        },
+                        {
+                            "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
+                            "size": 100,
+                            "x": 2567.236749540911,
+                            "y": 422.11593388828635
+                        },
+                        {
+                            "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
+                            "size": 100,
+                            "x": 2060.1385066175067,
+                            "y": 1059.6549573019236
+                        },
+                        {
+                            "GUID": "bc7b5d00-1eb4-11eb-a04e-73e33b72b93e",
+                            "x": 2745.305458209943,
+                            "y": 561.207273347007,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "cdf7d590-1eb4-11eb-a04e-73e33b72b93e",
+                            "x": 2149.621749920027,
+                            "y": 1104.2913713819569,
+                            "size": 100
+                        },
+                        {
+                            "GUID": "c8586b00-2430-11eb-9c8c-17fcea665648",
+                            "size": 100,
+                            "x": 2005.9405533254628,
+                            "y": 481.82698369237943
+                        },
+                        {
+                            "GUID": "ce956720-2430-11eb-9c8c-17fcea665648",
+                            "size": 100,
+                            "x": 1525.76731833674,
+                            "y": 1116.7246858497317
+                        }
+                    ],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "hideRelationshipName": false,
+                    "showPropertiesBoxes": false,
+                    "nameAlongTheLine": true,
+                    "forceLayout": true,
+                    "defaultLinkLength": 798
+                },
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": []
             },
             "collectionLevel": {},
             "changed": false
@@ -8052,7 +8989,8 @@
         "dtDiagram": {
             "collapsedNodes": [],
             "details": true,
-            "hideErdDetails": false
+            "hideErdDetails": false,
+            "shouldDistributeCollections": false
         }
     }
 }
