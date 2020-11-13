@@ -1,0 +1,16 @@
+
+.UserRegistration {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-family: var(--default-font);
+  height: 500px
+}
+
+
+.agreement {
+  display:flex;
+}

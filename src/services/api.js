@@ -79,6 +79,33 @@ let api = {
     }else{
       return driver.session().run(query);
     }
+  },
+  login:(user,pass)=>{
+    let query = `
+    MATCH (n:User)
+    WHERE n.email = $user AND n.password = $password
+    return n
+    `
+    let params = {user:user,password:pass};
+    return driver.session().run(query, params)
+      .then(res=>{
+        let response = {};
+        if(res.records.length ===1){
+          response.success=true;
+          response.user = res.records[0]._fields[0];
+        }else{
+          response.success=false;
+          response.message="No user found, check email and password";
+        }
+        return response;
+      })
+  },
+  registerUser:(params)=>{
+    let query = `CREATE (user:User)
+    SET user = $user
+    return user
+    `
+    return driver.session().run(query,{user:params})
   }
 }
 

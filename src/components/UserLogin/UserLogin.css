@@ -1,0 +1,39 @@
+.UserLogin {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.UserLogin form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-family: var(--default-font);
+  margin: 15px;
+  position: relative;
+}
+.UserLogin form .MuiFormControl-root {
+  margin: 0 0 10px 0;
+}
+.UserLogin form p {
+  margin: 10px 0;
+}
+.UserLogin form .MuiSnackbar-root {
+  position: absolute;
+  bottom: -68px;
+}
+.UserLogin form .MuiSnackbar-root .MuiSnackbarContent-root {
+  background-color: #ffb7c5;
+}
+.UserLogin
+  form
+  .MuiSnackbar-root
+  .MuiSnackbarContent-root
+  .MuiSnackbarContent-message
+  #message-id {
+  color: #990000;
+}

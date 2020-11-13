@@ -1,0 +1,7 @@
+
+.ModalBoolean {
+  display: none;
+}
+.ModalBoolean .MuiDialog-paperWidthSm{
+  max-width: 90vh;
+}

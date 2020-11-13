@@ -6,6 +6,7 @@ import A_Thought from "./nodes/A_Thought";
 import A_Perception from "./nodes/A_Perception";
 import Tracker from "./nodes/Tracker";
 import Inquiry_Session from "./Inquiry_Session";
+import User from "./nodes/User";
 
 class GraphModel{
     constructor(data,format){
@@ -46,6 +47,8 @@ class GraphModel{
             return new Tracker(model);
         }else if(label == "Inquiry_Session"){
             return new Inquiry_Session(model);
+        }else if(label == "User"){
+            return new User(model);
         }else{
             return new GraphNode(model);
         }
@@ -65,6 +68,8 @@ class GraphModel{
             }
         }else if(label =="Thought_Tracker"){
             return new Tracker(model, id, properties);
+        }else if(label =="User"){
+            return new User(model, id, properties);
         }else{
             return new GraphNode(model, id, properties);
         }

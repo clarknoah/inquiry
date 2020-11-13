@@ -139,6 +139,7 @@ export default class CypherQuery{
     }
 
     generateQuery(){
+        this.addTransactionId();
         let query = [];
         if(this.match.length > 0){
             query.push(`MATCH ${this.match.join(",")}`);
