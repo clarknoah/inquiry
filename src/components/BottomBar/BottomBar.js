@@ -117,6 +117,11 @@ class BottomBar extends Component {
               Thought + Emotion
             </MenuItem>
           </Link>
+          <Link to="/logger/thoughtAndPart">
+            <MenuItem onClick={this.closeLoggerMenu}>
+              Thought + Part
+            </MenuItem>
+          </Link>
 
           <Link to="/logger/EmotionAndForm">
             <MenuItem onClick={this.closeLoggerMenu}>Emotion + Form</MenuItem>

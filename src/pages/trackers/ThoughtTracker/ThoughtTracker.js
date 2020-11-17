@@ -6,7 +6,7 @@ import InquiryModel from "../../../models/GraphModel";
 import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-
+import NodeEditor from "../../../components/NodeEditor/NodeEditor";
 // Class Based React Component
 class ThoughtTracker extends Component {
   constructor(props) {
@@ -105,13 +105,16 @@ class ThoughtTracker extends Component {
     }
     tracker.status = "review";
     console.log(tracker);
-    tracker.generateCypherQuery();
+    //tracker.generateCypherQuery();
     this.setState({
       tracker: tracker,
     });
   };
   submitTracker = () => {
-    this.state.tracker.submitTracker().then((res) => {
+    let tracker = this.state.tracker;
+    tracker.generateCypherQuery();
+    console.log(tracker.query);
+    tracker.submitTracker().then((res) => {
       this.setState({
         trackerSubmitted:true
       });
@@ -161,6 +164,38 @@ class ThoughtTracker extends Component {
       tracker: tracker,
     });
   };
+
+  getNodeEditors=()=>{
+    console.log(this.state.tracker.thoughts);
+    let editProps = {
+      hedonicAffect:true
+    }
+    let  editors = this.state.tracker.thoughts.map((perception, key)=>{
+      let node = perception[0];
+      node.properties.hideProperties();
+      node.properties.hedonicAffect.edittable = true;
+      let header = "("+node.labels.join(":")+"): "+node.properties.perception.value;
+      return <NodeEditor header={header} key={key} node={node} update={(node)=>{
+        this.editNode(node,key)
+      }}/>
+    })
+    return editors;
+  }
+
+  editNode=(node,key)=>{
+    let tracker = this.state.tracker;
+    tracker.thoughts.forEach((nodes,index)=>{
+      if(nodes[0].variable == node.variable){
+        tracker.thoughts[index][0].properties.hedonicAffect = node.properties.hedonicAffect;
+        console.log(tracker.thoughts[index][0]);
+        tracker.cypherQuery.updateParams(node);
+      }
+    })
+    //tracker.thoughts[key][0] = node;
+    this.setState({
+      tracker:tracker
+    })
+  }
 
   setHistoric = () => {
     let tracker = this.state.tracker;
@@ -296,8 +331,10 @@ class ThoughtTracker extends Component {
             ) : (
               <button onClick={this.resetTracker}>Reset</button>
             )}
-            <pre>{this.state.tracker.query.query}</pre>
-
+            {/* <pre>{this.state.tracker.query.query}</pre> */}
+              <div>
+                {this.getNodeEditors()}
+              </div>
           </div>
         ) : null}
       </div>

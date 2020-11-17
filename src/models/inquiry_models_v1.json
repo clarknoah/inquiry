@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-11-11T15:31:51.626Z",
+    "lastModifTS": "2020-11-17T18:10:56.218Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -563,6 +563,37 @@
                         "name": false
                     },
                     "isActivated": true
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "unassigned",
+                    "primaryKey": false,
+                    "enum": [
+                        "positive",
+                        "neutral",
+                        "negative",
+                        "unassigned"
+                    ],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "75823270-2800-11eb-9c8c-17fcea665648",
+                    "name": "hedonicAffect",
+                    "code": "Hedonic Affect",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -1827,36 +1858,6 @@
                     "compositeNodeKey": false,
                     "GUID": "4a0c0550-ccff-11ea-ae25-3ded20c57388",
                     "name": "polarity",
-                    "code": "",
-                    "description": "",
-                    "comments": "",
-                    "dependencies": [],
-                    "required": false,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {},
-                    "isActivated": true
-                },
-                {
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "default": "",
-                    "primaryKey": false,
-                    "enum": [
-                        "positive",
-                        "neutral",
-                        "negative"
-                    ],
-                    "sample": "",
-                    "unique": false,
-                    "type": "string",
-                    "compositeKey": [
-                        "compositeNodeKey"
-                    ],
-                    "compositeNodeKey": false,
-                    "GUID": "2f786e90-ccff-11ea-ae25-3ded20c57388",
-                    "name": "hedonicAffect",
                     "code": "",
                     "description": "",
                     "comments": "",
@@ -4314,12 +4315,10 @@
                     "description": "",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    },
+                    "error": {},
                     "isActivated": true
                 },
                 {
@@ -4342,12 +4341,10 @@
                     "description": "",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    },
+                    "error": {},
                     "isActivated": true
                 },
                 {
@@ -4358,7 +4355,7 @@
                     "primaryKey": false,
                     "enum": [],
                     "sample": "",
-                    "unique": false,
+                    "unique": true,
                     "type": "string",
                     "compositeKey": [
                         "compositeNodeKey"
@@ -4370,12 +4367,10 @@
                     "description": "",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    },
+                    "error": {},
                     "isActivated": true
                 },
                 {
@@ -4398,12 +4393,10 @@
                     "description": "",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    },
+                    "error": {},
                     "isActivated": true
                 },
                 {
@@ -4426,12 +4419,10 @@
                     "description": "",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    },
+                    "error": {},
                     "isActivated": true
                 },
                 {
@@ -4463,14 +4454,15 @@
                     "isActivated": true
                 },
                 {
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "default": "",
                     "primaryKey": false,
+                    "default": "",
                     "enum": [],
                     "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
                     "unique": false,
+                    "childType": "temporal",
                     "type": "string",
                     "compositeKey": [
                         "compositeNodeKey"
@@ -4480,15 +4472,13 @@
                     "name": "dateAccountCreated",
                     "code": "",
                     "description": "",
-                    "comments": "",
                     "dependencies": [],
                     "required": false,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    },
-                    "isActivated": true
+                    "isActivated": true,
+                    "error": {},
+                    "mode": "date"
                 }
             ],
             "definitions": {
@@ -6232,14 +6222,14 @@
         },
         {
             "GUID": "4066bdc0-f779-11ea-9f76-433a900eeb80",
-            "name": "PERFORMED_BY",
+            "name": "CONDUCTED_SESSION",
             "description": "",
             "comments": "",
             "relationshipType": "",
-            "parentCollection": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
             "parentField": [],
             "parentCardinality": "1",
-            "childCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "childCollection": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
@@ -6248,30 +6238,14 @@
         },
         {
             "GUID": "52b5a180-f779-11ea-9f76-433a900eeb80",
-            "name": "PERFORMED_BY",
+            "name": "CONDUCTED_SESSION",
             "description": "",
             "comments": "",
             "relationshipType": "",
-            "parentCollection": "80f80c10-f777-11ea-9f76-433a900eeb80",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
             "parentField": [],
             "parentCardinality": "1",
-            "childCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
-            "childField": [],
-            "childCardinality": "1",
-            "lineSize": 2,
-            "level": "entity",
-            "properties": []
-        },
-        {
-            "GUID": "bf5e8e50-f779-11ea-9f76-433a900eeb80",
-            "name": "LOGGED_BY",
-            "description": "",
-            "comments": "",
-            "relationshipType": "",
-            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
-            "parentField": [],
-            "parentCardinality": "1",
-            "childCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "childCollection": "80f80c10-f777-11ea-9f76-433a900eeb80",
             "childField": [],
             "childCardinality": "1",
             "lineSize": 2,
@@ -7414,6 +7388,22 @@
             "level": "entity",
             "lineSize": 2,
             "properties": []
+        },
+        {
+            "GUID": "fb1f0de0-28ff-11eb-9c8c-17fcea665648",
+            "name": "ASSOCIATED_PART",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "c8586b00-2430-11eb-9c8c-17fcea665648",
+            "childField": [],
+            "childCardinality": "1",
+            "level": "entity",
+            "lineSize": 2,
+            "properties": []
         }
     ],
     "users": [],
@@ -7482,7 +7472,6 @@
         "845c56e0-caef-11ea-ae25-3ded20c57388": "letGoStartTimestamp",
         "8b1512b0-caef-11ea-ae25-3ded20c57388": "letGoEndTimestamp",
         "935cfa00-caef-11ea-ae25-3ded20c57388": "letGoDuration",
-        "2f786e90-ccff-11ea-ae25-3ded20c57388": "hedonicAffect",
         "4a0c0550-ccff-11ea-ae25-3ded20c57388": "polarity",
         "5e9ccf60-ce97-11ea-ae25-3ded20c57388": "fullBelief",
         "80f80c10-f777-11ea-9f76-433a900eeb80": "Thought_Tracker",
@@ -7494,13 +7483,9 @@
         "e1c965b0-f778-11ea-9f76-433a900eeb80": "Stimulus",
         "ee0f2e90-f778-11ea-9f76-433a900eeb80": "CAUSED",
         "281a09c0-f779-11ea-9f76-433a900eeb80": "User",
-        "4066bdc0-f779-11ea-9f76-433a900eeb80": "PERFORMED_BY",
-        "52b5a180-f779-11ea-9f76-433a900eeb80": "PERFORMED_BY",
-        "bf5e8e50-f779-11ea-9f76-433a900eeb80": "LOGGED_BY",
-        "10baf4a0-f77a-11ea-9f76-433a900eeb80": "firstName",
-        "157a7880-f77a-11ea-9f76-433a900eeb80": "lastName",
+        "4066bdc0-f779-11ea-9f76-433a900eeb80": "CONDUCTED_SESSION",
+        "52b5a180-f779-11ea-9f76-433a900eeb80": "CONDUCTED_SESSION",
         "18896630-f77a-11ea-9f76-433a900eeb80": "email",
-        "2a9c5260-f77a-11ea-9f76-433a900eeb80": "birthDate",
         "322aadb0-f77a-11ea-9f76-433a900eeb80": "password",
         "38753e60-f77a-11ea-9f76-433a900eeb80": "previousPassword",
         "4b416870-f77a-11ea-9f76-433a900eeb80": "dateAccountCreated",
@@ -7715,7 +7700,12 @@
         "6b2ed1c0-2431-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
         "b0d07120-2431-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
         "c78b1370-2431-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
-        "0c19bc30-2432-11eb-9c8c-17fcea665648": "ASSOCIATED_PART"
+        "0c19bc30-2432-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
+        "10baf4a0-f77a-11ea-9f76-433a900eeb80": "firstName",
+        "157a7880-f77a-11ea-9f76-433a900eeb80": "lastName",
+        "2a9c5260-f77a-11ea-9f76-433a900eeb80": "birthDate",
+        "75823270-2800-11eb-9c8c-17fcea665648": "hedonicAffect",
+        "fb1f0de0-28ff-11eb-9c8c-17fcea665648": "ASSOCIATED_PART"
     },
     "definitions": {
         "type": "definitions",
@@ -8230,16 +8220,6 @@
                         "GUID": "52b5a180-f779-11ea-9f76-433a900eeb80",
                         "x": 720,
                         "y": 720,
-                        "width": 240,
-                        "height": 100,
-                        "color": {
-                            "hex": "#333333"
-                        }
-                    },
-                    {
-                        "GUID": "bf5e8e50-f779-11ea-9f76-433a900eeb80",
-                        "x": 740,
-                        "y": 740,
                         "width": 240,
                         "height": 100,
                         "color": {
@@ -8819,11 +8799,21 @@
                         "color": {
                             "hex": "#333333"
                         }
+                    },
+                    {
+                        "GUID": "fb1f0de0-28ff-11eb-9c8c-17fcea665648",
+                        "x": 740,
+                        "y": 740,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
                     }
                 ],
                 "buckets": [],
                 "collapsedNodes": [],
-                "activeRelationship": "0c19bc30-2432-11eb-9c8c-17fcea665648",
+                "activeRelationship": "",
                 "activeRelationshipFields": {
                     "childField": [],
                     "parentField": []
@@ -8835,140 +8825,140 @@
                         {
                             "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
                             "size": 120,
-                            "x": 2620.0196542047033,
-                            "y": 1858.2829150657392
+                            "x": 3074.8387210509836,
+                            "y": 2094.173125528835
                         },
                         {
                             "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 1958.0850934775285,
-                            "y": 1046.3158527513142
+                            "x": 2713.999942221452,
+                            "y": 1413.0039847085677
                         },
                         {
                             "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 1407.2109509251604,
-                            "y": 1198.8846570284816
+                            "x": 1799.8085860768012,
+                            "y": 1475.329334416102
                         },
                         {
                             "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 2525.5044679664775,
-                            "y": 1496.3565003831845
+                            "x": 3001.022039517105,
+                            "y": 1764.6769509252456
                         },
                         {
                             "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 1040.21556531635,
-                            "y": 1689.6013469191307
+                            "x": 1535.4075043686375,
+                            "y": 1792.5678986755445
                         },
                         {
                             "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 2467.265331778037,
-                            "y": 423.162869656161
+                            "x": 2048.0785065254267,
+                            "y": 959.7849480998706
                         },
                         {
                             "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 2231.0568190045087,
-                            "y": 1162.3205632121933
+                            "x": 2617.3975776330653,
+                            "y": 1438.8265099510932
                         },
                         {
                             "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 2989.8861265749706,
-                            "y": 866.3292359173639
+                            "x": 3414.7307703381944,
+                            "y": 1089.6139369634102
                         },
                         {
                             "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 1444.989780684682,
-                            "y": 997.3704899547682
+                            "x": 1904.8110895977702,
+                            "y": 1081.780647030004
                         },
                         {
                             "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
-                            "x": 2610.075512072122,
-                            "y": 1967.8315817258608,
+                            "x": 3066.571972507413,
+                            "y": 2210.244068207776,
                             "size": 100
                         },
                         {
                             "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
-                            "x": 3055.008796827441,
-                            "y": 1303.1567722962936,
+                            "x": 3314.154548128061,
+                            "y": 1449.461735525072,
                             "size": 100
                         },
                         {
                             "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
-                            "x": 1427.0544268613405,
-                            "y": 1100.9012066268779,
+                            "x": 1844.0214024245363,
+                            "y": 1385.6554421417688,
                             "size": 100
                         },
                         {
                             "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
-                            "x": 1615.3645064004543,
-                            "y": 1072.3347831051574,
+                            "x": 2085.1086847314446,
+                            "y": 1312.1588305392402,
                             "size": 100
                         },
                         {
                             "GUID": "a7bd9590-f777-11ea-9f76-433a900eeb80",
-                            "x": 975.4070934512831,
-                            "y": 1613.4484456156197,
+                            "x": 1389.1631862760664,
+                            "y": 1696.5425799121792,
                             "size": 100
                         },
                         {
                             "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 3004.639092339952,
-                            "y": 967.9326903838738
+                            "x": 3375.0045800024586,
+                            "y": 1183.9982696739619
                         },
                         {
                             "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 1822.707698227882,
-                            "y": 1838.7037186755676
+                            "x": 2276.894671367394,
+                            "y": 2087.851180425219
                         },
                         {
                             "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 2591.479365333735,
-                            "y": 1571.4979961920915
+                            "x": 3051.0703799823755,
+                            "y": 1862.2836313163432
                         },
                         {
                             "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 2567.236749540911,
-                            "y": 422.11593388828635
+                            "x": 2911.1130622985843,
+                            "y": 733.2716651183407
                         },
                         {
                             "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 2060.1385066175067,
-                            "y": 1059.6549573019236
+                            "x": 2351.4669105004255,
+                            "y": 1296.0111758438554
                         },
                         {
                             "GUID": "bc7b5d00-1eb4-11eb-a04e-73e33b72b93e",
-                            "x": 2745.305458209943,
-                            "y": 561.207273347007,
+                            "x": 3017.0579106940727,
+                            "y": 723.0203941482324,
                             "size": 100
                         },
                         {
                             "GUID": "cdf7d590-1eb4-11eb-a04e-73e33b72b93e",
-                            "x": 2149.621749920027,
-                            "y": 1104.2913713819569,
+                            "x": 2548.9353455428836,
+                            "y": 1348.3263711805002,
                             "size": 100
                         },
                         {
                             "GUID": "c8586b00-2430-11eb-9c8c-17fcea665648",
                             "size": 100,
-                            "x": 2005.9405533254628,
-                            "y": 481.82698369237943
+                            "x": 2524.8675527208043,
+                            "y": 547.8950251772181
                         },
                         {
                             "GUID": "ce956720-2430-11eb-9c8c-17fcea665648",
                             "size": 100,
-                            "x": 1525.76731833674,
-                            "y": 1116.7246858497317
+                            "x": 2217.3098716178124,
+                            "y": 1288.335299654269
                         }
                     ],
                     "buckets": [],

@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import { Link, withRouter } from "react-router-dom";
 import "./TopBar.css";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -69,6 +70,8 @@ class TopBar extends Component {
   logout=()=>{
     localStorage.clear();
     this.handleClose();
+    this.props.update();
+    this.props.history.push("/");
   }
 
   render() {
@@ -78,7 +81,8 @@ class TopBar extends Component {
         <UserLogin
           open={this.state.userLoginShow}
           onClose={() => {
-            this.setState({ userLoginShow: false });
+            console.log('hello world');
+            this.setState({ userLoginShow: false },this.props.update);
           }}
         />
         <UserRegistration
@@ -98,7 +102,8 @@ class TopBar extends Component {
           </Typography>
             </div>
             {auth && (
-              <div>
+              <div style={{display:"flex",alignItems:"center"}}>
+                <Typography>{localStorage.getItem("activeUser_firstName")}</Typography>
                 <IconButton
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
@@ -142,4 +147,5 @@ class TopBar extends Component {
   }
 }
 
-export default TopBar;
+export default withRouter(TopBar);
+;

@@ -27,36 +27,6 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-/*
-    This class needs to perform the following tasks. 
-
-    1:  Accept a thought as the thought to be inquired into 
-    2:  Have a function which can be called to set the inquired thought 
-        to either a true or false 
-
-    3:  Have a function which can be called to set the inquired thought 
-        of certainly true to either true or false 
-    
-    4:  Have a component that handles the is it true section 
-    
-    4:  Have a PerceptionCollector for desires 
-    5:  Have a PerceptionCollector for fears 
-    6:  Have a PerceptionsCollector for When Believed True
-        Also ensure I can import text for the perceptions collector
-
-    7:  Have a way to have Body Sensations and Emotions contain a list
-        of associated perceptions 
-    8:  Have a way to collector memories (Maybe passing in an "extraLabels"
-        prop into manifestedPerception 
-    
-    9:  Create class for managing how I treat questions 
-    10: To do turn arounds, I'm going to use a PerceptionCollector,
-        which will collect the perceptions we want to do turn arounds
-        for. 
-
-        I'll also be using an PerceptionsCollector, which will
-        contain a list of the thoughts
-*/
 
 function getSteps() {
   return [

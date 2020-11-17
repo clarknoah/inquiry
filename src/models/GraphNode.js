@@ -90,12 +90,25 @@ class GraphNode{
         }
         return this;
     }
+    checkForUpdatedProperties(){
+        let update = false;
+        this.properties.propertyKeys.forEach(key=>{
+            if(this.properties[key].changed==true){
+                update = true;
+            }
+        })
+        if(update){
+            return this.getPropertyObject()
+        }else{
+            return false
+        }
+    }
     setExistingProperties(props){
         console.log(props);
         for(let key in props){
             try{
                 if(this.properties.hasOwnProperty(key)){
-                    this.properties[key].value = props[key];
+                    this.properties[key].setInitialValue(props[key]);
                 }
             }catch(err){
                 console.log(err);

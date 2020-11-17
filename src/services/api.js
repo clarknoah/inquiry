@@ -6,13 +6,14 @@ var driver = neo4j.driver(
 );
 
 let api = {
-  nodeListQuery:function(label, field, queryText){
+  nodeListQuery:function(label, field, queryText, limit = 5, skip=0){
     let query = `
-    MATCH (n:${label})
-    WHERE n.${field} =~ $text
+    MATCH (user:User)-[:HAS_ABSTRACT]->(n:${label})
+    WHERE n.${field} =~ $text AND ID(user)=${localStorage.getItem("activeUser_id")}
     RETURN n
     ORDER BY size(n.${field}) ASC
-    LIMIT 5
+    SKIP ${skip}
+    LIMIT ${limit}
     `
     let params={
       text:`(?i)${queryText}.*`
@@ -27,6 +28,47 @@ let api = {
             node.name = node.properties[field];
             return node;
         });
+      })
+  },
+  nodeListQuerySize:function(label, field, queryText=undefined, limit = 5, skip=0){
+    let query = `
+    MATCH (user:User)-[:HAS_ABSTRACT]->(n:A_${label})<-[:MANIFESTATION_OF]-(m:M_${label})
+    WHERE ${queryText!==undefined ? `n.${field} =~ $text AND` : ""}ID(user)=${localStorage.getItem("activeUser_id")}
+    RETURN n, count(distinct m)
+    ORDER BY count(distinct m) DESC
+    SKIP ${skip}
+    LIMIT ${limit}
+    `
+    let params={
+      text:`(?i)${queryText}.*`
+    }
+   
+    return driver.session().run(query,params)
+      .then(results=>{
+
+        return results.records.map((val)=>{
+            let node = val._fields[0];
+            node.count = val._fields[1];
+            node.identity = node.identity.low;
+            node.name = node.properties[field];
+            return node;
+        });
+      })
+  },
+  updateNode:function(id,props){
+    let query = `
+    MATCH (node)
+    WHERE ID(node) = ${id}
+    SET node = $props
+    return properties(node)
+    `
+    let params={
+      props: props
+    }
+   
+    return driver.session().run(query,params)
+      .then(results=>{
+        console.log(results);
       })
   },
   submitInquiryPayload:function(payload){
@@ -106,8 +148,50 @@ let api = {
     return user
     `
     return driver.session().run(query,{user:params})
+      .then(res=>{
+        return {
+          success:true,
+          user: res.records[0]._fields[0]
+        }
+      })
+      .catch(err=>{
+        return {
+          success:false,
+          error:err
+        }
+      })
+  },
+  getThoughtTimeSeries:()=>{
+    let query = `
+    MATCH (n:User {firstName:"Noah"})-[:HAS_ABSTRACT]->(a:A_Thought)<-[:MANIFESTATION_OF]-(m:M_Thought)<-[:PERCEIVED]-(t:Thought_Tracker)
+    RETURN {date:m.dateOfPerception, perception:m.perception,timestamp:m.timestampOfPerception, hedonicAffect:a.hedonicAffect, trackerId:id(t), duration:t.duration}
+    `
+    return driver.session().run(query)
+  },
+  getTrackerDatesAndDuration:()=>{
+    let query = `
+    MATCH (user:User {firstName:"Noah"})-[:CONDUCTED_SESSION]->(n:Thought_Tracker)
+    RETURN distinct n.date, collect(n.duration)
+    ORDER BY n.date
+    `
+    return driver.session().run(query)
+      .then(res=>{
+        let dates = {};
+        res.records.forEach(field=>{
+          let totalDuration = field._fields[1].reduce((a,b)=>a+b);
+          dates[field._fields[0]]={
+            date:field._fields[0],
+            duration:field._fields[1],
+            totalDuration:totalDuration
+
+          }
+        })
+        return dates;
+      })
   }
 }
 
 
 export default api;
+
+

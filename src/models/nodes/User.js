@@ -1,6 +1,6 @@
 import GraphNode from "../GraphNode";
 import api from "../../services/api";
-
+import InquiryModel from "../GraphModel";
 
 class User extends GraphNode{
     constructor(data, id=undefined, properties=undefined){
@@ -28,9 +28,18 @@ class User extends GraphNode{
             localStorage.removeItem(`activeUser_${key}`);
           });
           localStorage.removeItem("activeUser_id");
+          localStorage.removeItem("activeUser_json");
       }
     
-
+      loadFromStorage=()=>{
+        if(localStorage.getItem("activeUser_json")!== null && localStorage.getItem("activeUser_json") !== undefined){
+            let props = JSON.parse(localStorage.getItem("activeUser_json"));
+            let user = InquiryModel.getExistingModelClass("User",parseInt(localStorage.activeUser_id), props);
+            return user;
+        }else{
+            return false;
+        }
+      }
 
 }
 

@@ -14,93 +14,139 @@ import StLogger from "./pages/ThoughtLogger/StLogger/StLogger";
 import SteLogger from "./pages/ThoughtLogger/SteLogger/SteLogger";
 import StefLogger from "./pages/ThoughtLogger/StefLogger/StefLogger";
 import TeLogger from "./pages/ThoughtLogger/TeLogger/TeLogger";
+import TpLogger from "./pages/ThoughtLogger/TpLogger/TpLogger";
 import TefLogger from "./pages/ThoughtLogger/TefLogger/TefLogger";
 import TfLogger from "./pages/ThoughtLogger/TfLogger/TfLogger";
 import TopBar from "./components/TopBar/TopBar";
-function App() {
-  return (
-    <div className="App">
-      <main>
-        <TopBar/>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
 
-        <Switch>
-          <Route
-            path="/journal"
-            render={(routerProps) => {
-              return <ThoughtJournal {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/practices"
-            render={(routerProps) => {
-              return <ThoughtTracker {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/logger/thought"
-            render={(routerProps) => {
-              return <ThoughtLogger {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/logger/stimulusAndThought"
-            render={(routerProps) => {
-              return <StLogger {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/logger/stimulusAndThoughtAndEmotion"
-            render={(routerProps) => {
-              return <SteLogger {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/logger/stimulusAndThoughtAndEmotionAndConcept"
-            render={(routerProps) => {
-              return <StefLogger {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/logger/thoughtAndEmotionAndConcept"
-            render={(routerProps) => {
-              return <TefLogger {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/logger/thoughtAndEmotion"
-            render={(routerProps) => {
-              return <TeLogger {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/logger/emotionAndForm"
-            render={(routerProps) => {
-              return <TfLogger {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/inquiry"
-            render={(routerProps) => {
-              return <InquiryForm {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/insights"
-            render={(routerProps) => {
-              return <InsightsHome {...routerProps} />;
-            }}
-          />
-          <Route
-            path="/"
-            render={(routerProps) => {
-              return <HomePage {...routerProps} />;
-            }}
-          />
-        </Switch>
-      </main>
-      <BottomBar />
-    </div>
-  );
+    // Default CSS class to apply to the Component
+    console.log(this.getLoggedInStatus())
+    this.state = {
+      classList: "UserRegistration",
+      loggedIn: this.getLoggedInStatus()
+    };
+  }
+
+  componentDidUpdate() {
+    console.log("APp updated");
+  }
+
+  getLoggedInStatus=()=>{
+    return localStorage.getItem("activeUser_json")!== null && localStorage.getItem("activeUser_json") !== undefined;
+  }
+
+  updateUserStatus=()=>{
+    console.log("UPDATING");
+    if (this.state.loggedIn !== true && this.getLoggedInStatus()) {
+      console.log("loggin in");
+      this.setState({
+        loggedIn: true
+      })
+    } else if (this.state.loggedIn === true && !this.getLoggedInStatus()) {
+      console.log("loggin out");
+      this.setState({
+        loggedIn: false
+      })
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <main>
+          <TopBar update={this.updateUserStatus}/>
+
+          {this.state.loggedIn ? <Switch>
+            <Route
+              path="/journal"
+              render={(routerProps) => {
+                return <ThoughtJournal {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/practices"
+              render={(routerProps) => {
+                return <ThoughtTracker {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/thought"
+              render={(routerProps) => {
+                return <ThoughtLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/stimulusAndThought"
+              render={(routerProps) => {
+                return <StLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/stimulusAndThoughtAndEmotion"
+              render={(routerProps) => {
+                return <SteLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/stimulusAndThoughtAndEmotionAndConcept"
+              render={(routerProps) => {
+                return <StefLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/thoughtAndEmotionAndConcept"
+              render={(routerProps) => {
+                return <TefLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/thoughtAndEmotion"
+              render={(routerProps) => {
+                return <TeLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/thoughtAndPart"
+              render={(routerProps) => {
+                return <TpLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/emotionAndForm"
+              render={(routerProps) => {
+                return <TfLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/inquiry"
+              render={(routerProps) => {
+                return <InquiryForm {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/insights"
+              render={(routerProps) => {
+                return <InsightsHome {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/"
+              render={(routerProps) => {
+                return <HomePage {...routerProps} />;
+              }}
+            />
+          </Switch> :
+            <div>Please Login</div>
+          }
+        </main>
+        <BottomBar />
+      </div>
+    );
+  }
 }
 
 export default App;

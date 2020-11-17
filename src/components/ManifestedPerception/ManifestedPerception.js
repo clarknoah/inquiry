@@ -37,7 +37,7 @@ class ManifestedPerception extends Component {
 
   resetForm = () => {
     let mPerception = InquiryModel.getNewModelClass(`M_${this.props.label}`);
-    console.log(mPerception);
+    //console.log(mPerception);
     mPerception.properties[this.props.queryKey].value = "";
     if(this.state.newPerception == false){
       mPerception.properties.dateOfPerception.setValue(this.state.mPerception.properties.dateOfPerception.value)

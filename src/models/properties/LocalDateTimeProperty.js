@@ -23,6 +23,16 @@ class LocalDateTimeProperty extends NodeProperty{
     setDefaultValue(){
         this.value = getCurrentLocalDateTime();
     }
+    setInitialValue(value){
+        if(typeof value=="object"){
+            this.value = value.toNumber();
+            this.originalValue = value.toNumber();
+        }else{
+            this.originalValue = value;
+            this.value = value;
+
+        }
+    }
     setValueByDate(date){
     date = new Date(date);
     let offset = date.getTimezoneOffset();

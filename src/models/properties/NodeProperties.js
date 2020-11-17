@@ -2,6 +2,7 @@ import DateProperty from "./DateProperty";
 import LocalDateTimeProperty from "./LocalDateTimeProperty";
 import NumberProperty from "./NumberProperty.js";
 import NodeProperty from "./NodeProperty";
+import StringProperty from "./StringProperty";
 class NodeProperties{
     constructor(data){
         this.propertyKeys = this.setPropertyKeys(data);
@@ -23,12 +24,17 @@ class NodeProperties{
                     this[field.name] = new LocalDateTimeProperty(field);
                 }
             }else if(field.type=="string"){
-                this[field.name] = new NodeProperty(field);
+                this[field.name] = new StringProperty(field);
             }else if(field.type=="numeric"){
                 this[field.name] = new NumberProperty(field);
             }else if(field.type=="boolean" || field.type=="array"){
                 this[field.name] = new NodeProperty(field);
             }
+        })
+    }
+    hideProperties = ()=>{
+        this.propertyKeys.forEach(key=>{
+            this[key].edittable = false;
         })
     }
 

@@ -63,13 +63,13 @@ class UserRegistration extends Component {
     try{
       api.registerUser(userProperties).then(res => {
         console.log(res);
-        // let user = res.data.user;
-        // utils.setActiveUser(user);
-        // api.updateContent().then(results => {
-        //   this.props.history.push({
-        //     pathname: `/`
-        //   });
-        // });
+        if(res.success){
+          let user = InquiryModel.getExistingModelClass("User",res.user.identity.toNumber(),res.user.properties)
+          user.login();
+          this.onClose();
+        }else{
+          console.log(res);
+        }
       });
     }catch(err){
       console.log(err);

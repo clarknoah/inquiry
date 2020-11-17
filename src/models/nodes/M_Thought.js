@@ -30,9 +30,9 @@ class M_Thought extends M_Perception{
         return this;
     }
     setInputDuration(){
-        console.log(this.properties.timestampOfInput.value);
+        //console.log(this.properties.timestampOfInput.value);
         let currentTime = getCurrentLocalDateTime();
-        console.log(currentTime);
+        //console.log(currentTime);
         let duration = (currentTime-this.properties.timestampOfInput.value)/1000;
         return this.properties.inputDuration.setValue(duration);
     }
