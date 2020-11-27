@@ -1,17 +1,16 @@
-
 import React from 'react'
 import { shallow, mount, configure } from 'enzyme'
 
-import TpLogger from './TpLogger.js'
+import ThoughtTrackerTimeseries from './ThoughtTrackerTimeseries.js'
 import Adapter from 'enzyme-adapter-react-16';
 configure({adapter: new Adapter()});
 
 
-describe('TpLogger component', () => {
+describe('ThoughtTimeseries component', () => {
 
   it('should render as expected', () => {
 
-    const component = shallow(<TpLogger />)
+    const component = shallow(<ThoughtTrackerTimeseries />)
 	 	expect(component.exists()).toBe(true);
   })
 })

@@ -53,9 +53,13 @@ class ManifestedPerception extends Component {
       label:this.props.label,
       queryKey:this.props.queryKey
     },()=>{
-      this.inputRef.current.focus();
+      this.focus();
     });
   };
+
+  focus=()=>{
+    this.inputRef.current.focus()
+  }
 
   switchLabel=(text)=>{
     let label;
@@ -181,10 +185,17 @@ class ManifestedPerception extends Component {
     if(this.props.label!==props.label){
       this.resetForm();
     }
+
+    if(this.props.focus){
+      this.focus();
+    }
   }
 
   componentDidMount(){
     console.log("Mounted");
+    if(this.props.focus){
+      this.focus();
+    }
   }
 
   render() {

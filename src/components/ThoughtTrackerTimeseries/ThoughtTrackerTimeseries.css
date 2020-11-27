@@ -1,0 +1,25 @@
+.ThoughtTrackerTimeseries {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.ThoughtTrackerTimeseries-filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    padding: 10px;
+}
+
+.ThoughtTrackerTimeseries-chart {
+    width: 100%;
+    height: 100%;
+}
+
+.ThoughtTrackerTimeseries .MuiTextField-root {
+    margin:10px;
+}

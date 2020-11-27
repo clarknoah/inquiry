@@ -18,6 +18,8 @@ import TpLogger from "./pages/ThoughtLogger/TpLogger/TpLogger";
 import TefLogger from "./pages/ThoughtLogger/TefLogger/TefLogger";
 import TfLogger from "./pages/ThoughtLogger/TfLogger/TfLogger";
 import TopBar from "./components/TopBar/TopBar";
+import ThoughtTimeseries from "./components/ThoughtTimeseries/ThoughtTimeseries";
+import ThoughtTrackerTimeseries from "./components/ThoughtTrackerTimeseries/ThoughtTrackerTimeseries";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -128,9 +130,17 @@ class App extends React.Component {
               }}
             />
             <Route
-              path="/insights"
+              exact
+              path="/insights/thoughtTrackerTimeseries"
               render={(routerProps) => {
-                return <InsightsHome {...routerProps} />;
+                return <ThoughtTrackerTimeseries {...routerProps} />;
+              }}
+            />
+            <Route
+            exact
+              path="/insights/thoughtTimeseries"
+              render={(routerProps) => {
+                return <ThoughtTimeseries {...routerProps} />;
               }}
             />
             <Route

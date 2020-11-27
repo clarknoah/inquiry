@@ -22,7 +22,7 @@ import Chart from 'react-apexcharts'
 // Class Based React Component
 
 let day = 1000 * 60 * 60 * 24;
-let twentyFourHours = 1000 * 60 * 60 * 24 *7;
+let twentyFourHours = 1000 * 60 * 60 * 24 * 7;
 let today = new Date(Date.now()).toISOString().split(".")[0];
 let yesterday = new Date(Date.now() - twentyFourHours).toISOString().split(".")[0];
 class ThoughtTimeseries extends Component {
@@ -33,9 +33,9 @@ class ThoughtTimeseries extends Component {
     // Default CSS class to apply to the Component
     this.state = {
       classList: "ThoughtTimeseries",
-      showHedonic:"both",
+      showHedonic: "both",
       source: [],
-      trackers:{},
+      trackers: {},
       chartData: [],
       limitMin: 4,
       limitMax: 999999999999,
@@ -46,7 +46,7 @@ class ThoughtTimeseries extends Component {
           type: 'line',
           stacked: false,
           height: 350,
-          width:"100%",
+          width: "100%",
           zoom: {
             type: 'x',
             enabled: true,
@@ -109,17 +109,20 @@ class ThoughtTimeseries extends Component {
       .then(res => {
         res = res.records.map(field => {
           if (!isNaN(field._fields[0].date)) {
-            field._fields[0].date = this.convertToDate(field._fields[0].date)
+            field._fields[0].date = this.convertToDate(field._fields[0].timestamp)
+          }else{
+            field._fields[0].date = this.convertToDate(field._fields[0].timestamp)
           }
           return field._fields[0];
         });
         console.log(res.length);
-        api.getTrackerDatesAndDuration()
-          .then(trackers=>{
-            
+        api.getTrackerDatesAndDuration2()
+          .then(trackers => {
+            console.log(trackers);
+
             this.setState({
               source: res,
-              trackers:trackers
+              trackers: trackers
             }, this.updateChart)
 
           })
@@ -150,7 +153,7 @@ class ThoughtTimeseries extends Component {
 
 
   convertToDate = (value) => {
-    return new Date(value).toISOString().split('T')[0];
+    return new Date(value-(300*60*1000)).toISOString().split('T')[0];
   }
 
   sanitizeData = (data) => {
@@ -177,6 +180,7 @@ class ThoughtTimeseries extends Component {
 
   }
 
+
   filterByCountMax = (data) => {
     return data.filter(value => {
       return value[1].length < this.state.limitMax;
@@ -198,7 +202,7 @@ class ThoughtTimeseries extends Component {
     return data.filter(field => {
       return field.timestamp > new Date(this.state.startTimestamp).getTime();
     })
-    
+
   }
 
   filterEndDate = (data) => {
@@ -209,57 +213,57 @@ class ThoughtTimeseries extends Component {
 
   }
 
-  normalizeData=(data)=>{
+  normalizeData = (data) => {
     /*
-      First, we need to set a baseline average, which everything will be mapped against. 
-      Iterate thorugh ready data
-
+    First, we need to set a baseline average, which everything will be mapped against. 
+    Iterate thorugh ready data
+    
     */
-  //  console.log(data);
-  //  let grouped = d3.groups(data,d=>d.date);
-  //  grouped = grouped.map(field=>{
-  //    return field.groups(field, )
-  //  })
-  //  console.log(grouped, this.state.trackers,grouped["2020-11-16"]);
+    //  console.log(data);
+    //  let grouped = d3.groups(data,d=>d.date);
+    //  grouped = grouped.map(field=>{
+    //    return field.groups(field, )
+    //  })
+    //  console.log(grouped, this.state.trackers,grouped["2020-11-16"]);
     console.log(data);
-    data = data.map(thought=>{
-      thought[1] = thought[1].map(thoughtDate=>{
+    data = data.map(thought => {
+      thought[1] = thought[1].map(thoughtDate => {
 
         let date = thoughtDate[0];
         let tracker = this.state.trackers[date];
-        let normalizer = 600/tracker.totalDuration;
-        if(thoughtDate[1]!==null){
+        let normalizer = 600 / tracker.totalDuration;
+        if (thoughtDate[1] !== null) {
           thoughtDate[1] = thoughtDate[1] / normalizer;
         }
         return thoughtDate;
       })
       return thought;
     })
-   return data;
+    return data;
   }
 
-  addEmptyDates=(data)=>{
+  addEmptyDates = (data) => {
     let dateRange = [];
     let startTimestamp = new Date(this.state.startTimestamp).getTime();
     let currentTimestamp = startTimestamp;
     let endTimestamp = new Date(this.state.endTimestamp).getTime();
-    while(currentTimestamp<=endTimestamp){
+    while (currentTimestamp <= endTimestamp) {
       let date = new Date(currentTimestamp).toISOString().split("T")[0];
       dateRange.push(date);
       currentTimestamp += day;
     }
-    data = data.map(field=>{
-      dateRange.forEach(date=>{
-        let missingDate = field[1].filter(thoughtDate=>{
+    data = data.map(field => {
+      dateRange.forEach(date => {
+        let missingDate = field[1].filter(thoughtDate => {
           return thoughtDate[0] == date;
         }).length === 0;
-        
-        if(missingDate){
-          let newDate = [date,null];
+
+        if (missingDate) {
+          let newDate = [date, 0];
           field[1].push(newDate);
         }
       })
-      field[1].sort((a,b)=>{return (a[0] < b[0]) ? -1 : (a[0]> b[0]) ? 1 : 0;})
+      field[1].sort((a, b) => { return (a[0] < b[0]) ? -1 : (a[0] > b[0]) ? 1 : 0; })
       return field;
     })
 
@@ -267,9 +271,46 @@ class ThoughtTimeseries extends Component {
     return data;
   }
 
-  getHedonicRatio = (data)=>{
+  getHedonicRatio = (data) => {
     let hedonic = d3.rollups(data, v => v.length, d => d.hedonicAffect, d => d.date)
+    console.log(this.addEmptyDates(hedonic));
+    hedonic = this.addEmptyDates(hedonic);
+    for(let i = 0; i < hedonic[0][1].length; i++){
+
+      console.log(hedonic[0][1][i][1],hedonic[1][1][i][1],hedonic[2][1][i][1],hedonic[3][1][i][1])
+      let total = hedonic[0][1][i][1] + hedonic[1][1][i][1] + hedonic[2][1][i][1] + hedonic[3][1][i][1]
+      console.log(total);
+      if(total>0){
+        let tenths = 10/total;
+        console.log(tenths);
+  
+        hedonic[0][1][i][1] = tenths * hedonic[0][1][i][1];
+        hedonic[1][1][i][1] = tenths * hedonic[1][1][i][1];
+        hedonic[2][1][i][1] = tenths * hedonic[2][1][i][1];
+        hedonic[3][1][i][1] = tenths * hedonic[3][1][i][1];
+      }
+
+
+    }
     return hedonic;
+  }
+
+  getDailyThoughtCount = (data) => {
+    let trackers = this.state.trackers;
+    let dailyTotal = d3.rollups(data, v=>v.length,d=>d.date);
+    let dailyNormalized = JSON.parse(JSON.stringify(dailyTotal));
+    dailyNormalized = dailyNormalized.map(field=>{
+      if(field[0]==="2020-10-27"){
+        let frank = field[1] * (300/trackers[field[0]].totalDuration)
+        console.log(frank, field[1], trackers[field[0]].totalDuration)
+      }
+      field[1] = field[1] * (300/trackers[field[0]].totalDuration)
+      return field;
+    })
+    console.log(dailyTotal, dailyNormalized);
+    let daily = [["Daily Total",dailyTotal],["Daily Average (5 Minutes)",dailyNormalized]];
+    console.log(trackers);
+    return daily;
   }
 
   updateChart = () => {
@@ -278,18 +319,21 @@ class ThoughtTimeseries extends Component {
     data = this.filterStartDate(data);
     data = this.filterEndDate(data);
     let hedonic = this.getHedonicRatio(data);
+    let daily = this.getDailyThoughtCount(data);
     data = d3.rollups(data, v => v.length, d => d.perception, d => d.date)
     console.log(hedonic);
     data = this.filterByCountMin(data);
     data = this.filterByCountMax(data);
-    data = this.normalizeData(data);
-    if(this.state.showHedonic=="both"){
+    //data = this.normalizeData(data);
+    data.push(...daily);
+    if (this.state.showHedonic == "both") {
       data.push(...hedonic);
 
-    }else if(this.state.showHedonic=="thought"){
+    } else if (this.state.showHedonic == "thought") {
 
-    }else if(this.state.showHedonic=="hedonic"){
+    } else if (this.state.showHedonic == "hedonic") {
       data = hedonic;
+      data.push(...daily);
     }
     data = this.addEmptyDates(data);
     console.log(data);
@@ -318,7 +362,7 @@ class ThoughtTimeseries extends Component {
     return (
       <div className={this.state.classList}>
         { this.state.chartData.length > 0 ?
-          (<Chart options={this.state.options} series={this.state.chartData} type="line" height={"70%"} width={2000} />)
+          (<Chart options={this.state.options} series={this.state.chartData} type="line" height={"70%"} width={1000} />)
           : null}
 
         <div className="ThoughtTimeseries-filters">
@@ -329,27 +373,27 @@ class ThoughtTimeseries extends Component {
             <Button>Month</Button>
           </ButtonGroup>
           <ButtonGroup color="primary" variant="contained" aria-label="outlined primary button group">
-            <Button onClick={()=>{this.setState({showHedonic:"both"})}}>Hedonic and Thoughts</Button>
-            <Button onClick={()=>{this.setState({showHedonic:"thoughts"})}}>Thoughts Only</Button>
-            <Button onClick={()=>{this.setState({showHedonic:"hedonic"})}}>Hedonic Only</Button>
+            <Button onClick={() => { this.setState({ showHedonic: "both" }) }}>Hedonic and Thoughts</Button>
+            <Button onClick={() => { this.setState({ showHedonic: "thoughts" }) }}>Thoughts Only</Button>
+            <Button onClick={() => { this.setState({ showHedonic: "hedonic" }) }}>Hedonic Only</Button>
           </ButtonGroup>
           <div>
 
-          <TextField id="outlined-basic"
-            value={this.state.limitMin}
-            
-            onChange={(e) => {
-              this.updateValue("limitMin",e.target.value)
-              
-            }} label="Min" variant="outlined" type="number" />
-          <TextField id="outlined-basic"
-            value={this.state.limitMax}
-            
-            onChange={(e) => {
-              this.updateValue("limitMax",e.target.value)
-              
-            }} label="Max" variant="outlined" type="number" />
-            </div>
+            <TextField id="outlined-basic"
+              value={this.state.limitMin}
+
+              onChange={(e) => {
+                this.updateValue("limitMin", e.target.value)
+
+              }} label="Min" variant="outlined" type="number" />
+            <TextField id="outlined-basic"
+              value={this.state.limitMax}
+
+              onChange={(e) => {
+                this.updateValue("limitMax", e.target.value)
+
+              }} label="Max" variant="outlined" type="number" />
+          </div>
           <div>
 
             <TextField
@@ -358,7 +402,7 @@ class ThoughtTimeseries extends Component {
               type="datetime-local"
               onChange={(e) => {
                 let time = new Date(e.target.value).getTime();
-                this.updateValue("startTimestamp",time)
+                this.updateValue("startTimestamp", time)
 
               }}
               defaultValue={yesterday}
@@ -373,7 +417,7 @@ class ThoughtTimeseries extends Component {
               type="datetime-local"
               onChange={(e) => {
                 let time = new Date(e.target.value).getTime();
-                this.updateValue("endTimestamp",time)
+                this.updateValue("endTimestamp", time)
 
               }}
               className="ThoughtTimeseries-field"

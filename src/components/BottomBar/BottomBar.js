@@ -24,31 +24,33 @@ class BottomBar extends Component {
       classList: "BottomBar",
       showLoggerMenu: false,
       anchor: null,
+      showInsightMenu:false,
+      insightAnchor:null
     };
   }
-  showLoggerMenu = (e) => {
+  showLoggerMenu = (e,key) => {
     console.log(Boolean(e.currentTarget));
 
     this.setState({
-      anchor: e.currentTarget,
+      [key]: e.currentTarget,
     });
   };
 
-  closeLoggerMenu = () => {
+  closeLoggerMenu = (key) => {
     console.log("Closing");
     this.setState({
-      anchor: null,
+      [key]: null,
     });
   };
 
   // Runs after Component is loaded in the broswer
-  componentDidMount() {}
+  componentDidMount() { }
 
   // Runs after a component has been updated
-  componentDidUpdate() {}
+  componentDidUpdate() { }
 
   // Runs right before a component is removed from the DOM
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   render() {
     return (
@@ -56,92 +58,117 @@ class BottomBar extends Component {
         <AppBar color="primary" className="BottomBar-bar">
           <Toolbar>
 
-          <Tooltip title="Thought Journal">
-          <Link to="/journal">
-            <Fab color="secondary" aria-label="notes">
-              <NotesIcon />
-            </Fab>
-          </Link>
-        </Tooltip>
-        <Tooltip title="Metacognitive Practices">
-          <Link to="/practices">
-            <Fab color="secondary" aria-label="meta-practices">
-              <AddAlarmIcon />
-            </Fab>
-          </Link>
-        </Tooltip>
-        <div>
-        <Fab
-          aria-controls="simple-menu"
-          aria-haspopup="true"
-          color="secondary"
-          aria-label="add"
-          onClick={this.showLoggerMenu}
-        >
-          <AddIcon />
-        </Fab>
+            <Tooltip title="Thought Journal">
+              <Link to="/journal">
+                <Fab color="secondary" aria-label="notes">
+                  <NotesIcon />
+                </Fab>
+              </Link>
+            </Tooltip>
+            <Tooltip title="Metacognitive Practices">
+              <Link to="/practices">
+                <Fab color="secondary" aria-label="meta-practices">
+                  <AddAlarmIcon />
+                </Fab>
+              </Link>
+            </Tooltip>
+            <div>
+              <Fab
+                aria-controls="simple-menu"
+                aria-haspopup="true"
+                color="secondary"
+                aria-label="add"
+                onClick={(e)=>this.showLoggerMenu(e,"anchor")}
+              >
+                <AddIcon />
+              </Fab>
 
-        <Menu
-          id="simple-menu"
-          anchorEl={this.state.anchor}
-          keepMounted
-          open={Boolean(this.state.anchor)}
-          onClose={this.closeLoggerMenu}
-        >
-          <Link to="/logger/thought">
-            <MenuItem onClick={this.closeLoggerMenu}>Add Thought</MenuItem>
-          </Link>
-          <Link to="/logger/stimulusAndThought">
-            <MenuItem onClick={this.closeLoggerMenu}>
-              {" "}
+              <Menu
+                id="simple-menu"
+                anchorEl={this.state.anchor}
+                keepMounted
+                open={Boolean(this.state.anchor)}
+                onClick={()=>this.closeLoggerMenu("anchor")}
+              >
+                <Link to="/logger/thought">
+                <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>Add Thought</MenuItem>
+                </Link>
+                <Link to="/logger/stimulusAndThought">
+                <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>
+                    {" "}
               Add Stimulus + Thought
             </MenuItem>
-          </Link>
-          <Link to="/logger/stimulusAndThoughtAndEmotion">
-            <MenuItem onClick={this.closeLoggerMenu}>
-              Add Stimulus + THought + Emotion
+                </Link>
+                <Link to="/logger/stimulusAndThoughtAndEmotion">
+                <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>
+                    Add Stimulus + THought + Emotion
             </MenuItem>
-          </Link>
-          <Link to="/logger/stimulusAndThoughtAndEmotionAndConcept">
-            <MenuItem onClick={this.closeLoggerMenu}>
-              Add Stimulus + Thought + Emotion + Concept
+                </Link>
+                <Link to="/logger/stimulusAndThoughtAndEmotionAndConcept">
+                  <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>
+                    Add Stimulus + Thought + Emotion + Concept
             </MenuItem>
-          </Link>
-          <Link to="/logger/thoughtAndEmotionAndConcept">
-            <MenuItem onClick={this.closeLoggerMenu}>
-              Thought + Emotion + Concept
+                </Link>
+                <Link to="/logger/thoughtAndEmotionAndConcept">
+                <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>
+                    Thought + Emotion + Concept
             </MenuItem>
-          </Link>
-          <Link to="/logger/thoughtAndEmotion">
-            <MenuItem onClick={this.closeLoggerMenu}>
-              Thought + Emotion
+                </Link>
+                <Link to="/logger/thoughtAndEmotion">
+                <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>
+                    Thought + Emotion
             </MenuItem>
-          </Link>
-          <Link to="/logger/thoughtAndPart">
-            <MenuItem onClick={this.closeLoggerMenu}>
-              Thought + Part
+                </Link>
+                <Link to="/logger/thoughtAndPart">
+                <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>
+                    Thought + Part
             </MenuItem>
-          </Link>
+                </Link>
 
-          <Link to="/logger/EmotionAndForm">
-            <MenuItem onClick={this.closeLoggerMenu}>Emotion + Form</MenuItem>
-          </Link>
-        </Menu>
-        </div>
-        <Tooltip title="Inquiry Practice">
-          <Link to="/inquiry">
-            <Fab color="secondary" aria-label="inquiry">
-              <FlareIcon />
-            </Fab>
-          </Link>
-        </Tooltip>
-        <Tooltip title="Insights">
-          <Link to="/insights">
-            <Fab color="secondary" aria-label="insights">
-              <InsertChartIcon />
-            </Fab>
-          </Link>
-        </Tooltip>
+                <Link to="/logger/EmotionAndForm">
+                <MenuItem onClick={()=>this.closeLoggerMenu("anchor")}>Emotion + Form</MenuItem>
+                </Link>
+              </Menu>
+            </div>
+            <Tooltip title="Inquiry Practice">
+              <Link to="/inquiry">
+                <Fab color="secondary" aria-label="inquiry">
+                  <FlareIcon />
+                </Fab>
+              </Link>
+            </Tooltip>
+            <div>
+
+
+                <Fab
+                  aria-controls="simple-menu"
+                  aria-haspopup="true"
+                  color="secondary"
+                  aria-label="add"
+                  onClick={(e)=>this.showLoggerMenu(e,"insightAnchor")}
+                >
+                  <InsertChartIcon />
+                </Fab>
+
+            </div>
+
+            <Menu
+              id="simple-menu"
+              anchorEl={this.state.insightAnchor}
+              keepMounted
+              open={Boolean(this.state.insightAnchor)}
+              onClose={()=>this.closeLoggerMenu("insightAnchor")}
+            >
+              <Link to="/insights/thoughtTrackerTimeseries">
+              <MenuItem onClick={()=>this.closeLoggerMenu("insightAnchor")}>Thought Tracker Timeseries</MenuItem>
+              </Link>
+              <Link to="/insights/thoughtTimeseries">
+              <MenuItem onClick={()=>this.closeLoggerMenu("insightAnchor")}>
+                 Thought Timeseries
+            </MenuItem>
+              </Link>
+
+            </Menu>
           </Toolbar>
         </AppBar>
       </div>

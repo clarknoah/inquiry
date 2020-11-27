@@ -168,10 +168,17 @@ let api = {
     `
     return driver.session().run(query)
   },
+  getThoughtTrackerTimeSeries:()=>{
+    let query = `
+    MATCH (n:User {firstName:"Noah"})-[:CONDUCTED_SESSION]->(tracker:Thought_Tracker)
+    RETURN tracker
+    `
+    return driver.session().run(query)
+  },
   getTrackerDatesAndDuration:()=>{
     let query = `
     MATCH (user:User {firstName:"Noah"})-[:CONDUCTED_SESSION]->(n:Thought_Tracker)
-    RETURN distinct n.date, collect(n.duration)
+    RETURN distinct n.date, collect(n.duration), collect(n.timestampOfStart)
     ORDER BY n.date
     `
     return driver.session().run(query)
@@ -179,11 +186,44 @@ let api = {
         let dates = {};
         res.records.forEach(field=>{
           let totalDuration = field._fields[1].reduce((a,b)=>a+b);
+          let date = 
           dates[field._fields[0]]={
             date:field._fields[0],
             duration:field._fields[1],
             totalDuration:totalDuration
 
+          }
+        })
+        return dates;
+      })
+  },
+  getTrackerDatesAndDuration2:()=>{
+    let query = `
+    MATCH (user:User {firstName:"Noah"})-[:CONDUCTED_SESSION]->(n:Thought_Tracker)
+    RETURN n
+    `
+    return driver.session().run(query)
+      .then(res=>{
+        let dates = {};
+        res.records.forEach(field=>{
+          let tracker = field._fields[0];
+          let date;
+          console.log(tracker);
+          if(tracker.properties.hasOwnProperty("timestampOfStart")){
+
+            date = new Date(tracker.properties.timestampOfStart-(300*1000*60)).toISOString().split('T')[0];
+          }else{
+            date = tracker.properties.date;
+          }
+          if(dates.hasOwnProperty(date)){
+            dates[date].totalDuration += tracker.properties.duration;
+            dates[date].duration.push(tracker.properties.duration);
+          }else{
+            dates[date] = {
+              date:date,
+              duration: [tracker.properties.duration],
+              totalDuration:tracker.properties.duration
+            }
           }
         })
         return dates;

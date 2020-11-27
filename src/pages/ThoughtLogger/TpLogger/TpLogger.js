@@ -76,6 +76,7 @@ class TpLogger extends Component{
         cypherQuery:cypherQuery,
         activeStep:1,
         perception:[a,m],
+        focus:true,
         date:m.properties.dateOfPerception.value
       })
     }
@@ -124,6 +125,7 @@ class TpLogger extends Component{
      perception:[],
      text:"",
      cypherQuery: new CypherQuery(),
+     focus:!this.state.focus,
      date:undefined
    })
  };
@@ -133,7 +135,7 @@ class TpLogger extends Component{
   getStepContent=(stepIndex)=>{
     switch (stepIndex) {
       case 0:
-        return <ManifestedPerception label="Thought" date={this.state.date} queryKey="perception" submitPerception={this.submitPerception}/>;
+        return <ManifestedPerception label="Thought" focus date={this.state.date} queryKey="perception" submitPerception={this.submitPerception}/>;
       case 1:
         return <ManifestedPerception label="Part" date={this.state.date} queryKey="perception" submitPerception={this.submitPart}/>;
       case 2: 
