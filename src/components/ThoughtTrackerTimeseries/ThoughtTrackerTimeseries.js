@@ -68,7 +68,10 @@ class ThoughtTrackerTimeseries extends Component {
           enabled: false
         },
         markers: {
-          size: 8,
+          size: 4,
+        },      
+        stroke:{
+          curve:'smooth'
         },
         title: {
           text: 'Thought Tracker Timeline',

@@ -33,7 +33,7 @@ let api = {
   nodeListQuerySize:function(label, field, queryText=undefined, limit = 5, skip=0){
     let query = `
     MATCH (user:User)-[:HAS_ABSTRACT]->(n:A_${label})<-[:MANIFESTATION_OF]-(m:M_${label})
-    WHERE ${queryText!==undefined ? `n.${field} =~ $text AND` : ""}ID(user)=${localStorage.getItem("activeUser_id")}
+    WHERE ${queryText!==undefined ? `n.${field} =~ $text AND` : ""}ID(user)=${localStorage.getItem("activeUser_id")} AND n.hedonicAffect = "unassigned"
     RETURN n, count(distinct m)
     ORDER BY count(distinct m) DESC
     SKIP ${skip}

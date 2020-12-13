@@ -97,9 +97,12 @@ class TopBar extends Component {
               <IconButton edge="start" color="inherit" aria-label="menu">
                 <MenuIcon />
               </IconButton>
+          <img src="/images/iAmLogo.svg" className="iAm-logo"/>
+          <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
               <Typography variant="h6" >
                 iAm
           </Typography>
+          </Link>
             </div>
             {auth && (
               <div style={{display:"flex",alignItems:"center"}}>

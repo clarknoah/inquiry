@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2020-11-17T18:10:56.218Z",
+    "lastModifTS": "2020-11-28T13:32:25.540Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -396,6 +396,44 @@
                     "error": {},
                     "mode": "date",
                     "isActivated": true
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "unassigned",
+                    "primaryKey": false,
+                    "enum": [
+                        "positive",
+                        "neutral",
+                        "negative",
+                        "unassigned"
+                    ],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ad00ea40-2ace-11eb-9c8c-17fcea665648",
+                    "name": "hedonicAffect",
+                    "code": "Hedonic Affect",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "error": {
+                        "code": false,
+                        "name": false
+                    },
+                    "relationshipType": "",
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "parentRelationship": ""
                 }
             ],
             "definitions": {
@@ -593,7 +631,10 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "isActivated": true,
-                    "error": {}
+                    "error": {
+                        "code": false,
+                        "name": false
+                    }
                 }
             ],
             "definitions": {
@@ -754,6 +795,44 @@
                     "hackoladeMeta": {},
                     "error": {},
                     "isActivated": true
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "unassigned",
+                    "primaryKey": false,
+                    "enum": [
+                        "positive",
+                        "neutral",
+                        "negative",
+                        "unassigned"
+                    ],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b119a6d0-2ace-11eb-9c8c-17fcea665648",
+                    "name": "hedonicAffect",
+                    "code": "Hedonic Affect",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "error": {
+                        "code": false,
+                        "name": false
+                    },
+                    "relationshipType": "",
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "parentRelationship": ""
                 }
             ],
             "definitions": {
@@ -960,6 +1039,44 @@
                     "foreignField": [],
                     "parentRelationship": "",
                     "isActivated": true
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "unassigned",
+                    "primaryKey": false,
+                    "enum": [
+                        "positive",
+                        "neutral",
+                        "negative",
+                        "unassigned"
+                    ],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b4cb8b40-2ace-11eb-9c8c-17fcea665648",
+                    "name": "hedonicAffect",
+                    "code": "Hedonic Affect",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "error": {
+                        "code": false,
+                        "name": false
+                    },
+                    "relationshipType": "",
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "parentRelationship": ""
                 }
             ],
             "definitions": {
@@ -7704,8 +7821,11 @@
         "10baf4a0-f77a-11ea-9f76-433a900eeb80": "firstName",
         "157a7880-f77a-11ea-9f76-433a900eeb80": "lastName",
         "2a9c5260-f77a-11ea-9f76-433a900eeb80": "birthDate",
+        "fb1f0de0-28ff-11eb-9c8c-17fcea665648": "ASSOCIATED_PART",
         "75823270-2800-11eb-9c8c-17fcea665648": "hedonicAffect",
-        "fb1f0de0-28ff-11eb-9c8c-17fcea665648": "ASSOCIATED_PART"
+        "ad00ea40-2ace-11eb-9c8c-17fcea665648": "hedonicAffect",
+        "b119a6d0-2ace-11eb-9c8c-17fcea665648": "hedonicAffect",
+        "b4cb8b40-2ace-11eb-9c8c-17fcea665648": "hedonicAffect"
     },
     "definitions": {
         "type": "definitions",
@@ -8818,147 +8938,149 @@
                     "childField": [],
                     "parentField": []
                 },
-                "selectedCollections": [],
+                "selectedCollections": [
+                    "80f80c10-f777-11ea-9f76-433a900eeb80"
+                ],
                 "displayColorPicker": false,
                 "graphView": {
                     "erd": [
                         {
                             "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
                             "size": 120,
-                            "x": 3074.8387210509836,
-                            "y": 2094.173125528835
+                            "x": 3137.5264550221796,
+                            "y": 2026.8620738501916
                         },
                         {
                             "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 2713.999942221452,
-                            "y": 1413.0039847085677
+                            "x": 2707.614523841496,
+                            "y": 1396.1053443415606
                         },
                         {
                             "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 1799.8085860768012,
-                            "y": 1475.329334416102
+                            "x": 1775.8575685803703,
+                            "y": 1539.2598486490683
                         },
                         {
                             "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 3001.022039517105,
-                            "y": 1764.6769509252456
+                            "x": 3054.7357363939473,
+                            "y": 1832.9372981721513
                         },
                         {
                             "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 1535.4075043686375,
-                            "y": 1792.5678986755445
+                            "x": 1587.9445031784378,
+                            "y": 1779.0468246784765
                         },
                         {
                             "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 2048.0785065254267,
-                            "y": 959.7849480998706
+                            "x": 2057.9243069347713,
+                            "y": 928.2663159822584
                         },
                         {
                             "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 2617.3975776330653,
-                            "y": 1438.8265099510932
+                            "x": 2589.367056582576,
+                            "y": 1480.4418650473137
                         },
                         {
                             "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 3414.7307703381944,
-                            "y": 1089.6139369634102
+                            "x": 3456.207701529113,
+                            "y": 1170.0533650602022
                         },
                         {
                             "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
                             "size": 100,
-                            "x": 1904.8110895977702,
-                            "y": 1081.780647030004
+                            "x": 1917.6629806929764,
+                            "y": 1049.1660994374754
                         },
                         {
                             "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
-                            "x": 3066.571972507413,
-                            "y": 2210.244068207776,
+                            "x": 3115.781673325102,
+                            "y": 2134.653038273027,
                             "size": 100
                         },
                         {
                             "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
-                            "x": 3314.154548128061,
-                            "y": 1449.461735525072,
+                            "x": 3172.9277798899648,
+                            "y": 1267.2782441938255,
                             "size": 100
                         },
                         {
                             "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
-                            "x": 1844.0214024245363,
-                            "y": 1385.6554421417688,
+                            "x": 1814.085324374451,
+                            "y": 1446.8724296853811,
                             "size": 100
                         },
                         {
                             "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
-                            "x": 2085.1086847314446,
-                            "y": 1312.1588305392402,
+                            "x": 2106.1424169097277,
+                            "y": 1326.2655341984791,
                             "size": 100
                         },
                         {
                             "GUID": "a7bd9590-f777-11ea-9f76-433a900eeb80",
-                            "x": 1389.1631862760664,
-                            "y": 1696.5425799121792,
+                            "x": 1377.2934386582533,
+                            "y": 1642.827571762841,
                             "size": 100
                         },
                         {
                             "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 3375.0045800024586,
-                            "y": 1183.9982696739619
+                            "x": 3340.971442026823,
+                            "y": 1208.3572203315334
                         },
                         {
                             "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 2276.894671367394,
-                            "y": 2087.851180425219
+                            "x": 2323.9289855706356,
+                            "y": 2095.290114999211
                         },
                         {
                             "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 3051.0703799823755,
-                            "y": 1862.2836313163432
+                            "x": 3142.6453986192,
+                            "y": 1880.5852466156557
                         },
                         {
                             "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 2911.1130622985843,
-                            "y": 733.2716651183407
+                            "x": 2934.736272251782,
+                            "y": 803.8342558701719
                         },
                         {
                             "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
                             "size": 100,
-                            "x": 2351.4669105004255,
-                            "y": 1296.0111758438554
+                            "x": 2314.017856372064,
+                            "y": 1300.3951247844545
                         },
                         {
                             "GUID": "bc7b5d00-1eb4-11eb-a04e-73e33b72b93e",
-                            "x": 3017.0579106940727,
-                            "y": 723.0203941482324,
+                            "x": 2790.243165535415,
+                            "y": 651.5566292194474,
                             "size": 100
                         },
                         {
                             "GUID": "cdf7d590-1eb4-11eb-a04e-73e33b72b93e",
-                            "x": 2548.9353455428836,
-                            "y": 1348.3263711805002,
+                            "x": 2411.9325178800127,
+                            "y": 1320.6829122086217,
                             "size": 100
                         },
                         {
                             "GUID": "c8586b00-2430-11eb-9c8c-17fcea665648",
                             "size": 100,
-                            "x": 2524.8675527208043,
-                            "y": 547.8950251772181
+                            "x": 2580.2222176849677,
+                            "y": 567.8986842434535
                         },
                         {
                             "GUID": "ce956720-2430-11eb-9c8c-17fcea665648",
                             "size": 100,
-                            "x": 2217.3098716178124,
-                            "y": 1288.335299654269
+                            "x": 2214.381184054417,
+                            "y": 1291.959508737051
                         }
                     ],
                     "buckets": [],

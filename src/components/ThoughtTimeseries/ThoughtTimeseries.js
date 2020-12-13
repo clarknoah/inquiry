@@ -37,6 +37,9 @@ class ThoughtTimeseries extends Component {
       source: [],
       trackers: {},
       chartData: [],
+      stroke:{
+        curve:'smooth'
+      },
       limitMin: 4,
       limitMax: 999999999999,
       startTimestamp: yesterday,
@@ -281,7 +284,7 @@ class ThoughtTimeseries extends Component {
       let total = hedonic[0][1][i][1] + hedonic[1][1][i][1] + hedonic[2][1][i][1] + hedonic[3][1][i][1]
       console.log(total);
       if(total>0){
-        let tenths = 10/total;
+        let tenths = 100/total;
         console.log(tenths);
   
         hedonic[0][1][i][1] = tenths * hedonic[0][1][i][1];

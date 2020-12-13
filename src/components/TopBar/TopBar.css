@@ -8,3 +8,9 @@
     width: 100%;
     justify-content: space-between;
   }
+
+.iAm-logo {
+    height:50px;
+    width:auto;
+    fill:#FFFFFF;
+}

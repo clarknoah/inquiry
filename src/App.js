@@ -11,6 +11,7 @@ import ThoughtLogger from "./pages/ThoughtLogger/ThoughtLogger";
 import PracticesHome from "./pages/PracticesHome/PracticesHome";
 import ThoughtTracker from "./pages/trackers/ThoughtTracker/ThoughtTracker";
 import StLogger from "./pages/ThoughtLogger/StLogger/StLogger";
+import StpLogger from "./pages/ThoughtLogger/StpLogger/StLogger";
 import SteLogger from "./pages/ThoughtLogger/SteLogger/SteLogger";
 import StefLogger from "./pages/ThoughtLogger/StefLogger/StefLogger";
 import TeLogger from "./pages/ThoughtLogger/TeLogger/TeLogger";
@@ -88,7 +89,19 @@ class App extends React.Component {
               }}
             />
             <Route
+              path="/logger/stimulusAndThoughtAndPart"
+              render={(routerProps) => {
+                return <StpLogger {...routerProps} />;
+              }}
+            />
+            <Route
               path="/logger/stimulusAndThoughtAndEmotion"
+              render={(routerProps) => {
+                return <SteLogger {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/logger/stimulusAndThoughtAndEmotionAndPart"
               render={(routerProps) => {
                 return <SteLogger {...routerProps} />;
               }}
