@@ -1,17 +1,7 @@
 # Inquiry
-Inquiry is an app that serves to beat impermanence by allowing you to log the Thoughts that you experience throughout the day. The believing of Thoughts as being true or false in my experience ultimately determines how we experience any given moment. When you see a beautiful bird fly past you, you may experience a sense of joy and wonderment...that is until a Thought arises that says "this moment could feel better", in the MOMENT that this Thought is believed as true, which could be the default way in which you perceive your Thoughts, you experience the Thought as your reality, and this is followed by a feeling of incompleteness, because you just convinced yourself that the moment was incomplete. Belief has INCREDIBLE power to shape how we experience reality, but when you really simplify things, belief is really just a property associated with Thoughts, not dissimilar to how color is a property associated to an apple.
+Inquiry is designed to serve as a data platform for experimenting with different ways of tracking subjective experiences in real time. The the moment it focuses primarily on tracking of Emotion, Thoughts, and Perceptions, although this model is constantly expanding as creative ideas arise. The whole intent of this platform is to serve as a tool for prototyping different ways of observing subjective observable mental phenomona in a way that can be queries and correlated. This project started out as a way for me to get a better understanding of the "as is" landscape of my own mind, and I intend for this to expand far beyond my own personal needs as researchers and creatives continue to add to the platform.
 
-The vision for Inquiry is as follows:
-1. Help people develop a direct awareness of the relationship between Thought and emotion
-2. Help people to develop the ability to reprogramming their default way of labeling Thoughts that arise (from automatically believing, to recognizing the emptiness of Thoughts)
-3. Helping people to develop awareness of the stimulus that precedes Thoughts arising
-3. Allowing people to visualize temporally their Thought space.
-4. Allow people to categorize and tag Thoughts for later inquiry
-4. Provide timed meditative sessions where Thoughts are inquired into
-4. Provide analytics which allow for the cause and effect relationship between Thoughts
-4. Provide timed meditative sessions where users can reflect on Thoughts which are no longer beliefed
-5. Provide timed meditative sessions where users and inquiry into their own Thoughts to deeply question the reality of them
-5. Provide timed meditative sessions where the user simply tracks the stream of Thoughts that are arising and passing in consciousness
+As this is a work in progress, terminology, focus, and direction of this project is subject to change.
 
 ## Key Concepts
 Before we can go into detail about inquiry and how it will work as software, it's important to establish some explicit definitions for certain words that I will be using. When it is intended that these words be understood with their definition in mind, I will capitalize the word so that this is clearly understood (unless I forgot to capitalize it :D)
