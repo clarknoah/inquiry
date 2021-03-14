@@ -133,7 +133,7 @@ class TeLogger extends Component{
   getStepContent=(stepIndex)=>{
     switch (stepIndex) {
       case 0:
-        return <ManifestedPerception label="Thought" date={this.state.date} queryKey="perception" submitPerception={this.submitPerception}/>;
+        return <ManifestedPerception label="Thought" focus date={this.state.date} queryKey="perception" submitPerception={this.submitPerception}/>;
       case 1:
         return <ManifestedPerception label="Emotion" date={this.state.date} queryKey="perception" submitPerception={this.submitEmotion}/>;
       case 2: 

@@ -20,7 +20,7 @@ class ThoughtJournal extends Component{
 
   // Runs after Component is loaded in the broswer
   componentDidMount(){
-    api.nodeListQuerySize("Thought","perception",undefined, 50,48)
+    api.nodeListQuerySize("Thought","perception",undefined, 50,0)
       .then(res=>{
         let thoughts = [];
         res = res.map(val=>{

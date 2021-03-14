@@ -9,6 +9,7 @@ import Chart from 'react-apexcharts'
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import utils from "../../services/utils";
 /*
   This chart should do the following:
 
@@ -23,7 +24,9 @@ import Switch from '@material-ui/core/Switch';
 */
 
 // Class Based React Component
+let colors = utils.getColorArray(7);
 
+console.log(colors);
 let day = 1000 * 60 * 60 * 24;
 let twentyFourHours = 1000 * 60 * 60 * 24 * 15;
 let today = new Date(Date.now() + day).toISOString().split(".")[0];
@@ -64,6 +67,7 @@ class ThoughtTrackerTimeseries extends Component {
             autoSelected: 'zoom'
           }
         },
+        colors:colors,
         dataLabels: {
           enabled: false
         },

@@ -1,7 +1,7 @@
 import neo4j from "neo4j-driver";
 
 var driver = neo4j.driver(
-  "neo4j://localhost",
+  "bolt://localhost:7688",
   neo4j.auth.basic("neo4j", "neo4j")
 );
 
@@ -33,8 +33,8 @@ let api = {
   nodeListQuerySize:function(label, field, queryText=undefined, limit = 5, skip=0){
     let query = `
     MATCH (user:User)-[:HAS_ABSTRACT]->(n:A_${label})<-[:MANIFESTATION_OF]-(m:M_${label})
-    WHERE ${queryText!==undefined ? `n.${field} =~ $text AND` : ""}ID(user)=${localStorage.getItem("activeUser_id")} AND n.hedonicAffect = "unassigned"
-    RETURN n, count(distinct m)
+    WHERE ${queryText!==undefined ? `n.${field} =~ $text AND` : ""}ID(user)=${localStorage.getItem("activeUser_id")} AND n.hedonicAffect = "unassigned" AND NOT (n)<-[:MANIFESTATION_OF]-(:Manifested_${label})<-[:INQUIRED_INTO]-()
+    RETURN n, count(distinct m), n.timestampOfPerception
     ORDER BY count(distinct m) DESC
     SKIP ${skip}
     LIMIT ${limit}
@@ -42,7 +42,7 @@ let api = {
     let params={
       text:`(?i)${queryText}.*`
     }
-   
+    console.log(query);
     return driver.session().run(query,params)
       .then(results=>{
 

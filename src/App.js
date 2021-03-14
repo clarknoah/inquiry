@@ -21,6 +21,8 @@ import TfLogger from "./pages/ThoughtLogger/TfLogger/TfLogger";
 import TopBar from "./components/TopBar/TopBar";
 import ThoughtTimeseries from "./components/ThoughtTimeseries/ThoughtTimeseries";
 import ThoughtTrackerTimeseries from "./components/ThoughtTrackerTimeseries/ThoughtTrackerTimeseries";
+import {utils} from "stillness-utils";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -58,6 +60,8 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(utils)
+    console.log("wtf");
     return (
       <div className="App">
         <main>

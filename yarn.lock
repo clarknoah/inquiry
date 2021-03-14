@@ -11475,6 +11475,11 @@
   "resolved" "https://registry.npmjs.org/stillness-ogm/-/stillness-ogm-0.0.11111.tgz"
   "version" "0.0.11111"
 
+"stillness-utils@^0.0.1":
+  "integrity" "sha512-Wi0FCkKTT1R79sEQ+cKz6r8NhBFSU4oo9HWYJw1i2/Bj9PcGgypIPA5JS0xSvKBnUYDgd9pj9QUdId3pWWdFzQ=="
+  "resolved" "https://registry.npmjs.org/stillness-utils/-/stillness-utils-0.0.1.tgz"
+  "version" "0.0.1"
+
 "stream-browserify@^2.0.1":
   "integrity" "sha512-nX6hmklHs/gr2FuxYDltq8fJA1GDlxKQCz8O/IM4atRqBH8OORmBNgfvW5gG10GT/qQ9u0CzIvr2X5Pkt6ntqg=="
   "resolved" "https://registry.npmjs.org/stream-browserify/-/stream-browserify-2.0.2.tgz"

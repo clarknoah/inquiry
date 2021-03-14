@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Chart from 'react-apexcharts'
+import utils from "../../services/utils";
 /*
   This chart should do the following:
 
@@ -20,7 +21,7 @@ import Chart from 'react-apexcharts'
 */
 
 // Class Based React Component
-
+console.log(utils.getColorArray(100))
 let day = 1000 * 60 * 60 * 24;
 let twentyFourHours = 1000 * 60 * 60 * 24 * 7;
 let today = new Date(Date.now()).toISOString().split(".")[0];
@@ -278,22 +279,26 @@ class ThoughtTimeseries extends Component {
     let hedonic = d3.rollups(data, v => v.length, d => d.hedonicAffect, d => d.date)
     console.log(this.addEmptyDates(hedonic));
     hedonic = this.addEmptyDates(hedonic);
-    for(let i = 0; i < hedonic[0][1].length; i++){
-
-      console.log(hedonic[0][1][i][1],hedonic[1][1][i][1],hedonic[2][1][i][1],hedonic[3][1][i][1])
-      let total = hedonic[0][1][i][1] + hedonic[1][1][i][1] + hedonic[2][1][i][1] + hedonic[3][1][i][1]
-      console.log(total);
-      if(total>0){
-        let tenths = 100/total;
-        console.log(tenths);
+    try{
+      for(let i = 0; i < hedonic[0][1].length; i++){
   
-        hedonic[0][1][i][1] = tenths * hedonic[0][1][i][1];
-        hedonic[1][1][i][1] = tenths * hedonic[1][1][i][1];
-        hedonic[2][1][i][1] = tenths * hedonic[2][1][i][1];
-        hedonic[3][1][i][1] = tenths * hedonic[3][1][i][1];
+        console.log(hedonic[0][1][i][1],hedonic[1][1][i][1],hedonic[2][1][i][1],hedonic[3][1][i][1])
+        let total = hedonic[0][1][i][1] + hedonic[1][1][i][1] + hedonic[2][1][i][1] + hedonic[3][1][i][1]
+        console.log(total);
+        if(total>0){
+          let tenths = 100/total;
+          console.log(tenths);
+    
+          hedonic[0][1][i][1] = tenths * hedonic[0][1][i][1];
+          hedonic[1][1][i][1] = tenths * hedonic[1][1][i][1];
+          hedonic[2][1][i][1] = tenths * hedonic[2][1][i][1];
+          hedonic[3][1][i][1] = tenths * hedonic[3][1][i][1];
+        }
+  
+  
       }
-
-
+    }catch(err){
+      console.log("Something went wrong",err)
     }
     return hedonic;
   }
@@ -352,9 +357,11 @@ class ThoughtTimeseries extends Component {
       })
       return obj;
     })
-    this.setState({
-      chartData: mappedData
-    });
+    let state = this.state;
+    state.chartData = mappedData;
+    console.log(mappedData);
+    state.options.colors = utils.getColorArray(mappedData.length);
+    this.setState(state);
   }
 
 
