@@ -2,7 +2,7 @@
     "GUID": "711296f0-0aee-11eb-b91b-65a1de19ee72",
     "modelName": "New model",
     "code": "",
-    "lastModifTS": "2021-01-10T15:10:53.464Z",
+    "lastModifTS": "2021-03-31T10:24:52.306Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -3934,6 +3934,35 @@
                     },
                     "mode": "localdatetime",
                     "isActivated": true
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "passiveFlow",
+                    "primaryKey": false,
+                    "enum": [
+                        "passiveFlow",
+                        "cbtChallenge"
+                    ],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d6979a40-920a-11eb-aa6a-5defe6493440",
+                    "name": "trackerType",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -7927,7 +7956,8 @@
         "135d9dc0-5355-11eb-80ca-7b211204eb22": "HAS_TAG",
         "187d1bf0-5355-11eb-80ca-7b211204eb22": "HAS_TAG",
         "1dd70b10-5355-11eb-80ca-7b211204eb22": "HAS_TAG",
-        "e2a7b7a0-5355-11eb-80ca-7b211204eb22": "Tag to New node label"
+        "e2a7b7a0-5355-11eb-80ca-7b211204eb22": "Tag to New node label",
+        "d6979a40-920a-11eb-aa6a-5defe6493440": "trackerType"
     },
     "definitions": {
         "type": "definitions",

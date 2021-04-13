@@ -7,6 +7,10 @@ import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import NodeEditor from "../../../components/NodeEditor/NodeEditor";
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 // Class Based React Component
 class ThoughtTracker extends Component {
   constructor(props) {
@@ -197,6 +201,13 @@ class ThoughtTracker extends Component {
     })
   }
 
+  updateType =(e)=>{
+    console.log(e);
+    let tracker = this.state.tracker;
+    tracker.properties.trackerType.setValue(e.target.value);
+    this.setState({tracker});
+  }
+
   setHistoric = () => {
     let tracker = this.state.tracker;
     let value = !this.state.tracker.historic;
@@ -211,6 +222,7 @@ class ThoughtTracker extends Component {
   };
 
   render() {
+    console.log(this.state.tracker);
     let duration = this.state.tracker.properties.duration.value;
     let status = this.state.tracker.status;
     let historic = this.state.tracker.historic;
@@ -268,6 +280,20 @@ class ThoughtTracker extends Component {
                 />
               </div>
             ) : null}
+                  <FormControl variant="outlined">
+        <InputLabel id="demo-simple-select-outlined-label">Tracker Type</InputLabel>
+        <Select
+          labelId="demo-simple-select-outlined-label"
+          id="demo-simple-select-outlined"
+          value={this.state.tracker.properties.trackerType.value}
+          onChange={this.updateType}
+          label="Tracker Type"
+        >
+          {this.state.tracker.properties.trackerType.meta.enum.map(val=>{
+            return <MenuItem value={val}>{val}</MenuItem>
+          })}
+        </Select>
+      </FormControl>
             <TextField
               label="Please Select Duration"
               type="number"
