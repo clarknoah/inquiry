@@ -38,9 +38,6 @@ class ThoughtTimeseries extends Component {
       source: [],
       trackers: {},
       chartData: [],
-      stroke:{
-        curve:'smooth'
-      },
       limitMin: 4,
       limitMax: 999999999999,
       startTimestamp: yesterday,
@@ -59,6 +56,9 @@ class ThoughtTimeseries extends Component {
           toolbar: {
             autoSelected: 'zoom'
           }
+        },
+        stroke:{
+          curve:'smooth'
         },
         dataLabels: {
           enabled: false
@@ -83,7 +83,7 @@ class ThoughtTimeseries extends Component {
         yaxis: {
           labels: {
             formatter: function (val) {
-              return val
+              return val;
             },
           },
           title: {
@@ -97,7 +97,7 @@ class ThoughtTimeseries extends Component {
           shared: false,
           y: {
             formatter: function (val) {
-              return val
+              return val+"%"; 
             }
           }
         }
