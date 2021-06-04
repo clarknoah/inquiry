@@ -3943,7 +3943,8 @@
                     "primaryKey": false,
                     "enum": [
                         "passiveFlow",
-                        "cbtChallenge"
+                        "cbtChallenge",
+                        "mdmaTherapy"
                     ],
                     "sample": "",
                     "unique": false,
