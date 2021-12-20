@@ -202,10 +202,12 @@ class ThoughtTracker extends Component {
   }
 
   updateType =(e)=>{
-    console.log(e);
+    console.log(e.target.value);
+    let trackerType = e.target.value;
     let tracker = this.state.tracker;
+    let type = trackerType === "passiveEmotion" ? "Emotion" : "Thought";
     tracker.properties.trackerType.setValue(e.target.value);
-    this.setState({tracker});
+    this.setState({tracker, type});
   }
 
   setHistoric = () => {

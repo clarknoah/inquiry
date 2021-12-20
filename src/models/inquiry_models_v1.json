@@ -3944,7 +3944,9 @@
                     "enum": [
                         "passiveFlow",
                         "cbtChallenge",
-                        "mdmaTherapy"
+                        "mdmaTherapy",
+                        "tryptamineTherapy",
+                        "passiveEmotion"
                     ],
                     "sample": "",
                     "unique": false,
