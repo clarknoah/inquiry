@@ -11,6 +11,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Countdown from "react-countdown";
 // Class Based React Component
 class ThoughtTracker extends Component {
   constructor(props) {
@@ -29,6 +30,8 @@ class ThoughtTracker extends Component {
       type: "Thought",
       query: undefined,
       trackerSubmitted: false,
+      displayCountDown: false,
+      countdown: 5
     };
   }
 
@@ -224,17 +227,43 @@ class ThoughtTracker extends Component {
   };
 
   render() {
-    console.log(this.state.tracker);
-    let duration = this.state.tracker.properties.duration.value;
-    let status = this.state.tracker.status;
-    let historic = this.state.tracker.historic;
+    let { setState, state } = this;
+    let { tracker, timeRemaining, countdown, showCountdown} = state;
+    let duration = tracker.properties.duration.value;
+    let {status, historic} = tracker;
+
     let checkReady =
       isNaN(duration) !== true &&
       this.state.tracker.properties.date.value !== undefined;
+
     return (
       <div className={this.state.classList}>
         {status === "setup" ? (
           <div className={"ThoughtTracker-setupForm"}>
+            <FormControlLabel
+              className={"ThoughtLogger-field"}
+              control={
+                <Checkbox
+                  checked={showCountdown}
+                  onChange={e=>this.setState({showCountdown:!showCountdown})}
+                  name="checkedB"
+                  color="primary"
+                />
+              }
+              label="Show Countdown?"
+            />
+            {showCountdown ? (                
+            <TextField
+                  id="date"
+                  label="Countdown Display"
+                  type="number"
+                  onChange={(e) =>this.setState({countdown: e.target.value}) }
+                  value={countdown}
+                  className={"ThoughtLogger-field"}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />) : null}
             <FormControlLabel
               className={"ThoughtLogger-field"}
               control={
@@ -340,6 +369,8 @@ class ThoughtTracker extends Component {
           </div>
         ) : null}
         {status === "inProgress" && historic !== true ? (
+          <>
+         { timeRemaining <= countdown ? <div>{this.state.timeRemaining}</div> : null}
           <div className="ThoughtTracker-inProgress">
             <ManifestedPerception
               label={this.state.type}
@@ -348,6 +379,7 @@ class ThoughtTracker extends Component {
               finalInput={this.getFinalInput}
             />
           </div>
+          </>
         ) : null}
         {status === "review" ? (
           <div className="ThoughtTracker-Review"></div>
