@@ -22,7 +22,7 @@ let linkStyle = {
 class BottomBar extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -32,11 +32,13 @@ class BottomBar extends Component {
       showInsightMenu: false,
       insightAnchor: null,
       showJournalMenu: false,
-      journalAnchor: null
+      journalAnchor: null,
+      showPracticesMenu: false,
+      practicesAnchor: null
     };
   }
   showLoggerMenu = (e, key) => {
-    console.log(Boolean(e.currentTarget));
+    
 
     this.setState({
       [key]: e.currentTarget,
@@ -44,7 +46,7 @@ class BottomBar extends Component {
   };
 
   closeLoggerMenu = (key) => {
-    console.log("Closing");
+
     this.setState({
       [key]: null,
     });
@@ -113,12 +115,33 @@ class BottomBar extends Component {
 
             </Menu>
             <Tooltip title="Metacognitive Practices">
-              <Link style={linkStyle} to="/practices">
-                <Fab color="secondary" aria-label="meta-practices">
+              <Link style={linkStyle}>
+                <Fab 
+                  color="secondary" 
+                  aria-label="meta-practices"
+                  onClick={(e) => this.showLoggerMenu(e, "practicesAnchor")}
+                >
                   <AddAlarmIcon />
                 </Fab>
               </Link>
             </Tooltip>
+            <Menu
+              id="simple-menu"
+              anchorEl={this.state.practicesAnchor}
+              keepMounted
+              open={Boolean(this.state.practicesAnchor)}
+              onClose={() => this.closeLoggerMenu("practicesAnchor")}
+            >
+              <Link style={linkStyle} to="/trackers/thought">
+                <MenuItem onClick={() => this.closeLoggerMenu("practicesAnchor")}>Thought Tracking</MenuItem>
+              </Link>
+              <Link style={linkStyle} to="/trackers/emotion">
+                <MenuItem onClick={() => this.closeLoggerMenu("practicesAnchor")}>Emotion Tracking</MenuItem>
+              </Link>
+              <Link style={linkStyle} to="/trackers/hedonic">
+                <MenuItem onClick={() => this.closeLoggerMenu("practicesAnchor")}>Hedonic Tracking</MenuItem>
+              </Link>
+            </Menu>
             <div>
               <Fab
                 aria-controls="simple-menu"

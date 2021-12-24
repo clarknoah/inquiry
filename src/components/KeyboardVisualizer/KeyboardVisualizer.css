@@ -1,0 +1,24 @@
+.KeyboardVisualizer {
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+}
+
+
+.hideKey {
+    visibility: hidden;
+    height: 100px;
+    width: 100px;
+}
+
+.showKey {
+    display: flex;
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

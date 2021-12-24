@@ -10,6 +10,8 @@ import ThoughtJournal from "./pages/ThoughtJournal/ThoughtJournal";
 import ThoughtLogger from "./pages/ThoughtLogger/ThoughtLogger";
 import PracticesHome from "./pages/PracticesHome/PracticesHome";
 import ThoughtTracker from "./pages/trackers/ThoughtTracker/ThoughtTracker";
+import EmotionTracker from "./pages/trackers/EmotionTracker/ThoughtTracker";
+import Hedonictracker from "./pages/trackers/HedonicTracker/ThoughtTracker";
 import StLogger from "./pages/ThoughtLogger/StLogger/StLogger";
 import StpLogger from "./pages/ThoughtLogger/StpLogger/StLogger";
 import SteLogger from "./pages/ThoughtLogger/SteLogger/SteLogger";
@@ -26,18 +28,14 @@ import {utils} from "stillness-utils";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+
 
     // Default CSS class to apply to the Component
-    console.log(this.getLoggedInStatus())
+
     this.state = {
       classList: "UserRegistration",
       loggedIn: this.getLoggedInStatus()
     };
-  }
-
-  componentDidUpdate() {
-    console.log("APp updated");
   }
 
   getLoggedInStatus=()=>{
@@ -45,7 +43,7 @@ class App extends React.Component {
   }
 
   updateUserStatus=()=>{
-    console.log("UPDATING");
+
     if (this.state.loggedIn !== true && this.getLoggedInStatus()) {
       console.log("loggin in");
       this.setState({
@@ -60,8 +58,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(utils)
-    console.log("wtf");
+
     return (
       <div className="App">
         <main>
@@ -75,7 +72,19 @@ class App extends React.Component {
               }}
             />
             <Route
-              path="/practices"
+              path="/trackers/thought"
+              render={(routerProps) => {
+                return <ThoughtTracker {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/trackers/emotion"
+              render={(routerProps) => {
+                return <EmotionTracker {...routerProps} />;
+              }}
+            />
+            <Route
+              path="/trackers/hedonic"
               render={(routerProps) => {
                 return <ThoughtTracker {...routerProps} />;
               }}
