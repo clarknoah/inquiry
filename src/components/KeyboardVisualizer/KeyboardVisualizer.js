@@ -18,7 +18,6 @@ const KeyboardVisualizer = (props) => {
   return(
     <div className={classList}>
       {displayKeys.map(key=>{
-        console.log(key);
         return <div className={`${key.pressed ? "showKey" : "hideKey"}`}>{key.label}</div>
       })}
     </div>

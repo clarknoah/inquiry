@@ -13,6 +13,6 @@ Learn what it can do here:
 https://github.com/jondot/hygen
 ```
 
-console.log(hello)
+
 
 

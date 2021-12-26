@@ -3946,7 +3946,8 @@
                         "cbtChallenge",
                         "mdmaTherapy",
                         "tryptamineTherapy",
-                        "passiveEmotion"
+                        "passiveEmotion",
+                        "coreEmotionFlow"
                     ],
                     "sample": "",
                     "unique": false,

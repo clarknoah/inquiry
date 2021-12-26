@@ -207,6 +207,7 @@ class ManifestedPerception extends Component {
             variant="contained"
             label="Hello"
             onClick={() => {
+              console.log(val);
               this.selectExistingPerception(val);
             }}
           >

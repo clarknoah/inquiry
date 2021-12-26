@@ -30,6 +30,34 @@ let api = {
         });
       })
   },
+  coreEmotions:function(label, field, queryText){
+    let query = `
+    MATCH (user:User)-[:HAS_ABSTRACT]->(n:A_Emotion)
+    WHERE n.perception = $anger 
+    OR n.perception = $sad
+    OR n.perception = $happy
+    OR n.perception = $fear
+    AND ID(user)=${localStorage.getItem("activeUser_id")}
+    RETURN n
+    `
+    let params={
+      anger:`Anger`,
+      sad:`Sad`,
+      happy:`Happy`,
+      fear:`Fear`
+    }
+   
+    return driver.session().run(query,params)
+      .then(results=>{
+
+        return results.records.map((val)=>{
+            let node = val._fields[0];
+            node.identity = node.identity.low;
+            node.name = node.properties[field];
+            return node;
+        });
+      })
+  },
   nodeListQuerySize:function(label, field, queryText=undefined, limit = 5, skip=0){
     let query = `
     MATCH (user:User)-[:HAS_ABSTRACT]->(n:A_${label})<-[:MANIFESTATION_OF]-(m:M_${label})

@@ -67,6 +67,7 @@ let keyboardConfig = [
 
 class Keys {
   constructor(keys){
+
     const list = keyboardConfig.map(key=>{
       return {
         ...key,
@@ -74,6 +75,8 @@ class Keys {
         duration: null,
         start:null,
         end:null,
+        aPerception: null,
+        mPerception: null
       }
     })
     for(let i = 0; i<list.length; i++){
@@ -93,17 +96,33 @@ class Keys {
     let selectedKey = this[key];
     selectedKey.start = Date.now();
     selectedKey.pressed = true;
+    if(selectedKey.label){
+      selectedKey.mPerception = InquiryModel.getNewModelClass(`M_Emotion`);
+      selectedKey.mPerception.properties.dateOfPerception.setDefaultValue();
+    }
   }
+
+
+
 
   releaseKey(key){
     let selectedKey = this[key];
     selectedKey.end = Date.now();
-    let {start,end} = selectedKey;
-    selectedKey.duration = end - start;
-    let { duration, letter }  = selectedKey;
+    let { start, end, duration, letter, label, mPerception, aPerception } = selectedKey;
+    duration = (end - start);
     this.resetKey(key);
     console.log(`${letter} pressed duration: ${duration/1000}`)
-    return {duration, letter};
+    if(label){
+      mPerception.properties.inputDuration.setValue(duration);
+      mPerception.properties.perception.setValue(label);
+      mPerception.properties.dateOfInput.setDefaultValue();
+      mPerception.properties.timestampOfInput.setValue(start);
+      mPerception.properties.timestampOfPerception.setValue(start);
+      return {duration, start, end, letter, label, mPerception, aPerception};
+    }else{
+
+      return {duration, letter, start, end};
+    }
     
   }
 
@@ -116,6 +135,7 @@ class ThoughtTracker extends Component {
     console.log(props);
 
     let tracker = InquiryModel.getNewModelClass("Thought_Tracker");
+    tracker.properties.trackerType.setValue("coreEmotionFlow");
     tracker.properties.date.setDefaultValue();
     console.log(tracker);
     // Default CSS class to apply to the Component
@@ -146,12 +166,38 @@ class ThoughtTracker extends Component {
     let pressedKey = e.key;
     let keys = this.state.keys;
     if(keys[pressedKey]){
-      keys.releaseKey(pressedKey);
+      const data = keys.releaseKey(pressedKey);
+      console.log(data);
+      if(data.mPerception){
+        console.log(data);
+        this.submitThought(data.aPerception, data.mPerception);
+      }
       this.setState({keys})
     }
   }
 
-
+  getEmotions(){
+    api.coreEmotions().then((res) => {
+      const { keys } = this.state;
+      const emotions = {};
+      res.forEach(emotion=>{
+        let {labels, identity, properties} = emotion;
+        let aPerception = InquiryModel.getExistingModelClass(
+          labels[0],
+          identity,
+          properties
+        );
+        emotions[emotion.properties.perception.toLowerCase()] = aPerception;
+      })
+      console.log(emotions);
+      keys["a"].aPerception = emotions["anger"];
+      keys["s"].aPerception = emotions["sad"];
+      keys["d"].aPerception = emotions["happy"];
+      keys["f"].aPerception = emotions["fear"];
+      console.log(keys);
+      this.setState({emotions, keys});
+     });
+  }
 
 
   resetTracker = () => {
@@ -221,6 +267,7 @@ class ThoughtTracker extends Component {
 
   endTracker = () => {
     console.log("Tracker Ended");
+    this.endKeyTracking();
     let tracker = this.state.tracker;
     if (tracker.historic == true) {
       let duration = tracker.properties.duration.value * 1000;
@@ -249,6 +296,7 @@ class ThoughtTracker extends Component {
   };
 
   submitThought = (aThought, mThought) => {
+    console.log(aThought, mThought);
     this.setState({
       tracker: this.state.tracker.addThought(aThought, mThought),
     });
@@ -299,6 +347,7 @@ class ThoughtTracker extends Component {
     }
     let  editors = this.state.tracker.thoughts.map((perception, key)=>{
       let node = perception[0];
+      console.log(node);
       node.properties.hideProperties();
       node.properties.hedonicAffect.edittable = true;
       let header = "("+node.labels.join(":")+"): "+node.properties.perception.value;
@@ -328,7 +377,7 @@ class ThoughtTracker extends Component {
     console.log(e.target.value);
     let trackerType = e.target.value;
     let tracker = this.state.tracker;
-    let type = trackerType === "passiveEmotion" ? "Emotion" : "Thought";
+    let type = "Emotion";
     tracker.properties.trackerType.setValue(e.target.value);
     this.setState({tracker, type});
   }
@@ -358,6 +407,7 @@ class ThoughtTracker extends Component {
 
   componentDidMount(){
     this.initializeKeyTracking();
+    this.getEmotions();
   }
 
   componentWillUnmount(){
@@ -378,6 +428,7 @@ class ThoughtTracker extends Component {
       <div className={this.state.classList} keydown={this.listenForDownPress} onKeyUp={this.listenForUpPress}>
         {status === "setup" ? (
           <div className={"ThoughtTracker-setupForm"}>
+            <h1>Emotion Tracker</h1>
             <FormControlLabel
               className={"ThoughtLogger-field"}
               control={
@@ -449,20 +500,6 @@ class ThoughtTracker extends Component {
                 />
               </div>
             ) : null}
-                  <FormControl variant="outlined">
-        <InputLabel id="demo-simple-select-outlined-label">Tracker Type</InputLabel>
-        <Select
-          labelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
-          value={this.state.tracker.properties.trackerType.value}
-          onChange={this.updateType}
-          label="Tracker Type"
-        >
-          {this.state.tracker.properties.trackerType.meta.enum.map(val=>{
-            return <MenuItem value={val}>{val}</MenuItem>
-          })}
-        </Select>
-      </FormControl>
             <TextField
               label="Please Select Duration"
               type="number"
