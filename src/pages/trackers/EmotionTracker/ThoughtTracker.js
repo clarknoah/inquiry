@@ -62,6 +62,12 @@ let keyboardConfig = [
     label:"Fear",
     css:{}
   },
+  {
+    type:"input",
+    letter:"j",
+    label:"Craving",
+    css:{}
+  },
 ]
 
 
@@ -147,8 +153,8 @@ class ThoughtTracker extends Component {
       type: "Thought",
       query: undefined,
       trackerSubmitted: false,
-      displayCountDown: false,
-      countdown: 5,
+      showCountdown: true,
+      countdown: 300,
       keys: new Keys()
     };
   }
@@ -194,6 +200,7 @@ class ThoughtTracker extends Component {
       keys["s"].aPerception = emotions["sad"];
       keys["d"].aPerception = emotions["happy"];
       keys["f"].aPerception = emotions["fear"];
+      keys["j"].aPerception = emotions["craving"];
       console.log(keys);
       this.setState({emotions, keys});
      });

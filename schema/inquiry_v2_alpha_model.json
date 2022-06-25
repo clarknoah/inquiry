@@ -1,0 +1,4127 @@
+{
+    "GUID": "e6268470-b2ff-11ea-86d5-71e6098e7d39",
+    "modelName": "New model",
+    "code": "",
+    "lastModifTS": "2020-10-09T16:23:28.138Z",
+    "persistenceSchemaVersion": "3",
+    "description": "",
+    "comments": "",
+    "author": "",
+    "version": "",
+    "collections": [
+        {
+            "GUID": "efaf7740-b2ff-11ea-86d5-71e6098e7d39",
+            "collectionName": "Atman",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "efb7b4a0-b2ff-11ea-86d5-71e6098e7d39"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "f611aea0-b2ff-11ea-86d5-71e6098e7d39",
+            "collectionName": "Experience",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "769ea8b0-b301-11ea-86d5-71e6098e7d39",
+                    "name": "notes",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "79c89870-b301-11ea-86d5-71e6098e7d39",
+                    "name": "time_on_timer",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "81fb4a10-b301-11ea-86d5-71e6098e7d39",
+                    "name": "utc_timestamp_of_experience",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "f614bbe0-b2ff-11ea-86d5-71e6098e7d39"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "Experience",
+            "error": {}
+        },
+        {
+            "GUID": "fa52dac0-b2ff-11ea-86d5-71e6098e7d39",
+            "collectionName": "Meditation_Instance",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ed8ea830-b301-11ea-86d5-71e6098e7d39",
+                    "name": "date_of_meditation",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "f50ef9c0-b301-11ea-86d5-71e6098e7d39",
+                    "name": "display_name",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "fa9269e0-b301-11ea-86d5-71e6098e7d39",
+                    "name": "focus",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "01d00d20-b302-11ea-86d5-71e6098e7d39",
+                    "name": "start_time",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "54a94f70-b302-11ea-86d5-71e6098e7d39",
+                    "name": "finish_time",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "fa554bc0-b2ff-11ea-86d5-71e6098e7d39"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "Meditation_Instance",
+            "error": {}
+        },
+        {
+            "GUID": "5029a5a0-b300-11ea-86d5-71e6098e7d39",
+            "collectionName": "Perception",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "48c7bc10-b301-11ea-86d5-71e6098e7d39",
+                    "name": "display_name",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "521d1bc0-b301-11ea-86d5-71e6098e7d39",
+                    "name": "keywords",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "57d138d0-b301-11ea-86d5-71e6098e7d39",
+                    "name": "modality",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "5ee11550-b301-11ea-86d5-71e6098e7d39",
+                    "name": "perception_name",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "502d0100-b300-11ea-86d5-71e6098e7d39"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "Perception",
+            "error": {}
+        },
+        {
+            "GUID": "84b25e50-b302-11ea-86d5-71e6098e7d39",
+            "collectionName": "Altered_State_Observer",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "9c812fc0-b302-11ea-86d5-71e6098e7d39",
+                    "name": "date_of_ingestion",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "a191b9d0-b302-11ea-86d5-71e6098e7d39",
+                    "name": "display_name",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "a871acb0-b302-11ea-86d5-71e6098e7d39",
+                    "name": "dose",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "af4f7cb0-b302-11ea-86d5-71e6098e7d39",
+                    "name": "method_of_ingestion",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b9427bf0-b302-11ea-86d5-71e6098e7d39",
+                    "name": "substance",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c08157b0-b302-11ea-86d5-71e6098e7d39",
+                    "name": "timestamp_of_ingestion",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d8c8db90-b302-11ea-86d5-71e6098e7d39",
+                    "name": "unit_of_measurement",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "84b62ee0-b302-11ea-86d5-71e6098e7d39"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "Altered_State_Observer",
+            "error": {}
+        },
+        {
+            "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+            "collectionName": "Inquiry_Session",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "a0adbfb0-c12a-11ea-86d5-71e6098e7d39"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
+            "collectionName": "A_Perception",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "7ea44960-cac7-11ea-ae25-3ded20c57388",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "700a5420-cac3-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
+            "collectionName": "A_Thought",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "837fe4f0-0a3a-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "8cb64af0-0a3a-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfThought",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "date"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "e505b6f0-0a3a-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfThought",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {},
+                    "mode": "localdatetime"
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "bdce9730-0a4b-11eb-b91b-65a1de19ee72",
+                    "name": "test",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "c8943ba0-cac4-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "A_Thought",
+            "error": {}
+        },
+        {
+            "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
+            "collectionName": "A_Emotion",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "cd835b00-cac4-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
+            "collectionName": "A_Body_Sensation",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "da6c1aa0-cac4-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "collectionName": "M_Perception",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "743451f0-cac7-11ea-ae25-3ded20c57388",
+                    "name": "perception",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e0729d70-cac4-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "M_Perception",
+            "error": {}
+        },
+        {
+            "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "collectionName": "M_Thought",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b108f0f0-cac6-11ea-ae25-3ded20c57388",
+                    "name": "thought",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "98499da0-cac9-11ea-ae25-3ded20c57388",
+                    "name": "isItTrueEndTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b721c340-cac6-11ea-ae25-3ded20c57388",
+                    "name": "isItTrue",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "a2e89450-cac9-11ea-ae25-3ded20c57388",
+                    "name": "isItTrueDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "869d6280-cac9-11ea-ae25-3ded20c57388",
+                    "name": "isItTrueStartTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c3f17540-cac9-11ea-ae25-3ded20c57388",
+                    "name": "certainlyTrueDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "bb100d10-cac9-11ea-ae25-3ded20c57388",
+                    "name": "certainlyTrueEndTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ab1e2c20-cac9-11ea-ae25-3ded20c57388",
+                    "name": "certainlyTrueStartTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "c0e17d80-cac6-11ea-ae25-3ded20c57388",
+                    "name": "certainlyTrue",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d0ba5830-cac6-11ea-ae25-3ded20c57388",
+                    "name": "fullyAccept",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "e122efc0-cac6-11ea-ae25-3ded20c57388",
+                    "name": "fullyAcceptStartTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "f2573bc0-cac6-11ea-ae25-3ded20c57388",
+                    "name": "fullyAcceptEndTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "ff3944a0-cac6-11ea-ae25-3ded20c57388",
+                    "name": "fullyAcceptDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "24a076a0-cac7-11ea-ae25-3ded20c57388",
+                    "name": "letGo",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "845c56e0-caef-11ea-ae25-3ded20c57388",
+                    "name": "letGoStartTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "8b1512b0-caef-11ea-ae25-3ded20c57388",
+                    "name": "letGoEndTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "935cfa00-caef-11ea-ae25-3ded20c57388",
+                    "name": "letGoDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "default": "",
+                    "enum": [],
+                    "primaryKey": false,
+                    "sample": "",
+                    "unique": false,
+                    "childType": "boolean",
+                    "type": "boolean",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "2e6476a0-cac7-11ea-ae25-3ded20c57388",
+                    "name": "wouldLetGo",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "5869baa0-caef-11ea-ae25-3ded20c57388",
+                    "name": "wouldLetGoStartTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "62f32d80-caef-11ea-ae25-3ded20c57388",
+                    "name": "wouldLetGoEndTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "6e0383a0-caef-11ea-ae25-3ded20c57388",
+                    "name": "wouldLetGoDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "35eeb340-cac7-11ea-ae25-3ded20c57388",
+                    "name": "whenLetGo",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "26a65190-caef-11ea-ae25-3ded20c57388",
+                    "name": "whenLetGoStartTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "349e8560-caef-11ea-ae25-3ded20c57388",
+                    "name": "whenLetGoEndTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "40b2b6f0-caef-11ea-ae25-3ded20c57388",
+                    "name": "whenLetGoDuration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [
+                        "love",
+                        "fear"
+                    ],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "4a0c0550-ccff-11ea-ae25-3ded20c57388",
+                    "name": "polarity",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [
+                        "positive",
+                        "neutral",
+                        "negative"
+                    ],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "2f786e90-ccff-11ea-ae25-3ded20c57388",
+                    "name": "hedonicAffect",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "5e9ccf60-ce97-11ea-ae25-3ded20c57388",
+                    "name": "fullBelief",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "93131aa0-09b7-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfThought",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "876062a0-09ba-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfThought",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d22e6bf0-09cf-11eb-b91b-65a1de19ee72",
+                    "name": "dateOfInput",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "d9a2fdb0-09cf-11eb-b91b-65a1de19ee72",
+                    "name": "timestampOfInput",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e3cff940-cac4-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "M_Thought",
+            "error": {}
+        },
+        {
+            "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "collectionName": "M_Emotion",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e6a623b0-cac4-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "collectionName": "M_Body_Sensation\\",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "f04d4ce0-cac4-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
+            "collectionName": "A_Form",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "607d3d90-cac5-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
+            "collectionName": "M_Form",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "67791ce0-cac5-11ea-ae25-3ded20c57388"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
+            "collectionName": "Thought_Tracker",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "b6709550-0a38-11eb-b91b-65a1de19ee72",
+                    "name": "date",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "bee224b0-0a38-11eb-b91b-65a1de19ee72",
+                    "name": "startTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "primaryKey": false,
+                    "default": "",
+                    "enum": [],
+                    "sample": "",
+                    "comments": "",
+                    "pattern": "",
+                    "format": "",
+                    "unique": false,
+                    "childType": "temporal",
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "fc790cd0-0a38-11eb-b91b-65a1de19ee72",
+                    "name": "endTimestamp",
+                    "code": "",
+                    "description": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "unit": "",
+                    "minimum": "",
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "mode": "",
+                    "sample": "",
+                    "unique": false,
+                    "childType": "number",
+                    "type": "numeric",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "042920f0-0a39-11eb-b91b-65a1de19ee72",
+                    "name": "duration",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "80fdd870-f777-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            },
+            "name": "Thought_Tracker",
+            "error": {}
+        },
+        {
+            "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
+            "collectionName": "A_Body_Location",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "9f0475e0-f777-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "a7bd9590-f777-11ea-9f76-433a900eeb80",
+            "collectionName": "M_Body_Location",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "a7c25080-f777-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
+            "collectionName": "Stimulus",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e1cfa740-f778-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "collectionName": "User",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "10baf4a0-f77a-11ea-9f76-433a900eeb80",
+                    "name": "firstName",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "157a7880-f77a-11ea-9f76-433a900eeb80",
+                    "name": "lastName",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "18896630-f77a-11ea-9f76-433a900eeb80",
+                    "name": "email",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "2a9c5260-f77a-11ea-9f76-433a900eeb80",
+                    "name": "birthDate",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "322aadb0-f77a-11ea-9f76-433a900eeb80",
+                    "name": "password",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "38753e60-f77a-11ea-9f76-433a900eeb80",
+                    "name": "previousPassword",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "enum": [],
+                    "sample": "",
+                    "unique": false,
+                    "type": "string",
+                    "compositeKey": [
+                        "compositeNodeKey"
+                    ],
+                    "compositeNodeKey": false,
+                    "GUID": "4b416870-f77a-11ea-9f76-433a900eeb80",
+                    "name": "dateAccountCreated",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "2824df30-f779-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
+            "collectionName": "Tag",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "2e3b0de0-f783-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
+            "collectionName": "M_Mental_Image",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "9597ee00-f822-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        },
+        {
+            "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
+            "collectionName": "A_Mental_Image",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "a2581700-f822-11ea-9f76-433a900eeb80"
+            },
+            "collectionUsers": [],
+            "collation": {},
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
+        }
+    ],
+    "buckets": [],
+    "views": [],
+    "relationships": [
+        {
+            "GUID": "41969160-b300-11ea-86d5-71e6098e7d39",
+            "name": "performed_by",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "fa52dac0-b2ff-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "efaf7740-b2ff-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "d1897580-b300-11ea-86d5-71e6098e7d39",
+            "name": "perceived",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "fa52dac0-b2ff-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "f611aea0-b2ff-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "dfa20290-b300-11ea-86d5-71e6098e7d39",
+            "name": "followed_by",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "f611aea0-b2ff-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "f611aea0-b2ff-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "f09ca0f0-b300-11ea-86d5-71e6098e7d39",
+            "name": "Experience to Perception",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "f611aea0-b2ff-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "5029a5a0-b300-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "90a636a0-b302-11ea-86d5-71e6098e7d39",
+            "name": "performed_by",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "84b25e50-b302-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "efaf7740-b2ff-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "387f92e0-b303-11ea-86d5-71e6098e7d39",
+            "name": "part_of",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "fa52dac0-b2ff-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "84b25e50-b302-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "b2af46c0-c12a-11ea-86d5-71e6098e7d39",
+            "name": "INQUIRED_INTO",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "15bff3f0-c12a-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "d172a480-c12a-11ea-86d5-71e6098e7d39",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "15bff3f0-c12a-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "b7c33060-c123-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "e3095bd0-c12a-11ea-86d5-71e6098e7d39",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "23de7470-c12a-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e2b42c60-c129-11ea-86d5-71e6098e7d39",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "fc4c21b0-cac4-11ea-ae25-3ded20c57388",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "0638df60-cac5-11ea-ae25-3ded20c57388",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "082df8a0-cac5-11ea-ae25-3ded20c57388",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "0a6d1330-cac5-11ea-ae25-3ded20c57388",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "da687120-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "3041ad00-cac5-11ea-ae25-3ded20c57388",
+            "name": "WHEN_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "3dd6d940-cac5-11ea-ae25-3ded20c57388",
+            "name": "WHEN_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "42f80520-cac5-11ea-ae25-3ded20c57388",
+            "name": "WHEN_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "6aa1fb30-cac5-11ea-ae25-3ded20c57388",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "60737990-cac5-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "84f92530-cac5-11ea-ae25-3ded20c57388",
+            "name": "TURNAROUND",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "8e8fd3a0-cac5-11ea-ae25-3ded20c57388",
+            "name": "DESIRE",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "b3eccc70-cac5-11ea-ae25-3ded20c57388",
+            "name": "TO_FULFILL_DESIRE",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "d18a95f0-cac5-11ea-ae25-3ded20c57388",
+            "name": "INQUIRED_INTO",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "01e45ce0-cac6-11ea-ae25-3ded20c57388",
+            "name": "UNDERLYING_BELIEF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "17988bb0-cac6-11ea-ae25-3ded20c57388",
+            "name": "WHEN_NOT_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "2f4cf750-cac6-11ea-ae25-3ded20c57388",
+            "name": "WHEN_NOT_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "759d4d40-cac6-11ea-ae25-3ded20c57388",
+            "name": "WHEN_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "7bcded50-cac6-11ea-ae25-3ded20c57388",
+            "name": "WHEN_NOT_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "a21e6de0-cac6-11ea-ae25-3ded20c57388",
+            "name": "TURNAROUND_EXAMPLE",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "4f9b6c70-cac7-11ea-ae25-3ded20c57388",
+            "name": "FOLLOWED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "a9b38a80-cac7-11ea-ae25-3ded20c57388",
+            "name": "IN_RELATIONSHIP_TO",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "6774d720-cac5-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "91003420-f777-11ea-9f76-433a900eeb80",
+            "name": "PERCEIVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "80f80c10-f777-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "b4317350-f777-11ea-9f76-433a900eeb80",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "a7bd9590-f777-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "9efa63c0-f777-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "dfc41540-f777-11ea-9f76-433a900eeb80",
+            "name": "LOCATION",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "a7bd9590-f777-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "ee0f2e90-f778-11ea-9f76-433a900eeb80",
+            "name": "CAUSED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e1c965b0-f778-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "4066bdc0-f779-11ea-9f76-433a900eeb80",
+            "name": "PERFORMED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "52b5a180-f779-11ea-9f76-433a900eeb80",
+            "name": "PERFORMED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "80f80c10-f777-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "bf5e8e50-f779-11ea-9f76-433a900eeb80",
+            "name": "LOGGED_BY",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "37d6ec70-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_TAG",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "2e354180-f783-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "48568e70-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_TAG",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "2e354180-f783-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "7ef3ba20-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "7ef45660-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "7ef65230-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "9efa63c0-f777-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "a1077b60-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "da687120-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "a6e6ee30-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "ae272980-f783-11ea-9f76-433a900eeb80",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "60737990-cac5-11ea-ae25-3ded20c57388",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "a8761970-f822-11ea-9f76-433a900eeb80",
+            "name": "MANIFESTATION_OF",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "a2522390-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "be750ce0-f822-11ea-9f76-433a900eeb80",
+            "name": "WHEN_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "c6524b80-f822-11ea-9f76-433a900eeb80",
+            "name": "WHEN_NOT_BELIEVED",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "95911030-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        },
+        {
+            "GUID": "d68a0f10-f822-11ea-9f76-433a900eeb80",
+            "name": "HAS_ABSTRACT",
+            "description": "",
+            "comments": "",
+            "relationshipType": "",
+            "parentCollection": "281a09c0-f779-11ea-9f76-433a900eeb80",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childCollection": "a2522390-f822-11ea-9f76-433a900eeb80",
+            "childField": [],
+            "childCardinality": "1",
+            "lineSize": 2,
+            "properties": []
+        }
+    ],
+    "users": [],
+    "idToNameHashTable": {
+        "efaf7740-b2ff-11ea-86d5-71e6098e7d39": "Atman",
+        "f611aea0-b2ff-11ea-86d5-71e6098e7d39": "Experience",
+        "fa52dac0-b2ff-11ea-86d5-71e6098e7d39": "Meditation_Instance",
+        "41969160-b300-11ea-86d5-71e6098e7d39": "performed_by",
+        "5029a5a0-b300-11ea-86d5-71e6098e7d39": "Perception",
+        "d1897580-b300-11ea-86d5-71e6098e7d39": "perceived",
+        "dfa20290-b300-11ea-86d5-71e6098e7d39": "followed_by",
+        "f09ca0f0-b300-11ea-86d5-71e6098e7d39": "Experience to Perception",
+        "48c7bc10-b301-11ea-86d5-71e6098e7d39": "display_name",
+        "521d1bc0-b301-11ea-86d5-71e6098e7d39": "keywords",
+        "57d138d0-b301-11ea-86d5-71e6098e7d39": "modality",
+        "5ee11550-b301-11ea-86d5-71e6098e7d39": "perception_name",
+        "769ea8b0-b301-11ea-86d5-71e6098e7d39": "notes",
+        "79c89870-b301-11ea-86d5-71e6098e7d39": "time_on_timer",
+        "81fb4a10-b301-11ea-86d5-71e6098e7d39": "utc_timestamp_of_experience",
+        "ed8ea830-b301-11ea-86d5-71e6098e7d39": "date_of_meditation",
+        "f50ef9c0-b301-11ea-86d5-71e6098e7d39": "display_name",
+        "fa9269e0-b301-11ea-86d5-71e6098e7d39": "focus",
+        "01d00d20-b302-11ea-86d5-71e6098e7d39": "start_time",
+        "54a94f70-b302-11ea-86d5-71e6098e7d39": "finish_time",
+        "84b25e50-b302-11ea-86d5-71e6098e7d39": "Altered_State_Observer",
+        "90a636a0-b302-11ea-86d5-71e6098e7d39": "performed_by",
+        "9c812fc0-b302-11ea-86d5-71e6098e7d39": "date_of_ingestion",
+        "a191b9d0-b302-11ea-86d5-71e6098e7d39": "display_name",
+        "a871acb0-b302-11ea-86d5-71e6098e7d39": "dose",
+        "af4f7cb0-b302-11ea-86d5-71e6098e7d39": "method_of_ingestion",
+        "b9427bf0-b302-11ea-86d5-71e6098e7d39": "substance",
+        "c08157b0-b302-11ea-86d5-71e6098e7d39": "timestamp_of_ingestion",
+        "d8c8db90-b302-11ea-86d5-71e6098e7d39": "unit_of_measurement",
+        "387f92e0-b303-11ea-86d5-71e6098e7d39": "part_of",
+        "a0a952e0-c12a-11ea-86d5-71e6098e7d39": "Inquiry_Session",
+        "b2af46c0-c12a-11ea-86d5-71e6098e7d39": "INQUIRED_INTO",
+        "d172a480-c12a-11ea-86d5-71e6098e7d39": "MANIFESTATION_OF",
+        "e3095bd0-c12a-11ea-86d5-71e6098e7d39": "MANIFESTATION_OF",
+        "5f11ffb0-cac3-11ea-ae25-3ded20c57388": "A_Perception",
+        "c88c4c60-cac4-11ea-ae25-3ded20c57388": "A_Thought",
+        "cd7f3c50-cac4-11ea-ae25-3ded20c57388": "A_Emotion",
+        "da687120-cac4-11ea-ae25-3ded20c57388": "A_Body_Sensation",
+        "e06e7ec0-cac4-11ea-ae25-3ded20c57388": "M_Perception",
+        "e3cb6560-cac4-11ea-ae25-3ded20c57388": "M_Thought",
+        "e6a1b6e0-cac4-11ea-ae25-3ded20c57388": "M_Emotion",
+        "f0449a50-cac4-11ea-ae25-3ded20c57388": "M_Body_Sensation\\",
+        "fc4c21b0-cac4-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
+        "0638df60-cac5-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
+        "082df8a0-cac5-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
+        "0a6d1330-cac5-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
+        "3041ad00-cac5-11ea-ae25-3ded20c57388": "WHEN_BELIEVED",
+        "3dd6d940-cac5-11ea-ae25-3ded20c57388": "WHEN_BELIEVED",
+        "42f80520-cac5-11ea-ae25-3ded20c57388": "WHEN_BELIEVED",
+        "60737990-cac5-11ea-ae25-3ded20c57388": "A_Form",
+        "6774d720-cac5-11ea-ae25-3ded20c57388": "M_Form",
+        "6aa1fb30-cac5-11ea-ae25-3ded20c57388": "MANIFESTATION_OF",
+        "84f92530-cac5-11ea-ae25-3ded20c57388": "TURNAROUND",
+        "8e8fd3a0-cac5-11ea-ae25-3ded20c57388": "DESIRE",
+        "b3eccc70-cac5-11ea-ae25-3ded20c57388": "TO_FULFILL_DESIRE",
+        "d18a95f0-cac5-11ea-ae25-3ded20c57388": "INQUIRED_INTO",
+        "01e45ce0-cac6-11ea-ae25-3ded20c57388": "UNDERLYING_BELIEF",
+        "17988bb0-cac6-11ea-ae25-3ded20c57388": "WHEN_NOT_BELIEVED",
+        "2f4cf750-cac6-11ea-ae25-3ded20c57388": "WHEN_NOT_BELIEVED",
+        "759d4d40-cac6-11ea-ae25-3ded20c57388": "WHEN_BELIEVED",
+        "7bcded50-cac6-11ea-ae25-3ded20c57388": "WHEN_NOT_BELIEVED",
+        "a21e6de0-cac6-11ea-ae25-3ded20c57388": "TURNAROUND_EXAMPLE",
+        "b721c340-cac6-11ea-ae25-3ded20c57388": "isItTrue",
+        "c0e17d80-cac6-11ea-ae25-3ded20c57388": "certainlyTrue",
+        "d0ba5830-cac6-11ea-ae25-3ded20c57388": "fullyAccept",
+        "e122efc0-cac6-11ea-ae25-3ded20c57388": "fullyAcceptStartTimestamp",
+        "f2573bc0-cac6-11ea-ae25-3ded20c57388": "fullyAcceptEndTimestamp",
+        "ff3944a0-cac6-11ea-ae25-3ded20c57388": "fullyAcceptDuration",
+        "24a076a0-cac7-11ea-ae25-3ded20c57388": "letGo",
+        "2e6476a0-cac7-11ea-ae25-3ded20c57388": "wouldLetGo",
+        "4f9b6c70-cac7-11ea-ae25-3ded20c57388": "FOLLOWED_BY",
+        "743451f0-cac7-11ea-ae25-3ded20c57388": "perception",
+        "7ea44960-cac7-11ea-ae25-3ded20c57388": "perception",
+        "a9b38a80-cac7-11ea-ae25-3ded20c57388": "IN_RELATIONSHIP_TO",
+        "869d6280-cac9-11ea-ae25-3ded20c57388": "isItTrueStartTimestamp",
+        "98499da0-cac9-11ea-ae25-3ded20c57388": "isItTrueEndTimestamp",
+        "a2e89450-cac9-11ea-ae25-3ded20c57388": "isItTrueDuration",
+        "ab1e2c20-cac9-11ea-ae25-3ded20c57388": "certainlyTrueStartTimestamp",
+        "bb100d10-cac9-11ea-ae25-3ded20c57388": "certainlyTrueEndTimestamp",
+        "c3f17540-cac9-11ea-ae25-3ded20c57388": "certainlyTrueDuration",
+        "b108f0f0-cac6-11ea-ae25-3ded20c57388": "thought",
+        "26a65190-caef-11ea-ae25-3ded20c57388": "whenLetGoStartTimestamp",
+        "349e8560-caef-11ea-ae25-3ded20c57388": "whenLetGoEndTimestamp",
+        "40b2b6f0-caef-11ea-ae25-3ded20c57388": "whenLetGoDuration",
+        "5869baa0-caef-11ea-ae25-3ded20c57388": "wouldLetGoStartTimestamp",
+        "62f32d80-caef-11ea-ae25-3ded20c57388": "wouldLetGoEndTimestamp",
+        "35eeb340-cac7-11ea-ae25-3ded20c57388": "whenLetGo",
+        "6e0383a0-caef-11ea-ae25-3ded20c57388": "wouldLetGoDuration",
+        "845c56e0-caef-11ea-ae25-3ded20c57388": "letGoStartTimestamp",
+        "8b1512b0-caef-11ea-ae25-3ded20c57388": "letGoEndTimestamp",
+        "935cfa00-caef-11ea-ae25-3ded20c57388": "letGoDuration",
+        "2f786e90-ccff-11ea-ae25-3ded20c57388": "hedonicAffect",
+        "4a0c0550-ccff-11ea-ae25-3ded20c57388": "polarity",
+        "5e9ccf60-ce97-11ea-ae25-3ded20c57388": "fullBelief",
+        "80f80c10-f777-11ea-9f76-433a900eeb80": "Thought_Tracker",
+        "91003420-f777-11ea-9f76-433a900eeb80": "PERCEIVED",
+        "9efa63c0-f777-11ea-9f76-433a900eeb80": "A_Body_Location",
+        "a7bd9590-f777-11ea-9f76-433a900eeb80": "M_Body_Location",
+        "b4317350-f777-11ea-9f76-433a900eeb80": "MANIFESTATION_OF",
+        "dfc41540-f777-11ea-9f76-433a900eeb80": "LOCATION",
+        "e1c965b0-f778-11ea-9f76-433a900eeb80": "Stimulus",
+        "ee0f2e90-f778-11ea-9f76-433a900eeb80": "CAUSED",
+        "281a09c0-f779-11ea-9f76-433a900eeb80": "User",
+        "4066bdc0-f779-11ea-9f76-433a900eeb80": "PERFORMED_BY",
+        "52b5a180-f779-11ea-9f76-433a900eeb80": "PERFORMED_BY",
+        "bf5e8e50-f779-11ea-9f76-433a900eeb80": "LOGGED_BY",
+        "10baf4a0-f77a-11ea-9f76-433a900eeb80": "firstName",
+        "157a7880-f77a-11ea-9f76-433a900eeb80": "lastName",
+        "18896630-f77a-11ea-9f76-433a900eeb80": "email",
+        "2a9c5260-f77a-11ea-9f76-433a900eeb80": "birthDate",
+        "322aadb0-f77a-11ea-9f76-433a900eeb80": "password",
+        "38753e60-f77a-11ea-9f76-433a900eeb80": "previousPassword",
+        "4b416870-f77a-11ea-9f76-433a900eeb80": "dateAccountCreated",
+        "2e354180-f783-11ea-9f76-433a900eeb80": "Tag",
+        "37d6ec70-f783-11ea-9f76-433a900eeb80": "HAS_TAG",
+        "48568e70-f783-11ea-9f76-433a900eeb80": "HAS_TAG",
+        "7ef3ba20-f783-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
+        "7ef45660-f783-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
+        "7ef65230-f783-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
+        "a1077b60-f783-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
+        "a6e6ee30-f783-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
+        "ae272980-f783-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
+        "95911030-f822-11ea-9f76-433a900eeb80": "M_Mental_Image",
+        "a2522390-f822-11ea-9f76-433a900eeb80": "A_Mental_Image",
+        "a8761970-f822-11ea-9f76-433a900eeb80": "MANIFESTATION_OF",
+        "be750ce0-f822-11ea-9f76-433a900eeb80": "WHEN_BELIEVED",
+        "c6524b80-f822-11ea-9f76-433a900eeb80": "WHEN_NOT_BELIEVED",
+        "d68a0f10-f822-11ea-9f76-433a900eeb80": "HAS_ABSTRACT",
+        "93131aa0-09b7-11eb-b91b-65a1de19ee72": "dateOfThought",
+        "876062a0-09ba-11eb-b91b-65a1de19ee72": "timestampOfThought",
+        "d22e6bf0-09cf-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "d9a2fdb0-09cf-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "b6709550-0a38-11eb-b91b-65a1de19ee72": "date",
+        "bee224b0-0a38-11eb-b91b-65a1de19ee72": "startTimestamp",
+        "fc790cd0-0a38-11eb-b91b-65a1de19ee72": "endTimestamp",
+        "042920f0-0a39-11eb-b91b-65a1de19ee72": "duration",
+        "837fe4f0-0a3a-11eb-b91b-65a1de19ee72": "dateOfInput",
+        "ca0f3fb0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfInput",
+        "e505b6f0-0a3a-11eb-b91b-65a1de19ee72": "timestampOfThought",
+        "8cb64af0-0a3a-11eb-b91b-65a1de19ee72": "dateOfThought",
+        "bdce9730-0a4b-11eb-b91b-65a1de19ee72": "test"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "e626ab80-b2ff-11ea-86d5-71e6098e7d39"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "e626ab81-b2ff-11ea-86d5-71e6098e7d39"
+    },
+    "decorativeSymbols": [],
+    "dbVersion": "3.x",
+    "dbVendor": "Neo4j",
+    "appTarget": "NEO4J",
+    "creationTS": "2020-06-20T14:11:13.591Z",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginName": "Neo4j",
+        "pluginVersion": "0.1.14",
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "3.5.1"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "efaf7740-b2ff-11ea-86d5-71e6098e7d39",
+                        "x": 40,
+                        "y": 858.0910864022768,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "f611aea0-b2ff-11ea-86d5-71e6098e7d39",
+                        "x": 489.06344407409745,
+                        "y": 1281.5798945562817,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "fa52dac0-b2ff-11ea-86d5-71e6098e7d39",
+                        "x": 202,
+                        "y": 1172,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "41969160-b300-11ea-86d5-71e6098e7d39",
+                        "x": 40,
+                        "y": 40,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "5029a5a0-b300-11ea-86d5-71e6098e7d39",
+                        "x": 202,
+                        "y": 1475,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "d1897580-b300-11ea-86d5-71e6098e7d39",
+                        "x": 60,
+                        "y": 60,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "dfa20290-b300-11ea-86d5-71e6098e7d39",
+                        "x": 80,
+                        "y": 80,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "f09ca0f0-b300-11ea-86d5-71e6098e7d39",
+                        "x": 100,
+                        "y": 100,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "84b25e50-b302-11ea-86d5-71e6098e7d39",
+                        "x": 393.54281141178706,
+                        "y": 649.9703690530143,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "90a636a0-b302-11ea-86d5-71e6098e7d39",
+                        "x": 120,
+                        "y": 120,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "387f92e0-b303-11ea-86d5-71e6098e7d39",
+                        "x": 140,
+                        "y": 140,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+                        "x": 1573.7534387770577,
+                        "y": 1369.3100645780612,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "b2af46c0-c12a-11ea-86d5-71e6098e7d39",
+                        "x": 160,
+                        "y": 160,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "d172a480-c12a-11ea-86d5-71e6098e7d39",
+                        "x": 180,
+                        "y": 180,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "e3095bd0-c12a-11ea-86d5-71e6098e7d39",
+                        "x": 200,
+                        "y": 200,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
+                        "x": 1344.5874060348085,
+                        "y": 641.8212428743279,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
+                        "x": 1310.6032818735835,
+                        "y": 1363.7652509977365,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
+                        "x": 2032.0742848510217,
+                        "y": 646.8783840377251,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
+                        "x": 1800.238256143713,
+                        "y": 643.5016646492,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+                        "x": 1339.6604230369824,
+                        "y": 809.214928107423,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+                        "x": 1817.2520112519182,
+                        "y": 1128.5186897747847,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+                        "x": 2026.4213732925637,
+                        "y": 818.4181032751793,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+                        "x": 1797.4848173666612,
+                        "y": 822.867839665884,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "fc4c21b0-cac4-11ea-ae25-3ded20c57388",
+                        "x": 220,
+                        "y": 220,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "0638df60-cac5-11ea-ae25-3ded20c57388",
+                        "x": 240,
+                        "y": 240,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "082df8a0-cac5-11ea-ae25-3ded20c57388",
+                        "x": 260,
+                        "y": 260,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "0a6d1330-cac5-11ea-ae25-3ded20c57388",
+                        "x": 280,
+                        "y": 280,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "3041ad00-cac5-11ea-ae25-3ded20c57388",
+                        "x": 300,
+                        "y": 300,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "3dd6d940-cac5-11ea-ae25-3ded20c57388",
+                        "x": 320,
+                        "y": 320,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "42f80520-cac5-11ea-ae25-3ded20c57388",
+                        "x": 340,
+                        "y": 340,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "60737990-cac5-11ea-ae25-3ded20c57388",
+                        "x": 2304.640567757143,
+                        "y": 646.9655106722122,
+                        "width": 240,
+                        "height": 100,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "6774d720-cac5-11ea-ae25-3ded20c57388",
+                        "x": 2306.0954921567395,
+                        "y": 821.2287424966482,
+                        "width": 240,
+                        "height": 100,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "6aa1fb30-cac5-11ea-ae25-3ded20c57388",
+                        "x": 360,
+                        "y": 360,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "84f92530-cac5-11ea-ae25-3ded20c57388",
+                        "x": 380,
+                        "y": 380,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "8e8fd3a0-cac5-11ea-ae25-3ded20c57388",
+                        "x": 400,
+                        "y": 400,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "b3eccc70-cac5-11ea-ae25-3ded20c57388",
+                        "x": 420,
+                        "y": 420,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "d18a95f0-cac5-11ea-ae25-3ded20c57388",
+                        "x": 440,
+                        "y": 440,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "01e45ce0-cac6-11ea-ae25-3ded20c57388",
+                        "x": 460,
+                        "y": 460,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "17988bb0-cac6-11ea-ae25-3ded20c57388",
+                        "x": 480,
+                        "y": 480,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "2f4cf750-cac6-11ea-ae25-3ded20c57388",
+                        "x": 500,
+                        "y": 500,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "759d4d40-cac6-11ea-ae25-3ded20c57388",
+                        "x": 520,
+                        "y": 520,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "7bcded50-cac6-11ea-ae25-3ded20c57388",
+                        "x": 540,
+                        "y": 540,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "a21e6de0-cac6-11ea-ae25-3ded20c57388",
+                        "x": 560,
+                        "y": 560,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "4f9b6c70-cac7-11ea-ae25-3ded20c57388",
+                        "x": 580,
+                        "y": 580,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "a9b38a80-cac7-11ea-ae25-3ded20c57388",
+                        "x": 600,
+                        "y": 600,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "80f80c10-f777-11ea-9f76-433a900eeb80",
+                        "x": 2294.6666666666774,
+                        "y": 1382.6666666666656,
+                        "width": 240,
+                        "height": 100,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "91003420-f777-11ea-9f76-433a900eeb80",
+                        "x": 620,
+                        "y": 620,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "9efa63c0-f777-11ea-9f76-433a900eeb80",
+                        "x": 1587.9999999999995,
+                        "y": 641.9999999999999,
+                        "width": 240,
+                        "height": 100,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "a7bd9590-f777-11ea-9f76-433a900eeb80",
+                        "x": 1588,
+                        "y": 822,
+                        "width": 240,
+                        "height": 100,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "b4317350-f777-11ea-9f76-433a900eeb80",
+                        "x": 640,
+                        "y": 640,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "dfc41540-f777-11ea-9f76-433a900eeb80",
+                        "x": 660,
+                        "y": 660,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
+                        "x": 2304.66666666668,
+                        "y": 1128.6666666666647,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "ee0f2e90-f778-11ea-9f76-433a900eeb80",
+                        "x": 680,
+                        "y": 680,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
+                        "x": 1822.0000000000027,
+                        "y": 1632.6666666666647,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "4066bdc0-f779-11ea-9f76-433a900eeb80",
+                        "x": 700,
+                        "y": 700,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "52b5a180-f779-11ea-9f76-433a900eeb80",
+                        "x": 720,
+                        "y": 720,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "bf5e8e50-f779-11ea-9f76-433a900eeb80",
+                        "x": 740,
+                        "y": 740,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
+                        "x": 2081.999999999999,
+                        "y": 1379.3333333333333,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "37d6ec70-f783-11ea-9f76-433a900eeb80",
+                        "x": 760,
+                        "y": 760,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "48568e70-f783-11ea-9f76-433a900eeb80",
+                        "x": 780,
+                        "y": 780,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "7ef3ba20-f783-11ea-9f76-433a900eeb80",
+                        "x": 800,
+                        "y": 800,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "7ef45660-f783-11ea-9f76-433a900eeb80",
+                        "x": 820,
+                        "y": 820,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "7ef65230-f783-11ea-9f76-433a900eeb80",
+                        "x": 840,
+                        "y": 840,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "a1077b60-f783-11ea-9f76-433a900eeb80",
+                        "x": 860,
+                        "y": 860,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "a6e6ee30-f783-11ea-9f76-433a900eeb80",
+                        "x": 880,
+                        "y": 880,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "ae272980-f783-11ea-9f76-433a900eeb80",
+                        "x": 900,
+                        "y": 900,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
+                        "x": 1149.9999999999975,
+                        "y": 809.9999999999978,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
+                        "x": 1150.0000000000014,
+                        "y": 647.3333333333335,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#2196F3"
+                        }
+                    },
+                    {
+                        "GUID": "a8761970-f822-11ea-9f76-433a900eeb80",
+                        "x": 920,
+                        "y": 920,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "be750ce0-f822-11ea-9f76-433a900eeb80",
+                        "x": 940,
+                        "y": 940,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "c6524b80-f822-11ea-9f76-433a900eeb80",
+                        "x": 960,
+                        "y": 960,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    },
+                    {
+                        "GUID": "d68a0f10-f822-11ea-9f76-433a900eeb80",
+                        "x": 980,
+                        "y": 980,
+                        "width": 240,
+                        "height": 100,
+                        "color": {
+                            "hex": "#333333"
+                        }
+                    }
+                ],
+                "buckets": [],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "selectedCollections": [],
+                "decorativeSymbols": [],
+                "graphView": {
+                    "erd": [
+                        {
+                            "GUID": "efaf7740-b2ff-11ea-86d5-71e6098e7d39",
+                            "size": 120
+                        },
+                        {
+                            "GUID": "f611aea0-b2ff-11ea-86d5-71e6098e7d39",
+                            "size": 120
+                        },
+                        {
+                            "GUID": "fa52dac0-b2ff-11ea-86d5-71e6098e7d39",
+                            "size": 120
+                        },
+                        {
+                            "GUID": "5029a5a0-b300-11ea-86d5-71e6098e7d39",
+                            "size": 120
+                        },
+                        {
+                            "GUID": "84b25e50-b302-11ea-86d5-71e6098e7d39",
+                            "size": 120
+                        },
+                        {
+                            "GUID": "a0a952e0-c12a-11ea-86d5-71e6098e7d39",
+                            "size": 120
+                        },
+                        {
+                            "GUID": "5f11ffb0-cac3-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "c88c4c60-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "cd7f3c50-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "da687120-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "e06e7ec0-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "e3cb6560-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "e6a1b6e0-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "f0449a50-cac4-11ea-ae25-3ded20c57388",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "e1c965b0-f778-11ea-9f76-433a900eeb80",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "281a09c0-f779-11ea-9f76-433a900eeb80",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "2e354180-f783-11ea-9f76-433a900eeb80",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "95911030-f822-11ea-9f76-433a900eeb80",
+                            "size": 100
+                        },
+                        {
+                            "GUID": "a2522390-f822-11ea-9f76-433a900eeb80",
+                            "size": 100
+                        }
+                    ],
+                    "buckets": [],
+                    "hideRelationshipName": false,
+                    "showPropertiesBoxes": false,
+                    "nameAlongTheLine": false
+                },
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "displayColorPicker": false,
+                "expandCollections": []
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "details": true,
+            "hideErdDetails": false
+        }
+    }
+}

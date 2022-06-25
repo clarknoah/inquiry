@@ -37,6 +37,7 @@ let api = {
     OR n.perception = $sad
     OR n.perception = $happy
     OR n.perception = $fear
+    OR n.perception = $craving
     AND ID(user)=${localStorage.getItem("activeUser_id")}
     RETURN n
     `
@@ -44,7 +45,34 @@ let api = {
       anger:`Anger`,
       sad:`Sad`,
       happy:`Happy`,
-      fear:`Fear`
+      fear:`Fear`, 
+      craving: `Craving`
+    }
+   
+    return driver.session().run(query,params)
+      .then(results=>{
+
+        return results.records.map((val)=>{
+            let node = val._fields[0];
+            node.identity = node.identity.low;
+            node.name = node.properties[field];
+            return node;
+        });
+      })
+  },
+  hedonicTones:function(label, field, queryText){
+    let query = `
+    MATCH (user:User)-[:HAS_ABSTRACT]->(n:A_Emotion)
+    WHERE n.perception = $negative 
+    OR n.perception = $neutral
+    OR n.perception = $positive
+    AND ID(user)=${localStorage.getItem("activeUser_id")}
+    RETURN n
+    `
+    let params={
+      negative:`Negative`,
+      neutral:`Neutral`,
+      positive:`Positive`,
     }
    
     return driver.session().run(query,params)

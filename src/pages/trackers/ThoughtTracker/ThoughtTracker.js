@@ -177,6 +177,7 @@ class ThoughtTracker extends Component {
     let editProps = {
       hedonicAffect:true
     }
+    console.log(this.state.tracker.thoughts);
     let  editors = this.state.tracker.thoughts.map((perception, key)=>{
       let node = perception[0];
       node.properties.hideProperties();

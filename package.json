@@ -34,10 +34,14 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn start-database; react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-database": "../neo4j_databases/inquiry_4.1.4/bin/neo4j start",
+    "stop-database": "../neo4j_databases/inquiry_4.1.4/bin/neo4j stop",
+    "restart-database": "../neo4j_databases/inquiry_4.1.4/bin/neo4j restart",
+    "generate-dashboard": "node ./neodash/generators.js"
   },
   "eslintConfig": {
     "extends": "react-app"

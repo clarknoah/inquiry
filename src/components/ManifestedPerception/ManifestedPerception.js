@@ -14,7 +14,7 @@ class ManifestedPerception extends Component {
     let mPerception = InquiryModel.getNewModelClass(`M_${props.label}`);
     console.log(props);
     mPerception.properties[props.queryKey].value = "";
-    if(props.date!==undefined){
+    if (props.date !== undefined) {
       mPerception.setProperty("dateOfPerception", props.date);
       newPerception = false;
     }
@@ -26,11 +26,11 @@ class ManifestedPerception extends Component {
       mPerception: mPerception,
       newPerception: newPerception,
       label: props.label,
-      queryKey:props.queryKey,
-      hideNewThought:false
+      queryKey: props.queryKey,
+      hideNewThought: false
     };
-    if(props.hideNewThought){
-      this.state.hideNewThought=true;
+    if (props.hideNewThought) {
+      this.state.hideNewThought = true;
     }
   }
 
@@ -39,10 +39,10 @@ class ManifestedPerception extends Component {
     let mPerception = InquiryModel.getNewModelClass(`M_${this.props.label}`);
     //console.log(mPerception);
     mPerception.properties[this.props.queryKey].value = "";
-    if(this.state.newPerception == false){
+    if (this.state.newPerception == false) {
       mPerception.properties.dateOfPerception.setValue(this.state.mPerception.properties.dateOfPerception.value)
     }
-    if(this.props.date!==undefined){
+    if (this.props.date !== undefined) {
       mPerception.setProperty("dateOfPerception", this.props.date);
     }
     this.setState({
@@ -50,38 +50,38 @@ class ManifestedPerception extends Component {
       abstractPerceptions: [],
       mPerception: mPerception,
       newPerception: this.state.newPerception,
-      label:this.props.label,
-      queryKey:this.props.queryKey
-    },()=>{
+      label: this.props.label,
+      queryKey: this.props.queryKey
+    }, () => {
       this.focus();
     });
   };
 
-  focus=()=>{
+  focus = () => {
     this.inputRef.current.focus()
   }
 
-  switchLabel=(text)=>{
+  switchLabel = (text) => {
     let label;
-    if(text==="-T"){
+    if (text === "-T") {
       label = "Thought"
-    }else if(text==="-I"){
+    } else if (text === "-I") {
       label = "Mental_Image"
-    }else if(text=="-E"){
+    } else if (text == "-E") {
       label = "Emotion"
-    }else if(text=="-B"){
+    } else if (text == "-B") {
       label = "Body_Sensation"
-    }else if(text=="-P"){
+    } else if (text == "-P") {
       label = "Perception"
     }
 
-    if(label!==undefined){
+    if (label !== undefined) {
       let mPerception = InquiryModel.getNewModelClass(`M_${label}`);
-      mPerception.properties.perception.value="";
-      if(this.state.newPerception == false){
+      mPerception.properties.perception.value = "";
+      if (this.state.newPerception == false) {
         mPerception.properties.dateOfPerception.setValue(this.state.mPerception.properties.dateOfPerception.value)
       }
-      if(this.props.date!==undefined){
+      if (this.props.date !== undefined) {
         mPerception.setProperty("dateOfPerception", this.props.date);
       }
       this.setState({
@@ -89,38 +89,70 @@ class ManifestedPerception extends Component {
         abstractPerceptions: [],
         mPerception: mPerception,
         newPerception: this.state.newPerception,
-        label:label,
-        queryKey:this.props.queryKey
-      },()=>{
+        label: label,
+        queryKey: this.props.queryKey
+      }, () => {
         this.inputRef.current.focus();
       });
     }
   }
 
+  isHedonicChar = (char) =>{
+    console.log("Is called");
+    let charMap = {
+      "1":true,
+      "2":true,
+      "3":true
+    };
+    let hedonicChar = !!charMap[char];
+    let firstChar = char.length === 1;
+    console.log(hedonicChar, firstChar);
+    if(hedonicChar && firstChar){
+      return true;
+    }
+    return false;
+  }
+
+  getHedonicName = (char) => {
+    if (char === "1") {
+      return "negative";
+    }else if(char === "2"){
+      return "neutral";
+    }else if(char === "3"){
+      return "positive";
+    }
+  }
 
   onChange = (evt) => {
     let text = evt.target.value;
     let switchLabel = text[0] == "-" && text.length === 2;
     let mPerception = this.state.mPerception;
+    let hedonicSet = mPerception.properties["hedonicAffect"].value !== 'unassigned';
+    if(text.length === 1){
+      if(this.isHedonicChar(text) ){
+        mPerception.setProperty("hedonicAffect", this.getHedonicName(text[0]));
+        text = "";
+      }
+    }
     let noText = mPerception.properties[this.state.queryKey].value.length === 0;
     let assignTimes = text.length > 0 && noText;
-    if(switchLabel){
+    if (switchLabel) {
       this.switchLabel(text);
-    }else if (assignTimes && this.state.newPerception == true) {
+    } else if (assignTimes && this.state.newPerception == true) {
       mPerception.setNewPerceptionTimes(this.props.date);
-    } else if((assignTimes && this.state.newPerception == false) 
-      || (assignTimes && this.state.newPerception == false && this.props.date!==undefined)) {
+    } else if ((assignTimes && this.state.newPerception == false)
+      || (assignTimes && this.state.newPerception == false && this.props.date !== undefined)) {
       mPerception.setExistingPerceptionTimes(mPerception.properties.dateOfPerception.value);
     }
-    if (text.length > 0 && switchLabel==false) {
+    if (text.length > 0 && switchLabel == false) {
       api.nodeListQuery(`A_${this.state.label}`, this.state.queryKey, text).then((res) => {
-       // console.log(res);
+        // console.log(res);
         this.setState({
           abstractPerceptions: res,
           mPerception: this.state.mPerception.setProperty(this.state.queryKey, text),
         });
       });
-    } else if(switchLabel==false) {
+    } else if (switchLabel == false) {
       this.setState({
         abstractPerceptions: [],
         mPerception: mPerception.setProperty(this.state.queryKey, text),
@@ -152,10 +184,10 @@ class ManifestedPerception extends Component {
 
   submitPerception = (aPerception, mPerception) => {
     console.log(this.props);
-    if(mPerception.properties.perception.value.length > 0){
+    if (mPerception.properties.perception.value.length > 0) {
       this.props.submitPerception(aPerception, mPerception);
       this.resetForm();
-    }else{
+    } else {
       console.log("Empty thought...hahah")
     }
   };
@@ -170,7 +202,7 @@ class ManifestedPerception extends Component {
     if (same) {
       return (
         <Button
-        className={"ThoughtLogger-field"}
+          className={"ThoughtLogger-field"}
           variant="contained"
           label="Hello"
           onClick={this.selectNewPerception}
@@ -181,19 +213,19 @@ class ManifestedPerception extends Component {
     }
   };
 
-  componentDidUpdate(props){
-    if(this.props.label!==props.label){
+  componentDidUpdate(props) {
+    if (this.props.label !== props.label) {
       this.resetForm();
     }
 
-    if(this.props.focus){
+    if (this.props.focus) {
       this.focus();
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log("Mounted");
-    if(this.props.focus){
+    if (this.props.focus) {
       this.focus();
     }
   }
@@ -218,7 +250,8 @@ class ManifestedPerception extends Component {
     });
     return (
       <div className={this.state.classList} style={this.props.style}>
-        {this.props.date === undefined && this.props.hideNewThought!==true ?<FormControlLabel
+        {this.state.mPerception.properties.hedonicAffect.value}
+        {this.props.date === undefined && this.props.hideNewThought !== true ? <FormControlLabel
           control={
             <Checkbox
               checked={this.state.newPerception}
@@ -231,7 +264,7 @@ class ManifestedPerception extends Component {
           }
           label={`New ${this.state.label}? (In this moment)`}
         /> : null}
-        {this.state.newPerception == false && this.props.date === undefined  ? (
+        {this.state.newPerception == false && this.props.date === undefined ? (
           <TextField
             id="date"
             label="Date of Perception"
@@ -265,7 +298,7 @@ class ManifestedPerception extends Component {
         />
         {this.comparePerceptionString()}
         {chips}
-          
+
       </div>
     );
   }
