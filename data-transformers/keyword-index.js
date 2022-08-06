@@ -1,8 +1,6 @@
 // Need to take in an array of strings
-
-const { map } = require("d3-array");
-
-let thoughts;
+let thoughts = require("./neoData.json");
+console.log(thoughts.length);
 
 // Create a map object which will server as the index
 
@@ -12,18 +10,18 @@ let keywordMap = {};
 for(let i = 0; i < thoughts.length; i++){
     //Parse out all non alphabet letters
     //Split the string by spaces
+    let thought = thoughts[i]["mt.perception"].toLowerCase().split(" ").map(val=>val.replace(/[^a-z]/gi, ''));
     
-    let thought = thoughts[i].toLowerCase().replace(/[^a-z]/gi, '').split(" ");
-
+    // console.log(thought);
     // Iterate through each token in the array
     for(let j = 0; j < thought.length; j++){
         
         // check if it exists in the map
-        let key = thought[i];
-        if(!!keywordMap[key]){
-            keywordMapp[key]++;
-        }else{
-            keywordMapp[key] = 1;
+        let key = thought[j];
+        if(!!keywordMap[key] && key.length > 0){
+            keywordMap[key]++;
+        }else if(key.length > 0){
+            keywordMap[key] = 1;
         }
         // If it doesn't exist in the map, assign a key and value to the map
         
@@ -35,18 +33,18 @@ for(let i = 0; i < thoughts.length; i++){
 // Now we need to sort the key/values into an array with the largest value at index 0
 let keywordArray = Object.keys(keywordMap).map(key=>{
     return {
-        word:map,
-        count:keywordMap[map]
+        word:key,
+        count:keywordMap[key]
     }
 })
-
 keywordArray = keywordArray.sort(function(a, b) {
-    return parseFloat(a.price) - parseFloat(b.price);
+    return parseFloat(b.count) - parseFloat(a.count);
 });
 // 
 
 
 
-for(let i = 0; i < 10; i++){
-    console.log(keywordArray[i]);
+
+for(let i = 0; i < 1000; i++){
+   console.log(keywordArray[i]);
 }

@@ -31,7 +31,7 @@ class ThoughtTracker extends Component {
       query: undefined,
       trackerSubmitted: false,
       displayCountDown: false,
-      countdown: 5
+      countdown: 600
     };
   }
 

@@ -60,8 +60,8 @@ const getWeeks = (start, end) => {
   return weeks;
 };
 
-let months = getMonths('2020-07', '2022-06');
-let weeks = getWeeks('2022-01', '2022-06-10');
+let months = getMonths('2020-07', '2022-08');
+let weeks = getWeeks('2022-01', '2022-08-10');
 
 
 const generateRangedThoughts = ({width, type, height, start, end, title}) => {
@@ -82,6 +82,32 @@ const generateRangedThoughts = ({width, type, height, start, end, title}) => {
       "selection": {
         "index": "at.perception",
         "value": "count(distinct mt)",
+        "key": "(none)"
+      },
+      "settings": {}
+    }
+}
+const generateWordCount = ({width, type, height, start, end, title}) => {
+  let query = `
+  MATCH (noah:User {firstName:"Noah"})-[:HAS_ABSTRACT]->(at:A_Thought)<-[:MANIFESTATION_OF]-(mt:M_Thought)<-[:PERCEIVED]-(t:Thought_Tracker)
+  WHERE mt.timestampOfPerception > ${start}
+  AND mt.timestampOfPerception <  ${end}
+  AND t.trackerType="passiveFlow"
+  with mt, split(mt.perception, " ") as keywords
+  unwind keywords as kList
+  return kList, count(kList)
+  ORDER BY count(kList) DESC
+  LIMIT 100
+  `
+  return {
+      title,
+      "query": query,
+      "width": width,
+      "type": type,
+      "height": height,
+      "selection": {
+        "index": "kList",
+        "value": "count(kList)",
         "key": "(none)"
       },
       "settings": {}
@@ -242,6 +268,14 @@ const generateRangedHedonicAndThoughts = ({width, type, height, range}) => {
     }
 
 
+const generateRangedWordCount = ({width, type, height, range}) => {
+  let report = [];
+  range.map(({start, end, title})=>{
+      report.push(generateWordCount({width, type, height, start, end, title}));
+
+  })
+  return report;
+}
 
 let iAmNeoDash = {
     "title": "iAm Dashboard",
@@ -714,12 +748,17 @@ let monthlyHedonicAndThoughts = {
   "title": "Monthly Hedonic and Thoughts",
   "reports":generateRangedHedonicAndThoughts({width:"3",height:"3",type:"pie", range:months})
 };
+
+let monthlyKeywords = {
+  "title": "Monthly Top 100 Keywords",
+  "reports":generateRangedWordCount({width:"12",height:"6",type:"bar", range:months})
+};
 let weeklyHedonicAndThoughts = {
   "title": "Weekly Hedonic and Thoughts",
   "reports":generateRangedHedonicAndThoughts({width:"3",height:"3",type:"pie", range:weeks})
 };
 
-iAmNeoDash.pages.push(monthlyHedonicAndThoughts, weeklyHedonicAndThoughts);
+iAmNeoDash.pages.push(monthlyHedonicAndThoughts, weeklyHedonicAndThoughts, monthlyKeywords);
 
 // Create a file in current directory named "dashboard.json"
 fs.writeFileSync("./dashboard.json", JSON.stringify(iAmNeoDash));

@@ -25,4 +25,4 @@ yarn-error.log*
 
 # Other
 
-/data.json
+neoData.json
