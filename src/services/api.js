@@ -219,24 +219,27 @@ let api = {
   },
   getThoughtTimeSeries:()=>{
     let query = `
-    MATCH (n:User {firstName:"Noah"})-[:HAS_ABSTRACT]->(a:A_Thought)<-[:MANIFESTATION_OF]-(m:M_Thought)<-[:PERCEIVED]-(t:Thought_Tracker)
+    MATCH (n:User)-[:HAS_ABSTRACT]->(a:A_Thought)<-[:MANIFESTATION_OF]-(m:M_Thought)<-[:PERCEIVED]-(t:Thought_Tracker)
     WHERE t.trackerType = "passiveFlow" 
+    AND ID(user)=${localStorage.getItem("activeUser_id")}
     RETURN {date:m.dateOfPerception, perception:m.perception,timestamp:m.timestampOfPerception, hedonicAffect:a.hedonicAffect, trackerId:id(t), duration:t.duration}
     `
     return driver.session().run(query)
   },
   getThoughtTrackerTimeSeries:()=>{
     let query = `
-    MATCH (n:User {firstName:"Noah"})-[:CONDUCTED_SESSION]->(tracker:Thought_Tracker)
+    MATCH (n:User)-[:CONDUCTED_SESSION]->(tracker:Thought_Tracker)
     WHERE tracker.trackerType = "passiveFlow"
+    AND ID(user)=${localStorage.getItem("activeUser_id")}
     RETURN tracker
     `
     return driver.session().run(query)
   },
   getTrackerDatesAndDuration:()=>{
     let query = `
-    MATCH (user:User {firstName:"Noah"})-[:CONDUCTED_SESSION]->(n:Thought_Tracker)
+    MATCH (user:User)-[:CONDUCTED_SESSION]->(n:Thought_Tracker)
     WHERE n.trackerType = "passiveFlow"
+    AND ID(user)=${localStorage.getItem("activeUser_id")}
     RETURN distinct n.date, collect(n.duration), collect(n.timestampOfStart)
     ORDER BY n.date
     `
@@ -258,8 +261,9 @@ let api = {
   },
   getTrackerDatesAndDuration2:()=>{
     let query = `
-    MATCH (user:User {firstName:"Noah"})-[:CONDUCTED_SESSION]->(n:Thought_Tracker)
+    MATCH (user:User)-[:CONDUCTED_SESSION]->(n:Thought_Tracker)
     WHERE n.trackerType = "passiveFlow"
+    AND ID(user)=${localStorage.getItem("activeUser_id")}
     RETURN n
     `
     return driver.session().run(query)
