@@ -220,7 +220,7 @@ class BottomBar extends Component {
             </Tooltip>
             <div>
 
-
+            <Tooltip title="Data Visualizers">
               <Fab
                 aria-controls="simple-menu"
                 aria-haspopup="true"
@@ -230,7 +230,7 @@ class BottomBar extends Component {
               >
                 <InsertChartIcon />
               </Fab>
-
+            </Tooltip>
             </div>
 
             <Menu
