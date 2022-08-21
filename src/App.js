@@ -23,7 +23,9 @@ import TfLogger from "./pages/ThoughtLogger/TfLogger/TfLogger";
 import TopBar from "./components/TopBar/TopBar";
 import ThoughtTimeseries from "./components/ThoughtTimeseries/ThoughtTimeseries";
 import ThoughtTrackerTimeseries from "./components/ThoughtTrackerTimeseries/ThoughtTrackerTimeseries";
+import HowTo from "./pages/HowTo/HowTo";
 import {utils} from "stillness-utils";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -175,8 +177,7 @@ class App extends React.Component {
                 return <HomePage {...routerProps} />;
               }}
             />
-          </Switch> :
-            <div>Please Login</div>
+          </Switch> : <HowTo/>
           }
         </main>
         <BottomBar />

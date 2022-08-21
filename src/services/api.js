@@ -1,10 +1,13 @@
 import neo4j from "neo4j-driver";
 
-var driver = neo4j.driver(
-  "bolt://localhost:7688",
-  neo4j.auth.basic("neo4j", "neo4j")
+let driver = neo4j.driver(
+  "bolt://localhost:7687",
+  neo4j.auth.basic("neo4j", "123456")
 );
-console.log(driver);
+
+
+
+
 let api = {
   nodeListQuery:function(label, field, queryText, limit = 5, skip=0){
     let query = `

@@ -27,6 +27,7 @@ class UserRegistration extends Component {
       email: "",
       password: "",
       passwordConfirm:"",
+      neo4jPassword:"",
       agreement:false,
       open: this.props.open
     };
