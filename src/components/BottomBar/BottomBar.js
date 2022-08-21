@@ -248,6 +248,11 @@ class BottomBar extends Component {
                   Thought Timeseries
             </MenuItem>
               </Link>
+              <a href={window.location.origin + "/dashboard"}>
+                <MenuItem>
+                  Neodash
+            </MenuItem>
+                </a>
 
             </Menu>
           </Toolbar>

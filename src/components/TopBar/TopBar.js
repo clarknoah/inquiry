@@ -97,7 +97,7 @@ class TopBar extends Component {
               <IconButton edge="start" color="inherit" aria-label="menu">
                 <MenuIcon />
               </IconButton>
-          <img src="/images/iAmLogo.svg" className="iAm-logo"/>
+          <img src="./images/iAmLogo.svg" className="iAm-logo"/>
           <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
               <Typography variant="h6" >
                 iAm

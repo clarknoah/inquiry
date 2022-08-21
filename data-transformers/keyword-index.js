@@ -11,8 +11,7 @@ for(let i = 0; i < thoughts.length; i++){
     //Parse out all non alphabet letters
     //Split the string by spaces
     let thought = thoughts[i]["mt.perception"].toLowerCase().split(" ").map(val=>val.replace(/[^a-z]/gi, ''));
-    
-    // console.log(thought);
+
     // Iterate through each token in the array
     for(let j = 0; j < thought.length; j++){
         

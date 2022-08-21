@@ -17,6 +17,7 @@
     "d3": "^6.2.0",
     "d3-array": "^1.2.4",
     "date-fns": "^2.16.1",
+    "express": "^4.18.1",
     "grommet": "^2.14.0",
     "grommet-icons": "^4.4.0",
     "neo4j-driver": "^4.1.0",
@@ -42,7 +43,8 @@
     "start-database": "../neo4j_databases/inquiry_4.1.4/bin/neo4j start",
     "stop-database": "../neo4j_databases/inquiry_4.1.4/bin/neo4j stop",
     "restart-database": "../neo4j_databases/inquiry_4.1.4/bin/neo4j restart",
-    "generate-dashboard": "node ./neodash/generators.js"
+    "generate-dashboard": "node ./neodash/generators.js",
+    "server": "node ./server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
