@@ -89,8 +89,8 @@ ModalBoolean.defaultProps = {
   title: "Do Stuff",
   hideActions: false,
   open: false,
-  onConfirm: () => // console.log("Confirmed!"),
-  onCancel: () => // console.log("Cancelled!")
+  onConfirm: () =>  console.log("Confirmed!"),
+  onCancel: () =>  console.log("Cancelled!")
 };
 
 export default ModalBoolean;

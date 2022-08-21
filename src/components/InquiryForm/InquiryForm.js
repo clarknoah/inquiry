@@ -800,11 +800,6 @@ class InquiryForm extends Component {
                       <Timer
                         initialTime={0}
                         startImmediately={true}
-                        onStart={() => // console.log("onStart hook")}
-                        onResume={() => // console.log("onResume hook")}
-                        onPause={() => // console.log("onPause hook")}
-                        onStop={() => // console.log("onStop hook")}
-                        onReset={() => // console.log("onReset hook")}
                       >
                         {({
                           start,
