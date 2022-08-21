@@ -17,7 +17,7 @@ import utils from "../../services/utils";
 class UnderlyingBeliefs extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -44,7 +44,7 @@ class UnderlyingBeliefs extends Component{
     let belief = evt.target.value;
     if(belief.length > 3){
       api.nodeListQuery("Abstract_Thought", "thought", belief).then(res => {
-        console.log(res);
+        // console.log(res);
         res.map(val=>{
           val.exists = true;
           val.nodeId = val.identity;
@@ -74,7 +74,7 @@ class UnderlyingBeliefs extends Component{
   }
 
   addBelief=(belief)=>{
-    console.log(belief);
+    // console.log(belief);
     let beliefAdded = this.state.selectedBeliefs.filter(val=>{
       return belief.name.toLowerCase() == val.name.toLowerCase();
     }).length > 0;
@@ -89,11 +89,11 @@ class UnderlyingBeliefs extends Component{
   }
 
   compareThoughtString=()=>{
-    console.log(this.state.thought, )
+    // console.log(this.state.thought, )
     let same =  this.state.queriedBeliefs.filter(val=>{
       return val.name === this.state.underlyingBelief
     }).length == 0;
-    console.log(same);
+    // console.log(same);
     if(same){
       return  <Button
       variant="contained"

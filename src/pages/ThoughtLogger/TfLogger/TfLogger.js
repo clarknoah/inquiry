@@ -15,7 +15,7 @@ import api from "../../../services/api";
 class TfLogger extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
     this.steps = [ "Select Emotion","Select Form","Submit!"];
     this.state = {
       perception:[],
@@ -97,7 +97,7 @@ class TfLogger extends Component{
     cypherQuery.addNode(form[0]);
     cypherQuery.addNode(form[1]);
     cypherQuery.generateQuery();
-    console.log(cypherQuery.query, cypherQuery.params);
+    // console.log(cypherQuery.query, cypherQuery.params);
     api.cypherQuery(cypherQuery.query,cypherQuery.params)
       .then(res=>{
         this.handleReset();
@@ -105,7 +105,7 @@ class TfLogger extends Component{
 
   }
   handleNext = (e) => {
-    console.log(e.target.innerText);
+    // console.log(e.target.innerText);
     if(e.target.innerText === "FINISH"){
       this.submitLog();
     }else{

@@ -48,7 +48,7 @@ import Chip from "@material-ui/core/Chip";
 class PerceptionCollector extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
     let list = [];
     if (props.list !== undefined) {
       list = props.list;
@@ -99,7 +99,7 @@ class PerceptionCollector extends Component {
   removeFromSubList = () => {};
 
   updateSubList = (subList, mainIndex) => {
-    console.log(subList, mainIndex);
+    // console.log(subList, mainIndex);
     let list = this.state.list;
     list[mainIndex][1].collectorList = subList;
     this.setState(
@@ -121,7 +121,7 @@ class PerceptionCollector extends Component {
         );
       }).length === 0;
     if (isUnique == false) {
-      console.log(`${this.props.label} is duplicative`);
+      // console.log(`${this.props.label} is duplicative`);
     }
     return isUnique;
   };
@@ -140,7 +140,7 @@ class PerceptionCollector extends Component {
   };
 
   getAccordian = () => {
-    console.log(this.state.list, this.props);
+    // console.log(this.state.list, this.props);
     let accordians = this.state.list.map((label, index) => {
       let list = label[1].collectorList;
       return (

@@ -45,12 +45,12 @@ class App extends React.Component {
   updateUserStatus=()=>{
 
     if (this.state.loggedIn !== true && this.getLoggedInStatus()) {
-      console.log("loggin in");
+
       this.setState({
         loggedIn: true
       })
     } else if (this.state.loggedIn === true && !this.getLoggedInStatus()) {
-      console.log("loggin out");
+
       this.setState({
         loggedIn: false
       })

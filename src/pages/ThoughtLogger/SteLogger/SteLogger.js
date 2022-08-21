@@ -15,7 +15,7 @@ import api from "../../../services/api";
 class SteLogger extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
     this.steps = ["Select Stimulus", "Select Thought","Select Emotion","Submit!"];
     this.state = {
       stimulus:[],
@@ -49,7 +49,7 @@ class SteLogger extends Component{
 
 
   submitStimulus=(a, m)=>{
-    console.log("Called");
+    // console.log("Called");
     if(m.properties.perception.value.length > 0){
       let {text, cypherQuery} = this.state;
       text += `(Stimulus: ${m.properties.perception.value})-[:CAUSED]->`;
@@ -117,7 +117,7 @@ class SteLogger extends Component{
     cypherQuery.addNode(emotion[0]);
     cypherQuery.addNode(emotion[1]);
     cypherQuery.generateQuery();
-    console.log(cypherQuery.query, cypherQuery.params);
+    // console.log(cypherQuery.query, cypherQuery.params);
     api.cypherQuery(cypherQuery.query,cypherQuery.params)
       .then(res=>{
         this.handleReset();
@@ -125,7 +125,7 @@ class SteLogger extends Component{
 
   }
   handleNext = (e) => {
-    console.log(e.target.innerText);
+    // console.log(e.target.innerText);
     if(e.target.innerText === "FINISH"){
       this.submitLog();
     }else{

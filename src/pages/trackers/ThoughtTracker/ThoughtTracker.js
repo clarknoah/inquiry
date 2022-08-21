@@ -16,11 +16,11 @@ import Countdown from "react-countdown";
 class ThoughtTracker extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     let tracker = InquiryModel.getNewModelClass("Thought_Tracker");
     tracker.properties.date.setDefaultValue();
-    console.log(tracker);
+    // console.log(tracker);
     // Default CSS class to apply to the Component
     this.state = {
       classList: "ThoughtTracker",
@@ -48,7 +48,7 @@ class ThoughtTracker extends Component {
 
   determineTrackerMode = () => {
     let historic = this.state.tracker.historic;
-    console.log(historic);
+    // console.log(historic);
     if (historic !== true) {
       this.beginTracker();
     } else {
@@ -101,7 +101,7 @@ class ThoughtTracker extends Component {
   };
 
   endTracker = () => {
-    console.log("Tracker Ended");
+    // console.log("Tracker Ended");
     let tracker = this.state.tracker;
     if (tracker.historic == true) {
       let duration = tracker.properties.duration.value * 1000;
@@ -111,7 +111,7 @@ class ThoughtTracker extends Component {
       tracker.properties.timestampOfEnd.setDefaultValue();
     }
     tracker.status = "review";
-    console.log(tracker);
+    // console.log(tracker);
     //tracker.generateCypherQuery();
     this.setState({
       tracker: tracker,
@@ -120,7 +120,7 @@ class ThoughtTracker extends Component {
   submitTracker = () => {
     let tracker = this.state.tracker;
     tracker.generateCypherQuery();
-    console.log(tracker.query);
+    // console.log(tracker.query);
     tracker.submitTracker().then((res) => {
       this.setState({
         trackerSubmitted:true
@@ -135,7 +135,7 @@ class ThoughtTracker extends Component {
   };
 
   submitHistoricThought = (aThought, mThought) => {
-    console.log("Historic");
+    // console.log("Historic");
     if(aThought.exists!==true){
       aThought.properties.timestampOfPerception.value = this.state.tracker.properties.timestampOfStart.value+1;
     }
@@ -173,11 +173,11 @@ class ThoughtTracker extends Component {
   };
 
   getNodeEditors=()=>{
-    console.log(this.state.tracker.thoughts);
+    // console.log(this.state.tracker.thoughts);
     let editProps = {
       hedonicAffect:true
     }
-    console.log(this.state.tracker.thoughts);
+    // console.log(this.state.tracker.thoughts);
     let  editors = this.state.tracker.thoughts.map((perception, key)=>{
       let node = perception[0];
       node.properties.hideProperties();
@@ -195,7 +195,7 @@ class ThoughtTracker extends Component {
     tracker.thoughts.forEach((nodes,index)=>{
       if(nodes[0].variable == node.variable){
         tracker.thoughts[index][0].properties.hedonicAffect = node.properties.hedonicAffect;
-        console.log(tracker.thoughts[index][0]);
+        // console.log(tracker.thoughts[index][0]);
         tracker.cypherQuery.updateParams(node);
       }
     })
@@ -206,7 +206,7 @@ class ThoughtTracker extends Component {
   }
 
   updateType =(e)=>{
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let trackerType = e.target.value;
     let tracker = this.state.tracker;
     let type = trackerType === "passiveEmotion" ? "Emotion" : "Thought";

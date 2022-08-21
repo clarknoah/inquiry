@@ -13,7 +13,7 @@ import Divider from "@material-ui/core/Divider";
 class ThoughtLogger extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -32,7 +32,7 @@ class ThoughtLogger extends Component {
   };
 
   submitPerception = (a, m) => {
-    console.log(m);
+    // console.log(m);
     if (m.properties[m.defaultQueryKey].value.length > 0) {
       m.properties.inputType.setValue("logger");
       let rel = m.addRelationship("MANIFESTATION_OF", a.variable);
@@ -40,7 +40,7 @@ class ThoughtLogger extends Component {
       query.addNode(a);
       query.addNode(m);
       let qString = query.generateQuery();
-      console.log(qString, query.params);
+      // console.log(qString, query.params);
       api.cypherQuery(qString, query.params);
     }
     //api.submitThought(a, m);

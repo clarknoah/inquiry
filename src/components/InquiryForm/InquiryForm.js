@@ -56,7 +56,7 @@ class InquiryForm extends Component {
   constructor() {
     super();
     this.api = api;
-    console.log(this);
+    // console.log(this);
     this.steps = getSteps();
     this.timer = React.createRef();
     this.state = {
@@ -91,7 +91,7 @@ class InquiryForm extends Component {
     if (nextStep == this.steps.length) {
       //add checkedForCompleted
       if (true) {
-        console.log("Finished");
+        // console.log("Finished");
         let duration = this.getCurrentTimerTime();
         inquiry.properties.duration.value = duration;
         inquiry.properties.timestampOfInputEnd.setDefaultValue();
@@ -105,7 +105,7 @@ class InquiryForm extends Component {
       } else {
         alert("YOu still have more to finish");
         nextStep = nextStep - 1;
-        console.log(nextStep);
+        // console.log(nextStep);
       }
     } else if (nextStep == 1 && inquiry.stepsCompleted.thought !== true) {
       nextStep--;
@@ -132,12 +132,12 @@ class InquiryForm extends Component {
 
   finishInquiry = () => {
     let inquiry = this.state.inquiry;
-    console.log(this);
+    // console.log(this);
     inquiry.createMarkdown();
     inquiry.generateCypherQuery();
     api.cypherQuery(inquiry.query.query, inquiry.query.params)
       .then(res=>{
-        console.log(res,"Query submitted");
+        // console.log(res,"Query submitted");
       })
     this.setState({
       inquiry: inquiry,
@@ -145,7 +145,7 @@ class InquiryForm extends Component {
   };
   finishInquiryPass = (query, params) => {
     api.cypherQuery(query, params).then((res) => {
-      console.log(res, "Query submitted");
+      // console.log(res, "Query submitted");
     });
   };
 
@@ -480,7 +480,7 @@ class InquiryForm extends Component {
             />
             <Divider />
             {this.state.inquiry.turnarounds.map((turnaround, index) => {
-              console.log(turnaround);
+              // console.log(turnaround);
               let header = turnaround[0].properties.perception.value;
               return (
                 <Accordion className={"PerceptionsCollector-content"}>
@@ -559,7 +559,7 @@ class InquiryForm extends Component {
   };
 
   updateWhenBelievedNotTruePerceptionList = (list) => {
-    console.log(list);
+    // console.log(list);
     let inquiry = this.state.inquiry;
     let completed = false;
     for (let key in list) {
@@ -576,7 +576,7 @@ class InquiryForm extends Component {
   };
 
   updateWhenBelievedTruePerceptionList = (list) => {
-    console.log(list);
+    // console.log(list);
     let inquiry = this.state.inquiry;
     let completed = false;
     for (let key in list) {
@@ -594,7 +594,7 @@ class InquiryForm extends Component {
 
   updateTurnAroundsList = (list, action = undefined) => {
     let inquiry = this.state.inquiry;
-    console.log(list, inquiry.turnarounds, action);
+    // console.log(list, inquiry.turnarounds, action);
 
     if (action == "add") {
       let turnaroundList = {
@@ -606,9 +606,9 @@ class InquiryForm extends Component {
       };
       list[list.length - 1].push(turnaroundList);
     } else if (action == "remove") {
-      console.log("Something removed");
+      // console.log("Something removed");
     }
-    console.log(list, this.state.turnarounds);
+    // console.log(list, this.state.turnarounds);
     inquiry.turnarounds = list;
     if (inquiry.turnarounds.length > 0) {
       inquiry.stepsCompleted.turnarounds = true;
@@ -621,7 +621,7 @@ class InquiryForm extends Component {
   };
 
   receiveServes = (list, bool) => {
-    console.log(list, bool);
+    // console.log(list, bool);
     let inquiry = this.state.inquiry;
     inquiry.serves = list;
     inquiry.inquiryThought[1].properties.doesThisBenefitMe.value = bool;
@@ -647,7 +647,7 @@ class InquiryForm extends Component {
   };
 
   updateTreats = (list) => {
-    console.log(list);
+    // console.log(list);
     let inquiry = this.state.inquiry;
     inquiry.treats = list;
     this.setState({
@@ -655,7 +655,7 @@ class InquiryForm extends Component {
     });
   };
   updateDefinitions = (list) => {
-    console.log(list);
+    // console.log(list);
     let inquiry = this.state.inquiry;
     inquiry.definitions = list;
     this.setState({
@@ -663,7 +663,7 @@ class InquiryForm extends Component {
     });
   };
   updatePerceives = (list) => {
-    console.log(list);
+    // console.log(list);
     let inquiry = this.state.inquiry;
     inquiry.perceives = list;
     this.setState({
@@ -680,7 +680,7 @@ class InquiryForm extends Component {
   };
 
   updateTurnaroundExample = (exampleList, turnaroundIndex) => {
-    console.log(exampleList, turnaroundIndex);
+    // console.log(exampleList, turnaroundIndex);
     let inquiry = this.state.inquiry;
     inquiry.turnarounds[turnaroundIndex][2] = exampleList;
     this.setState({
@@ -689,7 +689,7 @@ class InquiryForm extends Component {
   };
 
   submitThoughtForInquiry = (a, m) => {
-    console.log(a, m);
+    // console.log(a, m);
     let inquiry = this.state.inquiry;
     inquiry.setupSession(a, m);
     this.setState({
@@ -719,11 +719,11 @@ class InquiryForm extends Component {
   };
 
   receiveAcceptance = (accept) => {
-    console.log("Acceptance: ", accept);
+    // console.log("Acceptance: ", accept);
   };
 
   receiveTruth = (isTrue) => {
-    console.log(isTrue);
+    // console.log(isTrue);
     let inquiry = this.state.inquiry;
     inquiry.inquiryThought[1].properties.isItTrue.value = isTrue.isItTrue;
     if (isTrue.isItTrue == true) {
@@ -731,7 +731,7 @@ class InquiryForm extends Component {
         isTrue.certainlyTrue;
     }
     inquiry.stepsCompleted.truth = true;
-    console.log("Truth: ", isTrue);
+    // console.log("Truth: ", isTrue);
     this.setState(
       {
         truth: isTrue,
@@ -747,7 +747,7 @@ class InquiryForm extends Component {
       .innerText.split(":")
       .map((val) => parseInt(val));
     let currentDuration = timeArr[0] * 60 * 60 + timeArr[1] * 60 + timeArr[2];
-    console.log(currentDuration);
+    // console.log(currentDuration);
     return currentDuration;
   };
 
@@ -769,7 +769,7 @@ class InquiryForm extends Component {
   };
 
   getThoughtText = () => {
-    console.log(this.state);
+    // console.log(this.state);
     
     let thoughtText =
       this.state.inquiry.inquiryThought[0] !== undefined
@@ -800,11 +800,11 @@ class InquiryForm extends Component {
                       <Timer
                         initialTime={0}
                         startImmediately={true}
-                        onStart={() => console.log("onStart hook")}
-                        onResume={() => console.log("onResume hook")}
-                        onPause={() => console.log("onPause hook")}
-                        onStop={() => console.log("onStop hook")}
-                        onReset={() => console.log("onReset hook")}
+                        onStart={() => // console.log("onStart hook")}
+                        onResume={() => // console.log("onResume hook")}
+                        onPause={() => // console.log("onPause hook")}
+                        onStop={() => // console.log("onStop hook")}
+                        onReset={() => // console.log("onReset hook")}
                       >
                         {({
                           start,

@@ -26,7 +26,7 @@ class ModalBoolean extends Component {
   };
 
   handleClose = value => {
-    console.log("Handling Close");
+    // console.log("Handling Close");
     this.state.onClose(value);
     this.setState({
       open: false
@@ -89,8 +89,8 @@ ModalBoolean.defaultProps = {
   title: "Do Stuff",
   hideActions: false,
   open: false,
-  onConfirm: () => console.log("Confirmed!"),
-  onCancel: () => console.log("Cancelled!")
+  onConfirm: () => // console.log("Confirmed!"),
+  onCancel: () => // console.log("Cancelled!")
 };
 
 export default ModalBoolean;

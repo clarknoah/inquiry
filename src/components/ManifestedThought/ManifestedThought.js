@@ -69,7 +69,7 @@ class ManifestedThought extends Component {
     }
     if (text.length > 0) {
       api.nodeListQuery(this.getType(), "thought", text).then((res) => {
-       // console.log(res);
+       // // console.log(res);
         this.setState({
           abstractThoughts: res,
           mThought: this.state.mThought.setProperty("thought", text),
@@ -131,7 +131,7 @@ class ManifestedThought extends Component {
   };
 
   selectType=(e)=>{
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let type = e.target.value;
     let mThought = this.state.mThought;
     if(type == "verbal"){

@@ -9,7 +9,7 @@ import PerceptionCollector from "../PerceptionCollector/PerceptionCollector";
 class HowItServes extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     let list = [];
     if (props.list!==undefined){

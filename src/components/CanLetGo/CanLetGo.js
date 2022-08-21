@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 class CanLetGo extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
     let data = {
       classList: "CanLetGo",
       couldEmotion:undefined,
@@ -34,7 +34,7 @@ class CanLetGo extends Component{
   }
 
    updateCouldEmotionQuestion=(bool)=>{
-    console.log("Changing");
+    // console.log("Changing");
     let obj = {};
     obj.couldEmotion = bool;
     if(bool==true){
@@ -50,7 +50,7 @@ class CanLetGo extends Component{
   }
 
   updateCouldThoughtQuestion=(bool)=>{
-    console.log("Changing");
+
     let obj = {};
     obj.couldThought = bool;
     if(bool==true){
@@ -65,7 +65,7 @@ class CanLetGo extends Component{
     })
   }
   updateWouldEmotionQuestion=(bool)=>{
-    console.log("Changing");
+
     let obj = {};
     obj.wouldEmotion = bool;
     if(bool==true){
@@ -81,7 +81,7 @@ class CanLetGo extends Component{
   }
 
   updateWouldThoughtQuestion=(bool)=>{
-    console.log("Changing");
+
     let obj = {};
     obj.wouldThought = bool;
     if(bool==true){

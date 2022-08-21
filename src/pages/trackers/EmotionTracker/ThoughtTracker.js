@@ -117,7 +117,7 @@ class Keys {
     let { start, end, duration, letter, label, mPerception, aPerception } = selectedKey;
     duration = (end - start);
     this.resetKey(key);
-    console.log(`${letter} pressed duration: ${duration/1000}`)
+    // console.log(`${letter} pressed duration: ${duration/1000}`)
     if(label){
       mPerception.properties.inputDuration.setValue(duration);
       mPerception.properties.perception.setValue(label);
@@ -138,12 +138,12 @@ class Keys {
 class ThoughtTracker extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     let tracker = InquiryModel.getNewModelClass("Thought_Tracker");
     tracker.properties.trackerType.setValue("coreEmotionFlow");
     tracker.properties.date.setDefaultValue();
-    console.log(tracker);
+    // console.log(tracker);
     // Default CSS class to apply to the Component
     this.state = {
       classList: "ThoughtTracker",
@@ -173,9 +173,9 @@ class ThoughtTracker extends Component {
     let keys = this.state.keys;
     if(keys[pressedKey]){
       const data = keys.releaseKey(pressedKey);
-      console.log(data);
+      // console.log(data);
       if(data.mPerception){
-        console.log(data);
+        // console.log(data);
         this.submitThought(data.aPerception, data.mPerception);
       }
       this.setState({keys})
@@ -195,13 +195,13 @@ class ThoughtTracker extends Component {
         );
         emotions[emotion.properties.perception.toLowerCase()] = aPerception;
       })
-      console.log(emotions);
+      // console.log(emotions);
       keys["a"].aPerception = emotions["anger"];
       keys["s"].aPerception = emotions["sad"];
       keys["d"].aPerception = emotions["happy"];
       keys["f"].aPerception = emotions["fear"];
       keys["j"].aPerception = emotions["craving"];
-      console.log(keys);
+      // console.log(keys);
       this.setState({emotions, keys});
      });
   }
@@ -220,7 +220,7 @@ class ThoughtTracker extends Component {
 
   determineTrackerMode = () => {
     let historic = this.state.tracker.historic;
-    console.log(historic);
+    // console.log(historic);
     if (historic !== true) {
       this.beginTracker();
     } else {
@@ -273,7 +273,7 @@ class ThoughtTracker extends Component {
   };
 
   endTracker = () => {
-    console.log("Tracker Ended");
+    // console.log("Tracker Ended");
     this.endKeyTracking();
     let tracker = this.state.tracker;
     if (tracker.historic == true) {
@@ -284,7 +284,7 @@ class ThoughtTracker extends Component {
       tracker.properties.timestampOfEnd.setDefaultValue();
     }
     tracker.status = "review";
-    console.log(tracker);
+    // console.log(tracker);
     //tracker.generateCypherQuery();
     this.setState({
       tracker: tracker,
@@ -294,7 +294,7 @@ class ThoughtTracker extends Component {
   submitTracker = () => {
     let tracker = this.state.tracker;
     tracker.generateCypherQuery();
-    console.log(tracker.query);
+    // console.log(tracker.query);
     tracker.submitTracker().then((res) => {
       this.setState({
         trackerSubmitted:true
@@ -303,14 +303,14 @@ class ThoughtTracker extends Component {
   };
 
   submitThought = (aThought, mThought) => {
-    console.log(aThought, mThought);
+    // console.log(aThought, mThought);
     this.setState({
       tracker: this.state.tracker.addThought(aThought, mThought),
     });
   };
 
   submitHistoricThought = (aThought, mThought) => {
-    console.log("Historic");
+    // console.log("Historic");
     if(aThought.exists!==true){
       aThought.properties.timestampOfPerception.value = this.state.tracker.properties.timestampOfStart.value+1;
     }
@@ -348,13 +348,13 @@ class ThoughtTracker extends Component {
   };
 
   getNodeEditors=()=>{
-    console.log(this.state.tracker.thoughts);
+    // console.log(this.state.tracker.thoughts);
     let editProps = {
       hedonicAffect:true
     }
     let  editors = this.state.tracker.thoughts.map((perception, key)=>{
       let node = perception[0];
-      console.log(node);
+      // console.log(node);
       node.properties.hideProperties();
       node.properties.hedonicAffect.edittable = true;
       let header = "("+node.labels.join(":")+"): "+node.properties.perception.value;
@@ -370,7 +370,7 @@ class ThoughtTracker extends Component {
     tracker.thoughts.forEach((nodes,index)=>{
       if(nodes[0].variable == node.variable){
         tracker.thoughts[index][0].properties.hedonicAffect = node.properties.hedonicAffect;
-        console.log(tracker.thoughts[index][0]);
+        // console.log(tracker.thoughts[index][0]);
         tracker.cypherQuery.updateParams(node);
       }
     })
@@ -381,7 +381,7 @@ class ThoughtTracker extends Component {
   }
 
   updateType =(e)=>{
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let trackerType = e.target.value;
     let tracker = this.state.tracker;
     let type = "Emotion";

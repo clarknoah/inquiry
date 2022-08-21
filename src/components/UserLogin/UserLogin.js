@@ -30,7 +30,7 @@ class UserLogin extends Component {
     }
   };
   loginUser = () => {
-    console.log("Ready for submission");
+    // console.log("Ready for submission");
     let { email, password } = this.state;
     let userProperties = {
       email: email,
@@ -38,7 +38,7 @@ class UserLogin extends Component {
     };
     this.setState({pending: true});
     api.login(email,password).then(res => {
-      console.log(res);
+      // console.log(res);
       if (res.success) {
         let user = InquiryModel.getExistingModelClass("User",res.user.identity.toNumber(),res.user.properties)
         user.login();
@@ -67,7 +67,7 @@ class UserLogin extends Component {
     });
   };
   onClose = val => {
-    console.log("user close");
+    // console.log("user close");
     this.setState(
       {
         open: false

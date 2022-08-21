@@ -11,7 +11,7 @@ import ThoughtTimeseries from "../../components/ThoughtTimeseries/ThoughtTimeser
 class InsightsHome extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -94,7 +94,7 @@ class InsightsHome extends Component {
     data.forEach(value=>{
       value.data.forEach(record=>{
         if(typeof record.x!=="string"){
-          console.log(record);
+          // console.log(record);
         }
       })
     })
@@ -104,14 +104,14 @@ class InsightsHome extends Component {
   componentDidMount() { 
     // api.getThoughtTimeSeries()
     //   .then(res=>{
-    //     console.log(d3);
-    //     console.log(res);
+    //     // console.log(d3);
+    //     // console.log(res);
     //     let data = d3.rollups(res.records,v=>v.length, d=>d._fields[1], d=>d._fields[0])
-    //     console.log(data);
+    //     // console.log(data);
     //     let finalData = data.filter(value=>{
     //       return value[1].length > 10;
     //     })
-    //     console.log(finalData);
+    //     // console.log(finalData);
     //     let mappedData = finalData.map(value=>{
     //       let obj = {};
     //       obj.id = value[0];
@@ -126,7 +126,7 @@ class InsightsHome extends Component {
     //       })
     //       return obj;
     //     })
-    //     console.log(mappedData);
+    //     // console.log(mappedData);
     //     //this.sanitizeData(mappedData);
     //     this.setState({
     //       data:mappedData

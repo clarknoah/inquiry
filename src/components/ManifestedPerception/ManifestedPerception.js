@@ -12,7 +12,7 @@ class ManifestedPerception extends Component {
     super(props);
     let newPerception = true;
     let mPerception = InquiryModel.getNewModelClass(`M_${props.label}`);
-    console.log(props);
+    // console.log(props);
     mPerception.properties[props.queryKey].value = "";
     if (props.date !== undefined) {
       mPerception.setProperty("dateOfPerception", props.date);
@@ -37,7 +37,7 @@ class ManifestedPerception extends Component {
 
   resetForm = () => {
     let mPerception = InquiryModel.getNewModelClass(`M_${this.props.label}`);
-    //console.log(mPerception);
+    //// console.log(mPerception);
     mPerception.properties[this.props.queryKey].value = "";
     if (this.state.newPerception == false) {
       mPerception.properties.dateOfPerception.setValue(this.state.mPerception.properties.dateOfPerception.value)
@@ -98,7 +98,7 @@ class ManifestedPerception extends Component {
   }
 
   isHedonicChar = (char) =>{
-    console.log("Is called");
+    // console.log("Is called");
     let charMap = {
       "1":true,
       "2":true,
@@ -106,7 +106,7 @@ class ManifestedPerception extends Component {
     };
     let hedonicChar = !!charMap[char];
     let firstChar = char.length === 1;
-    console.log(hedonicChar, firstChar);
+    // console.log(hedonicChar, firstChar);
     if(hedonicChar && firstChar){
       return true;
     }
@@ -146,7 +146,7 @@ class ManifestedPerception extends Component {
     }
     if (text.length > 0 && switchLabel == false) {
       api.nodeListQuery(`A_${this.state.label}`, this.state.queryKey, text).then((res) => {
-        // console.log(res);
+        // // console.log(res);
         this.setState({
           abstractPerceptions: res,
           mPerception: this.state.mPerception.setProperty(this.state.queryKey, text),
@@ -172,7 +172,7 @@ class ManifestedPerception extends Component {
   selectExistingPerception = (perception) => {
     let mPerception = this.state.mPerception;
     mPerception.setInputDuration();
-    console.log(perception);
+    // console.log(perception);
     let aPerception = InquiryModel.getExistingModelClass(
       perception.labels[0],
       perception.identity,
@@ -183,12 +183,12 @@ class ManifestedPerception extends Component {
   };
 
   submitPerception = (aPerception, mPerception) => {
-    console.log(this.props);
+    // console.log(this.props);
     if (mPerception.properties.perception.value.length > 0) {
       this.props.submitPerception(aPerception, mPerception);
       this.resetForm();
     } else {
-      console.log("Empty thought...hahah")
+      // console.log("Empty thought...hahah")
     }
   };
 
@@ -224,7 +224,7 @@ class ManifestedPerception extends Component {
   }
 
   componentDidMount() {
-    console.log("Mounted");
+    // console.log("Mounted");
     if (this.props.focus) {
       this.focus();
     }
@@ -239,7 +239,7 @@ class ManifestedPerception extends Component {
             variant="contained"
             label="Hello"
             onClick={() => {
-              console.log(val);
+              // console.log(val);
               this.selectExistingPerception(val);
             }}
           >

@@ -153,7 +153,6 @@ const generateRangedKeywords = ({width, type, height, start, end, title, keyword
 
   keywords = keywords.map((keyword, index)=>{
 
-    console.log(previousKeywords)
     let obj = {
       match: `MATCH (t)-[:PERCEIVED]->(keyword${index})`,
       where: `WHERE keyword${index}.perception =~ '(?i).*${keyword}.*'`,

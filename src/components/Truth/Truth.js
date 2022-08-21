@@ -7,7 +7,7 @@ import Divider from "@material-ui/core/Divider";
 class Truth extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
     let state = {
       classList: "Truth",
       button1:"outlined",
@@ -25,7 +25,7 @@ class Truth extends Component{
 
 
   onChange=(bool)=>{
-    console.log("Changing");
+    // console.log("Changing");
     let state = this.state;
     if(bool==true){
 
@@ -47,7 +47,7 @@ class Truth extends Component{
   }
 
   onCertainChange=(bool)=>{
-    console.log("Changing");
+    // console.log("Changing");
     if(bool==true){
       this.setState({
         certainlyTrue:bool,
@@ -76,7 +76,7 @@ class Truth extends Component{
 
       this.props.submitTruth(state);
     }else if(this.state.isItTrue==true && this.certainlyTrue!==null){
-      console.log(state);
+      // console.log(state);
       this.props.submitTruth(state);
     }
   }
@@ -84,9 +84,9 @@ class Truth extends Component{
 
 
   ifTrue=()=>{
-    console.log("If True");
+    // console.log("If True");
     if(this.state.isItTrue==true){
-      console.log("Thought true")
+      // console.log("Thought true")
       return (<div>
           <p>Can you be absolutely certain that this thought is true?</p>
           <div>

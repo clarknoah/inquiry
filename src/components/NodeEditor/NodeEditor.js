@@ -11,7 +11,7 @@ import api from "../../services/api";
 class NodeEditor extends Component {
   constructor(props) {
     super(props);
-    //console.log(props);
+    //// console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -26,7 +26,7 @@ class NodeEditor extends Component {
 
   // Runs after a component has been updated
   componentDidUpdate(props) {
-    console.log(this.props, props);
+    // console.log(this.props, props);
     this.checkForPropertyChange(props.node,this.props.node);
    }
 
@@ -67,7 +67,7 @@ class NodeEditor extends Component {
 
   saveNode=()=>{
     let props = this.state.node.properties.generateCypherPropertyObject();
-    console.log(props);
+    // console.log(props);
     api.updateNode(this.state.node.id, props)
       .then(res=>{
 

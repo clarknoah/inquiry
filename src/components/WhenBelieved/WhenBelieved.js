@@ -15,7 +15,7 @@ import utils from "../../services/utils";
 class WhenBelieved extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {

@@ -15,7 +15,7 @@ import api from "../../../services/api";
 class TeLogger extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
     this.steps = ["Select Thought", "Select Emotion","Submit!"];
     this.state = {
       stimulus:[],
@@ -93,7 +93,7 @@ class TeLogger extends Component{
     cypherQuery.addNode(perception[0]);
     cypherQuery.addNode(perception[1]);
     cypherQuery.generateQuery();
-    console.log(cypherQuery.query, cypherQuery.params);
+    // console.log(cypherQuery.query, cypherQuery.params);
     api.cypherQuery(cypherQuery.query,cypherQuery.params)
       .then(res=>{
         this.handleReset();
@@ -101,7 +101,7 @@ class TeLogger extends Component{
 
   }
   handleNext = (e) => {
-    console.log(e.target.innerText);
+    // console.log(e.target.innerText);
     if(e.target.innerText === "FINISH"){
       this.submitLog();
     }else{

@@ -26,7 +26,7 @@ import utils from "../../services/utils";
 // Class Based React Component
 let colors = utils.getColorArray(7);
 
-console.log(colors);
+// console.log(colors);
 let day = 1000 * 60 * 60 * 24;
 let twentyFourHours = 1000 * 60 * 60 * 24 * 15;
 let today = new Date(Date.now() + day).toISOString().split(".")[0];
@@ -34,7 +34,7 @@ let yesterday = new Date(Date.now() - twentyFourHours).toISOString().split(".")[
 class ThoughtTrackerTimeseries extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
     this.chart = React.createRef();
     // Default CSS class to apply to the Component
     this.state = {
@@ -126,13 +126,13 @@ class ThoughtTrackerTimeseries extends Component {
     //     })
     //   }
     // })
-    console.log(this.chart.current);
+    // console.log(this.chart.current);
     api.getThoughtTrackerTimeSeries()
       .then(res => {
         res = res.records.map(field => {
           return field._fields[0];
         });
-        console.log(res.length);
+        // console.log(res.length);
 
         this.setState({
           source: res,
@@ -152,7 +152,7 @@ class ThoughtTrackerTimeseries extends Component {
     data.forEach(value => {
       value.data.forEach(record => {
         if (typeof record.x !== "string") {
-          console.log(record);
+          // console.log(record);
         }
       })
     })
@@ -231,7 +231,7 @@ class ThoughtTrackerTimeseries extends Component {
       return field;
     })
 
-    console.log(dateRange, data, this.state.startTimestamp, this.state.endTimestamp);
+    // console.log(dateRange, data, this.state.startTimestamp, this.state.endTimestamp);
     return data;
   }
 
@@ -243,14 +243,14 @@ class ThoughtTrackerTimeseries extends Component {
   //   dailyNormalized = dailyNormalized.map(field=>{
   //     if(field[0]==="2020-10-27"){
   //       let frank = field[1] * (300/trackers[field[0]].totalDuration)
-  //       console.log(frank, field[1], trackers[field[0]].totalDuration)
+  //       // console.log(frank, field[1], trackers[field[0]].totalDuration)
   //     }
   //     field[1] = field[1] * (300/trackers[field[0]].totalDuration)
   //     return field;
   //   })
-  //   console.log(dailyTotal, dailyNormalized);
+  //   // console.log(dailyTotal, dailyNormalized);
   //   let daily = [["Daily Total",dailyTotal],["Daily Average (5 Minutes)",dailyNormalized]];
-  //   console.log(trackers);
+  //   // console.log(trackers);
   //   return daily;
   // }
 
@@ -271,19 +271,19 @@ class ThoughtTrackerTimeseries extends Component {
     data.sort((a, b) => {
       return (a[0] < b[0]) ? -1 : (a[0] > b[0]) ? 1 : 0;
     })
-    console.log([name, data])
+    // console.log([name, data])
     return [name, data];
   }
 
   updateChart = () => {
     let data = this.state.source;
-    console.log(data);
+    // console.log(data);
     data = this.filterStartDate(data);
     data = this.filterEndDate(data);
-    console.log(data);
+    // console.log(data);
     let categories = [];
     //data = d3.groups(data, d=>d.properties.date+": "+d.identity.low, d=>d.properties.distinctNewThoughtCount);
-    console.log(data);
+    // console.log(data);
     categories.push(this.getPropertyMap(data, "averageThoughtGap", "Average Time Between Thoughts"))
     categories.push(this.getPropertyMap(data, "averageThoughtsPerMinute", "Average Thoughts Per Minute"))
     categories.push(this.getPropertyMap(data, "shortestThoughtGap", "Shortest Thought Gap (Seconds)"))
@@ -296,7 +296,7 @@ class ThoughtTrackerTimeseries extends Component {
     // let hedonic = this.getHedonicRatio(data);
     // let daily = this.getDailyThoughtCount(data);
     // data = d3.rollups(data, v => v.length, d => d.perception, d => d.date)
-    // console.log(hedonic);
+    // // console.log(hedonic);
     // data = this.filterByCountMin(data);
     // data = this.filterByCountMax(data);
     // //data = this.normalizeData(data);
@@ -311,7 +311,7 @@ class ThoughtTrackerTimeseries extends Component {
     //   data.push(...daily);
     // }
     //data = this.addEmptyDates(data);
-    //console.log(data);
+    //// console.log(data);
     let mappedData = categories.map(value => {
       let obj = {};
       obj.id = value[0];

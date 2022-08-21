@@ -28,7 +28,7 @@ let userField = {
 class TopBar extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -81,7 +81,7 @@ class TopBar extends Component {
         <UserLogin
           open={this.state.userLoginShow}
           onClose={() => {
-            console.log('hello world');
+            // console.log('hello world');
             this.setState({ userLoginShow: false },this.props.update);
           }}
         />

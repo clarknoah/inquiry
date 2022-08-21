@@ -15,7 +15,7 @@ import utils from "../../services/utils";
 class ManifestedDesire extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -41,7 +41,7 @@ class ManifestedDesire extends Component{
     let desire = evt.target.value;
     if(desire.length > 3){
       api.nodeListQuery("Abstract_Form", "name", desire).then(res => {
-        console.log(res);
+        // console.log(res);
         this.setState({
           desire:desire,
           abstractForms:res
@@ -56,12 +56,12 @@ class ManifestedDesire extends Component{
   }
 
   compareDesireString=()=>{
-    console.log(this.state.desire )
+    // console.log(this.state.desire )
     let same =  this.state.abstractForms.filter(val=>{
-      console.log(val.name,this.state.desire);
+      // console.log(val.name,this.state.desire);
       return val.name.toLowerCase() === this.state.desire.toLowerCase()
     }).length == 0;
-    console.log(same);
+    // console.log(same);
     if(same){
       return  <Button
       variant="contained"
@@ -73,7 +73,7 @@ class ManifestedDesire extends Component{
   }
 
   selectExistingDesire=(desire)=>{
-    console.log(desire);
+    // console.log(desire);
     desire.exists = true;
     desire.nodeId = desire.identity;
     desire.manifestedVar = `node_${utils.getUniqueId()}`;

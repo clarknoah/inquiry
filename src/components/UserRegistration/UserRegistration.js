@@ -15,7 +15,7 @@ import InquiryModel from "../../models/GraphModel";
 class UserRegistration extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -50,7 +50,7 @@ class UserRegistration extends Component {
   };
 
   submitNewUser = () => {
-    console.log("Ready for submission");
+    // console.log("Ready for submission");
     let { firstName, lastName, date, email, password, username } = this.state;
     let userProperties = {
       firstName: firstName,
@@ -59,20 +59,20 @@ class UserRegistration extends Component {
       email: email,
       password: password
     };
-    console.log(userProperties);
+    // console.log(userProperties);
     try{
       api.registerUser(userProperties).then(res => {
-        console.log(res);
+        // console.log(res);
         if(res.success){
           let user = InquiryModel.getExistingModelClass("User",res.user.identity.toNumber(),res.user.properties)
           user.login();
           this.onClose();
         }else{
-          console.log(res);
+          // console.log(res);
         }
       });
     }catch(err){
-      console.log(err);
+      // console.log(err);
     }
 
   };
@@ -86,7 +86,7 @@ class UserRegistration extends Component {
   };
 
   onClose = val => {
-    console.log("user close");
+    // console.log("user close");
     this.setState(
       {
         open: false
@@ -98,7 +98,7 @@ class UserRegistration extends Component {
   };
 
   componentDidUpdate(props) {
-    console.log("UserRegistration Update", this.state.open, this.props.open);
+    // console.log("UserRegistration Update", this.state.open, this.props.open);
     if (this.state.open !== this.props.open) {
       this.setState({
         open: this.props.open

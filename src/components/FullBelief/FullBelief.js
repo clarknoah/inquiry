@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 class FullBelief extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {

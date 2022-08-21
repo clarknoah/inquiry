@@ -221,7 +221,7 @@ let api = {
     let query = `
     MATCH (n:User)-[:HAS_ABSTRACT]->(a:A_Thought)<-[:MANIFESTATION_OF]-(m:M_Thought)<-[:PERCEIVED]-(t:Thought_Tracker)
     WHERE t.trackerType = "passiveFlow" 
-    AND ID(user)=${localStorage.getItem("activeUser_id")}
+    AND ID(n)=${localStorage.getItem("activeUser_id")}
     RETURN {date:m.dateOfPerception, perception:m.perception,timestamp:m.timestampOfPerception, hedonicAffect:a.hedonicAffect, trackerId:id(t), duration:t.duration}
     `
     return driver.session().run(query)
@@ -230,7 +230,7 @@ let api = {
     let query = `
     MATCH (n:User)-[:CONDUCTED_SESSION]->(tracker:Thought_Tracker)
     WHERE tracker.trackerType = "passiveFlow"
-    AND ID(user)=${localStorage.getItem("activeUser_id")}
+    AND ID(n)=${localStorage.getItem("activeUser_id")}
     RETURN tracker
     `
     return driver.session().run(query)

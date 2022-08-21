@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 class Turnarounds extends Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -53,7 +53,7 @@ class Turnarounds extends Component{
       />
       <Divider />
       {this.state.inquiry.turnarounds.map((turnaround, index) => {
-        console.log(turnaround);
+        // console.log(turnaround);
         let header = turnaround[0].properties.perception.value;
         return (
           <Accordion className={"PerceptionsCollector-content"}>

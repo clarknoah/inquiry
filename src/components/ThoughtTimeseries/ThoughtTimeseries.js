@@ -21,7 +21,7 @@ import utils from "../../services/utils";
 */
 
 // Class Based React Component
-console.log(utils.getColorArray(100))
+// console.log(utils.getColorArray(100))
 let day = 1000 * 60 * 60 * 24;
 let twentyFourHours = 1000 * 60 * 60 * 24 * 7;
 let today = new Date(Date.now()).toISOString().split(".")[0];
@@ -29,7 +29,7 @@ let yesterday = new Date(Date.now() - twentyFourHours).toISOString().split(".")[
 class ThoughtTimeseries extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    // console.log(props);
 
     // Default CSS class to apply to the Component
     this.state = {
@@ -119,10 +119,10 @@ class ThoughtTimeseries extends Component {
           }
           return field._fields[0];
         });
-        console.log(res.length);
+        // console.log(res.length);
         api.getTrackerDatesAndDuration2()
           .then(trackers => {
-            console.log(trackers);
+            // console.log(trackers);
 
             this.setState({
               source: res,
@@ -131,7 +131,7 @@ class ThoughtTimeseries extends Component {
 
           })
         // let data = d3.rollups(res, v => v.length, d => d.perception, d => d.date)
-        // console.log(data);
+        // // console.log(data);
         // let mappedData = data.map(value => {
         //   let obj = {};
         //   obj.id = value[0];
@@ -144,9 +144,9 @@ class ThoughtTimeseries extends Component {
         //   })
         //   return obj;
         // })
-        // console.log(mappedData);
+        // // console.log(mappedData);
         // mappedData = this.filterByCount(mappedData);
-        // console.log(mappedData);
+        // // console.log(mappedData);
         // this.setState({
         //   source: res,
         //   chartData: mappedData
@@ -164,7 +164,7 @@ class ThoughtTimeseries extends Component {
     data.forEach(value => {
       value.data.forEach(record => {
         if (typeof record.x !== "string") {
-          console.log(record);
+          // console.log(record);
         }
       })
     })
@@ -223,13 +223,13 @@ class ThoughtTimeseries extends Component {
     Iterate thorugh ready data
     
     */
-    //  console.log(data);
+    //  // console.log(data);
     //  let grouped = d3.groups(data,d=>d.date);
     //  grouped = grouped.map(field=>{
     //    return field.groups(field, )
     //  })
-    //  console.log(grouped, this.state.trackers,grouped["2020-11-16"]);
-    console.log(data);
+    //  // console.log(grouped, this.state.trackers,grouped["2020-11-16"]);
+    // console.log(data);
     data = data.map(thought => {
       thought[1] = thought[1].map(thoughtDate => {
 
@@ -271,23 +271,23 @@ class ThoughtTimeseries extends Component {
       return field;
     })
 
-    console.log(dateRange, data, this.state.startTimestamp, this.state.endTimestamp);
+    // console.log(dateRange, data, this.state.startTimestamp, this.state.endTimestamp);
     return data;
   }
 
   getHedonicRatio = (data) => {
     let hedonic = d3.rollups(data, v => v.length, d => d.hedonicAffect, d => d.date)
-    console.log(this.addEmptyDates(hedonic));
+    // console.log(this.addEmptyDates(hedonic));
     hedonic = this.addEmptyDates(hedonic);
     try{
       for(let i = 0; i < hedonic[0][1].length; i++){
   
-        console.log(hedonic[0][1][i][1],hedonic[1][1][i][1],hedonic[2][1][i][1],hedonic[3][1][i][1])
+        // console.log(hedonic[0][1][i][1],hedonic[1][1][i][1],hedonic[2][1][i][1],hedonic[3][1][i][1])
         let total = hedonic[0][1][i][1] + hedonic[1][1][i][1] + hedonic[2][1][i][1] + hedonic[3][1][i][1]
-        console.log(total);
+        // console.log(total);
         if(total>0){
           let tenths = 100/total;
-          console.log(tenths);
+          // console.log(tenths);
     
           hedonic[0][1][i][1] = tenths * hedonic[0][1][i][1];
           hedonic[1][1][i][1] = tenths * hedonic[1][1][i][1];
@@ -298,7 +298,7 @@ class ThoughtTimeseries extends Component {
   
       }
     }catch(err){
-      console.log("Something went wrong",err)
+      // console.log("Something went wrong",err)
     }
     return hedonic;
   }
@@ -310,26 +310,26 @@ class ThoughtTimeseries extends Component {
     dailyNormalized = dailyNormalized.map(field=>{
       if(field[0]==="2020-10-27"){
         let frank = field[1] * (300/trackers[field[0]].totalDuration)
-        console.log(frank, field[1], trackers[field[0]].totalDuration)
+        // console.log(frank, field[1], trackers[field[0]].totalDuration)
       }
       field[1] = field[1] * (300/trackers[field[0]].totalDuration)
       return field;
     })
-    console.log(dailyTotal, dailyNormalized);
+    // console.log(dailyTotal, dailyNormalized);
     let daily = [["Daily Total",dailyTotal],["Daily Average (5 Minutes)",dailyNormalized]];
-    console.log(trackers);
+    // console.log(trackers);
     return daily;
   }
 
   updateChart = () => {
     let data = this.state.source;
-    console.log(data);
+    // console.log(data);
     data = this.filterStartDate(data);
     data = this.filterEndDate(data);
     let hedonic = this.getHedonicRatio(data);
     let daily = this.getDailyThoughtCount(data);
     data = d3.rollups(data, v => v.length, d => d.perception, d => d.date)
-    console.log(hedonic);
+    // console.log(hedonic);
     data = this.filterByCountMin(data);
     data = this.filterByCountMax(data);
     //data = this.normalizeData(data);
@@ -344,7 +344,7 @@ class ThoughtTimeseries extends Component {
       data.push(...daily);
     }
     data = this.addEmptyDates(data);
-    console.log(data);
+    // console.log(data);
     let mappedData = data.map(value => {
       let obj = {};
       obj.id = value[0];
@@ -359,7 +359,7 @@ class ThoughtTimeseries extends Component {
     })
     let state = this.state;
     state.chartData = mappedData;
-    console.log(mappedData);
+    // console.log(mappedData);
     state.options.colors = utils.getColorArray(mappedData.length);
     this.setState(state);
   }
