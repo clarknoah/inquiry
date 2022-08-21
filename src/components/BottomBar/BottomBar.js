@@ -75,6 +75,7 @@ class BottomBar extends Component {
                   aria-haspopup="true"
                   color="secondary"
                   aria-label="add"
+                  disabled
                   onClick={(e) => this.showLoggerMenu(e, "loggerAnchor")}
                 >
                   <NotesIcon />

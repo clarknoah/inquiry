@@ -100,7 +100,7 @@ class TopBar extends Component {
           <img src="./images/iAmLogo.svg" className="iAm-logo"/>
           <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
               <Typography variant="h6" >
-                iAm
+                iAm (Version 0.0.1)
           </Typography>
           </Link>
             </div>

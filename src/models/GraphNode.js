@@ -71,7 +71,6 @@ class GraphNode{
         return this;
     }
     addRelationship(relationshipKey, target){
-        console.log(relationshipKey, target);
        let rel= this.relationships[relationshipKey].addRelationship(this.variable,target);
        return rel;
     }
@@ -104,7 +103,6 @@ class GraphNode{
         }
     }
     setExistingProperties(props){
-        console.log(props);
         for(let key in props){
             try{
                 if(this.properties.hasOwnProperty(key)){

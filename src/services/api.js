@@ -4,7 +4,7 @@ var driver = neo4j.driver(
   "bolt://localhost:7688",
   neo4j.auth.basic("neo4j", "neo4j")
 );
-
+console.log(driver);
 let api = {
   nodeListQuery:function(label, field, queryText, limit = 5, skip=0){
     let query = `

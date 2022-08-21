@@ -5,7 +5,6 @@ export default class StringProperty extends NodeProperty{
         super(data);
         if(data.default!==""){
             this.value = data.default;
-            console.log(this.value);
         }
     }
 }
