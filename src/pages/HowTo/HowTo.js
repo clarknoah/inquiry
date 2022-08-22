@@ -66,6 +66,10 @@ class HowTo extends Component{
           <li>Once your database is ready, click on the "Start" button associated with it</li>
           <li>Once your database has been started, you are now ready to register!</li>
         </ol>
+        <p>Registering prior to setting up Neo4j will cause registration to not work. If you encounter problems, 
+          please ensure Neo4j Desktop is installed, and that you are accessing this web page through HTTP (inscure). 
+          You do not need to worry about the connection being insecure, as all data stays within your computer, you're 
+          basically downloading an app when you go to this webpage, and everything else happens within your computer </p>
         {/* {!saved ? (<div className={"PasswordSet"}>
         <TextField
             onChange={this.setPassword}

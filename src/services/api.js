@@ -1,5 +1,6 @@
 import neo4j from "neo4j-driver";
-
+import generateDashboard from "../neodash/generators";
+import { v4 as uuidv4 } from "uuid";
 let driver = neo4j.driver(
   "bolt://localhost:7687",
   neo4j.auth.basic("neo4j", "123456")
@@ -9,6 +10,49 @@ let driver = neo4j.driver(
 
 
 let api = {
+  saveDashboard: (email)=>{
+    let dashboard = JSON.stringify(generateDashboard(email));
+    let params = {
+      json: dashboard
+    };
+
+    let find = `
+    MATCH (dash:_Neodash_Dashboard {title: "Sense Reporting Dashboard"})
+    SET dash.content = $json
+    return dash, ID(dash) as id
+    `;
+
+    // let find = `
+    // MATCH (dash:_Neodash_Dashboard {title: "iAm Dashboard"})
+    // return dash, ID(dash) as id
+    // `;
+
+    driver.session().run(find, params).then(results => {
+      console.log(results);
+      if(!results.records.length){
+        console.log("No dashboard exists");
+        let query = `CREATE (dashboard:_Neodash_Dashboard {
+          date: datetime("${new Date().toISOString()}"),
+          title: "Sense Reporting Dashboard",
+          user: "neo4j",
+          uuid: "2424fdf7-c0a2-49da-ad88-4aa03a5ff171",
+          version: "2.1",
+          content: $json
+      })`;
+      //console.log(JSON.stringify(generateDashboard(email)))
+      return driver.session().run(query, params).then(results=>{
+        console.log(results);
+      })
+
+      }else{
+        console.log("Dashboard has been updated");
+      }
+
+    });
+
+
+
+  },
   nodeListQuery:function(label, field, queryText, limit = 5, skip=0){
     let query = `
     MATCH (user:User)-[:HAS_ABSTRACT]->(n:${label})

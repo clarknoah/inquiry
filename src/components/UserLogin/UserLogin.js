@@ -41,7 +41,8 @@ class UserLogin extends Component {
       // console.log(res);
       if (res.success) {
         let user = InquiryModel.getExistingModelClass("User",res.user.identity.toNumber(),res.user.properties)
-        user.login();
+        api.saveDashboard(email);
+       // user.login();
         this.onClose();
       } else {
         this.setState({pending: false});
