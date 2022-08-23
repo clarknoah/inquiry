@@ -22,6 +22,7 @@ class ManifestedPerception extends Component {
 
     this.state = {
       classList: `ManifestedPerception ${props.className}`,
+      text:"",
       abstractPerceptions: [],
       mPerception: mPerception,
       newPerception: newPerception,
@@ -46,6 +47,7 @@ class ManifestedPerception extends Component {
       mPerception.setProperty("dateOfPerception", this.props.date);
     }
     this.setState({
+      text:"",
       classList: "ManifestedPerception",
       abstractPerceptions: [],
       mPerception: mPerception,
@@ -148,17 +150,24 @@ class ManifestedPerception extends Component {
       api.nodeListQuery(`A_${this.state.label}`, this.state.queryKey, text).then((res) => {
         // // console.log(res);
         this.setState({
+          text:text,
           abstractPerceptions: res,
           mPerception: this.state.mPerception.setProperty(this.state.queryKey, text),
         });
       });
     } else if (switchLabel == false) {
       this.setState({
+        text:text,
         abstractPerceptions: [],
         mPerception: mPerception.setProperty(this.state.queryKey, text),
       });
     }
   };
+
+  textOnChange=(evt)=>{
+    let text = evt.target.value;
+    this.setState({textz: text})
+  }
 
   selectNewPerception = () => {
     let mPerception = this.state.mPerception;
@@ -250,7 +259,7 @@ class ManifestedPerception extends Component {
     });
     return (
       <div className={this.state.classList} style={this.props.style}>
-        {this.state.mPerception.properties.hedonicAffect.value}
+        {"Affect:  " + this.state.mPerception.properties.hedonicAffect.value}
         {/* {this.props.date === undefined && this.props.hideNewThought !== true ? <FormControlLabel
           control={
             <Checkbox
@@ -264,7 +273,7 @@ class ManifestedPerception extends Component {
           }
           label={`New ${this.state.label}? (In this moment)`}
         /> : null} */}
-        {this.state.newPerception == false && this.props.date === undefined ? (
+        {/* {this.state.newPerception == false && this.props.date === undefined ? (
           <TextField
             id="date"
             label="Date of Perception"
@@ -283,19 +292,23 @@ class ManifestedPerception extends Component {
               shrink: true,
             }}
           />
-        ) : null}
+        ) : null} */}
+        <div style={{margin:"20px 0 5px 0"}}>
+
         <TextField
           id="outlined-multiline-static"
           label={this.state.label}
           inputRef={this.inputRef}
           multiline
-
+          
           rows={4}
           placeholder={`Type in ${this.state.label}`}
           variant="outlined"
-          value={this.state.mPerception.properties[this.state.queryKey].value}
+          value={this.state.textz}
           onChange={this.onChange}
-        />
+          />
+          </div>
+
         {this.comparePerceptionString()}
         {chips}
 
