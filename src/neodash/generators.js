@@ -61,7 +61,7 @@ const getWeeks = (start, end) => {
   return weeks;
 };
 
-let months = getMonths('2020-07', new Date().toISOString().split('T')[0].slice(0,7));
+let months = getMonths('2022-04', new Date().toISOString().split('T')[0].slice(0,7));
 let weeks = getWeeks('2022-01', new Date().toISOString().split('T')[0]);
 let email = "noahbc08@gmail.com";
 
