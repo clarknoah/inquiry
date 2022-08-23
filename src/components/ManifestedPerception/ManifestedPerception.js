@@ -37,6 +37,7 @@ class ManifestedPerception extends Component {
 
 
   resetForm = () => {
+    console.log("reset");
     let mPerception = InquiryModel.getNewModelClass(`M_${this.props.label}`);
     //// console.log(mPerception);
     mPerception.properties[this.props.queryKey].value = "";
@@ -48,6 +49,7 @@ class ManifestedPerception extends Component {
     }
     this.setState({
       text:"",
+      textz:"",
       classList: "ManifestedPerception",
       abstractPerceptions: [],
       mPerception: mPerception,
@@ -257,6 +259,7 @@ class ManifestedPerception extends Component {
         </React.Fragment>
       );
     });
+    console.log(this.state.textz);
     return (
       <div className={this.state.classList} style={this.props.style}>
         {"Affect:  " + this.state.mPerception.properties.hedonicAffect.value}
@@ -304,7 +307,7 @@ class ManifestedPerception extends Component {
           rows={4}
           placeholder={`Type in ${this.state.label}`}
           variant="outlined"
-          value={this.state.textz}
+          value={this.state.text}
           onChange={this.onChange}
           />
           </div>
