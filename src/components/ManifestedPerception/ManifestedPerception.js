@@ -251,7 +251,7 @@ class ManifestedPerception extends Component {
     return (
       <div className={this.state.classList} style={this.props.style}>
         {this.state.mPerception.properties.hedonicAffect.value}
-        {this.props.date === undefined && this.props.hideNewThought !== true ? <FormControlLabel
+        {/* {this.props.date === undefined && this.props.hideNewThought !== true ? <FormControlLabel
           control={
             <Checkbox
               checked={this.state.newPerception}
@@ -263,7 +263,7 @@ class ManifestedPerception extends Component {
             />
           }
           label={`New ${this.state.label}? (In this moment)`}
-        /> : null}
+        /> : null} */}
         {this.state.newPerception == false && this.props.date === undefined ? (
           <TextField
             id="date"
