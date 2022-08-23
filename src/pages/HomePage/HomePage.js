@@ -56,12 +56,12 @@ let cardContainer = {
 
 let cards = [
   {
-    title:"Track Realtime Perceptions",
+    title:"Track Sense Phenomena",
     content:"Use iAm to record thoughts per minute, hedonic affect, concept meaning, and so much more"
   },
   {
     title:"Visualize your data",
-    content:"Using a series of visualizations, you can track your own mental activity over time to see how things such as diet, meditation, and psychoactive substances affect your mind"
+    content:"Using a series of visualizations"
   },
   {
     title:"Question your thoughts",
@@ -85,7 +85,7 @@ class HomePage extends Component{
 
     return(
       <div className={this.state.classList}>
-      <Typography variant="h3">The Ultimate Self Knowledge Research Platform</Typography>
+      <Typography variant="h3">Sense Reporting Research Platform</Typography>
         <div style={cardContainer}>
             {cards.map(val=><HCard content={val.content} title={val.title}/>)}
         </div>
