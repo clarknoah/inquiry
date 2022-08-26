@@ -149,6 +149,7 @@ class BottomBar extends Component {
                 aria-haspopup="true"
                 color="secondary"
                 aria-label="add"
+                disabled
                 onClick={(e) => this.showLoggerMenu(e, "anchor")}
               >
                 <AddIcon />
@@ -214,7 +215,11 @@ class BottomBar extends Component {
             </div>
             <Tooltip title="Inquiry Practice">
               <Link style={linkStyle} to="/inquiry">
-                <Fab color="secondary" aria-label="inquiry">
+                <Fab 
+                  color="secondary" 
+                  aria-label="inquiry"
+                  disabled
+                  >
                   <FlareIcon />
                 </Fab>
               </Link>

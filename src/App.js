@@ -25,7 +25,7 @@ import ThoughtTimeseries from "./components/ThoughtTimeseries/ThoughtTimeseries"
 import ThoughtTrackerTimeseries from "./components/ThoughtTrackerTimeseries/ThoughtTrackerTimeseries";
 import HowTo from "./pages/HowTo/HowTo";
 import {utils} from "stillness-utils";
-
+import api from "./services/api";
 
 class App extends React.Component {
   constructor(props) {
@@ -33,11 +33,46 @@ class App extends React.Component {
 
 
     // Default CSS class to apply to the Component
-
+    let interval = setInterval(()=>{
+      this.checkConnection();
+    },60000);
     this.state = {
       classList: "UserRegistration",
-      loggedIn: this.getLoggedInStatus()
+      loggedIn: this.getLoggedInStatus(),
+      connected:true,
+      interval,
+      intervalTime:60000
     };
+  }
+
+  componentDidMount(){
+    this.checkConnection();
+  }
+
+  checkConnection = () => {
+    api.ping()
+      .then(connected=>{
+        console.log("Connection?", connected);
+        let {interval, intervalTime} = this.state;
+        if(!connected){
+          intervalTime = 1000;
+          clearInterval(interval);
+         interval = setInterval(()=>{
+            this.checkConnection();
+          },intervalTime);
+        }else if(connected && intervalTime === 1000){
+          intervalTime = 60000;
+          clearInterval(interval);
+         interval = setInterval(()=>{
+            this.checkConnection();
+          },intervalTime);
+        }
+        this.setState({
+          connected,
+          interval,
+          intervalTime
+        })
+      })
   }
 
   getLoggedInStatus=()=>{
@@ -60,13 +95,13 @@ class App extends React.Component {
   }
 
   render() {
-
+    let {connected, loggedIn} = this.state;
     return (
       <div className="App">
         <main>
-          <TopBar update={this.updateUserStatus}/>
+          { connected && <TopBar update={this.updateUserStatus}/>}
 
-          {this.state.loggedIn ? <Switch>
+          {(loggedIn && connected) ? <Switch>
             <Route
               path="/journal"
               render={(routerProps) => {

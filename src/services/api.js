@@ -53,6 +53,22 @@ let api = {
 
 
   },
+  ping: ()=>{
+    let query = `
+    MATCH (n:User)
+    RETURN n
+    LIMIT 1;
+    `
+      let response = driver.session().run(query)
+      return response
+      .then(val=>{
+        return true;
+      })
+      .catch(val=>{
+        return false;
+      })
+
+  },
   nodeListQuery:function(label, field, queryText, limit = 5, skip=0){
     let query = `
     MATCH (user:User)-[:HAS_ABSTRACT]->(n:${label})

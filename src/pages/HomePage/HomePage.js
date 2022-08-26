@@ -57,16 +57,17 @@ let cardContainer = {
 let cards = [
   {
     title:"Track Sense Phenomena",
-    content:"Use iAm to record thoughts per minute, hedonic affect, concept meaning, and so much more"
+    content:"Use iAm to track subjective experience in real time"
   },
   {
     title:"Visualize your data",
-    content:"Using a series of visualizations"
-  },
-  {
-    title:"Question your thoughts",
-    content:"Using a variety of disciplines including Cognitive Behavior Therapy (CBT), Internal Family Systems (IFS), The Work, and the Ideal Parent Figure Protocol (IPF), actively question and change maladaptive thoughts"
+    content:"There are several visualizers we support, and more coming soon!"
   }
+  // ,
+  // {
+  //   title:"Question your thoughts",
+  //   content:"Using a variety of disciplines including Cognitive Behavior Therapy (CBT), Internal Family Systems (IFS), The Work, and the Ideal Parent Figure Protocol (IPF), actively question and change maladaptive thoughts"
+  // }
   ]
 
 class HomePage extends Component{

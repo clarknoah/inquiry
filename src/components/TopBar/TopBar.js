@@ -16,6 +16,7 @@ import TextField from '@material-ui/core/TextField';
 import ModalBoolean from "../ModalBoolean/ModalBoolean";
 import UserLogin from "../UserLogin/UserLogin";
 import UserRegistration from "../UserRegistration/UserRegistration";
+import api from "../../services/api";
 // Class Based React Component
 
 
@@ -37,8 +38,16 @@ class TopBar extends Component {
       anchorEl: null,
       open: false,
       userLoginShow:false,
-      userRegistrationShow:false
+      userRegistrationShow:false,
+      connected:true
     };
+  }
+
+  componentDidMount(){
+    this.checkConnection();
+    setInterval(()=>{
+      this.checkConnection();
+    },60000)
   }
 
   checkAuth=()=>{
@@ -47,6 +56,16 @@ class TopBar extends Component {
     }else{
       return false
     }
+  }
+
+  checkConnection = () => {
+    api.ping()
+      .then(val=>{
+        console.log("Connection?", val);
+        this.setState({
+          connected:val
+        })
+      })
   }
 
   handleClose = () => {
@@ -76,6 +95,8 @@ class TopBar extends Component {
 
   render() {
     let auth = this.checkAuth();
+    let connected = this.state.connected;
+    //let
     return (
       <div className={this.state.classList}>
         <UserLogin
@@ -104,6 +125,11 @@ class TopBar extends Component {
           </Typography>
           </Link>
             </div>
+            {!connected && (
+              <div>
+                App is not connected to database, please turn it on!
+              </div>
+            )}
             {auth && (
               <div style={{display:"flex",alignItems:"center"}}>
                 <Typography>{localStorage.getItem("activeUser_firstName")}</Typography>
