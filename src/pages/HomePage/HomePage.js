@@ -11,6 +11,17 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 // Class Based React Component
 
+let changeLog = [
+  {
+    date:"2022-08-26",
+    changes: [
+      "Users can now set hedonic tone at any point while inputting their perception",
+      "Application automatically updates dashboard",
+      "Users can now successfully submit zero perceptions without an error being thrown"
+    ]
+  }
+]
+
 
 let HCard = ({title, content}) => {
   let style = {
@@ -89,6 +100,24 @@ class HomePage extends Component{
       <Typography variant="h3">Sense Reporting Research Platform</Typography>
         <div style={cardContainer}>
             {cards.map(val=><HCard content={val.content} title={val.title}/>)}
+        </div>
+        <div style={cardContainer}>
+        <HCard
+          title={"Change Log"}
+          content={(
+            <div>
+              {changeLog.map(val=>{
+                return (<div style={{textAlign:"left"}}>
+                  <h3>{val.date}</h3>
+                  <ul style={{textAlign:"left"}}>
+                    {val.changes.map(change=><li>{change}</li>)}
+                  </ul>
+                </div>)
+              })}
+            </div>
+          )
+          }
+        />
         </div>
       </div>
     );

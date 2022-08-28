@@ -4,7 +4,6 @@ import api from "../../services/api";
 class Tracker extends GraphNode{
     constructor(data, id=undefined, properties=undefined){
         super(data, id, properties);
-        console.log(this);
         this.api = api;
         this.thoughts = [];
         this.perceptions = [];
@@ -31,7 +30,6 @@ class Tracker extends GraphNode{
     }
 
     addThought(aThought,mThought){
-        console.log(aThought);
         mThought.properties.inputType.setValue("tracker");
         if(aThought.exists===true){
             aThought = this.checkForExistingDuplicate(aThought);
@@ -45,13 +43,11 @@ class Tracker extends GraphNode{
         this.addRelationship(`PERCEIVED`,mThought.variable);
         if(this.thoughts.length > 0){
             let index = this.thoughts.length-1;
-            console.log(this.thoughts[index][1]);
             let durationRel = this.thoughts[index][1].addRelationship("FOLLOWED_BY",mThought.variable);
             if(this.historic==false){
                 let duration = mThought.properties.timestampOfPerception.value 
                 - this.thoughts[index][1].properties.timestampOfPerception.value;
             durationRel.properties.durationBetween.setValue(duration/1000);
-            console.log(durationRel);
             this.followedBy.push(duration/1000);
             }
             this.cypherQuery.addNewRelationship(durationRel.getCreateQuery());
@@ -101,7 +97,6 @@ class Tracker extends GraphNode{
             }
            
         })
-        console.log(uniqueIds);
         for(let key in uniqueIds){
             let uniqueVariable = uniqueIds[key];
             this.thoughts.forEach((val, index)=>{
@@ -116,8 +111,8 @@ class Tracker extends GraphNode{
 
     setThoughtGapMetrics(){
         let gaps = [];
-        let longestGap = 0;
-        let shortestGap = 99999;
+        let longestGap = this.properties.duration.value;
+        let shortestGap = this.properties.duration.value;
         let lastElement = this.thoughts.length - 1;
         this.thoughts.forEach((val,index)=>{
             if(index < lastElement){
@@ -145,9 +140,13 @@ class Tracker extends GraphNode{
 
     setAverageThoughtGapTotal(){
         let gaps = this.properties.thoughtGaps.value;
-        let total = gaps.reduce((a,b)=>a+b);
-        let avg = total/gaps.length;
-        console.log(gaps, total, avg);
+        let avg;
+        if(gaps.length){
+            let total = gaps.reduce((a,b)=>a+b);
+            let avg = total/gaps.length;
+        }else{
+            avg = this.properties.duration.value;
+        }
         this.properties.averageThoughtGap.setValue(avg);
     }
 
@@ -266,7 +265,6 @@ class Tracker extends GraphNode{
         this.properties.completed.setValue(true);
         this.properties.usedSuggestions.setValue(true);
         this.generateMetrics();
-        console.log(this.properties.generateCypherPropertyObject())
         this.cypherQuery.addNode(this);
         this.cypherQuery.addTransactionId();
        let query = this.cypherQuery.generateQuery();

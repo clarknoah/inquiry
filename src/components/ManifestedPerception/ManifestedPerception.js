@@ -4,15 +4,12 @@ import api from "../../services/api";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import InquiryModel from "../../models/GraphModel";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 class ManifestedPerception extends Component {
   constructor(props) {
     super(props);
     let newPerception = true;
     let mPerception = InquiryModel.getNewModelClass(`M_${props.label}`);
-    // console.log(props);
     mPerception.properties[props.queryKey].value = "";
     if (props.date !== undefined) {
       mPerception.setProperty("dateOfPerception", props.date);
@@ -37,7 +34,6 @@ class ManifestedPerception extends Component {
 
 
   resetForm = () => {
-    console.log("reset");
     let mPerception = InquiryModel.getNewModelClass(`M_${this.props.label}`);
     //// console.log(mPerception);
     mPerception.properties[this.props.queryKey].value = "";
@@ -133,12 +129,10 @@ class ManifestedPerception extends Component {
     if(text.length){
       lastChar = text[text.length-1];
     }
-    console.log(lastChar);
     let switchLabel = text[0] == "-" && text.length === 2;
     let mPerception = this.state.mPerception;
     let hedonicSet = mPerception.properties["hedonicAffect"].value !== 'unassigned';
     if(lastChar && this.isHedonicChar(lastChar)){
-      console.log("hedonic", lastChar);
         mPerception.setProperty("hedonicAffect", this.getHedonicName(lastChar));
         text = text.slice(0, text.length-1);
 
@@ -155,7 +149,6 @@ class ManifestedPerception extends Component {
     }
     if (text.length > 0 && switchLabel == false) {
       api.nodeListQuery(`A_${this.state.label}`, this.state.queryKey, text).then((res) => {
-        // // console.log(res);
         this.setState({
           text:text,
           abstractPerceptions: res,
@@ -199,7 +192,6 @@ class ManifestedPerception extends Component {
   };
 
   submitPerception = (aPerception, mPerception) => {
-    // console.log(this.props);
     if (mPerception.properties.perception.value.length > 0) {
       this.props.submitPerception(aPerception, mPerception);
       this.resetForm();
@@ -264,7 +256,6 @@ class ManifestedPerception extends Component {
         </React.Fragment>
       );
     });
-    console.log(this.state.textz);
     return (
       <div className={this.state.classList} style={this.props.style}>
         {"Affect:  " + this.state.mPerception.properties.hedonicAffect.value}
