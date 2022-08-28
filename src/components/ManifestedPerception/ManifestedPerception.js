@@ -129,14 +129,19 @@ class ManifestedPerception extends Component {
 
   onChange = (evt) => {
     let text = evt.target.value;
+    let lastChar;
+    if(text.length){
+      lastChar = text[text.length-1];
+    }
+    console.log(lastChar);
     let switchLabel = text[0] == "-" && text.length === 2;
     let mPerception = this.state.mPerception;
     let hedonicSet = mPerception.properties["hedonicAffect"].value !== 'unassigned';
-    if(text.length === 1){
-      if(this.isHedonicChar(text) ){
-        mPerception.setProperty("hedonicAffect", this.getHedonicName(text[0]));
-        text = "";
-      }
+    if(lastChar && this.isHedonicChar(lastChar)){
+      console.log("hedonic", lastChar);
+        mPerception.setProperty("hedonicAffect", this.getHedonicName(lastChar));
+        text = text.slice(0, text.length-1);
+
     }
     let noText = mPerception.properties[this.state.queryKey].value.length === 0;
     let assignTimes = text.length > 0 && noText;
