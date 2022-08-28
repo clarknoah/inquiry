@@ -26,6 +26,7 @@ import ThoughtTrackerTimeseries from "./components/ThoughtTrackerTimeseries/Thou
 import HowTo from "./pages/HowTo/HowTo";
 import {utils} from "stillness-utils";
 import api from "./services/api";
+import user from "./services/user";
 
 class App extends React.Component {
   constructor(props) {
@@ -41,12 +42,27 @@ class App extends React.Component {
       loggedIn: this.getLoggedInStatus(),
       connected:true,
       interval,
-      intervalTime:60000
+      intervalTime:60000,
+      dashboardUpdated:false,
+      user:user.getUser()
     };
   }
 
   componentDidMount(){
+    console.log(user.getUser());
     this.checkConnection();
+    this.updateDashboard();
+  }
+
+  updateDashboard = () =>{
+    let {dashboardUpdated, user, connected} = this.state;
+    if(connected && !dashboardUpdated && user){
+      console.log(user);
+      api.saveDashboard(user.properties.email.value)
+        .then(res=>{
+          this.setState({dashboardUpdated:true})
+        })
+    }
   }
 
   checkConnection = () => {

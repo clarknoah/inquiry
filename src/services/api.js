@@ -1,6 +1,7 @@
 import neo4j from "neo4j-driver";
 import generateDashboard from "../neodash/generators";
 import { v4 as uuidv4 } from "uuid";
+
 let driver = neo4j.driver(
   "bolt://localhost:7687",
   neo4j.auth.basic("neo4j", "123456")
@@ -22,12 +23,7 @@ let api = {
     return dash, ID(dash) as id
     `;
 
-    // let find = `
-    // MATCH (dash:_Neodash_Dashboard {title: "iAm Dashboard"})
-    // return dash, ID(dash) as id
-    // `;
-
-    driver.session().run(find, params).then(results => {
+   return driver.session().run(find, params).then(results => {
       console.log(results);
       if(!results.records.length){
         console.log("No dashboard exists");
@@ -39,9 +35,10 @@ let api = {
           version: "2.1",
           content: $json
       })`;
-      //console.log(JSON.stringify(generateDashboard(email)))
+
       return driver.session().run(query, params).then(results=>{
         console.log(results);
+        return results;
       })
 
       }else{

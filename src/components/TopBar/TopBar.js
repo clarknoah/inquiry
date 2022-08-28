@@ -43,12 +43,6 @@ class TopBar extends Component {
     };
   }
 
-  componentDidMount(){
-    this.checkConnection();
-    setInterval(()=>{
-      this.checkConnection();
-    },60000)
-  }
 
   checkAuth=()=>{
     if(localStorage.getItem("activeUser_id")!==null){
@@ -56,16 +50,6 @@ class TopBar extends Component {
     }else{
       return false
     }
-  }
-
-  checkConnection = () => {
-    api.ping()
-      .then(val=>{
-        console.log("Connection?", val);
-        this.setState({
-          connected:val
-        })
-      })
   }
 
   handleClose = () => {
