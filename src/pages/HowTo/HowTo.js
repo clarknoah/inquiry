@@ -54,6 +54,7 @@ class HowTo extends Component{
         <p>Given the sensitive nature of the data being collect, all data needs to be saved to a database locally on your computer. Instructions to setup this database are listed below</p>
         
         <ol style={{textAlign:"left"}}>
+          <li>A video tutorial to set this up can be found <a href="https://youtu.be/2EWlQZ3OiY0">here</a></li>
           <li><a href="https://neo4j.com/download/" target="_blank">Download Neo4j Desktop</a></li>
           <li>Follow required steps to download Neo4j Desktop, ensuring you copy the Activation Key</li>
           <li>Install the application on your computer</li>

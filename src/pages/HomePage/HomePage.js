@@ -15,6 +15,7 @@ let changeLog = [
   {
     date:"2022-08-26",
     changes: [
+      "Added video tutorials to explain how to use the application",
       "Shortest Thought Gap and Longest Thought Gap values are now reporting correctly",
       "Users can now set hedonic tone at any point while inputting their perception",
       "Application automatically updates dashboard",
@@ -69,11 +70,21 @@ let cardContainer = {
 let cards = [
   {
     title:"Track Sense Phenomena",
-    content:"Use iAm to track subjective experience in real time"
+    content:(
+      <div>
+        <p>Use iAm to track subjective experience in real time</p>
+        <a href="https://youtu.be/eCP2UGvzIls">Video tutorial for how to use iAm Trackers</a>
+        </div>
+      )
   },
   {
     title:"Visualize your data",
-    content:"There are several visualizers we support, and more coming soon!"
+    content:(
+      <div>
+        <p>There are several visualizers we support, and more coming soon!</p>
+        <a href="https://youtu.be/lRQ-OruAzz8">Video tutorial for how to use the visualizers</a>
+        </div>
+      )
   }
   // ,
   // {
@@ -98,7 +109,7 @@ class HomePage extends Component{
 
     return(
       <div className={this.state.classList}>
-      <Typography variant="h3">Sense Reporting Research Platform</Typography>
+      <Typography variant="h3">iAm: the Phenomenology Research Platform</Typography>
         <div style={cardContainer}>
             {cards.map(val=><HCard content={val.content} title={val.title}/>)}
         </div>
