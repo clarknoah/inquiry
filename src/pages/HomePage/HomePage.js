@@ -15,6 +15,7 @@ let changeLog = [
   {
     date:"2022-08-26",
     changes: [
+      "Shortest Thought Gap and Longest Thought Gap values are now reporting correctly",
       "Users can now set hedonic tone at any point while inputting their perception",
       "Application automatically updates dashboard",
       "Users can now successfully submit zero perceptions without an error being thrown"

@@ -11,12 +11,8 @@ import MenuIcon from '@material-ui/icons/Menu'
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import InputBase from '@material-ui/core/InputBase';
-import TextField from '@material-ui/core/TextField';
-import ModalBoolean from "../ModalBoolean/ModalBoolean";
 import UserLogin from "../UserLogin/UserLogin";
 import UserRegistration from "../UserRegistration/UserRegistration";
-import api from "../../services/api";
 // Class Based React Component
 
 
@@ -93,7 +89,8 @@ class TopBar extends Component {
         <UserRegistration
           open={this.state.userRegistrationShow}
           onClose={() => {
-            this.setState({ userRegistrationShow: false });
+
+            this.setState({ userRegistrationShow: false }, this.props.update);
           }}
         />
         <AppBar position="static">

@@ -110,28 +110,48 @@ class Tracker extends GraphNode{
     }
 
     setThoughtGapMetrics(){
+        let startTimestamp = this.properties.timestampOfStart.value;
+        let endTimestamp = this.properties.timestampOfEnd.value;
+        let sessionDuration = this.properties.duration.value;
+        let first;
+        let last;
         let gaps = [];
-        let longestGap = this.properties.duration.value;
-        let shortestGap = this.properties.duration.value;
+        let longestGap = this.thoughts.length === 0 ? sessionDuration : 0;
+        let shortestGap = sessionDuration;
         let lastElement = this.thoughts.length - 1;
-        this.thoughts.forEach((val,index)=>{
-            if(index < lastElement){
-                let timestamp = val[1].properties.timestampOfPerception.value
-                let inputDuration = val[1].properties.inputDuration.value;
-                let nextTimestamp = this.thoughts[index+1][1].properties.timestampOfPerception.value;
-                let gap = nextTimestamp - (timestamp+(inputDuration*1000));
-                gap = gap/1000;
-                gaps.push(gap);
-                if(gap>longestGap){
-                    longestGap = gap;
+        if(this.thoughts.length > 0){
+            first = this.thoughts[0][1];
+            last = this.thoughts[this.thoughts.length - 1][1];
+            let firstTimestamp = first.properties.timestampOfPerception.value;
+            let lastTimestamp = last.properties.timestampOfPerception.value;
+            let firstInputDuration = first.properties.inputDuration.value;
+            let lastInputDuration = last.properties.inputDuration.value;
+            let firstGap = (firstTimestamp - (startTimestamp))/1000;
+            let secondGap = (endTimestamp - (lastTimestamp+(lastInputDuration*1000)))/1000;
+            gaps.push(firstGap, secondGap);
+            longestGap = firstGap > secondGap ? firstGap : secondGap;
+            shortestGap = firstGap < secondGap ? firstGap : secondGap;
+        }
+        if(this.thoughts.length > 1){
+            this.thoughts.forEach((val,index)=>{
+                if(index < lastElement){
+                    let timestamp = val[1].properties.timestampOfPerception.value
+                    let inputDuration = val[1].properties.inputDuration.value;
+                    let nextTimestamp = this.thoughts[index+1][1].properties.timestampOfPerception.value;
+                    let gap = nextTimestamp - (timestamp+(inputDuration*1000));
+                    gap = gap/1000;
+                    gaps.push(gap);
+                    if(gap>longestGap){
+                        longestGap = gap;
+                    }
+                    if(gap<shortestGap){
+                        shortestGap = gap;
+                    }
+    
+                    
                 }
-                if(gap<shortestGap){
-                    shortestGap = gap;
-                }
-
-                
-            }
-        })
+            })
+        }
         this.properties.longestThoughtGap.setValue(longestGap);
         this.properties.thoughtGaps.setValue(gaps);
         this.properties.shortestThoughtGap.setValue(shortestGap);

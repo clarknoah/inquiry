@@ -62,18 +62,21 @@ class ManifestedPerception extends Component {
   }
 
   switchLabel = (text) => {
+    let command = text.slice(text.length-2).toLowerCase();
     let label;
-    if (text === "-T") {
+    if (command === "/t") {
       label = "Thought"
-    } else if (text === "-I") {
+    } else if (command === "/i") {
       label = "Mental_Image"
-    } else if (text == "-E") {
+    } else if (command == "/e") {
       label = "Emotion"
-    } else if (text == "-B") {
+    } else if (command == "/b") {
       label = "Body_Sensation"
-    } else if (text == "-P") {
+    } else if (command == "/p") {
       label = "Perception"
     }
+    let idx = text.indexOf("/");
+    text = text.slice(0,idx);
 
     if (label !== undefined) {
       let mPerception = InquiryModel.getNewModelClass(`M_${label}`);
@@ -85,6 +88,7 @@ class ManifestedPerception extends Component {
         mPerception.setProperty("dateOfPerception", this.props.date);
       }
       this.setState({
+        text:text,
         classList: "ManifestedPerception",
         abstractPerceptions: [],
         mPerception: mPerception,
@@ -129,7 +133,7 @@ class ManifestedPerception extends Component {
     if(text.length){
       lastChar = text[text.length-1];
     }
-    let switchLabel = text[0] == "-" && text.length === 2;
+    let switchLabel = text[text.length - 2] == "/";
     let mPerception = this.state.mPerception;
     let hedonicSet = mPerception.properties["hedonicAffect"].value !== 'unassigned';
     if(lastChar && this.isHedonicChar(lastChar)){

@@ -4,6 +4,8 @@ const app = express();
 const port = process.env.PORT || 3005;
 const publicPath = path.join(__dirname, '..', 'build');
 const neodashPath = path.join(__dirname, '..', 'dist');
+require("dotenv").config();
+
 app.use("/app", express.static(publicPath));
 
 app.use("/dashboard", express.static(neodashPath));

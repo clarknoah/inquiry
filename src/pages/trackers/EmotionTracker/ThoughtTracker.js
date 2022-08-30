@@ -460,53 +460,6 @@ class ThoughtTracker extends Component {
                     shrink: true,
                   }}
                 />) : null}
-            <FormControlLabel
-              className={"ThoughtLogger-field"}
-              control={
-                <Checkbox
-                  checked={this.state.tracker.historic}
-                  onChange={this.setHistoric}
-                  name="checkedB"
-                  color="primary"
-                />
-              }
-              label="Historic Tracker"
-            />
-            {this.state.tracker.historic == true ? (
-              <div>
-                <TextField
-                  id="date"
-                  label="Date of Entry"
-                  type="date"
-                  onChange={(e) => {
-                    this.setState({
-                      tracker: this.state.tracker.setProperty(
-                        "date",
-                        e.target.value
-                      ),
-                    });
-                  }}
-                  value={this.state.tracker.properties.date.value}
-                  className={"ThoughtLogger-field"}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                />
-                <TextField
-                  id="time"
-                  label="Alarm clock"
-                  type="time"
-                  defaultValue="07:30"
-                  onChange={this.setTimestampOfStart}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  inputProps={{
-                    step: 300, // 5 min
-                  }}
-                />
-              </div>
-            ) : null}
             <TextField
               label="Please Select Duration"
               type="number"
