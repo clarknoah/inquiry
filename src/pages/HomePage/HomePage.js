@@ -109,7 +109,7 @@ class HomePage extends Component{
 
     return(
       <div className={this.state.classList}>
-      <Typography variant="h3">iAm: the Phenomenology Research Platform</Typography>
+      <Typography variant="h3">iAm: An Experimental Sense Reporting Prototype</Typography>
         <div style={cardContainer}>
             {cards.map(val=><HCard content={val.content} title={val.title}/>)}
         </div>
