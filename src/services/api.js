@@ -3,7 +3,7 @@ import generateDashboard from "../neodash/generators";
 import { v4 as uuidv4 } from "uuid";
 
 let driver = neo4j.driver(
-  "bolt://localhost:7688",
+  "bolt://localhost:7687",
   neo4j.auth.basic("neo4j", "123456")
 );
 
