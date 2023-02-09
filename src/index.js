@@ -7,6 +7,17 @@ import {
   BrowserRouter as Router
 } from "react-router-dom"
 import * as serviceWorker from './serviceWorker';
+import TagManager from 'react-gtm-module';
+
+
+const tagManagerArgs = {
+  gtmId: "GTM-5K2NLH4"
+}
+TagManager.initialize(tagManagerArgs)
+
+
+
+
 
 ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
 
